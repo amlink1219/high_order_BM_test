@@ -1,0 +1,16 @@
+{
+  "experiment_id": "E001",
+  "completed_at": "2026-06-04 23:53:54",
+  "best_acc_selection_metric": 0.9427,
+  "best_epoch": 34,
+  "final_epoch": 50,
+  "out_dir": "./runs_twoport1024_E001_baseline",
+  "best_checkpoint_epoch": 34,
+  "final_full_test_label_gibbs_acc": 0.942,
+  "final_full_label_entropy": 0.23679556736587729,
+  "final_full_eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2
+  }
+}

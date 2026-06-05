@@ -1,0 +1,16 @@
+{
+  "experiment_id": "E005",
+  "completed_at": "2026-06-05 21:05:33",
+  "best_acc_selection_metric": 0.9436,
+  "best_epoch": 34,
+  "final_epoch": 50,
+  "out_dir": "./runs_twoport1024_E005_gamma_h110_l120",
+  "best_checkpoint_epoch": 34,
+  "final_full_test_label_gibbs_acc": 0.9422,
+  "final_full_label_entropy": 0.23225207264136666,
+  "final_full_eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2
+  }
+}
