@@ -1,0 +1,35 @@
+Using device: cuda
+audio_layout=time40_fold, image=20x20, gamma_h=1.15, gamma_l=1.15, total_pbits=1024
+Epoch 001/40 | loss -0.4926 | CD -0.5003 | short-CD label retention 93.41%
+Epoch 002/40 | loss -0.4999 | CD -0.5076 | short-CD label retention 93.58% | quick label-Gibbs acc 93.99% | full label-Gibbs acc 93.95% | saved best
+Epoch 003/40 | loss -0.4488 | CD -0.4565 | short-CD label retention 93.61%
+Epoch 004/40 | loss -0.5142 | CD -0.5217 | short-CD label retention 93.59% | quick label-Gibbs acc 94.25% | full label-Gibbs acc 94.21% | saved best
+Epoch 005/40 | loss -0.4819 | CD -0.4894 | short-CD label retention 93.55%
+Epoch 006/40 | loss -0.4514 | CD -0.4589 | short-CD label retention 93.70% | quick label-Gibbs acc 94.07%
+Epoch 007/40 | loss -0.4303 | CD -0.4377 | short-CD label retention 93.79%
+Epoch 008/40 | loss -0.4457 | CD -0.4531 | short-CD label retention 93.76% | quick label-Gibbs acc 93.88%
+Epoch 009/40 | loss -0.4288 | CD -0.4361 | short-CD label retention 93.86%
+Epoch 010/40 | loss -0.4411 | CD -0.4483 | short-CD label retention 93.93% | quick label-Gibbs acc 93.95%
+Epoch 011/40 | loss -0.4158 | CD -0.4229 | short-CD label retention 93.96%
+Epoch 012/40 | loss -0.3915 | CD -0.3986 | short-CD label retention 94.02% | quick label-Gibbs acc 93.85%
+Epoch 013/40 | loss -0.3728 | CD -0.3799 | short-CD label retention 93.98%
+Epoch 014/40 | loss -0.4358 | CD -0.4428 | short-CD label retention 94.06% | quick label-Gibbs acc 93.91%
+Epoch 015/40 | loss -0.4642 | CD -0.4712 | short-CD label retention 94.03%
+Epoch 016/40 | loss -0.4179 | CD -0.4248 | short-CD label retention 94.16% | quick label-Gibbs acc 93.71%
+Early stopping after 6 evals without improvement.
+Done. {
+  "experiment_id": "E007",
+  "completed_at": "2026-06-05 22:08:38",
+  "best_acc_selection_metric": 0.9421,
+  "best_epoch": 4,
+  "final_epoch": 16,
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E007_distill_w0p05",
+  "best_checkpoint_epoch": 4,
+  "final_full_test_label_gibbs_acc": 0.9419,
+  "final_full_label_entropy": 0.22755582899602153,
+  "final_full_eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2
+  }
+}
