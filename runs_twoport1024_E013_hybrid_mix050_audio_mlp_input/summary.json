@@ -1,0 +1,16 @@
+{
+  "experiment_id": "E013",
+  "completed_at": "2026-06-06 07:17:35",
+  "best_acc_selection_metric": 0.8894,
+  "best_epoch": 100,
+  "final_epoch": 100,
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E013_hybrid_mix050_audio_mlp_input",
+  "best_checkpoint_epoch": 100,
+  "final_full_test_label_gibbs_acc": 0.8894,
+  "final_full_label_entropy": 0.08857437789719315,
+  "final_full_eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2
+  }
+}

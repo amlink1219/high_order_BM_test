@@ -233,3 +233,275 @@ is diagnostic only.
 - Teacher NPZ: /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz
 - Completed distillation IDs: E006/E007/E008
 
+## E009-E020 processed feature batch started - 2026-06-06 03:17:37
+- Strategy: feed deployable posterior-pattern features into the p-bit Gibbs model, instead of using teacher KL as an auxiliary loss.
+- Feature NPZ: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz`
+- Pattern: interleave
+
+## E009 started - 2026-06-06 03:17:42
+- Purpose: processed_audio_input
+- Change: optical=raw,audio=audio_mlp_probs
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E009_audio_mlp_input`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E009_audio_mlp_input --experiment_id E009 --purpose processed_audio_input --change_note optical=raw,audio=audio_mlp_probs --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source raw --audio_feature_source audio_mlp_probs --processed_feature_pattern interleave --processed_mix 0.5 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E009 completed - 2026-06-06 03:26:39
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E009_audio_mlp_input`
+- Best selection metric: 0.864900 at epoch 2
+- Final epoch: 22
+- Final full `test_label_gibbs_acc`: 0.8654
+- Next: compare_processed_feature_inputs
+
+## E009 processed feature queue summary - 2026-06-06 03:26:40
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E009_audio_mlp_input`
+- Optical/audio sources: raw / audio_mlp_probs
+- Pattern/mix: interleave / 0.5
+- Best selection metric: 0.8649
+- Best epoch: 2
+- Final full test_label_gibbs_acc: 0.8654
+
+## E010 started - 2026-06-06 03:26:44
+- Purpose: processed_optical_input
+- Change: optical=image_rbm_probs,audio=raw
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E010_optical_image_rbm_input`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E010_optical_image_rbm_input --experiment_id E010 --purpose processed_optical_input --change_note optical=image_rbm_probs,audio=raw --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source image_rbm_probs --audio_feature_source raw --processed_feature_pattern interleave --processed_mix 0.5 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E010 completed - 2026-06-06 04:44:04
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E010_optical_image_rbm_input`
+- Best selection metric: 0.950500 at epoch 86
+- Final epoch: 100
+- Final full `test_label_gibbs_acc`: 0.9511
+- Next: compare_processed_feature_inputs
+
+## E010 processed feature queue summary - 2026-06-06 04:44:04
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E010_optical_image_rbm_input`
+- Optical/audio sources: image_rbm_probs / raw
+- Pattern/mix: interleave / 0.5
+- Best selection metric: 0.9505
+- Best epoch: 86
+- Final full test_label_gibbs_acc: 0.9511
+
+## E011 started - 2026-06-06 04:44:09
+- Purpose: processed_dual_input
+- Change: optical=image_rbm_probs,audio=audio_mlp_probs
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E011_dual_posterior_input`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E011_dual_posterior_input --experiment_id E011 --purpose processed_dual_input --change_note optical=image_rbm_probs,audio=audio_mlp_probs --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source image_rbm_probs --audio_feature_source audio_mlp_probs --processed_feature_pattern interleave --processed_mix 0.5 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E011 completed - 2026-06-06 04:53:43
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E011_dual_posterior_input`
+- Best selection metric: 0.921400 at epoch 2
+- Final epoch: 22
+- Final full `test_label_gibbs_acc`: 0.9213
+- Next: compare_processed_feature_inputs
+
+## E011 processed feature queue summary - 2026-06-06 04:53:43
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E011_dual_posterior_input`
+- Optical/audio sources: image_rbm_probs / audio_mlp_probs
+- Pattern/mix: interleave / 0.5
+- Best selection metric: 0.9214
+- Best epoch: 2
+- Final full test_label_gibbs_acc: 0.9213
+
+## E012 started - 2026-06-06 04:53:47
+- Purpose: hybrid_processed_optical_input
+- Change: optical=raw_plus_image_rbm_probs,audio=audio_mlp_probs,mix=0.25
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E012_hybrid_mix025_audio_mlp_input`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E012_hybrid_mix025_audio_mlp_input --experiment_id E012 --purpose hybrid_processed_optical_input --change_note optical=raw_plus_image_rbm_probs,audio=audio_mlp_probs,mix=0.25 --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source raw_plus_image_rbm_probs --audio_feature_source audio_mlp_probs --processed_feature_pattern interleave --processed_mix 0.25 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E012 completed - 2026-06-06 06:03:14
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E012_hybrid_mix025_audio_mlp_input`
+- Best selection metric: 0.875000 at epoch 88
+- Final epoch: 100
+- Final full `test_label_gibbs_acc`: 0.8743
+- Next: compare_processed_feature_inputs
+
+## E012 processed feature queue summary - 2026-06-06 06:03:14
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E012_hybrid_mix025_audio_mlp_input`
+- Optical/audio sources: raw_plus_image_rbm_probs / audio_mlp_probs
+- Pattern/mix: interleave / 0.25
+- Best selection metric: 0.875
+- Best epoch: 88
+- Final full test_label_gibbs_acc: 0.8743
+
+## E013 started - 2026-06-06 06:03:19
+- Purpose: hybrid_processed_optical_input
+- Change: optical=raw_plus_image_rbm_probs,audio=audio_mlp_probs,mix=0.50
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E013_hybrid_mix050_audio_mlp_input`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E013_hybrid_mix050_audio_mlp_input --experiment_id E013 --purpose hybrid_processed_optical_input --change_note optical=raw_plus_image_rbm_probs,audio=audio_mlp_probs,mix=0.50 --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source raw_plus_image_rbm_probs --audio_feature_source audio_mlp_probs --processed_feature_pattern interleave --processed_mix 0.5 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E013 completed - 2026-06-06 07:18:59
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E013_hybrid_mix050_audio_mlp_input`
+- Best selection metric: 0.889400 at epoch 100
+- Final epoch: 100
+- Final full `test_label_gibbs_acc`: 0.8894
+- Next: compare_processed_feature_inputs
+
+## E013 processed feature queue summary - 2026-06-06 07:18:59
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E013_hybrid_mix050_audio_mlp_input`
+- Optical/audio sources: raw_plus_image_rbm_probs / audio_mlp_probs
+- Pattern/mix: interleave / 0.5
+- Best selection metric: 0.8894
+- Best epoch: 100
+- Final full test_label_gibbs_acc: 0.8894
+
+## E014 started - 2026-06-06 07:19:04
+- Purpose: hybrid_processed_optical_input
+- Change: optical=raw_plus_image_rbm_probs,audio=audio_mlp_probs,mix=0.75
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E014_hybrid_mix075_audio_mlp_input`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E014_hybrid_mix075_audio_mlp_input --experiment_id E014 --purpose hybrid_processed_optical_input --change_note optical=raw_plus_image_rbm_probs,audio=audio_mlp_probs,mix=0.75 --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source raw_plus_image_rbm_probs --audio_feature_source audio_mlp_probs --processed_feature_pattern interleave --processed_mix 0.75 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E014 completed - 2026-06-06 07:28:42
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E014_hybrid_mix075_audio_mlp_input`
+- Best selection metric: 0.891000 at epoch 2
+- Final epoch: 22
+- Final full `test_label_gibbs_acc`: 0.8907
+- Next: compare_processed_feature_inputs
+
+## E014 processed feature queue summary - 2026-06-06 07:28:42
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E014_hybrid_mix075_audio_mlp_input`
+- Optical/audio sources: raw_plus_image_rbm_probs / audio_mlp_probs
+- Pattern/mix: interleave / 0.75
+- Best selection metric: 0.891
+- Best epoch: 2
+- Final full test_label_gibbs_acc: 0.8907
+
+## E015 started - 2026-06-06 07:28:47
+- Purpose: processed_dual_input_pattern_ablation
+- Change: optical=image_rbm_probs,audio=audio_mlp_probs,pattern=blocks
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E015_dual_posterior_blocks`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E015_dual_posterior_blocks --experiment_id E015 --purpose processed_dual_input_pattern_ablation --change_note optical=image_rbm_probs,audio=audio_mlp_probs,pattern=blocks --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source image_rbm_probs --audio_feature_source audio_mlp_probs --processed_feature_pattern blocks --processed_mix 0.5 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E015 completed - 2026-06-06 07:38:12
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E015_dual_posterior_blocks`
+- Best selection metric: 0.925600 at epoch 2
+- Final epoch: 22
+- Final full `test_label_gibbs_acc`: 0.9256
+- Next: compare_processed_feature_inputs
+
+## E015 processed feature queue summary - 2026-06-06 07:38:13
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E015_dual_posterior_blocks`
+- Optical/audio sources: image_rbm_probs / audio_mlp_probs
+- Pattern/mix: blocks / 0.5
+- Best selection metric: 0.9256
+- Best epoch: 2
+- Final full test_label_gibbs_acc: 0.9256
+
+## E016 started - 2026-06-06 07:38:17
+- Purpose: hybrid_processed_optical_pattern_ablation
+- Change: optical=raw_plus_image_rbm_probs,audio=audio_mlp_probs,mix=0.50,pattern=blocks
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E016_hybrid_mix050_blocks`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E016_hybrid_mix050_blocks --experiment_id E016 --purpose hybrid_processed_optical_pattern_ablation --change_note optical=raw_plus_image_rbm_probs,audio=audio_mlp_probs,mix=0.50,pattern=blocks --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source raw_plus_image_rbm_probs --audio_feature_source audio_mlp_probs --processed_feature_pattern blocks --processed_mix 0.5 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E016 completed - 2026-06-06 08:47:45
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E016_hybrid_mix050_blocks`
+- Best selection metric: 0.887600 at epoch 80
+- Final epoch: 100
+- Final full `test_label_gibbs_acc`: 0.8876
+- Next: compare_processed_feature_inputs
+
+## E016 processed feature queue summary - 2026-06-06 08:47:46
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E016_hybrid_mix050_blocks`
+- Optical/audio sources: raw_plus_image_rbm_probs / audio_mlp_probs
+- Pattern/mix: blocks / 0.5
+- Best selection metric: 0.8876
+- Best epoch: 80
+- Final full test_label_gibbs_acc: 0.8876
+
+## E017 started - 2026-06-06 08:47:50
+- Purpose: hybrid_processed_both_channels
+- Change: optical=raw_plus_image_rbm_probs,audio=raw_plus_audio_mlp_probs,mix=0.35
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E017_raw_plus_both_mix035`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E017_raw_plus_both_mix035 --experiment_id E017 --purpose hybrid_processed_both_channels --change_note optical=raw_plus_image_rbm_probs,audio=raw_plus_audio_mlp_probs,mix=0.35 --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source raw_plus_image_rbm_probs --audio_feature_source raw_plus_audio_mlp_probs --processed_feature_pattern interleave --processed_mix 0.35 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E017 completed - 2026-06-06 09:01:22
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E017_raw_plus_both_mix035`
+- Best selection metric: 0.973200 at epoch 6
+- Final epoch: 26
+- Final full `test_label_gibbs_acc`: 0.9731
+- Next: compare_processed_feature_inputs
+
+## E017 processed feature queue summary - 2026-06-06 09:01:22
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E017_raw_plus_both_mix035`
+- Optical/audio sources: raw_plus_image_rbm_probs / raw_plus_audio_mlp_probs
+- Pattern/mix: interleave / 0.35
+- Best selection metric: 0.9732
+- Best epoch: 6
+- Final full test_label_gibbs_acc: 0.9731
+
+## E018 started - 2026-06-06 09:01:26
+- Purpose: teacher_posterior_input_diagnostic
+- Change: optical=teacher_probs,audio=raw
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E018_teacher_optical_raw_audio_diagnostic`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E018_teacher_optical_raw_audio_diagnostic --experiment_id E018 --purpose teacher_posterior_input_diagnostic --change_note optical=teacher_probs,audio=raw --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source teacher_probs --audio_feature_source raw --processed_feature_pattern interleave --processed_mix 0.5 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E018 completed - 2026-06-06 09:17:03
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E018_teacher_optical_raw_audio_diagnostic`
+- Best selection metric: 0.986400 at epoch 8
+- Final epoch: 28
+- Final full `test_label_gibbs_acc`: 0.9864
+- Next: compare_processed_feature_inputs
+
+## E018 processed feature queue summary - 2026-06-06 09:17:04
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E018_teacher_optical_raw_audio_diagnostic`
+- Optical/audio sources: teacher_probs / raw
+- Pattern/mix: interleave / 0.5
+- Best selection metric: 0.9864
+- Best epoch: 8
+- Final full test_label_gibbs_acc: 0.9864
+
+## E019 started - 2026-06-06 09:17:08
+- Purpose: teacher_posterior_input_diagnostic
+- Change: optical=teacher_probs,audio=audio_mlp_probs
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E019_teacher_optical_audio_mlp_diagnostic`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E019_teacher_optical_audio_mlp_diagnostic --experiment_id E019 --purpose teacher_posterior_input_diagnostic --change_note optical=teacher_probs,audio=audio_mlp_probs --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source teacher_probs --audio_feature_source audio_mlp_probs --processed_feature_pattern interleave --processed_mix 0.5 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E019 completed - 2026-06-06 09:39:21
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E019_teacher_optical_audio_mlp_diagnostic`
+- Best selection metric: 0.951800 at epoch 20
+- Final epoch: 40
+- Final full `test_label_gibbs_acc`: 0.9514
+- Next: compare_processed_feature_inputs
+
+## E019 processed feature queue summary - 2026-06-06 09:39:22
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E019_teacher_optical_audio_mlp_diagnostic`
+- Optical/audio sources: teacher_probs / audio_mlp_probs
+- Pattern/mix: interleave / 0.5
+- Best selection metric: 0.9518
+- Best epoch: 20
+- Final full test_label_gibbs_acc: 0.9514
+
+## E020 started - 2026-06-06 09:39:26
+- Purpose: teacher_hybrid_input_diagnostic
+- Change: optical=raw_plus_teacher_probs,audio=audio_mlp_probs,mix=0.35
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E020_raw_plus_teacher_mix035_diagnostic`
+- Config: total=1024, hidden=574, gamma_h=1.15, gamma_l=1.15, lr=0.0002, cd_k=3, distill_weight=0.0
+- Command: `train_twoport_1024_optimization_wsd.py --out_dir /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E020_raw_plus_teacher_mix035_diagnostic --experiment_id E020 --purpose teacher_hybrid_input_diagnostic --change_note optical=raw_plus_teacher_probs,audio=audio_mlp_probs,mix=0.35 --next_note compare_processed_feature_inputs --processed_feature_npz /home/Hongjie_Zeng/high_order_BM/runs_twoport1024_teacher_latefusion_lam05/latefusion_teacher_lam05_train_test.npz --optical_feature_source raw_plus_teacher_probs --audio_feature_source audio_mlp_probs --processed_feature_pattern interleave --processed_mix 0.35 --epochs 100 --early_stop_patience 10 --eval_every 2 --quick_eval_steps 800 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_on_best --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --batch_size 50 --eval_batch_size 128 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_init random_onehot --audio_layout time40_fold --audio_scale zscore_sigmoid --num_workers 2`
+
+## E020 completed - 2026-06-06 10:53:32
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E020_raw_plus_teacher_mix035_diagnostic`
+- Best selection metric: 0.886400 at epoch 94
+- Final epoch: 100
+- Final full `test_label_gibbs_acc`: 0.8866
+- Next: compare_processed_feature_inputs
+
+## E020 processed feature queue summary - 2026-06-06 10:53:33
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E020_raw_plus_teacher_mix035_diagnostic`
+- Optical/audio sources: raw_plus_teacher_probs / audio_mlp_probs
+- Pattern/mix: interleave / 0.35
+- Best selection metric: 0.8864
+- Best epoch: 94
+- Final full test_label_gibbs_acc: 0.8866
+
+## E009-E020 processed feature batch completed - 2026-06-06 10:53:33
+- Next: choose best processed input; if >=95%, refine pattern/mix around it; otherwise try a learned 400-d optical projection.
+

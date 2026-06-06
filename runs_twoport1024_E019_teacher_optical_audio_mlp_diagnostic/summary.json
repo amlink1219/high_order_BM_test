@@ -1,0 +1,16 @@
+{
+  "experiment_id": "E019",
+  "completed_at": "2026-06-06 09:37:54",
+  "best_acc_selection_metric": 0.9518,
+  "best_epoch": 20,
+  "final_epoch": 40,
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E019_teacher_optical_audio_mlp_diagnostic",
+  "best_checkpoint_epoch": 20,
+  "final_full_test_label_gibbs_acc": 0.9514,
+  "final_full_label_entropy": 0.15185771536932713,
+  "final_full_eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2
+  }
+}

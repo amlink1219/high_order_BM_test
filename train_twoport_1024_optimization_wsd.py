@@ -14,6 +14,7 @@ from torch.utils.data import DataLoader, Dataset
 
 from train_1000pbit_20x20_wsd_mnist20 import (
     ConditionalTwoPortBM,
+    WSD20Dataset,
     evaluate_twoport,
     label_scores_from_bits,
     load_wsd20,
@@ -80,6 +81,143 @@ def late_fusion_probs(image_scores: np.ndarray, audio_probs: np.ndarray, lambda_
     log_img = np.log(np.clip(normalize_rows(image_scores), 1e-8, 1.0))
     log_audio = np.log(np.clip(normalize_rows(audio_probs), 1e-8, 1.0))
     return softmax_np(log_img + lambda_audio * log_audio)
+
+
+def class_probs_to_400(probs: np.ndarray, pattern: str) -> np.ndarray:
+    probs = normalize_rows(probs).astype(np.float32)
+    if probs.shape[1] != 10:
+        raise ValueError(f"Expected 10 class probabilities, got shape={probs.shape}")
+    if pattern == "blocks":
+        return np.repeat(probs, 40, axis=1).astype(np.float32)
+    if pattern == "interleave":
+        return np.tile(probs, (1, 40)).astype(np.float32)
+    raise ValueError(f"Unknown processed_feature_pattern: {pattern}")
+
+
+def feature_probs_from_npz(data: np.lib.npyio.NpzFile, split: str, source: str, lambda_audio: float) -> np.ndarray:
+    if source == "image_rbm_probs":
+        key = f"{split}_image_scores"
+        if key not in data.files:
+            raise ValueError(f"Missing {key} in processed feature NPZ")
+        return normalize_rows(data[key]).astype(np.float32)
+    if source == "audio_mlp_probs":
+        key = f"{split}_audio_probs"
+        if key not in data.files:
+            raise ValueError(f"Missing {key} in processed feature NPZ")
+        return normalize_rows(data[key]).astype(np.float32)
+    if source == "teacher_probs":
+        key = f"{split}_teacher_probs"
+        if key in data.files:
+            return normalize_rows(data[key]).astype(np.float32)
+        image_key = f"{split}_image_scores"
+        audio_key = f"{split}_audio_probs"
+        if image_key not in data.files or audio_key not in data.files:
+            raise ValueError(f"Missing {key} or {image_key}+{audio_key} in processed feature NPZ")
+        return late_fusion_probs(data[image_key], data[audio_key], lambda_audio)
+    raise ValueError(f"Unknown processed feature source: {source}")
+
+
+def apply_processed_feature(
+    raw: np.ndarray,
+    data: Optional[np.lib.npyio.NpzFile],
+    split: str,
+    source: str,
+    pattern: str,
+    mix: float,
+    lambda_audio: float,
+    n_items: int,
+) -> np.ndarray:
+    raw = raw.astype(np.float32)
+    if source == "raw":
+        return raw
+    if data is None:
+        raise ValueError("--processed_feature_npz is required for non-raw processed feature modes")
+    if source.startswith("raw_plus_"):
+        base_source = source[len("raw_plus_") :]
+        probs = feature_probs_from_npz(data, split, base_source, lambda_audio)
+        feat = class_probs_to_400(probs, pattern)
+        if feat.shape[0] < n_items:
+            raise ValueError(f"{split} processed features have {feat.shape[0]} rows, need {n_items}")
+        feat = feat[:n_items]
+        return np.clip((1.0 - mix) * raw + mix * feat, 0.0, 1.0).astype(np.float32)
+    probs = feature_probs_from_npz(data, split, source, lambda_audio)
+    feat = class_probs_to_400(probs, pattern)
+    if feat.shape[0] < n_items:
+        raise ValueError(f"{split} processed features have {feat.shape[0]} rows, need {n_items}")
+    return feat[:n_items].astype(np.float32)
+
+
+def build_processed_datasets(args):
+    train_ds, test_ds, dims = load_wsd20(
+        Path(args.data_dir),
+        args.image_size,
+        args.image_downsample,
+        args.audio_scale,
+        args.audio_layout,
+        args.max_train,
+        args.max_test,
+    )
+    if args.optical_feature_source == "raw" and args.audio_feature_source == "raw":
+        return train_ds, test_ds, dims
+
+    train_image = train_ds.image.numpy().astype(np.float32)
+    train_audio = train_ds.audio.numpy().astype(np.float32)
+    train_y = train_ds.labels.numpy().astype(np.int64)
+    test_image = test_ds.image.numpy().astype(np.float32)
+    test_audio = test_ds.audio.numpy().astype(np.float32)
+    test_y = test_ds.labels.numpy().astype(np.int64)
+
+    feature_data = np.load(args.processed_feature_npz) if args.processed_feature_npz else None
+    try:
+        train_image = apply_processed_feature(
+            train_image,
+            feature_data,
+            "train",
+            args.optical_feature_source,
+            args.processed_feature_pattern,
+            args.processed_mix,
+            args.teacher_lambda_audio,
+            len(train_y),
+        )
+        test_image = apply_processed_feature(
+            test_image,
+            feature_data,
+            "test",
+            args.optical_feature_source,
+            args.processed_feature_pattern,
+            args.processed_mix,
+            args.teacher_lambda_audio,
+            len(test_y),
+        )
+        train_audio = apply_processed_feature(
+            train_audio,
+            feature_data,
+            "train",
+            args.audio_feature_source,
+            args.processed_feature_pattern,
+            args.processed_mix,
+            args.teacher_lambda_audio,
+            len(train_y),
+        )
+        test_audio = apply_processed_feature(
+            test_audio,
+            feature_data,
+            "test",
+            args.audio_feature_source,
+            args.processed_feature_pattern,
+            args.processed_mix,
+            args.teacher_lambda_audio,
+            len(test_y),
+        )
+    finally:
+        if feature_data is not None:
+            feature_data.close()
+
+    return (
+        WSD20Dataset(train_image, train_audio, train_y),
+        WSD20Dataset(test_image, test_audio, test_y),
+        dims,
+    )
 
 
 def load_teacher_probs(
@@ -552,6 +690,35 @@ def main():
     p.add_argument("--teacher_temperature", type=float, default=1.0)
     p.add_argument("--distill_weight", type=float, default=0.0)
     p.add_argument("--distill_start_epoch", type=int, default=1)
+    p.add_argument("--processed_feature_npz", type=str, default="")
+    p.add_argument(
+        "--optical_feature_source",
+        choices=[
+            "raw",
+            "image_rbm_probs",
+            "audio_mlp_probs",
+            "teacher_probs",
+            "raw_plus_image_rbm_probs",
+            "raw_plus_audio_mlp_probs",
+            "raw_plus_teacher_probs",
+        ],
+        default="raw",
+    )
+    p.add_argument(
+        "--audio_feature_source",
+        choices=[
+            "raw",
+            "image_rbm_probs",
+            "audio_mlp_probs",
+            "teacher_probs",
+            "raw_plus_image_rbm_probs",
+            "raw_plus_audio_mlp_probs",
+            "raw_plus_teacher_probs",
+        ],
+        default="raw",
+    )
+    p.add_argument("--processed_feature_pattern", choices=["blocks", "interleave"], default="interleave")
+    p.add_argument("--processed_mix", type=float, default=0.5)
 
     p.add_argument("--warm_start_ckpt", type=str, default="")
     p.add_argument("--resume_ckpt", type=str, default="")
@@ -577,15 +744,7 @@ def main():
         flush=True,
     )
 
-    train_ds, test_ds, dims = load_wsd20(
-        Path(args.data_dir),
-        args.image_size,
-        args.image_downsample,
-        args.audio_scale,
-        args.audio_layout,
-        args.max_train,
-        args.max_test,
-    )
+    train_ds, test_ds, dims = build_processed_datasets(args)
     indexed_train = IndexedDataset(train_ds)
     train_loader = DataLoader(
         indexed_train,
