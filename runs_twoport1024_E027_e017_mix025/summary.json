@@ -1,0 +1,16 @@
+{
+  "experiment_id": "E027",
+  "completed_at": "2026-06-06 19:45:56",
+  "best_acc_selection_metric": 0.9732,
+  "best_epoch": 12,
+  "final_epoch": 32,
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E027_e017_mix025",
+  "best_checkpoint_epoch": 12,
+  "final_full_test_label_gibbs_acc": 0.9727,
+  "final_full_label_entropy": 0.17451092002901097,
+  "final_full_eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2
+  }
+}

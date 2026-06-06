@@ -1,0 +1,43 @@
+Using device: cuda
+audio_layout=time40_fold, image=20x20, gamma_h=1.15, gamma_l=1.15, total_pbits=1024
+Epoch 001/100 | loss -2.0550 | CD -2.0550 | short-CD label retention 13.00%
+Epoch 002/100 | loss -3.1937 | CD -3.1937 | short-CD label retention 33.63% | quick label-Gibbs acc 96.62% | full label-Gibbs acc 96.61% | saved best
+Epoch 003/100 | loss -3.8859 | CD -3.8859 | short-CD label retention 77.43%
+Epoch 004/100 | loss -2.7974 | CD -2.7974 | short-CD label retention 94.97% | quick label-Gibbs acc 97.52% | full label-Gibbs acc 97.50% | saved best
+Epoch 005/100 | loss -1.8395 | CD -1.8395 | short-CD label retention 97.45%
+Epoch 006/100 | loss -1.3022 | CD -1.3022 | short-CD label retention 98.11% | quick label-Gibbs acc 97.40%
+Epoch 007/100 | loss -1.0180 | CD -1.0180 | short-CD label retention 98.55%
+Epoch 008/100 | loss -0.8133 | CD -0.8133 | short-CD label retention 98.80% | quick label-Gibbs acc 97.17%
+Epoch 009/100 | loss -0.6622 | CD -0.6622 | short-CD label retention 98.97%
+Epoch 010/100 | loss -0.5782 | CD -0.5782 | short-CD label retention 99.15% | quick label-Gibbs acc 96.75%
+Epoch 011/100 | loss -0.5390 | CD -0.5390 | short-CD label retention 99.21%
+Epoch 012/100 | loss -0.4721 | CD -0.4721 | short-CD label retention 99.35% | quick label-Gibbs acc 96.43%
+Epoch 013/100 | loss -0.4214 | CD -0.4214 | short-CD label retention 99.42%
+Epoch 014/100 | loss -0.3987 | CD -0.3987 | short-CD label retention 99.47% | quick label-Gibbs acc 96.16%
+Epoch 015/100 | loss -0.3986 | CD -0.3986 | short-CD label retention 99.55%
+Epoch 016/100 | loss -0.3115 | CD -0.3115 | short-CD label retention 99.61% | quick label-Gibbs acc 96.05%
+Epoch 017/100 | loss -0.3385 | CD -0.3385 | short-CD label retention 99.65%
+Epoch 018/100 | loss -0.2994 | CD -0.2994 | short-CD label retention 99.69% | quick label-Gibbs acc 95.74%
+Epoch 019/100 | loss -0.2695 | CD -0.2695 | short-CD label retention 99.69%
+Epoch 020/100 | loss -0.2175 | CD -0.2175 | short-CD label retention 99.73% | quick label-Gibbs acc 95.45%
+Epoch 021/100 | loss -0.2160 | CD -0.2160 | short-CD label retention 99.75%
+Epoch 022/100 | loss -0.2677 | CD -0.2677 | short-CD label retention 99.76% | quick label-Gibbs acc 95.16%
+Epoch 023/100 | loss -0.1943 | CD -0.1943 | short-CD label retention 99.77%
+Epoch 024/100 | loss -0.1729 | CD -0.1729 | short-CD label retention 99.79% | quick label-Gibbs acc 95.01%
+Early stopping after 10 evals without improvement.
+Done. {
+  "experiment_id": "E022",
+  "completed_at": "2026-06-06 18:27:13",
+  "best_acc_selection_metric": 0.975,
+  "best_epoch": 4,
+  "final_epoch": 24,
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E022_e017_seed125",
+  "best_checkpoint_epoch": 4,
+  "final_full_test_label_gibbs_acc": 0.9752,
+  "final_full_label_entropy": 0.67459530052173,
+  "final_full_eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2
+  }
+}
