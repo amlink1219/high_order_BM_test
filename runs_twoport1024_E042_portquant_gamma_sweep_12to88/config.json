@@ -1,0 +1,108 @@
+{
+  "experiment_id": "E042",
+  "purpose": "port_level_device_quantization_gamma_sweep_12to88",
+  "root": "/home/Hongjie_Zeng/high_order_BM",
+  "device": "cuda",
+  "device_quantization_mode": "port_level",
+  "port_mapping": "raw_term_to_single_port_probability_then_nearest_device_input_level",
+  "single_port_prob_levels": [
+    0.12,
+    0.18,
+    0.27,
+    0.4,
+    0.6,
+    0.73,
+    0.88
+  ],
+  "single_port_input_levels": [
+    0.0,
+    0.23804133766105884,
+    0.4989037947730722,
+    0.793482528291021,
+    1.1989476363991853,
+    1.4935263699171342,
+    1.9924301646902063
+  ],
+  "device_c": 0.9962150823451031,
+  "device_gammas": [
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.75
+  ],
+  "eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2,
+    "batch_size": 128,
+    "label_init": "random_onehot",
+    "label_update": "binary",
+    "beta_eval": 1.0,
+    "eval_seed_base": 20260608
+  },
+  "acceptance": {
+    "min_acc": 0.965,
+    "max_drop": 0.005
+  },
+  "run_specs": [
+    {
+      "id": "E017",
+      "run_dir": "runs_twoport1024_E017_raw_plus_both_mix035",
+      "seed": 123
+    },
+    {
+      "id": "E021",
+      "run_dir": "runs_twoport1024_E021_e017_seed124",
+      "seed": 124
+    },
+    {
+      "id": "E022",
+      "run_dir": "runs_twoport1024_E022_e017_seed125",
+      "seed": 125
+    },
+    {
+      "id": "E023",
+      "run_dir": "runs_twoport1024_E023_e017_seed126",
+      "seed": 126
+    },
+    {
+      "id": "E024",
+      "run_dir": "runs_twoport1024_E024_e017_seed127",
+      "seed": 127
+    },
+    {
+      "id": "E025",
+      "run_dir": "runs_twoport1024_E025_e017_seed128",
+      "seed": 128
+    }
+  ],
+  "command_args": {
+    "root": "/home/Hongjie_Zeng/high_order_BM",
+    "data_dir": ".",
+    "teacher_dir": "./runs_twoport1024_teacher_latefusion_lam05",
+    "out_dir": "runs_twoport1024_E042_portquant_gamma_sweep_12to88",
+    "experiment_id": "E042",
+    "purpose": "port_level_device_quantization_gamma_sweep_12to88",
+    "single_port_prob_levels": "0.12,0.18,0.27,0.40,0.60,0.73,0.88",
+    "device_gammas": "0.10,0.20,0.30,0.50,0.75",
+    "device_c": "auto",
+    "run_ids": "",
+    "checkpoint_name": "best.pt",
+    "eval_steps": 3000,
+    "eval_burn_in": 500,
+    "eval_thin": 2,
+    "eval_batch_size": 128,
+    "num_workers": 2,
+    "label_init": "random_onehot",
+    "label_update": "binary",
+    "beta_eval": 1.0,
+    "eval_seed": 20260608,
+    "accept_min_acc": 0.965,
+    "accept_max_drop": 0.005,
+    "cpu": false,
+    "skip_missing": false,
+    "log_path": "./twoport_1024_optimization_log.md"
+  },
+  "started_at": "2026-06-08 23:04:27"
+}

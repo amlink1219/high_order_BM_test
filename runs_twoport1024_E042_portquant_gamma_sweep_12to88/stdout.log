@@ -1,0 +1,202 @@
+[E042] device=cuda, c=0.996215
+single-port prob levels= 0.1200, 0.1800, 0.2700, 0.4000, 0.6000, 0.7300, 0.8800
+single-port input levels= 0.0000, 0.2380, 0.4989, 0.7935, 1.1989, 1.4935, 1.9924
+gamma sweep= 0.1, 0.2, 0.3, 0.5, 0.75
+Evaluating E017 from runs_twoport1024_E017_raw_plus_both_mix035...
+  gamma=0.1 continuous=97.32% port-quant=90.61% drop=6.71 pp
+  gamma=0.2 continuous=97.32% port-quant=93.27% drop=4.05 pp
+  gamma=0.3 continuous=97.32% port-quant=94.33% drop=2.99 pp
+  gamma=0.5 continuous=97.32% port-quant=96.03% drop=1.29 pp
+  gamma=0.75 continuous=97.32% port-quant=96.67% drop=0.65 pp
+Evaluating E021 from runs_twoport1024_E021_e017_seed124...
+  gamma=0.1 continuous=97.59% port-quant=93.59% drop=4.00 pp
+  gamma=0.2 continuous=97.59% port-quant=94.71% drop=2.88 pp
+  gamma=0.3 continuous=97.59% port-quant=95.58% drop=2.01 pp
+  gamma=0.5 continuous=97.59% port-quant=96.24% drop=1.35 pp
+  gamma=0.75 continuous=97.59% port-quant=96.62% drop=0.97 pp
+Evaluating E022 from runs_twoport1024_E022_e017_seed125...
+  gamma=0.1 continuous=97.52% port-quant=93.48% drop=4.04 pp
+  gamma=0.2 continuous=97.52% port-quant=95.42% drop=2.10 pp
+  gamma=0.3 continuous=97.52% port-quant=96.33% drop=1.19 pp
+  gamma=0.5 continuous=97.52% port-quant=97.02% drop=0.50 pp
+  gamma=0.75 continuous=97.52% port-quant=97.24% drop=0.28 pp
+Evaluating E023 from runs_twoport1024_E023_e017_seed126...
+  gamma=0.1 continuous=97.20% port-quant=94.99% drop=2.21 pp
+  gamma=0.2 continuous=97.20% port-quant=95.60% drop=1.60 pp
+  gamma=0.3 continuous=97.20% port-quant=95.91% drop=1.29 pp
+  gamma=0.5 continuous=97.20% port-quant=96.27% drop=0.93 pp
+  gamma=0.75 continuous=97.20% port-quant=96.52% drop=0.68 pp
+Evaluating E024 from runs_twoport1024_E024_e017_seed127...
+  gamma=0.1 continuous=97.34% port-quant=94.28% drop=3.06 pp
+  gamma=0.2 continuous=97.34% port-quant=95.71% drop=1.63 pp
+  gamma=0.3 continuous=97.34% port-quant=96.22% drop=1.12 pp
+  gamma=0.5 continuous=97.34% port-quant=96.53% drop=0.81 pp
+  gamma=0.75 continuous=97.34% port-quant=96.69% drop=0.65 pp
+Evaluating E025 from runs_twoport1024_E025_e017_seed128...
+  gamma=0.1 continuous=97.45% port-quant=94.30% drop=3.15 pp
+  gamma=0.2 continuous=97.45% port-quant=94.47% drop=2.98 pp
+  gamma=0.3 continuous=97.45% port-quant=94.33% drop=3.12 pp
+  gamma=0.5 continuous=97.45% port-quant=94.37% drop=3.08 pp
+  gamma=0.75 continuous=97.45% port-quant=95.28% drop=2.17 pp
+{
+  "experiment_id": "E042",
+  "completed_at": "2026-06-09 00:16:31",
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E042_portquant_gamma_sweep_12to88",
+  "device_quantization_mode": "port_level",
+  "single_port_prob_levels": [
+    0.12,
+    0.18,
+    0.27,
+    0.4,
+    0.6,
+    0.73,
+    0.88
+  ],
+  "single_port_input_levels": [
+    0.0,
+    0.23804133766105884,
+    0.4989037947730722,
+    0.793482528291021,
+    1.1989476363991853,
+    1.4935263699171342,
+    1.9924301646902063
+  ],
+  "device_c": 0.9962150823451031,
+  "device_gammas": [
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.75
+  ],
+  "summary_by_setting": {
+    "gamma_0.1_c_0.996215": {
+      "gamma_eff": 0.1,
+      "c_eff": 0.9962150823451031,
+      "continuous_stats": {
+        "mean": 0.9740333333333333,
+        "std": 0.0013097921802925675,
+        "min": 0.972,
+        "max": 0.9759,
+        "n": 6
+      },
+      "quantized_stats": {
+        "mean": 0.9354166666666667,
+        "std": 0.014034887087381752,
+        "min": 0.9061,
+        "max": 0.9499,
+        "n": 6
+      },
+      "accuracy_drop_stats": {
+        "mean": 0.03861666666666669,
+        "std": 0.014166323525255986,
+        "min": 0.02210000000000001,
+        "max": 0.06709999999999994,
+        "n": 6
+      }
+    },
+    "gamma_0.2_c_0.996215": {
+      "gamma_eff": 0.2,
+      "c_eff": 0.9962150823451031,
+      "continuous_stats": {
+        "mean": 0.9740333333333333,
+        "std": 0.0013097921802925675,
+        "min": 0.972,
+        "max": 0.9759,
+        "n": 6
+      },
+      "quantized_stats": {
+        "mean": 0.9486333333333333,
+        "std": 0.008452152914428896,
+        "min": 0.9327,
+        "max": 0.9571,
+        "n": 6
+      },
+      "accuracy_drop_stats": {
+        "mean": 0.025399999999999995,
+        "std": 0.008655056325639928,
+        "min": 0.016000000000000014,
+        "max": 0.04049999999999998,
+        "n": 6
+      }
+    },
+    "gamma_0.3_c_0.996215": {
+      "gamma_eff": 0.3,
+      "c_eff": 0.9962150823451031,
+      "continuous_stats": {
+        "mean": 0.9740333333333333,
+        "std": 0.0013097921802925675,
+        "min": 0.972,
+        "max": 0.9759,
+        "n": 6
+      },
+      "quantized_stats": {
+        "mean": 0.9544999999999999,
+        "std": 0.008271033792700885,
+        "min": 0.9433,
+        "max": 0.9633,
+        "n": 6
+      },
+      "accuracy_drop_stats": {
+        "mean": 0.01953333333333331,
+        "std": 0.00832279333450548,
+        "min": 0.011199999999999988,
+        "max": 0.031200000000000006,
+        "n": 6
+      }
+    },
+    "gamma_0.5_c_0.996215": {
+      "gamma_eff": 0.5,
+      "c_eff": 0.9962150823451031,
+      "continuous_stats": {
+        "mean": 0.9740333333333333,
+        "std": 0.0013097921802925675,
+        "min": 0.972,
+        "max": 0.9759,
+        "n": 6
+      },
+      "quantized_stats": {
+        "mean": 0.9607666666666667,
+        "std": 0.008240482725881754,
+        "min": 0.9437,
+        "max": 0.9702,
+        "n": 6
+      },
+      "accuracy_drop_stats": {
+        "mean": 0.013266666666666649,
+        "std": 0.008350382559433383,
+        "min": 0.0050000000000000044,
+        "max": 0.03080000000000005,
+        "n": 6
+      }
+    },
+    "gamma_0.75_c_0.996215": {
+      "gamma_eff": 0.75,
+      "c_eff": 0.9962150823451031,
+      "continuous_stats": {
+        "mean": 0.9740333333333333,
+        "std": 0.0013097921802925675,
+        "min": 0.972,
+        "max": 0.9759,
+        "n": 6
+      },
+      "quantized_stats": {
+        "mean": 0.9650333333333333,
+        "std": 0.005938200251104906,
+        "min": 0.9528,
+        "max": 0.9724,
+        "n": 6
+      },
+      "accuracy_drop_stats": {
+        "mean": 0.009000000000000008,
+        "std": 0.0060216276869298705,
+        "min": 0.0027999999999999137,
+        "max": 0.021700000000000053,
+        "n": 6
+      }
+    }
+  },
+  "recommended_setting": null,
+  "num_valid_rows": 30,
+  "num_requested_rows": 30
+}

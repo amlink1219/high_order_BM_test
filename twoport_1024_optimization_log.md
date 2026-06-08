@@ -917,3 +917,17 @@ is diagnostic only.
 - Mean drop: `0.0011166666666666547`
 - Runs: `6/6`
 
+## E041 port-level device quantization eval completed - 2026-06-08 23:04:25
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E041_portquant_gamma_sweep_5to95`
+- Device c: `1.4722194895832201`
+- Single-port levels: `0.0500, 0.1200, 0.2700, 0.5000, 0.7300, 0.8800, 0.9500`
+- Gammas: `0, 0.02, 0.05, 0.1, 0.2, 0.3, 0.5, 0.75, 1, 1.15`
+- Recommended setting: `none`
+
+## E042 port-level device quantization eval completed - 2026-06-09 00:16:31
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E042_portquant_gamma_sweep_12to88`
+- Device c: `0.9962150823451031`
+- Single-port levels: `0.1200, 0.1800, 0.2700, 0.4000, 0.6000, 0.7300, 0.8800`
+- Gammas: `0.1, 0.2, 0.3, 0.5, 0.75`
+- Recommended setting: `none`
+
