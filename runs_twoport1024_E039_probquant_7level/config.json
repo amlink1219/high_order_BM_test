@@ -1,0 +1,84 @@
+{
+  "experiment_id": "E039",
+  "purpose": "device_probability_quantization_7level",
+  "root": "/home/Hongjie_Zeng/high_order_BM",
+  "device": "cuda",
+  "quantization_name": "7level",
+  "probability_levels": [
+    0.05,
+    0.12,
+    0.27,
+    0.5,
+    0.73,
+    0.88,
+    0.95
+  ],
+  "quantization_rule": "nearest_probability_level_tie_lower",
+  "eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2,
+    "batch_size": 128,
+    "label_init": "random_onehot",
+    "label_update": "binary",
+    "beta_eval": 1.0,
+    "eval_seed_base": 20260608
+  },
+  "run_specs": [
+    {
+      "id": "E017",
+      "run_dir": "runs_twoport1024_E017_raw_plus_both_mix035",
+      "seed": 123
+    },
+    {
+      "id": "E021",
+      "run_dir": "runs_twoport1024_E021_e017_seed124",
+      "seed": 124
+    },
+    {
+      "id": "E022",
+      "run_dir": "runs_twoport1024_E022_e017_seed125",
+      "seed": 125
+    },
+    {
+      "id": "E023",
+      "run_dir": "runs_twoport1024_E023_e017_seed126",
+      "seed": 126
+    },
+    {
+      "id": "E024",
+      "run_dir": "runs_twoport1024_E024_e017_seed127",
+      "seed": 127
+    },
+    {
+      "id": "E025",
+      "run_dir": "runs_twoport1024_E025_e017_seed128",
+      "seed": 128
+    }
+  ],
+  "command_args": {
+    "root": "/home/Hongjie_Zeng/high_order_BM",
+    "data_dir": ".",
+    "teacher_dir": "./runs_twoport1024_teacher_latefusion_lam05",
+    "out_dir": "runs_twoport1024_E039_probquant_7level",
+    "experiment_id": "E039",
+    "purpose": "device_probability_quantization_7level",
+    "quantization_name": "7level",
+    "levels": "",
+    "run_ids": "",
+    "checkpoint_name": "best.pt",
+    "eval_steps": 3000,
+    "eval_burn_in": 500,
+    "eval_thin": 2,
+    "eval_batch_size": 128,
+    "num_workers": 2,
+    "label_init": "random_onehot",
+    "label_update": "binary",
+    "beta_eval": 1.0,
+    "eval_seed": 20260608,
+    "cpu": false,
+    "skip_missing": false,
+    "log_path": "./twoport_1024_optimization_log.md"
+  },
+  "started_at": "2026-06-08 16:58:19"
+}

@@ -899,3 +899,21 @@ is diagnostic only.
 ## E021-E038 E017 confirmation batch completed - 2026-06-07 01:26:47
 - Next: report multi-seed mean/std and decide whether E017 can be the main result.
 
+## E039 probability quantization eval completed - 2026-06-08 17:20:05
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E039_probquant_7level`
+- Quantization: `7level`
+- Levels: `0.0500, 0.1200, 0.2700, 0.5000, 0.7300, 0.8800, 0.9500`
+- Continuous mean acc: `0.9740333333333333`
+- Quantized mean acc: `0.9727833333333332`
+- Mean drop: `0.0012499999999999918`
+- Runs: `6/6`
+
+## E040 probability quantization eval completed - 2026-06-08 17:45:15
+- Output: `/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E040_probquant_11level_logit`
+- Quantization: `11level_logit`
+- Levels: `0.0500, 0.0866, 0.1460, 0.2355, 0.3569, 0.5000, 0.6431, 0.7645, 0.8540, 0.9134, 0.9500`
+- Continuous mean acc: `0.9740333333333333`
+- Quantized mean acc: `0.9729166666666668`
+- Mean drop: `0.0011166666666666547`
+- Runs: `6/6`
+

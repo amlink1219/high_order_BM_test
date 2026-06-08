@@ -1,0 +1,63 @@
+[E039] device=cuda, quantization=7level
+levels= 0.0500, 0.1200, 0.2700, 0.5000, 0.7300, 0.8800, 0.9500
+Evaluating E017 from runs_twoport1024_E017_raw_plus_both_mix035...
+  continuous=97.32% quantized=96.96% drop=0.36 pp
+Evaluating E021 from runs_twoport1024_E021_e017_seed124...
+  continuous=97.59% quantized=97.52% drop=0.07 pp
+Evaluating E022 from runs_twoport1024_E022_e017_seed125...
+  continuous=97.52% quantized=97.47% drop=0.05 pp
+Evaluating E023 from runs_twoport1024_E023_e017_seed126...
+  continuous=97.20% quantized=97.17% drop=0.03 pp
+Evaluating E024 from runs_twoport1024_E024_e017_seed127...
+  continuous=97.34% quantized=97.17% drop=0.17 pp
+Evaluating E025 from runs_twoport1024_E025_e017_seed128...
+  continuous=97.45% quantized=97.38% drop=0.07 pp
+{
+  "experiment_id": "E039",
+  "completed_at": "2026-06-08 17:20:05",
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_twoport1024_E039_probquant_7level",
+  "quantization_name": "7level",
+  "probability_levels": [
+    0.05,
+    0.12,
+    0.27,
+    0.5,
+    0.73,
+    0.88,
+    0.95
+  ],
+  "quantization_rule": "nearest_probability_level_tie_lower",
+  "eval": {
+    "steps": 3000,
+    "burn_in": 500,
+    "thin": 2,
+    "batch_size": 128,
+    "label_init": "random_onehot",
+    "label_update": "binary",
+    "beta_eval": 1.0,
+    "eval_seed_base": 20260608
+  },
+  "continuous_stats": {
+    "mean": 0.9740333333333333,
+    "std": 0.0013097921802925675,
+    "min": 0.972,
+    "max": 0.9759,
+    "n": 6
+  },
+  "quantized_stats": {
+    "mean": 0.9727833333333332,
+    "std": 0.0019590955963289546,
+    "min": 0.9696,
+    "max": 0.9752,
+    "n": 6
+  },
+  "accuracy_drop_stats": {
+    "mean": 0.0012499999999999918,
+    "std": 0.00113980992567473,
+    "min": 0.00029999999999996696,
+    "max": 0.0035999999999999366,
+    "n": 6
+  },
+  "num_valid_runs": 6,
+  "num_requested_runs": 6
+}
