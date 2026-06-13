@@ -1,0 +1,665 @@
+Start time: Sat Jun 13 04:26:10 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 270
+Sat Jun 13 16:26:10 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5090        Off |   00000000:16:00.0 Off |                  N/A |
+|  0%   27C    P8             24W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 5090        Off |   00000000:27:00.0 Off |                  N/A |
+|  0%   27C    P8             23W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 5090        Off |   00000000:49:00.0 Off |                  N/A |
+|  0%   27C    P8             31W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 5090        Off |   00000000:5A:00.0 Off |                  N/A |
+|  0%   26C    P8             31W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA GeForce RTX 5090        Off |   00000000:98:00.0 Off |                  N/A |
+|  0%   28C    P8             18W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA GeForce RTX 5090        Off |   00000000:B8:00.0 Off |                  N/A |
+|  0%   28C    P8             24W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA GeForce RTX 5090        Off |   00000000:C8:00.0 Off |                  N/A |
+|  0%   26C    P8             20W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA GeForce RTX 5090        Off |   00000000:D8:00.0 Off |                  N/A |
+|  0%   27C    P8             26W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    1   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    2   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    3   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    4   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    5   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    6   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    7   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
++-----------------------------------------------------------------------------------------+
+[2026-06-13 16:26:11] RUN L018_l012_modelseed124
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_twoport_4096_letters_isolet.py --out_dir ./runs_letters_isolet_L018_l012_modelseed124 --experiment_id L018_l012_modelseed124 --auto_download --seed 123 --model_seed 124 --pairing_seed 20260610 --test_pairing_seed 20260611 --total_pbits 1024 --image_dim 400 --audio_dim 400 --image_downsample mnist20_com_crop --max_train 0 --max_test 0 --epochs 260 --batch_size 64 --eval_batch_size 128 --cd_k 3 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --gamma_h 1.15 --gamma_l 1.15 --label_copies 5 --label_inhibit 0.3 --isolet_resize_mode linear --lr 0.0002 --momentum 0.6 --weight_decay 0.0
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L018_l012_modelseed124_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L018_l012_modelseed124_stderr.log
+[2026-06-13 17:26:40] RUN L018_l012_modelseed124_FULL
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python eval_twoport_4096_letters_isolet.py --ckpt ./runs_letters_isolet_L018_l012_modelseed124/best.pt --out_json ./runs_letters_isolet_L018_l012_modelseed124/full_eval_best_3000.json --auto_download --eval_batch_size 128 --eval_steps 3000 --eval_burn_in 500 --eval_thin 2 --label_init random_onehot --label_update binary --seed 123
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L018_l012_modelseed124_FULL_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L018_l012_modelseed124_FULL_stderr.log
+{
+  "created_at": "2026-06-13 17:29:16",
+  "purpose": "L012 1024 p-bit EMNIST20 + ISOLET400 multi-seed replication with fixed data split and fixed test pairing",
+  "runs": [
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L018_l012_modelseed124",
+      "experiment_id": "L018_l012_modelseed124",
+      "data_seed": 123,
+      "model_seed": 124,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 170,
+      "best_quick_acc": 0.9878846153846154,
+      "full_eval_epoch": 170,
+      "full_eval_acc": 0.9875961538461538,
+      "full_eval_entropy": 0.14367148869790913,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    }
+  ],
+  "full_eval_acc_mean": 0.9875961538461538,
+  "full_eval_acc_min": 0.9875961538461538,
+  "full_eval_acc_max": 0.9875961538461538,
+  "full_eval_acc_count": 1
+}
+[2026-06-13 17:29:16] RUN L019_l012_modelseed125
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_twoport_4096_letters_isolet.py --out_dir ./runs_letters_isolet_L019_l012_modelseed125 --experiment_id L019_l012_modelseed125 --auto_download --seed 123 --model_seed 125 --pairing_seed 20260610 --test_pairing_seed 20260611 --total_pbits 1024 --image_dim 400 --audio_dim 400 --image_downsample mnist20_com_crop --max_train 0 --max_test 0 --epochs 260 --batch_size 64 --eval_batch_size 128 --cd_k 3 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --gamma_h 1.15 --gamma_l 1.15 --label_copies 5 --label_inhibit 0.3 --isolet_resize_mode linear --lr 0.0002 --momentum 0.6 --weight_decay 0.0
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L019_l012_modelseed125_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L019_l012_modelseed125_stderr.log
+[2026-06-13 18:28:14] RUN L019_l012_modelseed125_FULL
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python eval_twoport_4096_letters_isolet.py --ckpt ./runs_letters_isolet_L019_l012_modelseed125/best.pt --out_json ./runs_letters_isolet_L019_l012_modelseed125/full_eval_best_3000.json --auto_download --eval_batch_size 128 --eval_steps 3000 --eval_burn_in 500 --eval_thin 2 --label_init random_onehot --label_update binary --seed 123
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L019_l012_modelseed125_FULL_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L019_l012_modelseed125_FULL_stderr.log
+{
+  "created_at": "2026-06-13 18:30:48",
+  "purpose": "L012 1024 p-bit EMNIST20 + ISOLET400 multi-seed replication with fixed data split and fixed test pairing",
+  "runs": [
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L018_l012_modelseed124",
+      "experiment_id": "L018_l012_modelseed124",
+      "data_seed": 123,
+      "model_seed": 124,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 170,
+      "best_quick_acc": 0.9878846153846154,
+      "full_eval_epoch": 170,
+      "full_eval_acc": 0.9875961538461538,
+      "full_eval_entropy": 0.14367148869790913,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L019_l012_modelseed125",
+      "experiment_id": "L019_l012_modelseed125",
+      "data_seed": 123,
+      "model_seed": 125,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 160,
+      "best_quick_acc": 0.9879326923076923,
+      "full_eval_epoch": 160,
+      "full_eval_acc": 0.9878365384615385,
+      "full_eval_entropy": 0.15490506214598204,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    }
+  ],
+  "full_eval_acc_mean": 0.9877163461538462,
+  "full_eval_acc_min": 0.9875961538461538,
+  "full_eval_acc_max": 0.9878365384615385,
+  "full_eval_acc_count": 2,
+  "full_eval_acc_std_population": 0.00012019230769233502
+}
+[2026-06-13 18:30:48] RUN L020_l012_modelseed126
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_twoport_4096_letters_isolet.py --out_dir ./runs_letters_isolet_L020_l012_modelseed126 --experiment_id L020_l012_modelseed126 --auto_download --seed 123 --model_seed 126 --pairing_seed 20260610 --test_pairing_seed 20260611 --total_pbits 1024 --image_dim 400 --audio_dim 400 --image_downsample mnist20_com_crop --max_train 0 --max_test 0 --epochs 260 --batch_size 64 --eval_batch_size 128 --cd_k 3 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --gamma_h 1.15 --gamma_l 1.15 --label_copies 5 --label_inhibit 0.3 --isolet_resize_mode linear --lr 0.0002 --momentum 0.6 --weight_decay 0.0
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L020_l012_modelseed126_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L020_l012_modelseed126_stderr.log
+[2026-06-13 19:29:24] RUN L020_l012_modelseed126_FULL
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python eval_twoport_4096_letters_isolet.py --ckpt ./runs_letters_isolet_L020_l012_modelseed126/best.pt --out_json ./runs_letters_isolet_L020_l012_modelseed126/full_eval_best_3000.json --auto_download --eval_batch_size 128 --eval_steps 3000 --eval_burn_in 500 --eval_thin 2 --label_init random_onehot --label_update binary --seed 123
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L020_l012_modelseed126_FULL_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L020_l012_modelseed126_FULL_stderr.log
+{
+  "created_at": "2026-06-13 19:31:58",
+  "purpose": "L012 1024 p-bit EMNIST20 + ISOLET400 multi-seed replication with fixed data split and fixed test pairing",
+  "runs": [
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L018_l012_modelseed124",
+      "experiment_id": "L018_l012_modelseed124",
+      "data_seed": 123,
+      "model_seed": 124,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 170,
+      "best_quick_acc": 0.9878846153846154,
+      "full_eval_epoch": 170,
+      "full_eval_acc": 0.9875961538461538,
+      "full_eval_entropy": 0.14367148869790913,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L019_l012_modelseed125",
+      "experiment_id": "L019_l012_modelseed125",
+      "data_seed": 123,
+      "model_seed": 125,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 160,
+      "best_quick_acc": 0.9879326923076923,
+      "full_eval_epoch": 160,
+      "full_eval_acc": 0.9878365384615385,
+      "full_eval_entropy": 0.15490506214598204,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L020_l012_modelseed126",
+      "experiment_id": "L020_l012_modelseed126",
+      "data_seed": 123,
+      "model_seed": 126,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 165,
+      "best_quick_acc": 0.9883653846153846,
+      "full_eval_epoch": 165,
+      "full_eval_acc": 0.988125,
+      "full_eval_entropy": 0.1550354357420301,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    }
+  ],
+  "full_eval_acc_mean": 0.9878525641025641,
+  "full_eval_acc_min": 0.9875961538461538,
+  "full_eval_acc_max": 0.988125,
+  "full_eval_acc_count": 3,
+  "full_eval_acc_std_population": 0.0002161977173594997
+}
+[2026-06-13 19:31:58] RUN L021_l012_modelseed127
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_twoport_4096_letters_isolet.py --out_dir ./runs_letters_isolet_L021_l012_modelseed127 --experiment_id L021_l012_modelseed127 --auto_download --seed 123 --model_seed 127 --pairing_seed 20260610 --test_pairing_seed 20260611 --total_pbits 1024 --image_dim 400 --audio_dim 400 --image_downsample mnist20_com_crop --max_train 0 --max_test 0 --epochs 260 --batch_size 64 --eval_batch_size 128 --cd_k 3 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --gamma_h 1.15 --gamma_l 1.15 --label_copies 5 --label_inhibit 0.3 --isolet_resize_mode linear --lr 0.0002 --momentum 0.6 --weight_decay 0.0
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L021_l012_modelseed127_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L021_l012_modelseed127_stderr.log
+[2026-06-13 20:31:01] RUN L021_l012_modelseed127_FULL
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python eval_twoport_4096_letters_isolet.py --ckpt ./runs_letters_isolet_L021_l012_modelseed127/best.pt --out_json ./runs_letters_isolet_L021_l012_modelseed127/full_eval_best_3000.json --auto_download --eval_batch_size 128 --eval_steps 3000 --eval_burn_in 500 --eval_thin 2 --label_init random_onehot --label_update binary --seed 123
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L021_l012_modelseed127_FULL_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L021_l012_modelseed127_FULL_stderr.log
+{
+  "created_at": "2026-06-13 20:33:38",
+  "purpose": "L012 1024 p-bit EMNIST20 + ISOLET400 multi-seed replication with fixed data split and fixed test pairing",
+  "runs": [
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L018_l012_modelseed124",
+      "experiment_id": "L018_l012_modelseed124",
+      "data_seed": 123,
+      "model_seed": 124,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 170,
+      "best_quick_acc": 0.9878846153846154,
+      "full_eval_epoch": 170,
+      "full_eval_acc": 0.9875961538461538,
+      "full_eval_entropy": 0.14367148869790913,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L019_l012_modelseed125",
+      "experiment_id": "L019_l012_modelseed125",
+      "data_seed": 123,
+      "model_seed": 125,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 160,
+      "best_quick_acc": 0.9879326923076923,
+      "full_eval_epoch": 160,
+      "full_eval_acc": 0.9878365384615385,
+      "full_eval_entropy": 0.15490506214598204,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L020_l012_modelseed126",
+      "experiment_id": "L020_l012_modelseed126",
+      "data_seed": 123,
+      "model_seed": 126,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 165,
+      "best_quick_acc": 0.9883653846153846,
+      "full_eval_epoch": 165,
+      "full_eval_acc": 0.988125,
+      "full_eval_entropy": 0.1550354357420301,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L021_l012_modelseed127",
+      "experiment_id": "L021_l012_modelseed127",
+      "data_seed": 123,
+      "model_seed": 127,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 155,
+      "best_quick_acc": 0.9874038461538461,
+      "full_eval_epoch": 155,
+      "full_eval_acc": 0.9872596153846154,
+      "full_eval_entropy": 0.1416946929748073,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    }
+  ],
+  "full_eval_acc_mean": 0.987704326923077,
+  "full_eval_acc_min": 0.9872596153846154,
+  "full_eval_acc_max": 0.988125,
+  "full_eval_acc_count": 4,
+  "full_eval_acc_std_population": 0.00031777173236545913
+}
+[2026-06-13 20:33:38] RUN L022_l012_modelseed128
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_twoport_4096_letters_isolet.py --out_dir ./runs_letters_isolet_L022_l012_modelseed128 --experiment_id L022_l012_modelseed128 --auto_download --seed 123 --model_seed 128 --pairing_seed 20260610 --test_pairing_seed 20260611 --total_pbits 1024 --image_dim 400 --audio_dim 400 --image_downsample mnist20_com_crop --max_train 0 --max_test 0 --epochs 260 --batch_size 64 --eval_batch_size 128 --cd_k 3 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --gamma_h 1.15 --gamma_l 1.15 --label_copies 5 --label_inhibit 0.3 --isolet_resize_mode linear --lr 0.0002 --momentum 0.6 --weight_decay 0.0
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L022_l012_modelseed128_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L022_l012_modelseed128_stderr.log
+[2026-06-13 21:33:35] RUN L022_l012_modelseed128_FULL
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python eval_twoport_4096_letters_isolet.py --ckpt ./runs_letters_isolet_L022_l012_modelseed128/best.pt --out_json ./runs_letters_isolet_L022_l012_modelseed128/full_eval_best_3000.json --auto_download --eval_batch_size 128 --eval_steps 3000 --eval_burn_in 500 --eval_thin 2 --label_init random_onehot --label_update binary --seed 123
+STDOUT: /home/Hongjie_Zeng/high_order_BM/logs/L022_l012_modelseed128_FULL_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/logs/L022_l012_modelseed128_FULL_stderr.log
+{
+  "created_at": "2026-06-13 21:36:10",
+  "purpose": "L012 1024 p-bit EMNIST20 + ISOLET400 multi-seed replication with fixed data split and fixed test pairing",
+  "runs": [
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L018_l012_modelseed124",
+      "experiment_id": "L018_l012_modelseed124",
+      "data_seed": 123,
+      "model_seed": 124,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 170,
+      "best_quick_acc": 0.9878846153846154,
+      "full_eval_epoch": 170,
+      "full_eval_acc": 0.9875961538461538,
+      "full_eval_entropy": 0.14367148869790913,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L019_l012_modelseed125",
+      "experiment_id": "L019_l012_modelseed125",
+      "data_seed": 123,
+      "model_seed": 125,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 160,
+      "best_quick_acc": 0.9879326923076923,
+      "full_eval_epoch": 160,
+      "full_eval_acc": 0.9878365384615385,
+      "full_eval_entropy": 0.15490506214598204,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L020_l012_modelseed126",
+      "experiment_id": "L020_l012_modelseed126",
+      "data_seed": 123,
+      "model_seed": 126,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 165,
+      "best_quick_acc": 0.9883653846153846,
+      "full_eval_epoch": 165,
+      "full_eval_acc": 0.988125,
+      "full_eval_entropy": 0.1550354357420301,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L021_l012_modelseed127",
+      "experiment_id": "L021_l012_modelseed127",
+      "data_seed": 123,
+      "model_seed": 127,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 155,
+      "best_quick_acc": 0.9874038461538461,
+      "full_eval_epoch": 155,
+      "full_eval_acc": 0.9872596153846154,
+      "full_eval_entropy": 0.1416946929748073,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    },
+    {
+      "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_letters_isolet_L022_l012_modelseed128",
+      "experiment_id": "L022_l012_modelseed128",
+      "data_seed": 123,
+      "model_seed": 128,
+      "pairing_seed": 20260610,
+      "test_pairing_seed": 20260611,
+      "best_quick_epoch": 155,
+      "best_quick_acc": 0.9873076923076923,
+      "full_eval_epoch": 155,
+      "full_eval_acc": 0.9873076923076923,
+      "full_eval_entropy": 0.1515430327664855,
+      "computed_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "label_dim": 130,
+        "hidden_dim": 494,
+        "total_pbits": 1024,
+        "num_classes": 26
+      },
+      "data_dims": {
+        "image_dim": 400,
+        "audio_dim": 400,
+        "num_classes": 26,
+        "train_size": 124800,
+        "test_size": 20800,
+        "isolet_train_size": 6237,
+        "isolet_test_size": 1560,
+        "isolet_resize_mode": "linear",
+        "image_downsample": "mnist20_com_crop",
+        "optical_feature_source": "raw",
+        "audio_feature_source": "raw"
+      }
+    }
+  ],
+  "full_eval_acc_mean": 0.9876250000000001,
+  "full_eval_acc_min": 0.9872596153846154,
+  "full_eval_acc_max": 0.988125,
+  "full_eval_acc_count": 5,
+  "full_eval_acc_std_population": 0.0003255059784579136
+}
+[2026-06-13 21:36:10] L012 multi-seed replication queue completed
+End time: Sat Jun 13 09:36:10 PM CST 2026

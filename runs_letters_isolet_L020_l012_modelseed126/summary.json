@@ -1,0 +1,18 @@
+{
+  "experiment_id": "L020_l012_modelseed126",
+  "finished_at": "2026-06-13 19:29:23",
+  "best_epoch": 165,
+  "best_acc_selection_metric": 0.9883653846153846,
+  "final_epoch": 260,
+  "final_test_label_gibbs_acc": 0.9833173076923077,
+  "computed_dims": {
+    "image_dim": 400,
+    "audio_dim": 400,
+    "label_dim": 130,
+    "hidden_dim": 494,
+    "total_pbits": 1024,
+    "num_classes": 26
+  },
+  "out_dir": "runs_letters_isolet_L020_l012_modelseed126",
+  "note": "Local smoke test only; do not use this accuracy as a final conclusion."
+}
