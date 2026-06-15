@@ -1,0 +1,5 @@
+Start time: Mon Jun 15 09:45:55 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 278
+CUDA_VISIBLE_DEVICES: 0

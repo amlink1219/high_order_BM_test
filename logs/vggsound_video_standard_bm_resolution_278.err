@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_video_standard_bm_resolution_sweep.py", line 299, in <module>
+    main()
+    ~~~~^^
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_video_standard_bm_resolution_sweep.py", line 281, in main
+    raise RuntimeError(f"raw video clips were not found: {raw_root}")
+RuntimeError: raw video clips were not found: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/clips

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_video_standard_bm_resolution_sweep.py", line 299, in <module>
+    main()
+    ~~~~^^
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_video_standard_bm_resolution_sweep.py", line 291, in main
+    result = train_standard_bm(exp, feature_npz, args, root)
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_video_standard_bm_resolution_sweep.py", line 196, in train_standard_bm
+    run_checked(cmd, root, stdout_path, stderr_path, dry_run=args.dry_run)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_video_standard_bm_resolution_sweep.py", line 69, in run_checked
+    raise RuntimeError(f"command failed with exit code {proc.returncode}; see {stderr_path}")
+RuntimeError: command failed with exit code 1; see /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V006_standard_video_gray24_stderr.log

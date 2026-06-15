@@ -1,0 +1,33 @@
+[2026-06-15 22:16:28] rows=2138 ffmpeg=/home/Hongjie_Zeng/.conda/envs/hongjie_env/lib/python3.13/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2
+[2026-06-15 22:16:28] reused audio features from /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_features_2048.npz: 2138 rows
+[2026-06-15 22:16:28] processed 1/2138 ok=1 failures=0
+[2026-06-15 22:16:47] processed 100/2138 ok=98 failures=2
+[2026-06-15 22:17:07] processed 200/2138 ok=192 failures=8
+[2026-06-15 22:17:34] processed 300/2138 ok=287 failures=13
+[2026-06-15 22:17:56] processed 400/2138 ok=381 failures=19
+[2026-06-15 22:18:22] processed 500/2138 ok=481 failures=19
+[2026-06-15 22:18:45] processed 600/2138 ok=580 failures=20
+[2026-06-15 22:19:10] processed 700/2138 ok=678 failures=22
+[2026-06-15 22:19:34] processed 800/2138 ok=776 failures=24
+[2026-06-15 22:19:54] processed 900/2138 ok=875 failures=25
+[2026-06-15 22:20:16] processed 1000/2138 ok=975 failures=25
+[2026-06-15 22:20:39] processed 1100/2138 ok=1075 failures=25
+[2026-06-15 22:20:58] processed 1200/2138 ok=1173 failures=27
+[2026-06-15 22:21:19] processed 1300/2138 ok=1271 failures=29
+[2026-06-15 22:21:42] processed 1400/2138 ok=1371 failures=29
+[2026-06-15 22:22:07] processed 1500/2138 ok=1471 failures=29
+[2026-06-15 22:22:32] processed 1600/2138 ok=1571 failures=29
+[2026-06-15 22:22:59] processed 1700/2138 ok=1671 failures=29
+[2026-06-15 22:23:28] processed 1800/2138 ok=1771 failures=29
+[2026-06-15 22:23:48] processed 1900/2138 ok=1871 failures=29
+[2026-06-15 22:24:10] processed 2000/2138 ok=1968 failures=32
+[2026-06-15 22:24:29] processed 2100/2138 ok=2067 failures=33
+[2026-06-15 22:24:37] processed 2138/2138 ok=2105 failures=33
+[2026-06-15 22:24:49] wrote /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s32_gray_audio2048.npz
+{
+  "train_size": 1780,
+  "test_size": 325,
+  "num_failures": 33,
+  "video_dim": 8192,
+  "audio_dim": 2048
+}

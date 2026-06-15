@@ -1,0 +1,37 @@
+Start time: Mon Jun 15 10:06:37 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 280
+CUDA_VISIBLE_DEVICES: 0
+
+[2026-06-15 22:06:37] EXTRACT V006 standard_video_gray24 -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s24_gray_audio2048.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_mini_features.py --root /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s24_gray_audio2048.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s24_gray_audio2048_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s24_gray_audio2048_summary.json --reuse_audio_npz ./data_vggsound_mini/features/vggsound_mini20_features_2048.npz --frame_size 24 --num_frames 8 --color_mode gray --video_fps 4 --timeout 180
+STDOUT: /home/Hongjie_Zeng/high_order_BM/V006_standard_video_gray24_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/V006_standard_video_gray24_feature_stderr.log
+
+[2026-06-15 22:14:54] TRAIN V006 standard_video_gray24 input_dim=4608 hidden_dim=4608 total_pbits=9316
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s24_gray_audio2048.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V006_standard_video_gray24 --experiment_id V006_standard_video_gray24 --model_type standard --input_mode video --total_pbits 9316 --input_dim 4608 --num_classes 20 --label_copies 5 --epochs 180 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V006_standard_video_gray24_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V006_standard_video_gray24_stderr.log
+
+[2026-06-15 22:16:28] EXTRACT V007 standard_video_gray32 -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s32_gray_audio2048.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_mini_features.py --root /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s32_gray_audio2048.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s32_gray_audio2048_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s32_gray_audio2048_summary.json --reuse_audio_npz ./data_vggsound_mini/features/vggsound_mini20_features_2048.npz --frame_size 32 --num_frames 8 --color_mode gray --video_fps 4 --timeout 180
+STDOUT: /home/Hongjie_Zeng/high_order_BM/V007_standard_video_gray32_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/V007_standard_video_gray32_feature_stderr.log
+
+[2026-06-15 22:24:49] TRAIN V007 standard_video_gray32 input_dim=8192 hidden_dim=8192 total_pbits=16484
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s32_gray_audio2048.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V007_standard_video_gray32 --experiment_id V007_standard_video_gray32 --model_type standard --input_mode video --total_pbits 16484 --input_dim 8192 --num_classes 20 --label_copies 5 --epochs 180 --batch_size 24 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V007_standard_video_gray32_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V007_standard_video_gray32_stderr.log
+
+[2026-06-15 22:29:35] EXTRACT V008 standard_video_gray48 -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s48_gray_audio2048.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_mini_features.py --root /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s48_gray_audio2048.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s48_gray_audio2048_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s48_gray_audio2048_summary.json --reuse_audio_npz ./data_vggsound_mini/features/vggsound_mini20_features_2048.npz --frame_size 48 --num_frames 8 --color_mode gray --video_fps 4 --timeout 180
+STDOUT: /home/Hongjie_Zeng/high_order_BM/V008_standard_video_gray48_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/V008_standard_video_gray48_feature_stderr.log
+
+[2026-06-15 22:38:08] TRAIN V008 standard_video_gray48 input_dim=18432 hidden_dim=18432 total_pbits=36964
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_video_f8_s48_gray_audio2048.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V008_standard_video_gray48 --experiment_id V008_standard_video_gray48 --model_type standard --input_mode video --total_pbits 36964 --input_dim 18432 --num_classes 20 --label_copies 5 --epochs 180 --batch_size 12 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V008_standard_video_gray48_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V008_standard_video_gray48_stderr.log
+Video resolution standard BM sweep finished.
+End time: Mon Jun 15 11:07:16 PM CST 2026
