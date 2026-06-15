@@ -1,0 +1,281 @@
+[data] train=1794 test=344 classes=20 video=2048 motion=2048 audio=2048 device=cuda
+[model] standard input=2048 label=100 hidden=1948 total=4096 mode=video
+[init] estimating visible bias from training set
+[epoch 001] recon_mse=0.06423
+[epoch 002] recon_mse=0.06348
+[epoch 003] recon_mse=0.06404
+[epoch 004] recon_mse=0.06387
+[epoch 005] recon_mse=0.06352 quick_test_acc=0.0756 ent=2.9945
+[epoch 006] recon_mse=0.06299
+[epoch 007] recon_mse=0.06350
+[epoch 008] recon_mse=0.06237
+[epoch 009] recon_mse=0.06183
+[epoch 010] recon_mse=0.06065 quick_test_acc=0.0640 ent=2.9934
+[epoch 011] recon_mse=0.05920
+[epoch 012] recon_mse=0.05795
+[epoch 013] recon_mse=0.05673
+[epoch 014] recon_mse=0.05476
+[epoch 015] recon_mse=0.05331 quick_test_acc=0.0727 ent=2.9907
+[epoch 016] recon_mse=0.05232
+[epoch 017] recon_mse=0.05112
+[epoch 018] recon_mse=0.05065
+[epoch 019] recon_mse=0.04978
+[epoch 020] recon_mse=0.04897 quick_test_acc=0.0669 ent=2.9874
+[epoch 021] recon_mse=0.04914
+[epoch 022] recon_mse=0.04819
+[epoch 023] recon_mse=0.04793
+[epoch 024] recon_mse=0.04869
+[epoch 025] recon_mse=0.04773 quick_test_acc=0.0698 ent=2.9831
+[epoch 026] recon_mse=0.04724
+[epoch 027] recon_mse=0.04726
+[epoch 028] recon_mse=0.04715
+[epoch 029] recon_mse=0.04692
+[epoch 030] recon_mse=0.04682 quick_test_acc=0.0669 ent=2.9792
+[epoch 031] recon_mse=0.04693
+[epoch 032] recon_mse=0.04695
+[epoch 033] recon_mse=0.04768
+[epoch 034] recon_mse=0.04672
+[epoch 035] recon_mse=0.04779 quick_test_acc=0.0698 ent=2.9748
+[epoch 036] recon_mse=0.04668
+[epoch 037] recon_mse=0.04686
+[epoch 038] recon_mse=0.04638
+[epoch 039] recon_mse=0.04653
+[epoch 040] recon_mse=0.04675 quick_test_acc=0.0698 ent=2.9720
+[epoch 041] recon_mse=0.04622
+[epoch 042] recon_mse=0.04616
+[epoch 043] recon_mse=0.04619
+[epoch 044] recon_mse=0.04576
+[epoch 045] recon_mse=0.04569 quick_test_acc=0.0727 ent=2.9691
+[epoch 046] recon_mse=0.04533
+[epoch 047] recon_mse=0.04552
+[epoch 048] recon_mse=0.04473
+[epoch 049] recon_mse=0.04485
+[epoch 050] recon_mse=0.04468 quick_test_acc=0.0727 ent=2.9658
+[epoch 051] recon_mse=0.04460
+[epoch 052] recon_mse=0.04425
+[epoch 053] recon_mse=0.04380
+[epoch 054] recon_mse=0.04406
+[epoch 055] recon_mse=0.04340 quick_test_acc=0.0698 ent=2.9628
+[epoch 056] recon_mse=0.04347
+[epoch 057] recon_mse=0.04317
+[epoch 058] recon_mse=0.04333
+[epoch 059] recon_mse=0.04303
+[epoch 060] recon_mse=0.04293 quick_test_acc=0.0640 ent=2.9590
+[epoch 061] recon_mse=0.04282
+[epoch 062] recon_mse=0.04297
+[epoch 063] recon_mse=0.04292
+[epoch 064] recon_mse=0.04297
+[epoch 065] recon_mse=0.04337 quick_test_acc=0.0640 ent=2.9563
+[epoch 066] recon_mse=0.04267
+[epoch 067] recon_mse=0.04276
+[epoch 068] recon_mse=0.04279
+[epoch 069] recon_mse=0.04304
+[epoch 070] recon_mse=0.04260 quick_test_acc=0.0640 ent=2.9536
+[epoch 071] recon_mse=0.04306
+[epoch 072] recon_mse=0.04261
+[epoch 073] recon_mse=0.04273
+[epoch 074] recon_mse=0.04301
+[epoch 075] recon_mse=0.04272 quick_test_acc=0.0698 ent=2.9498
+[epoch 076] recon_mse=0.04247
+[epoch 077] recon_mse=0.04228
+[epoch 078] recon_mse=0.04210
+[epoch 079] recon_mse=0.04245
+[epoch 080] recon_mse=0.04219 quick_test_acc=0.0727 ent=2.9483
+[epoch 081] recon_mse=0.04213
+[epoch 082] recon_mse=0.04211
+[epoch 083] recon_mse=0.04253
+[epoch 084] recon_mse=0.04221
+[epoch 085] recon_mse=0.04240 quick_test_acc=0.0785 ent=2.9457
+[epoch 086] recon_mse=0.04209
+[epoch 087] recon_mse=0.04177
+[epoch 088] recon_mse=0.04208
+[epoch 089] recon_mse=0.04183
+[epoch 090] recon_mse=0.04205 quick_test_acc=0.0640 ent=2.9433
+[epoch 091] recon_mse=0.04161
+[epoch 092] recon_mse=0.04150
+[epoch 093] recon_mse=0.04168
+[epoch 094] recon_mse=0.04176
+[epoch 095] recon_mse=0.04133 quick_test_acc=0.0727 ent=2.9414
+[epoch 096] recon_mse=0.04114
+[epoch 097] recon_mse=0.04105
+[epoch 098] recon_mse=0.04120
+[epoch 099] recon_mse=0.04105
+[epoch 100] recon_mse=0.04092 quick_test_acc=0.0785 ent=2.9399
+[epoch 101] recon_mse=0.04108
+[epoch 102] recon_mse=0.04056
+[epoch 103] recon_mse=0.04035
+[epoch 104] recon_mse=0.04035
+[epoch 105] recon_mse=0.04009 quick_test_acc=0.0669 ent=2.9376
+[epoch 106] recon_mse=0.03995
+[epoch 107] recon_mse=0.03984
+[epoch 108] recon_mse=0.03978
+[epoch 109] recon_mse=0.03986
+[epoch 110] recon_mse=0.03958 quick_test_acc=0.0814 ent=2.9370
+[epoch 111] recon_mse=0.03962
+[epoch 112] recon_mse=0.03986
+[epoch 113] recon_mse=0.03965
+[epoch 114] recon_mse=0.03938
+[epoch 115] recon_mse=0.03939 quick_test_acc=0.0785 ent=2.9348
+[epoch 116] recon_mse=0.03925
+[epoch 117] recon_mse=0.03943
+[epoch 118] recon_mse=0.03906
+[epoch 119] recon_mse=0.03920
+[epoch 120] recon_mse=0.03894 quick_test_acc=0.0756 ent=2.9329
+[epoch 121] recon_mse=0.03862
+[epoch 122] recon_mse=0.03893
+[epoch 123] recon_mse=0.03863
+[epoch 124] recon_mse=0.03833
+[epoch 125] recon_mse=0.03841 quick_test_acc=0.0814 ent=2.9295
+[epoch 126] recon_mse=0.03814
+[epoch 127] recon_mse=0.03852
+[epoch 128] recon_mse=0.03856
+[epoch 129] recon_mse=0.03815
+[epoch 130] recon_mse=0.03824 quick_test_acc=0.0698 ent=2.9287
+[epoch 131] recon_mse=0.03794
+[epoch 132] recon_mse=0.03784
+[epoch 133] recon_mse=0.03826
+[epoch 134] recon_mse=0.03803
+[epoch 135] recon_mse=0.03802 quick_test_acc=0.0785 ent=2.9263
+[epoch 136] recon_mse=0.03758
+[epoch 137] recon_mse=0.03761
+[epoch 138] recon_mse=0.03772
+[epoch 139] recon_mse=0.03815
+[epoch 140] recon_mse=0.03777 quick_test_acc=0.0814 ent=2.9256
+[epoch 141] recon_mse=0.03771
+[epoch 142] recon_mse=0.03763
+[epoch 143] recon_mse=0.03749
+[epoch 144] recon_mse=0.03740
+[epoch 145] recon_mse=0.03752 quick_test_acc=0.0843 ent=2.9230
+[epoch 146] recon_mse=0.03748
+[epoch 147] recon_mse=0.03753
+[epoch 148] recon_mse=0.03745
+[epoch 149] recon_mse=0.03736
+[epoch 150] recon_mse=0.03704 quick_test_acc=0.0843 ent=2.9214
+[epoch 151] recon_mse=0.03721
+[epoch 152] recon_mse=0.03726
+[epoch 153] recon_mse=0.03693
+[epoch 154] recon_mse=0.03747
+[epoch 155] recon_mse=0.03698 quick_test_acc=0.0814 ent=2.9196
+[epoch 156] recon_mse=0.03705
+[epoch 157] recon_mse=0.03745
+[epoch 158] recon_mse=0.03737
+[epoch 159] recon_mse=0.03706
+[epoch 160] recon_mse=0.03728 quick_test_acc=0.0814 ent=2.9172
+[epoch 161] recon_mse=0.03745
+[epoch 162] recon_mse=0.03710
+[epoch 163] recon_mse=0.03700
+[epoch 164] recon_mse=0.03703
+[epoch 165] recon_mse=0.03720 quick_test_acc=0.0756 ent=2.9150
+[epoch 166] recon_mse=0.03696
+[epoch 167] recon_mse=0.03671
+[epoch 168] recon_mse=0.03680
+[epoch 169] recon_mse=0.03677
+[epoch 170] recon_mse=0.03664 quick_test_acc=0.0843 ent=2.9136
+[epoch 171] recon_mse=0.03676
+[epoch 172] recon_mse=0.03673
+[epoch 173] recon_mse=0.03684
+[epoch 174] recon_mse=0.03691
+[epoch 175] recon_mse=0.03671 quick_test_acc=0.0843 ent=2.9102
+[epoch 176] recon_mse=0.03681
+[epoch 177] recon_mse=0.03664
+[epoch 178] recon_mse=0.03666
+[epoch 179] recon_mse=0.03657
+[epoch 180] recon_mse=0.03676 quick_test_acc=0.0843 ent=2.9102
+[full_eval_best] {
+  "created_at": "2026-06-15 18:21:49",
+  "ckpt": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V001_standard_video_only/best.pt",
+  "ckpt_epoch": 145,
+  "ckpt_best_acc": 0.08430232558139535,
+  "eval_steps": 3000,
+  "eval_burn_in": 500,
+  "eval_thin": 2,
+  "test_label_gibbs_acc": 0.08139534883720931,
+  "test_label_entropy": 2.9230074087778726,
+  "computed_dims": {
+    "input_dim": 2048,
+    "label_dim": 100,
+    "hidden_dim": 1948,
+    "total_pbits": 4096,
+    "num_classes": 20
+  },
+  "data_dims": {
+    "feature_npz": "data_vggsound_mini/features/vggsound_mini20_features_2048.npz",
+    "train_size": 1794,
+    "test_size": 344,
+    "num_classes": 20,
+    "class_names": [
+      "playing cello",
+      "playing cymbal",
+      "playing didgeridoo",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing flute",
+      "playing harp",
+      "playing marimba, xylophone",
+      "playing piano",
+      "playing saxophone",
+      "playing trombone",
+      "playing violin, fiddle",
+      "police car (siren)",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "rowboat, canoe, kayak rowing",
+      "singing bowl",
+      "tap dancing",
+      "toilet flushing",
+      "vehicle horn, car horn, honking"
+    ],
+    "video_dim": 2048,
+    "motion_dim": 2048,
+    "audio_dim": 2048
+  }
+}
+{
+  "experiment_id": "V001_standard_video_only",
+  "finished_at": "2026-06-15 18:21:49",
+  "model_type": "standard",
+  "best_epoch": 145,
+  "best_acc_selection_metric": 0.08430232558139535,
+  "final_epoch": 180,
+  "final_test_label_gibbs_acc": 0.08430232558139535,
+  "full_eval_best_acc": 0.08139534883720931,
+  "computed_dims": {
+    "input_dim": 2048,
+    "label_dim": 100,
+    "hidden_dim": 1948,
+    "total_pbits": 4096,
+    "num_classes": 20
+  },
+  "data_dims": {
+    "feature_npz": "data_vggsound_mini/features/vggsound_mini20_features_2048.npz",
+    "train_size": 1794,
+    "test_size": 344,
+    "num_classes": 20,
+    "class_names": [
+      "playing cello",
+      "playing cymbal",
+      "playing didgeridoo",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing flute",
+      "playing harp",
+      "playing marimba, xylophone",
+      "playing piano",
+      "playing saxophone",
+      "playing trombone",
+      "playing violin, fiddle",
+      "police car (siren)",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "rowboat, canoe, kayak rowing",
+      "singing bowl",
+      "tap dancing",
+      "toilet flushing",
+      "vehicle horn, car horn, honking"
+    ],
+    "video_dim": 2048,
+    "motion_dim": 2048,
+    "audio_dim": 2048
+  },
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V001_standard_video_only"
+}

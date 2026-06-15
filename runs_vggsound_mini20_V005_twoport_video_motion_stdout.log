@@ -1,0 +1,282 @@
+[data] train=1794 test=344 classes=20 video=2048 motion=2048 audio=2048 device=cuda
+[model] twoport A=motion:2048 O=video:2048 label=100 hidden=1948 total=4096
+[epoch 001] loss=-31.1135 short_acc=0.0624
+[epoch 002] loss=-19.4065 short_acc=0.0530
+[epoch 003] loss=-13.2928 short_acc=0.0491
+[epoch 004] loss=-10.5337 short_acc=0.0496
+[epoch 005] loss=-8.7735 short_acc=0.0513 quick_test_acc=0.0465 ent=2.9887
+[epoch 006] loss=-7.1961 short_acc=0.0502
+[epoch 007] loss=-6.0951 short_acc=0.0535
+[epoch 008] loss=-5.7867 short_acc=0.0574
+[epoch 009] loss=-5.1942 short_acc=0.0491
+[epoch 010] loss=-4.6203 short_acc=0.0569 quick_test_acc=0.0378 ent=2.9889
+[epoch 011] loss=-3.8197 short_acc=0.0463
+[epoch 012] loss=-3.6696 short_acc=0.0546
+[epoch 013] loss=-3.6397 short_acc=0.0474
+[epoch 014] loss=-3.4008 short_acc=0.0496
+[epoch 015] loss=-2.8850 short_acc=0.0541 quick_test_acc=0.0407 ent=2.9890
+[epoch 016] loss=-2.4608 short_acc=0.0485
+[epoch 017] loss=-2.6285 short_acc=0.0474
+[epoch 018] loss=-2.4439 short_acc=0.0524
+[epoch 019] loss=-1.9727 short_acc=0.0491
+[epoch 020] loss=-2.0181 short_acc=0.0446 quick_test_acc=0.0436 ent=2.9890
+[epoch 021] loss=-1.9988 short_acc=0.0479
+[epoch 022] loss=-1.6514 short_acc=0.0479
+[epoch 023] loss=-1.6766 short_acc=0.0563
+[epoch 024] loss=-1.9848 short_acc=0.0479
+[epoch 025] loss=-1.7683 short_acc=0.0502 quick_test_acc=0.0523 ent=2.9890
+[epoch 026] loss=-1.5374 short_acc=0.0563
+[epoch 027] loss=-1.4257 short_acc=0.0507
+[epoch 028] loss=-1.8859 short_acc=0.0541
+[epoch 029] loss=-1.2712 short_acc=0.0569
+[epoch 030] loss=-1.3148 short_acc=0.0524 quick_test_acc=0.0610 ent=2.9891
+[epoch 031] loss=-1.1731 short_acc=0.0485
+[epoch 032] loss=-1.2081 short_acc=0.0546
+[epoch 033] loss=-1.0856 short_acc=0.0507
+[epoch 034] loss=-1.0834 short_acc=0.0602
+[epoch 035] loss=-1.4256 short_acc=0.0507 quick_test_acc=0.0494 ent=2.9887
+[epoch 036] loss=-1.1088 short_acc=0.0624
+[epoch 037] loss=-1.0820 short_acc=0.0569
+[epoch 038] loss=-0.8882 short_acc=0.0574
+[epoch 039] loss=-1.1556 short_acc=0.0535
+[epoch 040] loss=-0.9618 short_acc=0.0557 quick_test_acc=0.0640 ent=2.9886
+[epoch 041] loss=-1.2618 short_acc=0.0630
+[epoch 042] loss=-1.2318 short_acc=0.0552
+[epoch 043] loss=-1.2206 short_acc=0.0491
+[epoch 044] loss=-0.7263 short_acc=0.0574
+[epoch 045] loss=-0.6741 short_acc=0.0585 quick_test_acc=0.0523 ent=2.9884
+[epoch 046] loss=-0.8439 short_acc=0.0446
+[epoch 047] loss=-1.0822 short_acc=0.0563
+[epoch 048] loss=-0.8185 short_acc=0.0524
+[epoch 049] loss=-0.9947 short_acc=0.0513
+[epoch 050] loss=-1.0389 short_acc=0.0591 quick_test_acc=0.0640 ent=2.9883
+[epoch 051] loss=-0.7127 short_acc=0.0530
+[epoch 052] loss=-1.0609 short_acc=0.0502
+[epoch 053] loss=-1.1042 short_acc=0.0452
+[epoch 054] loss=-0.5425 short_acc=0.0429
+[epoch 055] loss=-0.9495 short_acc=0.0585 quick_test_acc=0.0581 ent=2.9882
+[epoch 056] loss=-1.0524 short_acc=0.0496
+[epoch 057] loss=-1.0514 short_acc=0.0474
+[epoch 058] loss=-0.7472 short_acc=0.0546
+[epoch 059] loss=-0.9433 short_acc=0.0591
+[epoch 060] loss=-0.9054 short_acc=0.0585 quick_test_acc=0.0610 ent=2.9880
+[epoch 061] loss=-1.0147 short_acc=0.0569
+[epoch 062] loss=-0.9766 short_acc=0.0591
+[epoch 063] loss=-0.7122 short_acc=0.0546
+[epoch 064] loss=-0.7900 short_acc=0.0491
+[epoch 065] loss=-1.2728 short_acc=0.0518 quick_test_acc=0.0552 ent=2.9878
+[epoch 066] loss=-0.4983 short_acc=0.0546
+[epoch 067] loss=-0.7404 short_acc=0.0608
+[epoch 068] loss=-0.6609 short_acc=0.0491
+[epoch 069] loss=-0.9127 short_acc=0.0502
+[epoch 070] loss=-0.8831 short_acc=0.0569 quick_test_acc=0.0669 ent=2.9876
+[epoch 071] loss=-0.7412 short_acc=0.0585
+[epoch 072] loss=-0.6465 short_acc=0.0435
+[epoch 073] loss=-0.9398 short_acc=0.0468
+[epoch 074] loss=-0.7716 short_acc=0.0552
+[epoch 075] loss=-0.7841 short_acc=0.0608 quick_test_acc=0.0727 ent=2.9872
+[epoch 076] loss=-0.5867 short_acc=0.0552
+[epoch 077] loss=-0.9258 short_acc=0.0530
+[epoch 078] loss=-1.0123 short_acc=0.0552
+[epoch 079] loss=-1.1300 short_acc=0.0479
+[epoch 080] loss=-0.6382 short_acc=0.0502 quick_test_acc=0.0581 ent=2.9872
+[epoch 081] loss=-1.0864 short_acc=0.0507
+[epoch 082] loss=-0.4657 short_acc=0.0585
+[epoch 083] loss=-1.0737 short_acc=0.0574
+[epoch 084] loss=-0.9473 short_acc=0.0474
+[epoch 085] loss=-0.8123 short_acc=0.0524 quick_test_acc=0.0581 ent=2.9869
+[epoch 086] loss=-0.7801 short_acc=0.0541
+[epoch 087] loss=-0.9727 short_acc=0.0485
+[epoch 088] loss=-0.8996 short_acc=0.0635
+[epoch 089] loss=-0.8069 short_acc=0.0569
+[epoch 090] loss=-1.0389 short_acc=0.0485 quick_test_acc=0.0727 ent=2.9864
+[epoch 091] loss=-1.0225 short_acc=0.0491
+[epoch 092] loss=-1.0776 short_acc=0.0569
+[epoch 093] loss=-0.9280 short_acc=0.0463
+[epoch 094] loss=-0.8221 short_acc=0.0591
+[epoch 095] loss=-0.7390 short_acc=0.0602 quick_test_acc=0.0698 ent=2.9862
+[epoch 096] loss=-0.7312 short_acc=0.0546
+[epoch 097] loss=-0.7710 short_acc=0.0580
+[epoch 098] loss=-1.0569 short_acc=0.0502
+[epoch 099] loss=-1.1174 short_acc=0.0530
+[epoch 100] loss=-1.0208 short_acc=0.0585 quick_test_acc=0.0669 ent=2.9858
+[epoch 101] loss=-0.9482 short_acc=0.0507
+[epoch 102] loss=-0.8700 short_acc=0.0674
+[epoch 103] loss=-0.8547 short_acc=0.0546
+[epoch 104] loss=-1.0716 short_acc=0.0546
+[epoch 105] loss=-0.8754 short_acc=0.0513 quick_test_acc=0.0872 ent=2.9855
+[epoch 106] loss=-0.9756 short_acc=0.0680
+[epoch 107] loss=-1.4196 short_acc=0.0546
+[epoch 108] loss=-0.6813 short_acc=0.0541
+[epoch 109] loss=-0.7472 short_acc=0.0474
+[epoch 110] loss=-0.8720 short_acc=0.0507 quick_test_acc=0.0698 ent=2.9853
+[epoch 111] loss=-0.9839 short_acc=0.0546
+[epoch 112] loss=-1.1749 short_acc=0.0530
+[epoch 113] loss=-1.1496 short_acc=0.0669
+[epoch 114] loss=-1.0089 short_acc=0.0546
+[epoch 115] loss=-0.8093 short_acc=0.0546 quick_test_acc=0.0843 ent=2.9851
+[epoch 116] loss=-1.5419 short_acc=0.0580
+[epoch 117] loss=-0.6673 short_acc=0.0541
+[epoch 118] loss=-0.5927 short_acc=0.0468
+[epoch 119] loss=-1.1458 short_acc=0.0574
+[epoch 120] loss=-1.0175 short_acc=0.0552 quick_test_acc=0.0785 ent=2.9847
+[epoch 121] loss=-0.8976 short_acc=0.0535
+[epoch 122] loss=-0.8689 short_acc=0.0535
+[epoch 123] loss=-1.1696 short_acc=0.0569
+[epoch 124] loss=-1.0006 short_acc=0.0635
+[epoch 125] loss=-0.9478 short_acc=0.0602 quick_test_acc=0.0785 ent=2.9845
+[epoch 126] loss=-1.0447 short_acc=0.0557
+[epoch 127] loss=-1.0131 short_acc=0.0557
+[epoch 128] loss=-0.8049 short_acc=0.0530
+[epoch 129] loss=-1.4942 short_acc=0.0585
+[epoch 130] loss=-1.0590 short_acc=0.0658 quick_test_acc=0.0843 ent=2.9842
+[epoch 131] loss=-1.0476 short_acc=0.0530
+[epoch 132] loss=-1.0797 short_acc=0.0541
+[epoch 133] loss=-1.4552 short_acc=0.0518
+[epoch 134] loss=-0.9855 short_acc=0.0591
+[epoch 135] loss=-1.2494 short_acc=0.0613 quick_test_acc=0.0901 ent=2.9838
+[epoch 136] loss=-1.0346 short_acc=0.0479
+[epoch 137] loss=-0.9335 short_acc=0.0619
+[epoch 138] loss=-0.8895 short_acc=0.0502
+[epoch 139] loss=-1.1025 short_acc=0.0546
+[epoch 140] loss=-1.1087 short_acc=0.0613 quick_test_acc=0.0814 ent=2.9833
+[epoch 141] loss=-0.9153 short_acc=0.0513
+[epoch 142] loss=-0.9365 short_acc=0.0474
+[epoch 143] loss=-1.3922 short_acc=0.0574
+[epoch 144] loss=-1.0656 short_acc=0.0613
+[epoch 145] loss=-0.9995 short_acc=0.0619 quick_test_acc=0.0843 ent=2.9826
+[epoch 146] loss=-1.5585 short_acc=0.0541
+[epoch 147] loss=-1.3256 short_acc=0.0491
+[epoch 148] loss=-0.8184 short_acc=0.0669
+[epoch 149] loss=-1.3511 short_acc=0.0557
+[epoch 150] loss=-0.9994 short_acc=0.0524 quick_test_acc=0.0814 ent=2.9823
+[epoch 151] loss=-1.0398 short_acc=0.0507
+[epoch 152] loss=-1.2180 short_acc=0.0496
+[epoch 153] loss=-0.7937 short_acc=0.0669
+[epoch 154] loss=-1.7073 short_acc=0.0585
+[epoch 155] loss=-1.4650 short_acc=0.0496 quick_test_acc=0.0843 ent=2.9817
+[epoch 156] loss=-0.9481 short_acc=0.0613
+[epoch 157] loss=-1.1080 short_acc=0.0479
+[epoch 158] loss=-1.1401 short_acc=0.0596
+[epoch 159] loss=-1.3525 short_acc=0.0630
+[epoch 160] loss=-1.3151 short_acc=0.0602 quick_test_acc=0.0843 ent=2.9814
+[epoch 161] loss=-1.0629 short_acc=0.0652
+[epoch 162] loss=-0.9584 short_acc=0.0591
+[epoch 163] loss=-0.8559 short_acc=0.0530
+[epoch 164] loss=-1.1521 short_acc=0.0535
+[epoch 165] loss=-1.1864 short_acc=0.0507 quick_test_acc=0.0843 ent=2.9813
+[epoch 166] loss=-1.2004 short_acc=0.0596
+[epoch 167] loss=-1.0003 short_acc=0.0468
+[epoch 168] loss=-1.3241 short_acc=0.0585
+[epoch 169] loss=-1.3517 short_acc=0.0546
+[epoch 170] loss=-0.9872 short_acc=0.0602 quick_test_acc=0.0843 ent=2.9806
+[epoch 171] loss=-1.2099 short_acc=0.0574
+[epoch 172] loss=-0.9526 short_acc=0.0530
+[epoch 173] loss=-1.2605 short_acc=0.0641
+[epoch 174] loss=-1.2524 short_acc=0.0507
+[epoch 175] loss=-0.9780 short_acc=0.0546 quick_test_acc=0.0959 ent=2.9800
+[epoch 176] loss=-0.8093 short_acc=0.0658
+[epoch 177] loss=-1.3703 short_acc=0.0697
+[epoch 178] loss=-0.5843 short_acc=0.0552
+[epoch 179] loss=-0.7030 short_acc=0.0647
+[epoch 180] loss=-1.1086 short_acc=0.0652 quick_test_acc=0.0988 ent=2.9795
+[full_eval_best] {
+  "created_at": "2026-06-15 18:27:59",
+  "ckpt": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V005_twoport_video_motion/best.pt",
+  "ckpt_epoch": 180,
+  "ckpt_best_acc": 0.09883720930232558,
+  "eval_steps": 3000,
+  "eval_burn_in": 500,
+  "eval_thin": 2,
+  "test_label_gibbs_acc": 0.09593023255813954,
+  "test_label_entropy": 2.97961695988973,
+  "computed_dims": {
+    "image_dim": 2048,
+    "audio_dim": 2048,
+    "label_dim": 100,
+    "hidden_dim": 1948,
+    "total_pbits": 4096,
+    "num_classes": 20
+  },
+  "data_dims": {
+    "feature_npz": "data_vggsound_mini/features/vggsound_mini20_features_2048.npz",
+    "train_size": 1794,
+    "test_size": 344,
+    "num_classes": 20,
+    "class_names": [
+      "playing cello",
+      "playing cymbal",
+      "playing didgeridoo",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing flute",
+      "playing harp",
+      "playing marimba, xylophone",
+      "playing piano",
+      "playing saxophone",
+      "playing trombone",
+      "playing violin, fiddle",
+      "police car (siren)",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "rowboat, canoe, kayak rowing",
+      "singing bowl",
+      "tap dancing",
+      "toilet flushing",
+      "vehicle horn, car horn, honking"
+    ],
+    "video_dim": 2048,
+    "motion_dim": 2048,
+    "audio_dim": 2048
+  }
+}
+{
+  "experiment_id": "V005_twoport_video_motion",
+  "finished_at": "2026-06-15 18:27:59",
+  "model_type": "twoport",
+  "best_epoch": 180,
+  "best_acc_selection_metric": 0.09883720930232558,
+  "final_epoch": 180,
+  "final_test_label_gibbs_acc": 0.09883720930232558,
+  "full_eval_best_acc": 0.09593023255813954,
+  "computed_dims": {
+    "image_dim": 2048,
+    "audio_dim": 2048,
+    "label_dim": 100,
+    "hidden_dim": 1948,
+    "total_pbits": 4096,
+    "num_classes": 20
+  },
+  "data_dims": {
+    "feature_npz": "data_vggsound_mini/features/vggsound_mini20_features_2048.npz",
+    "train_size": 1794,
+    "test_size": 344,
+    "num_classes": 20,
+    "class_names": [
+      "playing cello",
+      "playing cymbal",
+      "playing didgeridoo",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing flute",
+      "playing harp",
+      "playing marimba, xylophone",
+      "playing piano",
+      "playing saxophone",
+      "playing trombone",
+      "playing violin, fiddle",
+      "police car (siren)",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "rowboat, canoe, kayak rowing",
+      "singing bowl",
+      "tap dancing",
+      "toilet flushing",
+      "vehicle horn, car horn, honking"
+    ],
+    "video_dim": 2048,
+    "motion_dim": 2048,
+    "audio_dim": 2048
+  },
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V005_twoport_video_motion"
+}

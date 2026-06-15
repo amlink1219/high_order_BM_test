@@ -1,0 +1,49 @@
+{
+  "experiment_id": "V002_standard_audio_only",
+  "finished_at": "2026-06-15 18:22:27",
+  "model_type": "standard",
+  "best_epoch": 160,
+  "best_acc_selection_metric": 0.1511627906976744,
+  "final_epoch": 180,
+  "final_test_label_gibbs_acc": 0.14534883720930233,
+  "full_eval_best_acc": 0.14534883720930233,
+  "computed_dims": {
+    "input_dim": 2048,
+    "label_dim": 100,
+    "hidden_dim": 1948,
+    "total_pbits": 4096,
+    "num_classes": 20
+  },
+  "data_dims": {
+    "feature_npz": "data_vggsound_mini/features/vggsound_mini20_features_2048.npz",
+    "train_size": 1794,
+    "test_size": 344,
+    "num_classes": 20,
+    "class_names": [
+      "playing cello",
+      "playing cymbal",
+      "playing didgeridoo",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing flute",
+      "playing harp",
+      "playing marimba, xylophone",
+      "playing piano",
+      "playing saxophone",
+      "playing trombone",
+      "playing violin, fiddle",
+      "police car (siren)",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "rowboat, canoe, kayak rowing",
+      "singing bowl",
+      "tap dancing",
+      "toilet flushing",
+      "vehicle horn, car horn, honking"
+    ],
+    "video_dim": 2048,
+    "motion_dim": 2048,
+    "audio_dim": 2048
+  },
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V002_standard_audio_only"
+}
