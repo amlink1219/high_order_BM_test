@@ -1,0 +1,49 @@
+{
+  "experiment_id": "V017_standard_video_resnet18_mean_h2",
+  "finished_at": "2026-06-16 17:32:04",
+  "model_type": "standard",
+  "best_epoch": 135,
+  "best_acc_selection_metric": 0.12,
+  "final_epoch": 220,
+  "final_test_label_gibbs_acc": 0.07692307692307693,
+  "full_eval_best_acc": 0.09538461538461539,
+  "computed_dims": {
+    "input_dim": 512,
+    "label_dim": 100,
+    "hidden_dim": 1024,
+    "total_pbits": 1636,
+    "num_classes": 20
+  },
+  "data_dims": {
+    "feature_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet18_mean_per_dim_minmax_f8_s224.npz",
+    "train_size": 1780,
+    "test_size": 325,
+    "num_classes": 20,
+    "class_names": [
+      "playing cello",
+      "playing cymbal",
+      "playing didgeridoo",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing flute",
+      "playing harp",
+      "playing marimba, xylophone",
+      "playing piano",
+      "playing saxophone",
+      "playing trombone",
+      "playing violin, fiddle",
+      "police car (siren)",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "rowboat, canoe, kayak rowing",
+      "singing bowl",
+      "tap dancing",
+      "toilet flushing",
+      "vehicle horn, car horn, honking"
+    ],
+    "video_dim": 512,
+    "motion_dim": 1,
+    "audio_dim": 1
+  },
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V017_standard_video_resnet18_mean_h2"
+}
