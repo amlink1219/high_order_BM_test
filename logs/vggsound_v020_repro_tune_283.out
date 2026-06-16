@@ -1,0 +1,152 @@
+Start time: Tue Jun 16 07:05:45 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+TORCH_HOME: /home/Hongjie_Zeng/.cache/torch
+SLURM_JOB_ID: 283
+Tue Jun 16 19:05:45 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5090        Off |   00000000:16:00.0 Off |                  N/A |
+|  0%   28C    P8             24W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 5090        Off |   00000000:27:00.0 Off |                  N/A |
+|  0%   27C    P8             23W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 5090        Off |   00000000:49:00.0 Off |                  N/A |
+|  0%   27C    P8             30W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 5090        Off |   00000000:5A:00.0 Off |                  N/A |
+|  0%   26C    P8             32W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA GeForce RTX 5090        Off |   00000000:98:00.0 Off |                  N/A |
+|  0%   29C    P8             15W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA GeForce RTX 5090        Off |   00000000:B8:00.0 Off |                  N/A |
+|  0%   29C    P8             25W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA GeForce RTX 5090        Off |   00000000:C8:00.0 Off |                  N/A |
+|  0%   26C    P8             20W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA GeForce RTX 5090        Off |   00000000:D8:00.0 Off |                  N/A |
+|  0%   27C    P8             26W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    1   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    2   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    3   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    4   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    5   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    6   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    7   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
++-----------------------------------------------------------------------------------------+
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:05:46] TRAIN V023 v020_repro_seed124 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V023_v020_repro_seed124 --experiment_id V023_v020_repro_seed124 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 124 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V023_v020_repro_seed124_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V023_v020_repro_seed124_stderr.log
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:09:00] TRAIN V024 v020_repro_seed125 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V024_v020_repro_seed125 --experiment_id V024_v020_repro_seed125 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 125 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V024_v020_repro_seed125_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V024_v020_repro_seed125_stderr.log
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:12:14] TRAIN V025 v020_repro_seed126 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V025_v020_repro_seed126 --experiment_id V025_v020_repro_seed126 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 126 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V025_v020_repro_seed126_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V025_v020_repro_seed126_stderr.log
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:15:30] TRAIN V026 v020_repro_seed127 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V026_v020_repro_seed127 --experiment_id V026_v020_repro_seed127 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 127 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V026_v020_repro_seed127_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V026_v020_repro_seed127_stderr.log
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:18:46] TRAIN V027 v020_repro_seed128 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V027_v020_repro_seed128 --experiment_id V027_v020_repro_seed128 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 128 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V027_v020_repro_seed128_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V027_v020_repro_seed128_stderr.log
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:22:00] TRAIN V028 v020_hidden1_seed123 video_feature_dim=4096 hidden_dim=4096 label_copies=5 total_pbits=8292
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V028_v020_hidden1_seed123 --experiment_id V028_v020_hidden1_seed123 --model_type standard --input_mode video --total_pbits 8292 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 48 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V028_v020_hidden1_seed123_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V028_v020_hidden1_seed123_stderr.log
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:23:36] TRAIN V029 v020_hidden3_seed123 video_feature_dim=4096 hidden_dim=12288 label_copies=5 total_pbits=16484
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V029_v020_hidden3_seed123 --experiment_id V029_v020_hidden3_seed123 --model_type standard --input_mode video --total_pbits 16484 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 24 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V029_v020_hidden3_seed123_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V029_v020_hidden3_seed123_stderr.log
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:28:38] TRAIN V030 v020_labelcopies10_seed123 video_feature_dim=4096 hidden_dim=8192 label_copies=10 total_pbits=12488
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V030_v020_labelcopies10_seed123 --experiment_id V030_v020_labelcopies10_seed123 --model_type standard --input_mode video --total_pbits 12488 --input_dim 4096 --num_classes 20 --label_copies 10 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V030_v020_labelcopies10_seed123_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V030_v020_labelcopies10_seed123_stderr.log
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:31:58] TRAIN V031 v020_threshold_seed123 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V031_v020_threshold_seed123 --experiment_id V031_v020_threshold_seed123 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize threshold --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V031_v020_threshold_seed123_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V031_v020_threshold_seed123_stderr.log
+SKIP feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+
+[2026-06-16 19:35:12] TRAIN V032 v020_sample_seed123 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V032_v020_sample_seed123 --experiment_id V032_v020_sample_seed123 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize sample --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V032_v020_sample_seed123_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V032_v020_sample_seed123_stderr.log
+
+[2026-06-16 19:38:26] EXTRACT V033 resnet50_meanstd_zsig_seed123 -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_zscore_sigmoid_f8_s224.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_video_encoder_features.py --root /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_zscore_sigmoid_f8_s224.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_zscore_sigmoid_f8_s224_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_zscore_sigmoid_f8_s224_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_zscore_sigmoid --num_frames 8 --video_fps 4 --frame_size 224 --timeout 120 --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V033_resnet50_meanstd_zsig_seed123_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V033_resnet50_meanstd_zsig_seed123_feature_stderr.log
+
+[2026-06-16 19:46:52] TRAIN V033 resnet50_meanstd_zsig_seed123 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_zscore_sigmoid_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V033_resnet50_meanstd_zsig_seed123 --experiment_id V033_resnet50_meanstd_zsig_seed123 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V033_resnet50_meanstd_zsig_seed123_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V033_resnet50_meanstd_zsig_seed123_stderr.log
+
+[2026-06-16 19:50:10] EXTRACT V034 resnet50_meanmax_seed123 -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_max_per_dim_minmax_f8_s224.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_video_encoder_features.py --root /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_max_per_dim_minmax_f8_s224.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_max_per_dim_minmax_f8_s224_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_max_per_dim_minmax_f8_s224_summary.json --encoder resnet50 --pool mean_max --normalize per_dim_minmax --num_frames 8 --video_fps 4 --frame_size 224 --timeout 120 --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V034_resnet50_meanmax_seed123_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V034_resnet50_meanmax_seed123_feature_stderr.log
+
+[2026-06-16 19:57:39] TRAIN V034 resnet50_meanmax_seed123 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_max_per_dim_minmax_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V034_resnet50_meanmax_seed123 --experiment_id V034_resnet50_meanmax_seed123 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V034_resnet50_meanmax_seed123_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V034_resnet50_meanmax_seed123_stderr.log
+
+[2026-06-16 20:00:54] EXTRACT V035 resnet50_meanstd_f16_seed123 -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f16_s224.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_video_encoder_features.py --root /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f16_s224.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f16_s224_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f16_s224_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_minmax --num_frames 16 --video_fps 4 --frame_size 224 --timeout 120 --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V035_resnet50_meanstd_f16_seed123_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V035_resnet50_meanstd_f16_seed123_feature_stderr.log
+
+[2026-06-16 20:08:34] TRAIN V035 resnet50_meanstd_f16_seed123 video_feature_dim=4096 hidden_dim=8192 label_copies=5 total_pbits=12388
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f16_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V035_resnet50_meanstd_f16_seed123 --experiment_id V035_resnet50_meanstd_f16_seed123 --model_type standard --input_mode video --total_pbits 12388 --input_dim 4096 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V035_resnet50_meanstd_f16_seed123_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V035_resnet50_meanstd_f16_seed123_stderr.log
+V020 reproduction and tuning sweep finished.
+End time: Tue Jun 16 08:11:52 PM CST 2026

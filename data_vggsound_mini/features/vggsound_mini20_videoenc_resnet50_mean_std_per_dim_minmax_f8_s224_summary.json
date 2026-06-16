@@ -1,0 +1,326 @@
+{
+  "created_at": "2026-06-16 17:56:02",
+  "root": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_mini",
+  "source_manifest": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/meta/vggsound_mini20_download_manifest.csv",
+  "out_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz",
+  "out_manifest": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224_manifest.csv",
+  "num_source_rows": 2138,
+  "num_clean_rows": 2105,
+  "num_failures": 33,
+  "train_size": 1780,
+  "test_size": 325,
+  "video_dim": 4096,
+  "motion_dim": 1,
+  "audio_dim": 1,
+  "num_classes": 20,
+  "class_names": [
+    "playing cello",
+    "playing cymbal",
+    "playing didgeridoo",
+    "playing drum kit",
+    "playing electric guitar",
+    "playing flute",
+    "playing harp",
+    "playing marimba, xylophone",
+    "playing piano",
+    "playing saxophone",
+    "playing trombone",
+    "playing violin, fiddle",
+    "police car (siren)",
+    "race car, auto racing",
+    "railroad car, train wagon",
+    "rowboat, canoe, kayak rowing",
+    "singing bowl",
+    "tap dancing",
+    "toilet flushing",
+    "vehicle horn, car horn, honking"
+  ],
+  "train_class_counts": [
+    95,
+    89,
+    93,
+    85,
+    87,
+    90,
+    91,
+    89,
+    91,
+    90,
+    84,
+    85,
+    91,
+    97,
+    93,
+    89,
+    86,
+    85,
+    80,
+    90
+  ],
+  "test_class_counts": [
+    16,
+    15,
+    20,
+    20,
+    20,
+    16,
+    16,
+    15,
+    17,
+    14,
+    13,
+    15,
+    16,
+    16,
+    17,
+    20,
+    15,
+    17,
+    15,
+    12
+  ],
+  "feature_config": {
+    "encoder": "resnet50",
+    "pretrained": true,
+    "pool": "mean_std",
+    "normalize": "per_dim_minmax",
+    "num_frames": 8,
+    "video_fps": 4,
+    "frame_size": 224,
+    "frame_feature_dim": 2048,
+    "note": "video arrays contain pretrained encoder features; audio/motion arrays are one-dimensional dummy zeros."
+  },
+  "failures": [
+    {
+      "clip_relpath": "clips/test/001_playing_cymbal/DKH0HIZP284_000070.mp4",
+      "split": "test",
+      "label": "playing cymbal",
+      "label_id": "1",
+      "error": "ffmpeg video decode failed: ce8a400] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x2ce26680] [dec:libdav1d @ 0x2ce8a400] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x2ce26680] [dec:libdav1d @ 0x2ce8a400] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x2ce26680] [dec:libdav1d @ 0x2ce8a400] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/001_playing_cymbal/JesyktMT-Dk_000010.mp4",
+      "split": "test",
+      "label": "playing cymbal",
+      "label_id": "1",
+      "error": "ffmpeg video decode failed: 0262c00] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x40213e40] [dec:libdav1d @ 0x40262c00] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x40213e40] [dec:libdav1d @ 0x40262c00] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x40213e40] [dec:libdav1d @ 0x40262c00] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/008_playing_piano/IPYHy8k9Z34_000050.mp4",
+      "split": "test",
+      "label": "playing piano",
+      "label_id": "8",
+      "error": "ffmpeg video decode failed: 669db40] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x1669e5c0] [dec:libdav1d @ 0x1669db40] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x1669e5c0] [dec:libdav1d @ 0x1669db40] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x1669e5c0] [dec:libdav1d @ 0x1669db40] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/009_playing_saxophone/RyOySHPhn0o_000200.mp4",
+      "split": "test",
+      "label": "playing saxophone",
+      "label_id": "9",
+      "error": "ffmpeg video decode failed: 738ed00] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x2737fe40] [dec:libdav1d @ 0x2738ed00] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x2737fe40] [dec:libdav1d @ 0x2738ed00] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x2737fe40] [dec:libdav1d @ 0x2738ed00] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/010_playing_trombone/mJaX4ZpfULM_000030.mp4",
+      "split": "test",
+      "label": "playing trombone",
+      "label_id": "10",
+      "error": "ffmpeg video decode failed: 9622940] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x395bccc0] [dec:libdav1d @ 0x39622940] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x395bccc0] [dec:libdav1d @ 0x39622940] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x395bccc0] [dec:libdav1d @ 0x39622940] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/011_playing_violin_fiddle/9NUBwDtWAmk_000030.mp4",
+      "split": "test",
+      "label": "playing violin, fiddle",
+      "label_id": "11",
+      "error": "ffmpeg video decode failed: 4b6ffc0] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x24b680c0] [dec:libdav1d @ 0x24b6ffc0] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x24b680c0] [dec:libdav1d @ 0x24b6ffc0] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x24b680c0] [dec:libdav1d @ 0x24b6ffc0] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/011_playing_violin_fiddle/AA_XVhso6IU_000244.mp4",
+      "split": "test",
+      "label": "playing violin, fiddle",
+      "label_id": "11",
+      "error": "ffmpeg video decode failed: af35100] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x3af25a80] [dec:libdav1d @ 0x3af35100] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x3af25a80] [dec:libdav1d @ 0x3af35100] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x3af25a80] [dec:libdav1d @ 0x3af35100] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/011_playing_violin_fiddle/_XA3BaNyf4Q_000069.mp4",
+      "split": "test",
+      "label": "playing violin, fiddle",
+      "label_id": "11",
+      "error": "ffmpeg video decode failed: 38d1a40] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x3386ef40] [dec:libdav1d @ 0x338d1a40] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x3386ef40] [dec:libdav1d @ 0x338d1a40] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x3386ef40] [dec:libdav1d @ 0x338d1a40] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/012_police_car_siren/rx3fg5zGSxg_000350.mp4",
+      "split": "test",
+      "label": "police car (siren)",
+      "label_id": "12",
+      "error": "ffmpeg video decode failed: d @ 0xd017f40] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0xcff4c40] [dec:libdav1d @ 0xd017f40] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0xcff4c40] [dec:libdav1d @ 0xd017f40] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0xcff4c40] [dec:libdav1d @ 0xd017f40] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/012_police_car_siren/tR4zs1xwI98_000009.mp4",
+      "split": "test",
+      "label": "police car (siren)",
+      "label_id": "12",
+      "error": "ffmpeg video decode failed: c710280] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x1c6fef80] [dec:libdav1d @ 0x1c710280] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x1c6fef80] [dec:libdav1d @ 0x1c710280] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x1c6fef80] [dec:libdav1d @ 0x1c710280] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/013_race_car_auto_racing/Bz3F3488Ypc_000238.mp4",
+      "split": "test",
+      "label": "race car, auto racing",
+      "label_id": "13",
+      "error": "ffmpeg video decode failed: 8024100] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x28044a00] [dec:libdav1d @ 0x28024100] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x28044a00] [dec:libdav1d @ 0x28024100] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x28044a00] [dec:libdav1d @ 0x28024100] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/014_railroad_car_train_wagon/Snz2sQ5QxeE_000260.mp4",
+      "split": "test",
+      "label": "railroad car, train wagon",
+      "label_id": "14",
+      "error": "ffmpeg video decode failed: ef82d40] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x2ef60bc0] [dec:libdav1d @ 0x2ef82d40] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x2ef60bc0] [dec:libdav1d @ 0x2ef82d40] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x2ef60bc0] [dec:libdav1d @ 0x2ef82d40] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/017_tap_dancing/6utponLXbo4_000011.mp4",
+      "split": "test",
+      "label": "tap dancing",
+      "label_id": "17",
+      "error": "ffmpeg video decode failed: 954bf00] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x29500cc0] [dec:libdav1d @ 0x2954bf00] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x29500cc0] [dec:libdav1d @ 0x2954bf00] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x29500cc0] [dec:libdav1d @ 0x2954bf00] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/019_vehicle_horn_car_horn_honking/-fz6omiAhZ8_000040.mp4",
+      "split": "test",
+      "label": "vehicle horn, car horn, honking",
+      "label_id": "19",
+      "error": "ffmpeg video decode failed: 40ba200] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x140525c0] [dec:libdav1d @ 0x140ba200] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x140525c0] [dec:libdav1d @ 0x140ba200] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x140525c0] [dec:libdav1d @ 0x140ba200] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/019_vehicle_horn_car_horn_honking/LX5Y1jcoUXE_000030.mp4",
+      "split": "test",
+      "label": "vehicle horn, car horn, honking",
+      "label_id": "19",
+      "error": "ffmpeg video decode failed: ae8a4c0] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x3ae0b240] [dec:libdav1d @ 0x3ae8a4c0] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x3ae0b240] [dec:libdav1d @ 0x3ae8a4c0] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x3ae0b240] [dec:libdav1d @ 0x3ae8a4c0] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/019_vehicle_horn_car_horn_honking/O1jGNd4Deys_000050.mp4",
+      "split": "test",
+      "label": "vehicle horn, car horn, honking",
+      "label_id": "19",
+      "error": "ffmpeg video decode failed: 0eac280] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x40f126c0] [dec:libdav1d @ 0x40eac280] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x40f126c0] [dec:libdav1d @ 0x40eac280] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x40f126c0] [dec:libdav1d @ 0x40eac280] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/019_vehicle_horn_car_horn_honking/SSFFe1cVwgU_000080.mp4",
+      "split": "test",
+      "label": "vehicle horn, car horn, honking",
+      "label_id": "19",
+      "error": "ffmpeg video decode failed: 21f3140] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x122016c0] [dec:libdav1d @ 0x121f3140] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x122016c0] [dec:libdav1d @ 0x121f3140] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x122016c0] [dec:libdav1d @ 0x121f3140] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/019_vehicle_horn_car_horn_honking/VQ3h0ZA3FQ0_000260.mp4",
+      "split": "test",
+      "label": "vehicle horn, car horn, honking",
+      "label_id": "19",
+      "error": "ffmpeg video decode failed: 1c86dc0] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x31c26bc0] [dec:libdav1d @ 0x31c86dc0] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x31c26bc0] [dec:libdav1d @ 0x31c86dc0] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x31c26bc0] [dec:libdav1d @ 0x31c86dc0] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/test/019_vehicle_horn_car_horn_honking/garZ8KkuBds_000220.mp4",
+      "split": "test",
+      "label": "vehicle horn, car horn, honking",
+      "label_id": "19",
+      "error": "ffmpeg video decode failed: d @ 0x9729a00] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x9776000] [dec:libdav1d @ 0x9729a00] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x9776000] [dec:libdav1d @ 0x9729a00] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x9776000] [dec:libdav1d @ 0x9729a00] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/002_playing_didgeridoo/Ff0EH5s9P-0_000223.mp4",
+      "split": "train",
+      "label": "playing didgeridoo",
+      "label_id": "2",
+      "error": "ffmpeg video decode failed: 4e09580] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x44e01600] [dec:libdav1d @ 0x44e09580] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x44e01600] [dec:libdav1d @ 0x44e09580] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x44e01600] [dec:libdav1d @ 0x44e09580] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/003_playing_drum_kit/3cZ0nF0csK4_000040.mp4",
+      "split": "train",
+      "label": "playing drum kit",
+      "label_id": "3",
+      "error": "ffmpeg video decode failed: 3fe1000] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x23fdf3c0] [dec:libdav1d @ 0x23fe1000] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x23fdf3c0] [dec:libdav1d @ 0x23fe1000] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x23fdf3c0] [dec:libdav1d @ 0x23fe1000] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/003_playing_drum_kit/dFFDS2MNjRg_000030.mp4",
+      "split": "train",
+      "label": "playing drum kit",
+      "label_id": "3",
+      "error": "ffmpeg video decode failed: 3c45700] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x43c3b600] [dec:libdav1d @ 0x43c45700] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x43c3b600] [dec:libdav1d @ 0x43c45700] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x43c3b600] [dec:libdav1d @ 0x43c45700] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/004_playing_electric_guitar/YyTo-PxJy6I_000138.mp4",
+      "split": "train",
+      "label": "playing electric guitar",
+      "label_id": "4",
+      "error": "ffmpeg video decode failed: 5848740] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x1582ccc0] [dec:libdav1d @ 0x15848740] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x1582ccc0] [dec:libdav1d @ 0x15848740] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x1582ccc0] [dec:libdav1d @ 0x15848740] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/004_playing_electric_guitar/awpcCvX6JAk_000507.mp4",
+      "split": "train",
+      "label": "playing electric guitar",
+      "label_id": "4",
+      "error": "ffmpeg video decode failed: d4578c0] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x1d42edc0] [dec:libdav1d @ 0x1d4578c0] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x1d42edc0] [dec:libdav1d @ 0x1d4578c0] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x1d42edc0] [dec:libdav1d @ 0x1d4578c0] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/005_playing_flute/sX200pZVR3M_000040.mp4",
+      "split": "train",
+      "label": "playing flute",
+      "label_id": "5",
+      "error": "ffmpeg video decode failed: a3de2c0] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x3a3d7140] [dec:libdav1d @ 0x3a3de2c0] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x3a3d7140] [dec:libdav1d @ 0x3a3de2c0] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x3a3d7140] [dec:libdav1d @ 0x3a3de2c0] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/009_playing_saxophone/6vqKJK-F5pk_000896.mp4",
+      "split": "train",
+      "label": "playing saxophone",
+      "label_id": "9",
+      "error": "ffmpeg video decode failed: a02e040] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x3a0253c0] [dec:libdav1d @ 0x3a02e040] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x3a0253c0] [dec:libdav1d @ 0x3a02e040] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x3a0253c0] [dec:libdav1d @ 0x3a02e040] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/009_playing_saxophone/QN2RnjFHmNY_000094.mp4",
+      "split": "train",
+      "label": "playing saxophone",
+      "label_id": "9",
+      "error": "ffmpeg video decode failed: 0d6dfc0] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x10d58a00] [dec:libdav1d @ 0x10d6dfc0] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x10d58a00] [dec:libdav1d @ 0x10d6dfc0] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x10d58a00] [dec:libdav1d @ 0x10d6dfc0] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/009_playing_saxophone/bDyjJNtVycs_000143.mp4",
+      "split": "train",
+      "label": "playing saxophone",
+      "label_id": "9",
+      "error": "ffmpeg video decode failed: 5020040] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x3500bf80] [dec:libdav1d @ 0x35020040] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x3500bf80] [dec:libdav1d @ 0x35020040] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x3500bf80] [dec:libdav1d @ 0x35020040] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/009_playing_saxophone/j9B3QjQ3VSo_000019.mp4",
+      "split": "train",
+      "label": "playing saxophone",
+      "label_id": "9",
+      "error": "ffmpeg video decode failed: daa5600] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x3db134c0] [dec:libdav1d @ 0x3daa5600] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x3db134c0] [dec:libdav1d @ 0x3daa5600] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x3db134c0] [dec:libdav1d @ 0x3daa5600] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/017_tap_dancing/VZyyfX8WbT4_000002.mp4",
+      "split": "train",
+      "label": "tap dancing",
+      "label_id": "17",
+      "error": "ffmpeg video decode failed: 7877f00] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x37879400] [dec:libdav1d @ 0x37877f00] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x37879400] [dec:libdav1d @ 0x37877f00] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x37879400] [dec:libdav1d @ 0x37877f00] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/017_tap_dancing/ei5lo4uL4Fg_000131.mp4",
+      "split": "train",
+      "label": "tap dancing",
+      "label_id": "17",
+      "error": "ffmpeg video decode failed: e02f440] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x2e01c680] [dec:libdav1d @ 0x2e02f440] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x2e01c680] [dec:libdav1d @ 0x2e02f440] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x2e01c680] [dec:libdav1d @ 0x2e02f440] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/018_toilet_flushing/HpA4ldGoHRQ_000020.mp4",
+      "split": "train",
+      "label": "toilet flushing",
+      "label_id": "18",
+      "error": "ffmpeg video decode failed: 3fb2e00] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x33f9ce40] [dec:libdav1d @ 0x33fb2e00] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x33f9ce40] [dec:libdav1d @ 0x33fb2e00] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x33f9ce40] [dec:libdav1d @ 0x33fb2e00] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    },
+    {
+      "clip_relpath": "clips/train/019_vehicle_horn_car_horn_honking/0-wM311Z0rc_000073.mp4",
+      "split": "train",
+      "label": "vehicle horn, car horn, honking",
+      "label_id": "19",
+      "error": "ffmpeg video decode failed: 29266c0] A decoder returned an unexpected error code. This is a bug, please report it.\n[vist#0:0/av1 @ 0x42998dc0] [dec:libdav1d @ 0x429266c0] Error processing packet in decoder: Internal bug, should not have happened\n[vist#0:0/av1 @ 0x42998dc0] [dec:libdav1d @ 0x429266c0] Task finished with error code: -558323010 (Internal bug, should not have happened)\n[vist#0:0/av1 @ 0x42998dc0] [dec:libdav1d @ 0x429266c0] Terminating thread with return code -558323010 (Internal bug, should not have happened)"
+    }
+  ]
+}
