@@ -1,0 +1,100 @@
+Start time: Tue Jun 16 10:23:00 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+TORCH_HOME: /home/Hongjie_Zeng/.cache/torch
+SLURM_JOB_ID: 285
+Tue Jun 16 22:23:00 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5090        Off |   00000000:16:00.0 Off |                  N/A |
+|  0%   27C    P8             24W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 5090        Off |   00000000:27:00.0 Off |                  N/A |
+|  0%   26C    P8             23W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 5090        Off |   00000000:49:00.0 Off |                  N/A |
+|  0%   26C    P8             30W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 5090        Off |   00000000:5A:00.0 Off |                  N/A |
+|  0%   25C    P8             31W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA GeForce RTX 5090        Off |   00000000:98:00.0 Off |                  N/A |
+|  0%   28C    P8             15W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA GeForce RTX 5090        Off |   00000000:B8:00.0 Off |                  N/A |
+|  0%   28C    P8             25W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA GeForce RTX 5090        Off |   00000000:C8:00.0 Off |                  N/A |
+|  0%   26C    P8             20W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA GeForce RTX 5090        Off |   00000000:D8:00.0 Off |                  N/A |
+|  0%   26C    P8             26W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    1   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    2   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    3   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    4   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    5   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    6   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    7   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
++-----------------------------------------------------------------------------------------+
+SKIP video feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz
+SKIP audio base feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_m96_t64_per_mel_zscore_sigmoid.npz
+SKIP audio CNN feature extraction: /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_cnn_e1024_per_dim_minmax_seed123.npz
+
+[2026-06-16 22:23:00] ENSURE AUDIO CNN e4096 -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_cnn_e4096_per_dim_minmax_seed123.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_audio_cnn_encoder_features.py --audio_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_m96_t64_per_mel_zscore_sigmoid.npz --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_cnn_e4096_per_dim_minmax_seed123.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_cnn_e4096_per_dim_minmax_seed123_summary.json --out_history /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_cnn_e4096_per_dim_minmax_seed123_history.json --out_ckpt /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_cnn_e4096_per_dim_minmax_seed123_teacher.pt --experiment_id A_e4096 --n_mels 96 --n_time 64 --embedding_dim 4096 --normalize per_dim_minmax --epochs 120 --batch_size 48 --eval_batch_size 128 --lr 0.001 --weight_decay 0.0001 --dropout 0.2 --eval_every 5 --seed 123 --num_workers 0 --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_audio_cnn_e4096_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_audio_cnn_e4096_feature_stderr.log
+
+[2026-06-16 22:23:25] ENSURE ALIGNED AV -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_aligned_video4096_audio4096.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_aligned_av_features.py --video_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_videoenc_resnet50_mean_std_per_dim_minmax_f8_s224.npz --audio_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_cnn_e4096_per_dim_minmax_seed123.npz --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_aligned_video4096_audio4096.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_aligned_video4096_audio4096_summary.json
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_aligned_video4096_audio4096_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_aligned_video4096_audio4096_stderr.log
+
+[2026-06-16 22:23:29] TRAIN V044 audio_cnn1024_hidden4 type=standard total=5220
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_audio_cnn_e1024_per_dim_minmax_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V044_audio_cnn1024_hidden4 --experiment_id V044_audio_cnn1024_hidden4 --model_type standard --input_mode audio --total_pbits 5220 --input_dim 1024 --num_classes 20 --label_copies 5 --epochs 220 --batch_size 64 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V044_audio_cnn1024_hidden4_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V044_audio_cnn1024_hidden4_stderr.log
+
+[2026-06-16 22:24:08] TRAIN V045 audio_cnn4096_aligned_hidden4_lc10 type=standard total=20680
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_aligned_video4096_audio4096.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V045_audio_cnn4096_aligned_hidden4_lc10 --experiment_id V045_audio_cnn4096_aligned_hidden4_lc10 --model_type standard --input_mode audio --total_pbits 20680 --input_dim 4096 --num_classes 20 --label_copies 10 --epochs 220 --batch_size 20 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V045_audio_cnn4096_aligned_hidden4_lc10_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V045_audio_cnn4096_aligned_hidden4_lc10_stderr.log
+
+[2026-06-16 22:30:53] TRAIN V046 twoport_aligned_gamma115_lc10 type=twoport total=20680
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_aligned_video4096_audio4096.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V046_twoport_aligned_gamma115_lc10 --experiment_id V046_twoport_aligned_gamma115_lc10 --model_type twoport --input_mode video --total_pbits 20680 --input_dim 4096 --num_classes 20 --label_copies 10 --epochs 220 --batch_size 20 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best --port_a audio --port_o video --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_condition both --label_update binary --neg_init random_onehot --pos_hidden_probs
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V046_twoport_aligned_gamma115_lc10_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V046_twoport_aligned_gamma115_lc10_stderr.log
+
+[2026-06-16 22:44:09] TRAIN V047 twoport_aligned_gamma0_lc10 type=twoport total=20680
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_aligned_video4096_audio4096.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V047_twoport_aligned_gamma0_lc10 --experiment_id V047_twoport_aligned_gamma0_lc10 --model_type twoport --input_mode video --total_pbits 20680 --input_dim 4096 --num_classes 20 --label_copies 10 --epochs 220 --batch_size 20 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best --port_a audio --port_o video --gamma_h 0.0 --gamma_l 0.0 --label_inhibit 0.3 --label_condition both --label_update binary --neg_init random_onehot --pos_hidden_probs
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V047_twoport_aligned_gamma0_lc10_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V047_twoport_aligned_gamma0_lc10_stderr.log
+
+[2026-06-16 22:57:23] TRAIN V048 twoport_aligned_gamma05_lc10 type=twoport total=20680
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_mini/features/vggsound_mini20_aligned_video4096_audio4096.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V048_twoport_aligned_gamma05_lc10 --experiment_id V048_twoport_aligned_gamma05_lc10 --model_type twoport --input_mode video --total_pbits 20680 --input_dim 4096 --num_classes 20 --label_copies 10 --epochs 220 --batch_size 20 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 600 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best --port_a audio --port_o video --gamma_h 0.5 --gamma_l 0.5 --label_inhibit 0.3 --label_condition both --label_update binary --neg_init random_onehot --pos_hidden_probs
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V048_twoport_aligned_gamma05_lc10_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_mini20_V048_twoport_aligned_gamma05_lc10_stderr.log
+VGGSound audio4x aligned two-port sweep finished.
+End time: Tue Jun 16 11:10:38 PM CST 2026
