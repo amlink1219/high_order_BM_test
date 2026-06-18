@@ -1,0 +1,388 @@
+Start time: Thu Jun 18 03:28:23 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+TORCH_HOME: /home/Hongjie_Zeng/.cache/torch
+SLURM_JOB_ID: 286
+Thu Jun 18 15:28:23 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5090        Off |   00000000:16:00.0 Off |                  N/A |
+|  0%   29C    P8             25W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 5090        Off |   00000000:27:00.0 Off |                  N/A |
+|  0%   28C    P8             24W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 5090        Off |   00000000:49:00.0 Off |                  N/A |
+|  0%   27C    P8             28W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 5090        Off |   00000000:5A:00.0 Off |                  N/A |
+|  0%   27C    P8             29W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA GeForce RTX 5090        Off |   00000000:98:00.0 Off |                  N/A |
+|  0%   29C    P8             16W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA GeForce RTX 5090        Off |   00000000:B8:00.0 Off |                  N/A |
+|  0%   29C    P8             25W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA GeForce RTX 5090        Off |   00000000:C8:00.0 Off |                  N/A |
+|  0%   27C    P8             24W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA GeForce RTX 5090        Off |   00000000:D8:00.0 Off |                  N/A |
+|  0%   28C    P8             27W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    1   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    2   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    3   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    4   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    5   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    6   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    7   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
++-----------------------------------------------------------------------------------------+
+
+[2026-06-18 15:28:24] EXTRACT f8 in 4 GPU shards -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_visual_motion_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard0of4_raw.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard0of4_raw_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard0of4_raw_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_minmax --num_frames 8 --video_fps 4 --frame_size 224 --timeout 120 --max_classes 0 --min_train 50 --min_test 10 --num_shards 4 --shard_index 0 --raw_output --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_feature_shard0_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_feature_shard0_stderr.log
+CUDA_VISIBLE_DEVICES=0
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_visual_motion_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard1of4_raw.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard1of4_raw_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard1of4_raw_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_minmax --num_frames 8 --video_fps 4 --frame_size 224 --timeout 120 --max_classes 0 --min_train 50 --min_test 10 --num_shards 4 --shard_index 1 --raw_output --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_feature_shard1_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_feature_shard1_stderr.log
+CUDA_VISIBLE_DEVICES=1
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_visual_motion_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard2of4_raw.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard2of4_raw_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard2of4_raw_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_minmax --num_frames 8 --video_fps 4 --frame_size 224 --timeout 120 --max_classes 0 --min_train 50 --min_test 10 --num_shards 4 --shard_index 2 --raw_output --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_feature_shard2_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_feature_shard2_stderr.log
+CUDA_VISIBLE_DEVICES=2
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_visual_motion_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard3of4_raw.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard3of4_raw_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard3of4_raw_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_minmax --num_frames 8 --video_fps 4 --frame_size 224 --timeout 120 --max_classes 0 --min_train 50 --min_test 10 --num_shards 4 --shard_index 3 --raw_output --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_feature_shard3_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_feature_shard3_stderr.log
+CUDA_VISIBLE_DEVICES=3
+[2026-06-18 15:28:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:29:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:30:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:31:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:32:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:33:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:34:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:35:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:36:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:37:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:38:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:39:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:40:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:41:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:42:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:43:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:44:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:45:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:46:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:47:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:48:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:49:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:50:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:51:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:52:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:53:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:54:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:55:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:56:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:57:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:58:24] waiting for 4/4 feature shard processes
+[2026-06-18 15:59:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:00:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:01:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:02:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:03:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:04:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:05:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:06:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:07:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:08:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:09:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:10:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:11:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:12:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:13:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:14:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:15:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:16:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:17:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:18:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:19:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:20:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:21:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:22:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:23:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:24:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:25:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:26:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:27:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:28:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:29:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:30:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:31:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:32:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:33:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:34:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:35:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:36:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:37:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:38:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:39:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:40:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:41:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:42:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:43:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:44:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:45:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:46:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:47:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:48:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:49:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:50:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:51:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:52:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:53:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:54:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:55:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:56:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:57:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:58:24] waiting for 4/4 feature shard processes
+[2026-06-18 16:59:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:00:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:01:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:02:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:03:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:04:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:05:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:06:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:07:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:08:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:09:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:10:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:11:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:12:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:13:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:14:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:15:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:16:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:17:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:18:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:19:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:20:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:21:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:22:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:23:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:24:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:25:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:26:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:27:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:28:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:29:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:30:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:31:24] waiting for 4/4 feature shard processes
+[2026-06-18 17:32:24] waiting for 2/4 feature shard processes
+[2026-06-18 17:33:24] waiting for 2/4 feature shard processes
+[2026-06-18 17:34:24] waiting for 2/4 feature shard processes
+[2026-06-18 17:35:24] waiting for 2/4 feature shard processes
+[2026-06-18 17:36:24] waiting for 1/4 feature shard processes
+[2026-06-18 17:37:24] waiting for 1/4 feature shard processes
+
+[2026-06-18 17:38:24] MERGE f8 shards -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python merge_vggsound_full_visual_motion_shards.py --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_summary.json --normalize per_dim_minmax --shards /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard0of4_raw.npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard1of4_raw.npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard2of4_raw.npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224_shard3of4_raw.npz
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_merge_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f8_visual_motion_merge_stderr.log
+
+[2026-06-18 17:42:41] EXTRACT f16 in 4 GPU shards -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_visual_motion_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard0of4_raw.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard0of4_raw_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard0of4_raw_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_minmax --num_frames 16 --video_fps 4 --frame_size 224 --timeout 120 --max_classes 0 --min_train 50 --min_test 10 --num_shards 4 --shard_index 0 --raw_output --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_feature_shard0_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_feature_shard0_stderr.log
+CUDA_VISIBLE_DEVICES=0
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_visual_motion_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard1of4_raw.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard1of4_raw_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard1of4_raw_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_minmax --num_frames 16 --video_fps 4 --frame_size 224 --timeout 120 --max_classes 0 --min_train 50 --min_test 10 --num_shards 4 --shard_index 1 --raw_output --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_feature_shard1_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_feature_shard1_stderr.log
+CUDA_VISIBLE_DEVICES=1
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_visual_motion_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard2of4_raw.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard2of4_raw_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard2of4_raw_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_minmax --num_frames 16 --video_fps 4 --frame_size 224 --timeout 120 --max_classes 0 --min_train 50 --min_test 10 --num_shards 4 --shard_index 2 --raw_output --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_feature_shard2_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_feature_shard2_stderr.log
+CUDA_VISIBLE_DEVICES=2
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_visual_motion_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard3of4_raw.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard3of4_raw_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard3of4_raw_summary.json --encoder resnet50 --pool mean_std --normalize per_dim_minmax --num_frames 16 --video_fps 4 --frame_size 224 --timeout 120 --max_classes 0 --min_train 50 --min_test 10 --num_shards 4 --shard_index 3 --raw_output --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_feature_shard3_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_feature_shard3_stderr.log
+CUDA_VISIBLE_DEVICES=3
+[2026-06-18 17:42:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:43:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:44:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:45:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:46:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:47:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:48:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:49:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:50:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:51:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:52:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:53:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:54:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:55:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:56:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:57:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:58:41] waiting for 4/4 feature shard processes
+[2026-06-18 17:59:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:00:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:01:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:02:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:03:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:04:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:05:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:06:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:07:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:08:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:09:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:10:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:11:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:12:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:13:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:14:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:15:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:16:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:17:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:18:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:19:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:20:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:21:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:22:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:23:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:24:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:25:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:26:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:27:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:28:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:29:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:30:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:31:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:32:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:33:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:34:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:35:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:36:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:37:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:38:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:39:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:40:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:41:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:42:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:43:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:44:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:45:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:46:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:47:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:48:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:49:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:50:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:51:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:52:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:53:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:54:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:55:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:56:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:57:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:58:41] waiting for 4/4 feature shard processes
+[2026-06-18 18:59:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:00:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:01:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:02:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:03:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:04:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:05:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:06:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:07:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:08:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:09:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:10:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:11:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:12:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:13:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:14:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:15:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:16:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:17:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:18:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:19:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:20:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:21:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:22:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:23:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:24:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:25:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:26:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:27:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:28:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:29:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:30:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:31:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:32:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:33:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:34:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:35:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:36:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:37:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:38:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:39:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:40:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:41:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:42:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:43:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:44:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:45:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:46:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:47:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:48:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:49:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:50:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:51:41] waiting for 4/4 feature shard processes
+[2026-06-18 19:52:41] waiting for 4/4 feature shard processes
+
+[2026-06-18 19:53:41] MERGE f16 shards -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python merge_vggsound_full_visual_motion_shards.py --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224.npz --out_manifest /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_manifest.csv --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_summary.json --normalize per_dim_minmax --shards /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard0of4_raw.npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard1of4_raw.npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard2of4_raw.npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224_shard3of4_raw.npz
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_merge_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_f16_visual_motion_merge_stderr.log
+
+[2026-06-18 19:59:10] TRAIN VF001 video_resnet50_meanstd_f8_h4_lc5 classes=309 input=4096 label=1545 hidden=16384 total=22025
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF001_video_resnet50_meanstd_f8_h4_lc5 --experiment_id VF001_video_resnet50_meanstd_f8_h4_lc5 --model_type standard --input_mode video --total_pbits 22025 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 60 --batch_size 128 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 400 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF001_video_resnet50_meanstd_f8_h4_lc5_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF001_video_resnet50_meanstd_f8_h4_lc5_stderr.log
+
+[2026-06-18 20:30:30] TRAIN VF002 motion_diffresnet50_meanstd_f8_h4_lc5 classes=309 input=4096 label=1545 hidden=16384 total=22025
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f8_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF002_motion_diffresnet50_meanstd_f8_h4_lc5 --experiment_id VF002_motion_diffresnet50_meanstd_f8_h4_lc5 --model_type standard --input_mode motion --total_pbits 22025 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 60 --batch_size 128 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 400 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF002_motion_diffresnet50_meanstd_f8_h4_lc5_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF002_motion_diffresnet50_meanstd_f8_h4_lc5_stderr.log
+
+[2026-06-18 21:01:57] TRAIN VF003 video_resnet50_meanstd_f16_h4_lc5 classes=309 input=4096 label=1545 hidden=16384 total=22025
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF003_video_resnet50_meanstd_f16_h4_lc5 --experiment_id VF003_video_resnet50_meanstd_f16_h4_lc5 --model_type standard --input_mode video --total_pbits 22025 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 60 --batch_size 128 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 400 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF003_video_resnet50_meanstd_f16_h4_lc5_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF003_video_resnet50_meanstd_f16_h4_lc5_stderr.log
+
+[2026-06-18 21:33:29] TRAIN VF004 motion_diffresnet50_meanstd_f16_h4_lc5 classes=309 input=4096 label=1545 hidden=16384 total=22025
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF004_motion_diffresnet50_meanstd_f16_h4_lc5 --experiment_id VF004_motion_diffresnet50_meanstd_f16_h4_lc5 --model_type standard --input_mode motion --total_pbits 22025 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 60 --batch_size 128 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 400 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF004_motion_diffresnet50_meanstd_f16_h4_lc5_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF004_motion_diffresnet50_meanstd_f16_h4_lc5_stderr.log
+End time: Thu Jun 18 10:03:59 PM CST 2026
