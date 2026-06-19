@@ -1,0 +1,86 @@
+Start time: Fri Jun 19 01:50:13 AM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+TORCH_HOME: /home/Hongjie_Zeng/.cache/torch
+SLURM_JOB_ID: 288
+This job reuses existing f16 ResNet50 features; no video feature extraction is run.
+Fri Jun 19 01:50:13 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5090        Off |   00000000:16:00.0 Off |                  N/A |
+| 52%   74C    P1            571W /  575W |    3387MiB /  32607MiB |     98%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 5090        Off |   00000000:27:00.0 Off |                  N/A |
+|  0%   28C    P8             24W /  575W |      18MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 5090        Off |   00000000:49:00.0 Off |                  N/A |
+|  0%   23C    P8             29W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 5090        Off |   00000000:5A:00.0 Off |                  N/A |
+|  0%   22C    P8             28W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA GeForce RTX 5090        Off |   00000000:98:00.0 Off |                  N/A |
+|  0%   25C    P8             16W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA GeForce RTX 5090        Off |   00000000:B8:00.0 Off |                  N/A |
+|  0%   25C    P8             24W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA GeForce RTX 5090        Off |   00000000:C8:00.0 Off |                  N/A |
+|  0%   23C    P8             23W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA GeForce RTX 5090        Off |   00000000:D8:00.0 Off |                  N/A |
+|  0%   24C    P8             27W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    0   N/A  N/A          559154      C   ...a/envs/hongjie_env/bin/python       3364MiB |
+|    1   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    2   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    3   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    4   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    5   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    6   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    7   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
++-----------------------------------------------------------------------------------------+
+PREPARE resume best: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF003_video_resnet50_meanstd_f16_h4_lc5/best.pt -> /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF005_video_resnet50_meanstd_f16_h4_lc5_resume120/best.pt
+
+[2026-06-19 01:50:14] TRAIN VF005 video_resnet50_meanstd_f16_h4_lc5_resume120 classes=309 input=4096 label=1545 hidden=16384 total=22025
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF005_video_resnet50_meanstd_f16_h4_lc5_resume120 --experiment_id VF005_video_resnet50_meanstd_f16_h4_lc5_resume120 --model_type standard --input_mode video --total_pbits 22025 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 120 --batch_size 128 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 400 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best --resume_ckpt /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF003_video_resnet50_meanstd_f16_h4_lc5/last.pt --resume_history_json /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF003_video_resnet50_meanstd_f16_h4_lc5/history.json
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF005_video_resnet50_meanstd_f16_h4_lc5_resume120_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF005_video_resnet50_meanstd_f16_h4_lc5_resume120_stderr.log
+PREPARE resume best: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF005_video_resnet50_meanstd_f16_h4_lc5_resume120/best.pt -> /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF006_video_resnet50_meanstd_f16_h4_lc5_resume180/best.pt
+
+[2026-06-19 02:21:44] TRAIN VF006 video_resnet50_meanstd_f16_h4_lc5_resume180 classes=309 input=4096 label=1545 hidden=16384 total=22025
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF006_video_resnet50_meanstd_f16_h4_lc5_resume180 --experiment_id VF006_video_resnet50_meanstd_f16_h4_lc5_resume180 --model_type standard --input_mode video --total_pbits 22025 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 180 --batch_size 128 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 400 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best --resume_ckpt /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF005_video_resnet50_meanstd_f16_h4_lc5_resume120/last.pt --resume_history_json /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF005_video_resnet50_meanstd_f16_h4_lc5_resume120/history.json
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF006_video_resnet50_meanstd_f16_h4_lc5_resume180_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF006_video_resnet50_meanstd_f16_h4_lc5_resume180_stderr.log
+
+[2026-06-19 02:52:55] TRAIN VF007 video_resnet50_meanstd_f16_h6_lc5_e120 classes=309 input=4096 label=1545 hidden=24576 total=30217
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF007_video_resnet50_meanstd_f16_h6_lc5_e120 --experiment_id VF007_video_resnet50_meanstd_f16_h6_lc5_e120 --model_type standard --input_mode video --total_pbits 30217 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 120 --batch_size 96 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 400 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF007_video_resnet50_meanstd_f16_h6_lc5_e120_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF007_video_resnet50_meanstd_f16_h6_lc5_e120_stderr.log
+
+[2026-06-19 04:18:43] TRAIN VF008 video_resnet50_meanstd_f16_h8_lc5_e120 classes=309 input=4096 label=1545 hidden=32768 total=38409
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_visual_motion_resnet50_meanstd_allclasses_f16_s224.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF008_video_resnet50_meanstd_f16_h8_lc5_e120 --experiment_id VF008_video_resnet50_meanstd_f16_h8_lc5_e120 --model_type standard --input_mode video --total_pbits 38409 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 120 --batch_size 64 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 400 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF008_video_resnet50_meanstd_f16_h8_lc5_e120_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF008_video_resnet50_meanstd_f16_h8_lc5_e120_stderr.log
+VGGSound full f16 follow-up finished.
+End time: Fri Jun 19 06:23:46 AM CST 2026
