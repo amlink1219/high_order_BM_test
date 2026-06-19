@@ -1,0 +1,96 @@
+Start time: Fri Jun 19 06:42:04 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+TORCH_HOME: /home/Hongjie_Zeng/.cache/torch
+SLURM_JOB_ID: 292
+This job trains supervised audio CNN-BiLSTM encoders on STFT128x96 with DataParallel, exports embeddings, then trains audio-only standard BM baselines.
+The CNN-BiLSTM teacher uses up to 4 GPUs. The BM training stage is still single-GPU.
+Fri Jun 19 18:42:04 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5090        Off |   00000000:16:00.0 Off |                  N/A |
+| 39%   64C    P1            462W /  575W |    5127MiB /  32607MiB |     94%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GeForce RTX 5090        Off |   00000000:27:00.0 Off |                  N/A |
+| 46%   73C    P1            553W /  575W |    3387MiB /  32607MiB |     98%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GeForce RTX 5090        Off |   00000000:49:00.0 Off |                  N/A |
+|  0%   22C    P8             28W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GeForce RTX 5090        Off |   00000000:5A:00.0 Off |                  N/A |
+|  0%   21C    P8             29W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA GeForce RTX 5090        Off |   00000000:98:00.0 Off |                  N/A |
+|  0%   24C    P8             16W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA GeForce RTX 5090        Off |   00000000:B8:00.0 Off |                  N/A |
+|  0%   24C    P8             23W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA GeForce RTX 5090        Off |   00000000:C8:00.0 Off |                  N/A |
+|  0%   22C    P8             21W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA GeForce RTX 5090        Off |   00000000:D8:00.0 Off |                  N/A |
+|  0%   22C    P8             25W /  575W |      15MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    0   N/A  N/A          981969      C   ...a/envs/hongjie_env/bin/python       5104MiB |
+|    1   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    1   N/A  N/A         1059231      C   ...a/envs/hongjie_env/bin/python       3364MiB |
+|    2   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    3   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    4   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    5   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    6   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
+|    7   N/A  N/A            3919      G   /usr/lib/xorg/Xorg                        4MiB |
++-----------------------------------------------------------------------------------------+
+
+[2026-06-19 18:42:04] TRAIN AUDIO CNN-LSTM FEATURE ACL001 -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm2048_stft128x96_per_dim_zscore_sigmoid_seed123.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_audio_cnn_lstm_encoder_features.py --audio_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_stft128x96_official5s_allclasses_sr16000_n512_o353.npz --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm2048_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm2048_stft128x96_per_dim_zscore_sigmoid_seed123_summary.json --out_history /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm2048_stft128x96_per_dim_zscore_sigmoid_seed123_history.json --out_ckpt /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm2048_stft128x96_per_dim_zscore_sigmoid_seed123_teacher.pt --experiment_id ACL001 --n_freq 128 --n_time 96 --embedding_dim 2048 --cnn_width 32 --lstm_input_dim 512 --lstm_hidden 512 --lstm_layers 1 --normalize per_dim_zscore_sigmoid --epochs 50 --batch_size 512 --eval_batch_size 512 --lr 0.001 --weight_decay 0.0001 --dropout 0.25 --eval_every 5 --seed 123 --num_workers 0 --device auto --amp --data_parallel
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_ACL001_audio_cnnlstm2048_stft128x96_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_ACL001_audio_cnnlstm2048_stft128x96_feature_stderr.log
+
+[2026-06-19 19:06:07] TRAIN AUDIO CNN-LSTM FEATURE ACL002 -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_audio_cnn_lstm_encoder_features.py --audio_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_stft128x96_official5s_allclasses_sr16000_n512_o353.npz --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123_summary.json --out_history /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123_history.json --out_ckpt /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123_teacher.pt --experiment_id ACL002 --n_freq 128 --n_time 96 --embedding_dim 4096 --cnn_width 32 --lstm_input_dim 512 --lstm_hidden 512 --lstm_layers 1 --normalize per_dim_zscore_sigmoid --epochs 50 --batch_size 512 --eval_batch_size 512 --lr 0.001 --weight_decay 0.0001 --dropout 0.25 --eval_every 5 --seed 123 --num_workers 0 --device auto --amp --data_parallel
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_ACL002_audio_cnnlstm4096_stft128x96_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_ACL002_audio_cnnlstm4096_stft128x96_feature_stderr.log
+
+[2026-06-19 19:30:33] TRAIN AUDIO BM AF009 standard_audio_cnnlstm2048_h4_lc5_e180 classes=309 input=2048 label=1545 hidden=8192 total=11785
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm2048_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF009_standard_audio_cnnlstm2048_h4_lc5_e180 --experiment_id AF009_standard_audio_cnnlstm2048_h4_lc5_e180 --model_type standard --input_mode audio --total_pbits 11785 --input_dim 2048 --num_classes 309 --label_copies 5 --epochs 180 --batch_size 128 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF009_standard_audio_cnnlstm2048_h4_lc5_e180_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF009_standard_audio_cnnlstm2048_h4_lc5_e180_stderr.log
+
+[2026-06-19 20:09:13] TRAIN AUDIO BM AF010 standard_audio_cnnlstm2048_h6_lc5_e180 classes=309 input=2048 label=1545 hidden=12288 total=15881
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm2048_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF010_standard_audio_cnnlstm2048_h6_lc5_e180 --experiment_id AF010_standard_audio_cnnlstm2048_h6_lc5_e180 --model_type standard --input_mode audio --total_pbits 15881 --input_dim 2048 --num_classes 309 --label_copies 5 --epochs 180 --batch_size 128 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF010_standard_audio_cnnlstm2048_h6_lc5_e180_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF010_standard_audio_cnnlstm2048_h6_lc5_e180_stderr.log
+
+[2026-06-19 21:00:03] TRAIN AUDIO BM AF011 standard_audio_cnnlstm4096_h4_lc5_e180 classes=309 input=4096 label=1545 hidden=16384 total=22025
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF011_standard_audio_cnnlstm4096_h4_lc5_e180 --experiment_id AF011_standard_audio_cnnlstm4096_h4_lc5_e180 --model_type standard --input_mode audio --total_pbits 22025 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 180 --batch_size 128 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF011_standard_audio_cnnlstm4096_h4_lc5_e180_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF011_standard_audio_cnnlstm4096_h4_lc5_e180_stderr.log
+
+[2026-06-19 22:21:15] TRAIN AUDIO BM AF012 standard_audio_cnnlstm4096_h6_lc5_e180 classes=309 input=4096 label=1545 hidden=24576 total=30217
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF012_standard_audio_cnnlstm4096_h6_lc5_e180 --experiment_id AF012_standard_audio_cnnlstm4096_h6_lc5_e180 --model_type standard --input_mode audio --total_pbits 30217 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 180 --batch_size 96 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF012_standard_audio_cnnlstm4096_h6_lc5_e180_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF012_standard_audio_cnnlstm4096_h6_lc5_e180_stderr.log
+VGGSound full audio CNN-LSTM BM sweep finished.
+End time: Sat Jun 20 12:33:52 AM CST 2026
