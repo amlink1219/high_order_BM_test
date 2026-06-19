@@ -1,0 +1,13 @@
+[data] train=182615 test=15341 classes=309 video=4096 motion=4096 audio=1 device=cuda
+[model] standard input=4096 label=1545 hidden=49152 total=54793 mode=video
+[init] estimating visible bias from training set
+[epoch 001] recon_mse=0.02974
+[epoch 002] recon_mse=0.02585
+[epoch 003] recon_mse=0.02401
+[epoch 004] recon_mse=0.02283
+[epoch 005] recon_mse=0.02195 quick_test_acc=0.1352 ent=5.2191
+[epoch 006] recon_mse=0.02124
+[epoch 007] recon_mse=0.02065
+[epoch 008] recon_mse=0.02014
+[epoch 009] recon_mse=0.01969
+[epoch 010] recon_mse=0.01929 quick_test_acc=0.1761 ent=4.8373
