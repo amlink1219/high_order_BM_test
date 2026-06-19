@@ -140,10 +140,11 @@ def make_loaders(args) -> Tuple[DataLoader, DataLoader, Dict]:
     return train_loader, test_loader, dims
 
 
-def save_standard_checkpoint(path: Path, bm: StandardBernoulliBM, epoch: int, best_acc: float, config: dict) -> None:
+def save_standard_checkpoint(path: Path, bm: StandardBernoulliBM, epoch: int, best_acc: float, config: dict, best_epoch: int | None = None) -> None:
     torch.save(
         {
             "epoch": epoch,
+            "best_epoch": int(epoch if best_epoch is None else best_epoch),
             "best_acc": best_acc,
             "config": config,
             "model": bm.state_dict(),
@@ -229,7 +230,7 @@ def train_standard(args, device: torch.device, train_loader: DataLoader, test_lo
         bm.load_state_dict(ckpt["model"])
         start_epoch = int(ckpt.get("epoch", 0)) + 1
         best_acc = float(ckpt.get("best_acc", -1.0))
-        best_epoch = int(ckpt.get("epoch", 0))
+        best_epoch = int(ckpt.get("best_epoch", ckpt.get("epoch", 0)))
         history = json.loads(Path(args.resume_history_json or Path(args.resume_ckpt).parent / "history.json").read_text(encoding="utf-8"))
     else:
         start_epoch = 1
@@ -281,13 +282,13 @@ def train_standard(args, device: torch.device, train_loader: DataLoader, test_lo
             if acc > best_acc:
                 best_acc = acc
                 best_epoch = epoch
-                save_standard_checkpoint(out_dir / "best.pt", bm, epoch, best_acc, config)
+                save_standard_checkpoint(out_dir / "best.pt", bm, epoch, best_acc, config, best_epoch=best_epoch)
             print(f"[epoch {epoch:03d}] recon_mse={row['train_recon_mse']:.5f} quick_test_acc={acc:.4f} ent={entropy:.4f}", flush=True)
         else:
             print(f"[epoch {epoch:03d}] recon_mse={row['train_recon_mse']:.5f}", flush=True)
         history.append(row)
         (out_dir / "history.json").write_text(json.dumps(history, indent=2), encoding="utf-8")
-        save_standard_checkpoint(out_dir / "last.pt", bm, epoch, best_acc, config)
+        save_standard_checkpoint(out_dir / "last.pt", bm, epoch, best_acc, config, best_epoch=best_epoch)
 
     full_result = None
     if args.full_eval_on_best and (out_dir / "best.pt").exists():
