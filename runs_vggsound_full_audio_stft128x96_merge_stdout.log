@@ -1,0 +1,7 @@
+{
+  "train_size": 182615,
+  "test_size": 15341,
+  "num_classes": 309,
+  "audio_dim": 12288
+}
+[2026-06-18 23:21:43] wrote /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_stft128x96_official5s_allclasses_sr16000_n512_o353.npz
