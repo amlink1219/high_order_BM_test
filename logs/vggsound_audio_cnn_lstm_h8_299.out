@@ -1,0 +1,17 @@
+Start time: Sat Jun 20 04:03:15 AM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 299
+CUDA_VISIBLE_DEVICES: 2
+
+[2026-06-20 04:03:16] TRAIN H8 AF020 to epoch 300 hidden=32768 total=38409
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF020_standard_audio_cnnlstm4096_h8_lc5_e300 --experiment_id AF020_standard_audio_cnnlstm4096_h8_lc5_e300 --model_type standard --input_mode audio --total_pbits 38409 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 300 --batch_size 64 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF020_standard_audio_cnnlstm4096_h8_lc5_e300_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF020_standard_audio_cnnlstm4096_h8_lc5_e300_stderr.log
+
+[2026-06-20 09:16:28] TRAIN H8 AF021 to epoch 500 hidden=32768 total=38409
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF021_standard_audio_cnnlstm4096_h8_lc5_e500_resume_af020 --experiment_id AF021_standard_audio_cnnlstm4096_h8_lc5_e500_resume_af020 --model_type standard --input_mode audio --total_pbits 38409 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 500 --batch_size 64 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best --resume_ckpt /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF020_standard_audio_cnnlstm4096_h8_lc5_e300/last.pt --resume_history_json /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF020_standard_audio_cnnlstm4096_h8_lc5_e300/history.json
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF021_standard_audio_cnnlstm4096_h8_lc5_e500_resume_af020_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF021_standard_audio_cnnlstm4096_h8_lc5_e500_resume_af020_stderr.log
+CNN-LSTM4096 h8 BM training finished.
+End time: Sat Jun 20 12:47:00 PM CST 2026
