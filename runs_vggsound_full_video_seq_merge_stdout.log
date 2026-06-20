@@ -1,0 +1,21 @@
+{
+  "created_at": "2026-06-20 07:21:58",
+  "out_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_resnet50_seq_f16_s224_allclasses.npz",
+  "shards": [
+    "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_resnet50_seq_f16_s224_allclasses_shard0of1.npz"
+  ],
+  "train_size": 182615,
+  "test_size": 15341,
+  "num_classes": 309,
+  "sequence_shape_train": [
+    182615,
+    16,
+    2048
+  ],
+  "sequence_shape_test": [
+    15341,
+    16,
+    2048
+  ],
+  "dtype": "float16"
+}
