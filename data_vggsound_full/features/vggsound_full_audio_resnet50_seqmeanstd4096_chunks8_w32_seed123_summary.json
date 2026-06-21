@@ -1,0 +1,17 @@
+{
+  "experiment_id": "ARF002_meanstd",
+  "created_at": "2026-06-20 22:10:40",
+  "source_seq_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_resnet50_seq_chunks8_w32_stft128x96_seed123.npz",
+  "out_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_resnet50_seqmeanstd4096_chunks8_w32_seed123.npz",
+  "embedding_dim": 4096,
+  "normalize": "per_dim_zscore_sigmoid",
+  "normalization_params_summary": {
+    "mode": "per_dim_zscore_sigmoid",
+    "mu_mean": 0.4179081916809082,
+    "sd_mean": 0.6191197633743286
+  },
+  "train_size": 182615,
+  "test_size": 15341,
+  "num_classes": 309,
+  "note": "Mean/std pooled audio ResNet50 chunk-sequence feature for BM input_mode=audio."
+}

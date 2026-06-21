@@ -1,0 +1,35 @@
+{
+  "global_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_global2048_seed123.npz",
+  "global_embedding_dim": 2048,
+  "global_normalization": {
+    "mode": "per_dim_zscore_sigmoid",
+    "mu_mean": 0.16210000216960907,
+    "sd_mean": 0.2451399564743042
+  },
+  "seq_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seq_chunks4_w500_seed123.npz",
+  "seq_shape_train": [
+    182615,
+    4,
+    2048
+  ],
+  "seq_shape_test": [
+    15341,
+    4,
+    2048
+  ],
+  "meanstd_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seqmeanstd4096_chunks4_w500_seed123.npz",
+  "meanstd_embedding_dim": 4096,
+  "meanstd_normalization": {
+    "mode": "per_dim_zscore_sigmoid",
+    "mu_mean": 0.11140131950378418,
+    "sd_mean": 0.16239364445209503
+  },
+  "sequence_num_chunks": 4,
+  "sequence_chunk_frames": 500,
+  "sequence_chunk_starts": [
+    0,
+    168,
+    336,
+    504
+  ]
+}

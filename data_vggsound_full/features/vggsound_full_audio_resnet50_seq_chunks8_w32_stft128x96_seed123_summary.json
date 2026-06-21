@@ -1,0 +1,35 @@
+{
+  "experiment_id": "ARF002",
+  "created_at": "2026-06-20 22:10:40",
+  "audio_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_stft128x96_official5s_allclasses_sr16000_n512_o353.npz",
+  "teacher_ckpt": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_resnet50_stft128x96_per_dim_zscore_sigmoid_seed123_teacher_best.pt",
+  "out_seq_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_resnet50_seq_chunks8_w32_stft128x96_seed123.npz",
+  "seq_shape_train": [
+    182615,
+    8,
+    2048
+  ],
+  "seq_shape_test": [
+    15341,
+    8,
+    2048
+  ],
+  "n_freq": 128,
+  "n_time": 96,
+  "num_chunks": 8,
+  "chunk_frames": 32,
+  "chunk_starts": [
+    0,
+    9,
+    18,
+    27,
+    37,
+    46,
+    55,
+    64
+  ],
+  "train_size": 182615,
+  "test_size": 15341,
+  "num_classes": 309,
+  "note": "Sequence is per-chunk 2048-d audio ResNet50 backbone embedding from STFT temporal windows."
+}

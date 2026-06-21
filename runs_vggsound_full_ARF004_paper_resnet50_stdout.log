@@ -1,0 +1,165 @@
+[2026-06-20 22:38:01] train paper-STFT audio ResNet50 teacher data_dir=/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/audio_paper_stft257x1004 device=cuda
+[data_parallel] using 2 GPUs for paper-STFT audio ResNet50
+[epoch 001] ce=2.3233 lr=1.00e-03
+[epoch 002] ce=1.6058 test_top1=0.3975 test_top5=0.6843 lr=1.00e-03
+[epoch 003] ce=1.3941 lr=1.00e-03
+[epoch 004] ce=1.2657 test_top1=0.4576 test_top5=0.7367 lr=1.00e-03
+[epoch 005] ce=1.1516 lr=1.00e-03
+[epoch 006] ce=1.0603 test_top1=0.4712 test_top5=0.7487 lr=1.00e-03
+[epoch 007] ce=0.9770 lr=1.00e-03
+[epoch 008] ce=0.8976 test_top1=0.4815 test_top5=0.7505 lr=1.00e-03
+[epoch 009] ce=0.8266 lr=1.00e-03
+[epoch 010] ce=0.7631 test_top1=0.4708 test_top5=0.7418 lr=1.00e-03
+[epoch 011] ce=0.7043 lr=1.00e-03
+[epoch 012] ce=0.6458 test_top1=0.4876 test_top5=0.7539 lr=1.00e-03
+[epoch 013] ce=0.5898 lr=1.00e-03
+[epoch 014] ce=0.5448 test_top1=0.4861 test_top5=0.7478 lr=1.00e-03
+[epoch 015] ce=0.4969 lr=1.00e-03
+[epoch 016] ce=0.4615 test_top1=0.4875 test_top5=0.7544 lr=1.00e-03
+[epoch 017] ce=0.4226 lr=1.00e-03
+[epoch 018] ce=0.3939 test_top1=0.4936 test_top5=0.7565 lr=1.00e-03
+[epoch 019] ce=0.3644 lr=1.00e-03
+[epoch 020] ce=0.3355 test_top1=0.4959 test_top5=0.7593 lr=1.00e-03
+[epoch 021] ce=0.3169 lr=1.00e-03
+[epoch 022] ce=0.2928 test_top1=0.4974 test_top5=0.7555 lr=1.00e-03
+[epoch 023] ce=0.2759 lr=1.00e-03
+[epoch 024] ce=0.2611 test_top1=0.4912 test_top5=0.7483 lr=1.00e-03
+[epoch 025] ce=0.2494 lr=1.00e-03
+[epoch 026] ce=0.2344 test_top1=0.4963 test_top5=0.7515 lr=1.00e-03
+[epoch 027] ce=0.2216 lr=1.00e-03
+[epoch 028] ce=0.2150 test_top1=0.4972 test_top5=0.7502 lr=1.00e-03
+[epoch 029] ce=0.2050 lr=1.00e-03
+[epoch 030] ce=0.1961 test_top1=0.4870 test_top5=0.7515 lr=1.00e-03
+[epoch 031] ce=0.1133 lr=1.00e-04
+[epoch 032] ce=0.0889 test_top1=0.5142 test_top5=0.7676 lr=1.00e-04
+[epoch 033] ce=0.0776 lr=1.00e-04
+[epoch 034] ce=0.0695 test_top1=0.5170 test_top5=0.7694 lr=1.00e-04
+[epoch 035] ce=0.0647 lr=1.00e-04
+[epoch 036] ce=0.0611 test_top1=0.5148 test_top5=0.7698 lr=1.00e-04
+[epoch 037] ce=0.0579 lr=1.00e-04
+[epoch 038] ce=0.0560 test_top1=0.5139 test_top5=0.7689 lr=1.00e-04
+[epoch 039] ce=0.0526 lr=1.00e-04
+[epoch 040] ce=0.0497 test_top1=0.5136 test_top5=0.7677 lr=1.00e-04
+[epoch 041] ce=0.0481 lr=1.00e-04
+[epoch 042] ce=0.0462 test_top1=0.5143 test_top5=0.7687 lr=1.00e-04
+[epoch 043] ce=0.0441 lr=1.00e-05
+[epoch 044] ce=0.0430 test_top1=0.5147 test_top5=0.7704 lr=1.00e-05
+[epoch 045] ce=0.0413 lr=1.00e-05
+[epoch 046] ce=0.0416 test_top1=0.5160 test_top5=0.7702 lr=1.00e-05
+[epoch 047] ce=0.0394 lr=1.00e-05
+[epoch 048] ce=0.0398 test_top1=0.5144 test_top5=0.7694 lr=1.00e-05
+[epoch 049] ce=0.0399 lr=1.00e-05
+[epoch 050] ce=0.0396 test_top1=0.5155 test_top5=0.7693 lr=1.00e-05
+[epoch 051] ce=0.0402 lr=1.00e-06
+[epoch 052] ce=0.0397 test_top1=0.5163 test_top5=0.7691 lr=1.00e-06
+[epoch 053] ce=0.0393 lr=1.00e-06
+[epoch 054] ce=0.0391 test_top1=0.5155 test_top5=0.7685 lr=1.00e-06
+[epoch 055] ce=0.0386 lr=1.00e-06
+[epoch 056] ce=0.0392 test_top1=0.5160 test_top5=0.7691 lr=1.00e-06
+[epoch 057] ce=0.0385 lr=1.00e-06
+[epoch 058] ce=0.0379 test_top1=0.5167 test_top5=0.7704 lr=1.00e-06
+[epoch 059] ce=0.0387 lr=1.00e-07
+[epoch 060] ce=0.0385 test_top1=0.5170 test_top5=0.7700 lr=1.00e-07
+[epoch 061] ce=0.0393 lr=1.00e-07
+[epoch 062] ce=0.0392 test_top1=0.5155 test_top5=0.7700 lr=1.00e-07
+[epoch 063] ce=0.0391 lr=1.00e-07
+[epoch 064] ce=0.0394 test_top1=0.5167 test_top5=0.7700 lr=1.00e-07
+[epoch 065] ce=0.0395 lr=1.00e-07
+[epoch 066] ce=0.0387 test_top1=0.5167 test_top5=0.7703 lr=1.00e-07
+[epoch 067] ce=0.0390 lr=1.00e-08
+[epoch 068] ce=0.0382 test_top1=0.5161 test_top5=0.7691 lr=1.00e-08
+[epoch 069] ce=0.0383 lr=1.00e-08
+[epoch 070] ce=0.0395 test_top1=0.5154 test_top5=0.7702 lr=1.00e-08
+[epoch 071] ce=0.0388 lr=1.00e-08
+[epoch 072] ce=0.0390 test_top1=0.5167 test_top5=0.7700 lr=1.00e-08
+[epoch 073] ce=0.0389 lr=1.00e-08
+[epoch 074] ce=0.0386 test_top1=0.5155 test_top5=0.7704 lr=1.00e-08
+[epoch 075] ce=0.0393 lr=1.00e-08
+[epoch 076] ce=0.0394 test_top1=0.5164 test_top5=0.7692 lr=1.00e-08
+[epoch 077] ce=0.0378 lr=1.00e-08
+[epoch 078] ce=0.0388 test_top1=0.5174 test_top5=0.7699 lr=1.00e-08
+[epoch 079] ce=0.0385 lr=1.00e-08
+[epoch 080] ce=0.0391 test_top1=0.5151 test_top5=0.7694 lr=1.00e-08
+[epoch 081] ce=0.0387 lr=1.00e-08
+[epoch 082] ce=0.0390 test_top1=0.5159 test_top5=0.7702 lr=1.00e-08
+[epoch 083] ce=0.0390 lr=1.00e-08
+[epoch 084] ce=0.0393 test_top1=0.5163 test_top5=0.7698 lr=1.00e-08
+[epoch 085] ce=0.0384 lr=1.00e-08
+[epoch 086] ce=0.0389 test_top1=0.5161 test_top5=0.7698 lr=1.00e-08
+[epoch 087] ce=0.0383 lr=1.00e-08
+[epoch 088] ce=0.0395 test_top1=0.5157 test_top5=0.7703 lr=1.00e-08
+[epoch 089] ce=0.0382 lr=1.00e-08
+[epoch 090] ce=0.0382 test_top1=0.5169 test_top5=0.7702 lr=1.00e-08
+[epoch 091] ce=0.0390 lr=1.00e-08
+[epoch 092] ce=0.0397 test_top1=0.5157 test_top5=0.7696 lr=1.00e-08
+[epoch 093] ce=0.0388 lr=1.00e-08
+[epoch 094] ce=0.0384 test_top1=0.5170 test_top5=0.7704 lr=1.00e-08
+[epoch 095] ce=0.0392 lr=1.00e-08
+[epoch 096] ce=0.0387 test_top1=0.5165 test_top5=0.7690 lr=1.00e-08
+[epoch 097] ce=0.0387 lr=1.00e-08
+[epoch 098] ce=0.0382 test_top1=0.5167 test_top5=0.7689 lr=1.00e-08
+[epoch 099] ce=0.0383 lr=1.00e-08
+[epoch 100] ce=0.0381 test_top1=0.5172 test_top5=0.7704 lr=1.00e-08
+[2026-06-21 04:51:06] export global full-10s ResNet50 embeddings
+[2026-06-21 04:55:19] export chunk sequence starts=[0, 168, 336, 504] chunk_frames=500
+{
+  "experiment_id": "ARF004_paper_resnet50",
+  "created_at": "2026-06-21 05:05:18",
+  "data_dir": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/audio_paper_stft257x1004",
+  "out_summary": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_teacher_seed123_summary.json",
+  "out_history": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_teacher_seed123_history.json",
+  "out_ckpt_last": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_teacher_seed123.pt",
+  "out_ckpt_best": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_teacher_seed123_best.pt",
+  "teacher_best_epoch": 78,
+  "teacher_best_test_top1": 0.5174369337070596,
+  "teacher_best_test_acc": 0.5174369337070596,
+  "teacher_history_last": {
+    "epoch": 100,
+    "train_ce": 0.03814361913465146,
+    "lr": 1.0000000000000004e-08,
+    "teacher_test_top1": 0.5172413793103449,
+    "teacher_test_top5": 0.7703539534580536,
+    "teacher_test_ce": 3.7486571398874124
+  },
+  "num_classes": 309,
+  "n_freq": 257,
+  "n_time": 1004,
+  "train_crop_frames": 500,
+  "eval_full_10s": true,
+  "paper_alignment": "Teacher trains on random 257x500 crops and exports embeddings from the full 10s STFT, without resizing/sigmoid before the ResNet50.",
+  "features": {
+    "global_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_global2048_seed123.npz",
+    "global_embedding_dim": 2048,
+    "global_normalization": {
+      "mode": "per_dim_zscore_sigmoid",
+      "mu_mean": 0.16210000216960907,
+      "sd_mean": 0.2451399564743042
+    },
+    "seq_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seq_chunks4_w500_seed123.npz",
+    "seq_shape_train": [
+      182615,
+      4,
+      2048
+    ],
+    "seq_shape_test": [
+      15341,
+      4,
+      2048
+    ],
+    "meanstd_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seqmeanstd4096_chunks4_w500_seed123.npz",
+    "meanstd_embedding_dim": 4096,
+    "meanstd_normalization": {
+      "mode": "per_dim_zscore_sigmoid",
+      "mu_mean": 0.11140131950378418,
+      "sd_mean": 0.16239364445209503
+    },
+    "sequence_num_chunks": 4,
+    "sequence_chunk_frames": 500,
+    "sequence_chunk_starts": [
+      0,
+      168,
+      336,
+      504
+    ]
+  }
+}

@@ -278,3 +278,9 @@ Status: code prepared/runnable. This route removes the previous STFT128x96 teach
 | ResNet50 sequence LSTM teacher top1 | 49.18% |
 | AF028 full best | 20.11% |
 | AF029 full best | 38.78% |
+
+## Partial Audio ResNet50 Upload Note
+
+JobID 304 partial upload: ARF002, ARF003, AF024, AF025, and AF026 are complete. AF027 started but is marked incomplete until `summary.json` exists.
+
+JobID 306 partial upload: ARF004 STFT, ARF004 paper ResNet50 teacher, ARF005 LSTM feature, AF028, and AF029 are complete. AF030 started but is marked incomplete until `summary.json` exists. AF031 had not started in the downloaded wrapper log.

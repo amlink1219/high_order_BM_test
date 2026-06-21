@@ -1,0 +1,61 @@
+{
+  "experiment_id": "ARF004_paper_resnet50",
+  "created_at": "2026-06-21 05:05:18",
+  "data_dir": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/audio_paper_stft257x1004",
+  "out_summary": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_teacher_seed123_summary.json",
+  "out_history": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_teacher_seed123_history.json",
+  "out_ckpt_last": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_teacher_seed123.pt",
+  "out_ckpt_best": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_teacher_seed123_best.pt",
+  "teacher_best_epoch": 78,
+  "teacher_best_test_top1": 0.5174369337070596,
+  "teacher_best_test_acc": 0.5174369337070596,
+  "teacher_history_last": {
+    "epoch": 100,
+    "train_ce": 0.03814361913465146,
+    "lr": 1.0000000000000004e-08,
+    "teacher_test_top1": 0.5172413793103449,
+    "teacher_test_top5": 0.7703539534580536,
+    "teacher_test_ce": 3.7486571398874124
+  },
+  "num_classes": 309,
+  "n_freq": 257,
+  "n_time": 1004,
+  "train_crop_frames": 500,
+  "eval_full_10s": true,
+  "paper_alignment": "Teacher trains on random 257x500 crops and exports embeddings from the full 10s STFT, without resizing/sigmoid before the ResNet50.",
+  "features": {
+    "global_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_global2048_seed123.npz",
+    "global_embedding_dim": 2048,
+    "global_normalization": {
+      "mode": "per_dim_zscore_sigmoid",
+      "mu_mean": 0.16210000216960907,
+      "sd_mean": 0.2451399564743042
+    },
+    "seq_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seq_chunks4_w500_seed123.npz",
+    "seq_shape_train": [
+      182615,
+      4,
+      2048
+    ],
+    "seq_shape_test": [
+      15341,
+      4,
+      2048
+    ],
+    "meanstd_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seqmeanstd4096_chunks4_w500_seed123.npz",
+    "meanstd_embedding_dim": 4096,
+    "meanstd_normalization": {
+      "mode": "per_dim_zscore_sigmoid",
+      "mu_mean": 0.11140131950378418,
+      "sd_mean": 0.16239364445209503
+    },
+    "sequence_num_chunks": 4,
+    "sequence_chunk_frames": 500,
+    "sequence_chunk_starts": [
+      0,
+      168,
+      336,
+      504
+    ]
+  }
+}
