@@ -1,0 +1,18 @@
+Start time: Mon Jun 22 03:33:22 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 313
+CUDA_VISIBLE_DEVICES: 4
+This branch supersedes the older AV006-AV010 AF029 mean/std audio branch.
+Video: VLF002/VF024-compatible 4096-d video LSTM feature.
+Audio: AF031 paper-STFT ResNet50 LSTM4096 feature.
+
+[2026-06-22 15:33:22] ALIGN VF024-compatible video feature with AF031 audio feature -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_aligned_av_features.py --video_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_lstm4096_resnet50_f16_seed123.npz --audio_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_lstm4096_chunks4_w500_h1024_seed123.npz --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123_summary.json --video_key video --audio_key audio
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV011_align_af031_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV011_align_af031_stderr.log
+
+[2026-06-22 15:34:06] TRAIN AV011 standard_avg_videolstm4096_audioaf031_lstm4096_h8_lc5_e320 type=standard input=4096 hidden=32768 total=38409
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV011_standard_avg_videolstm4096_audioaf031_lstm4096_h8_lc5_e320 --experiment_id AV011 --model_type standard --input_dim 4096 --num_classes 309 --label_copies 5 --total_pbits 38409 --epochs 320 --batch_size 64 --eval_batch_size 32 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best --input_mode avg_video_audio
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV011_standard_avg_videolstm4096_audioaf031_lstm4096_h8_lc5_e320_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV011_standard_avg_videolstm4096_audioaf031_lstm4096_h8_lc5_e320_stderr.log

@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-06-22 15:34:01",
+  "video_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_lstm4096_resnet50_f16_seed123.npz",
+  "audio_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_lstm4096_chunks4_w500_h1024_seed123.npz",
+  "out_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz",
+  "video_key": "video",
+  "audio_key": "audio",
+  "num_classes": 309,
+  "train": {
+    "split": "train",
+    "video_rows": 182615,
+    "audio_rows": 182615,
+    "aligned_rows": 182615,
+    "dropped_video_rows": 0,
+    "dropped_audio_rows": 0,
+    "video_dim": 4096,
+    "audio_dim": 4096
+  },
+  "test": {
+    "split": "test",
+    "video_rows": 15341,
+    "audio_rows": 15341,
+    "aligned_rows": 15341,
+    "dropped_video_rows": 0,
+    "dropped_audio_rows": 0,
+    "video_dim": 4096,
+    "audio_dim": 4096
+  },
+  "note": "Aligned by clip path. video_* carries the optical/video port; audio_* carries the electrical/audio port."
+}
