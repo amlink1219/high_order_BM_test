@@ -268,3 +268,36 @@ audio = ACL002 audio_cnnlstm4096_stft128x96, current best audio BM AF023 = 31.21
 | AF025_standard_audio_resnet50seq_meanstd4096_h8_lc5_e320 | 320 | 4096 | 32768 | 38409 | 305 | 27.74% | 26.14% |
 | AF026_standard_audio_resnet50seq_lstm4096_h6_lc5_e320 | 320 | 4096 | 24576 | 30217 | 320 | 29.06% | 28.97% |
 | AF027_standard_audio_resnet50seq_lstm4096_h8_lc5_e320 | 320 | 4096 | 32768 | 38409 | 320 | 30.77% | 30.76% |
+
+## Audio Paper-STFT ResNet50 Route
+
+Status: code prepared/runnable. This route removes the previous STFT128x96 teacher bottleneck.
+
+| item | result |
+|---|---:|
+| ResNet50 teacher top1 | 51.74% |
+| ResNet50 sequence LSTM teacher top1 | 49.18% |
+| AF028 full best | 20.11% |
+| AF029 full best | 38.78% |
+| AF030 full best | 36.65% |
+| AF031 full best | 44.31% |
+
+## AF029 Paper-ResNet Audio Continuation
+
+| experiment | final epoch | hidden dim | total pbits | best epoch | quick best | full best |
+|---|---:|---:|---:|---:|---:|---:|
+| AF032_standard_audio_paperresnet50_meanstd4096_h6_lc5_e650_resume_af029 | 650 | 24576 | 30217 | 645 | 41.46% | 39.30% |
+| AF033_standard_audio_paperresnet50_meanstd4096_h6_lc5_e850_resume_af032 | 850 | 24576 | 30217 | 815 | 42.38% | 39.57% |
+
+## Existing Best Audio-Video Fusion
+
+| experiment | model | best epoch | quick best | full best |
+|---|---|---:|---:|---:|
+| AV001 | standard | 320 | 37.26% | 37.29% |
+| AV002 | twoport | 270 | 41.06% | 40.63% |
+
+## Current Best Paper-Audio Audio-Video Fusion
+
+| experiment | model | best epoch | quick best | full best |
+|---|---|---:|---:|---:|
+| AV006 | standard | 320 | 41.39% | 41.48% |

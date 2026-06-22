@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+set -euo pipefail
+shopt -s nullglob
+
+cd /home/Hongjie_Zeng/high_order_BM
+
+paths=(
+  vggsound_full_experiment_status.md
+  vggsound_full_audio_paper_resnet50_bm_log.md
+  make_vggsound_full_audio_paper_stft_memmap.py
+  make_vggsound_full_audio_paper_resnet50_features.py
+  run_vggsound_full_audio_paper_resnet50_bm.py
+  sbatch_vggsound_full_audio_paper_resnet50_bm.sh
+  push_vggsound_full_audio_paper_resnet50_bm_results.sh
+  README_vggsound_full_audio_paper_resnet50_bm.md
+  logs/vggsound_audio_paper_resnet50_*.out
+  logs/vggsound_audio_paper_resnet50_*.err
+  runs_vggsound_full_ARF004_paper_stft_stdout.log
+  runs_vggsound_full_ARF004_paper_stft_stderr.log
+  runs_vggsound_full_ARF004_paper_resnet50_stdout.log
+  runs_vggsound_full_ARF004_paper_resnet50_stderr.log
+  runs_vggsound_full_ARF005_paper_resnet50_lstm_stdout.log
+  runs_vggsound_full_ARF005_paper_resnet50_lstm_stderr.log
+  runs_vggsound_full_AF028_standard_audio_paperresnet50_global2048_h8_lc5_e450/config.json
+  runs_vggsound_full_AF028_standard_audio_paperresnet50_global2048_h8_lc5_e450/history.json
+  runs_vggsound_full_AF028_standard_audio_paperresnet50_global2048_h8_lc5_e450/summary.json
+  runs_vggsound_full_AF028_standard_audio_paperresnet50_global2048_h8_lc5_e450_stdout.log
+  runs_vggsound_full_AF028_standard_audio_paperresnet50_global2048_h8_lc5_e450_stderr.log
+  runs_vggsound_full_AF029_standard_audio_paperresnet50_meanstd4096_h6_lc5_e450/config.json
+  runs_vggsound_full_AF029_standard_audio_paperresnet50_meanstd4096_h6_lc5_e450/history.json
+  runs_vggsound_full_AF029_standard_audio_paperresnet50_meanstd4096_h6_lc5_e450/summary.json
+  runs_vggsound_full_AF029_standard_audio_paperresnet50_meanstd4096_h6_lc5_e450_stdout.log
+  runs_vggsound_full_AF029_standard_audio_paperresnet50_meanstd4096_h6_lc5_e450_stderr.log
+  runs_vggsound_full_AF030_standard_audio_paperresnet50_meanstd4096_h8_lc5_e450/config.json
+  runs_vggsound_full_AF030_standard_audio_paperresnet50_meanstd4096_h8_lc5_e450/history.json
+  runs_vggsound_full_AF030_standard_audio_paperresnet50_meanstd4096_h8_lc5_e450/summary.json
+  runs_vggsound_full_AF030_standard_audio_paperresnet50_meanstd4096_h8_lc5_e450_stdout.log
+  runs_vggsound_full_AF030_standard_audio_paperresnet50_meanstd4096_h8_lc5_e450_stderr.log
+  runs_vggsound_full_AF031_standard_audio_paperresnet50_lstm4096_h6_lc5_e450/config.json
+  runs_vggsound_full_AF031_standard_audio_paperresnet50_lstm4096_h6_lc5_e450/history.json
+  runs_vggsound_full_AF031_standard_audio_paperresnet50_lstm4096_h6_lc5_e450/summary.json
+  runs_vggsound_full_AF031_standard_audio_paperresnet50_lstm4096_h6_lc5_e450_stdout.log
+  runs_vggsound_full_AF031_standard_audio_paperresnet50_lstm4096_h6_lc5_e450_stderr.log
+  data_vggsound_full/features/vggsound_full_audio_paperresnet50_teacher_seed123_summary.json
+  data_vggsound_full/features/vggsound_full_audio_paperresnet50_features_seed123_summary.json
+  data_vggsound_full/features/vggsound_full_audio_paperresnet50_lstm4096_chunks4_w500_h1024_seed123_summary.json
+  data_vggsound_full/features/vggsound_full_audio_paperresnet50_lstm4096_chunks4_w500_h1024_seed123_history.json
+)
+
+for p in "${paths[@]}"; do
+  if [ -e "$p" ]; then
+    git add "$p"
+  fi
+done
+
+git commit -m "Add paper STFT audio ResNet50 BM results" || true
+git push -u origin main
