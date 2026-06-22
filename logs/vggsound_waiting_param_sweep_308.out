@@ -1,0 +1,28 @@
+Start time: Sun Jun 21 05:14:28 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 308
+CUDA_VISIBLE_DEVICES: 2,3
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_aligned_av_features.py --video_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_lstm4096_resnet50_f16_seed123.npz --audio_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audiocnnlstm4096_seed123.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audiocnnlstm4096_seed123_summary.json
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP000_align_best_av_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP000_align_best_av_stderr.log
+
+[2026-06-21 17:15:22] TRAIN WP001 video_lstm4096_h10_lc5_e260 input=4096 hidden=40960 label_copies=5 total=46601
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_lstm4096_resnet50_f16_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP001_video_lstm4096_h10_lc5_e260 --experiment_id WP001 --model_type standard --input_mode video --input_dim 4096 --num_classes 309 --label_copies 5 --total_pbits 46601 --epochs 260 --batch_size 48 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP001_video_lstm4096_h10_lc5_e260_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP001_video_lstm4096_h10_lc5_e260_stderr.log
+
+[2026-06-22 00:10:35] TRAIN WP002 video_lstm4096_h8_lc8_e260 input=4096 hidden=32768 label_copies=8 total=39336
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_lstm4096_resnet50_f16_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP002_video_lstm4096_h8_lc8_e260 --experiment_id WP002 --model_type standard --input_mode video --input_dim 4096 --num_classes 309 --label_copies 8 --total_pbits 39336 --epochs 260 --batch_size 64 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP002_video_lstm4096_h8_lc8_e260_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP002_video_lstm4096_h8_lc8_e260_stderr.log
+
+[2026-06-22 05:41:31] TRAIN WP003 audio_cnnlstm4096_h10_lc5_e500 input=4096 hidden=40960 label_copies=5 total=46601
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP003_audio_cnnlstm4096_h10_lc5_e500 --experiment_id WP003 --model_type standard --input_mode audio --input_dim 4096 --num_classes 309 --label_copies 5 --total_pbits 46601 --epochs 500 --batch_size 48 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP003_audio_cnnlstm4096_h10_lc5_e500_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP003_audio_cnnlstm4096_h10_lc5_e500_stderr.log
+
+[2026-06-22 18:42:49] TRAIN WP004 audio_cnnlstm4096_h6_lc8_e500 input=4096 hidden=24576 label_copies=8 total=31144
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP004_audio_cnnlstm4096_h6_lc8_e500 --experiment_id WP004 --model_type standard --input_mode audio --input_dim 4096 --num_classes 309 --label_copies 8 --total_pbits 31144 --epochs 500 --batch_size 96 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP004_audio_cnnlstm4096_h6_lc8_e500_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP004_audio_cnnlstm4096_h6_lc8_e500_stderr.log
