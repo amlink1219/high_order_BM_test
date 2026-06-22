@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_full_best_av_paper_audio_twoport_bm.py", line 329, in <module>
+    main()
+    ~~~~^^
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_full_best_av_paper_audio_twoport_bm.py", line 322, in main
+    results.append(train_one(root, args, exp, feature_npz, info))
+                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_full_best_av_paper_audio_twoport_bm.py", line 235, in train_one
+    run_checked(
+    ~~~~~~~~~~~^
+        cmd,
+        ^^^^
+    ...<3 lines>...
+        dry_run=args.dry_run,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_full_best_av_paper_audio_twoport_bm.py", line 87, in run_checked
+    raise RuntimeError(f"command failed with exit code {proc.returncode}; see {stderr_path}")
+RuntimeError: command failed with exit code 1; see /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV007_twoport_videolstm4096_audiopaperresnet4096_h8_g115_lc5_e320_stderr.log
