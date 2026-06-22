@@ -1,6 +1,6 @@
 # VGGSound Full Experiment Status
 
-Updated: 2026-06-20
+Updated: 2026-06-21
 
 This file is the running status ledger for the full VGGSound branch. It separates completed results, code already prepared but not yet analyzed, and discussed future directions.
 
@@ -27,7 +27,12 @@ This file is the running status ledger for the full VGGSound branch. It separate
 | mean/std continuation | VF015 | 39.45% | continued VF014 to epoch 480; best quick epoch 390, final epoch regressed |
 | video LSTM | VF020 | 33.79% | ResNet50 frame sequence -> BiLSTM 2048 embedding, h6, epoch 220 |
 | video LSTM | VF021 | 38.99% | ResNet50 frame sequence -> BiLSTM 4096 embedding, h6, epoch 220 |
-| video LSTM | VF022 | 40.68% | ResNet50 frame sequence -> BiLSTM 4096 embedding, h8, epoch 220; current best video-only BM |
+| video LSTM | VF022 | 40.68% | ResNet50 frame sequence -> BiLSTM 4096 embedding, h8, epoch 220; former best video-only BM |
+| video LSTM continuation | VF023 | 41.93% | continued VF022 to epoch 360; best epoch 335, final quick 42.03% |
+| video LSTM continuation | VF024 | 42.74% | continued VF023 to epoch 500; best epoch 475, final quick 42.59%; current best video-only BM |
+| video LSTM 8192 visible | VF025 | 42.54% | new VLF003 8192-d BiLSTM feature, h4, epoch 260; best epoch 255, final quick 42.48% |
+| video LSTM 8192 visible | VF026 eval-only | 42.10% | VLF003 8192-d BiLSTM feature, h6, JobID 302 stopped at epoch 149; JobID 309 full-evaled best checkpoint at epoch 145; incomplete, not final |
+| video LSTM 8192 visible | VF026 | 42.84% | continued incomplete VF026 to epoch 260; best epoch 250; current best video-only BM, but only +0.10 pp over VF024 |
 
 ### Audio-Only BM
 
@@ -37,18 +42,28 @@ This file is the running status ledger for the full VGGSound branch. It separate
 | CNN embedding BM | AF008 | 20.75% | +16.28 pp vs AF004 | small supervised audio CNN embedding, 4096 dim, h6 |
 | CNN-LSTM embedding BM | AF012 | 22.78% | +2.03 pp vs AF008 | 4096 dim, h6, reached best at final epoch 180 |
 | CNN-LSTM continuation | AF016 | 24.74% | +1.96 pp vs AF012 | continued AF012 to epoch 260 |
-| CNN-LSTM continuation | AF017 | 25.53% | +0.79 pp vs AF016 | continued AF016 to epoch 300; current best audio-only BM |
+| CNN-LSTM continuation | AF017 | 25.53% | +0.79 pp vs AF016 | continued AF016 to epoch 300; former intermediate best |
 | CNN-LSTM continuation | AF018 | 28.01% | +2.48 pp vs AF017 | continued AF017 to epoch 500 |
-| CNN-LSTM continuation | AF019 | 29.78% | +1.77 pp vs AF018 | continued AF018 to epoch 700; current best audio-only BM |
+| CNN-LSTM continuation | AF019 | 29.78% | +1.77 pp vs AF018 | continued AF018 to epoch 700; former intermediate best |
 | CNN-LSTM hidden 8x | AF020 | 27.76% | -2.02 pp vs AF019 | h8 from scratch to epoch 300 |
 | CNN-LSTM hidden 8x | AF021 | 27.42% | -2.36 pp vs AF019 | continued h8 to epoch 500; did not beat h6 long training |
 | CNN-LSTM continuation | AF022 | 30.73% | +0.95 pp vs AF019 | continued AF019 to epoch 900; best quick epoch 890 |
-| CNN-LSTM continuation | AF023 | 31.21% | +0.48 pp vs AF022 | continued AF022 to epoch 1000; current best audio-only BM |
+| CNN-LSTM continuation | AF023 | 31.21% | +0.48 pp vs AF022 | continued AF022 to epoch 1000; former best audio-only BM |
 | ResNet50 global embedding | AF013 | 22.32% | -8.89 pp vs AF023 | ARF001 teacher top1 = 32.84%; 2048-d global embedding, h4 |
 | ResNet50 global embedding | AF014 | 20.98% | -10.23 pp vs AF023 | same ARF001 2048-d embedding, h6 |
 | ResNet50 global embedding | AF015 | 19.10% | -12.11 pp vs AF023 | same ARF001 2048-d embedding, h8 |
+| ResNet50 128x96 sequence mean/std | AF024 | 26.58% | -4.63 pp vs AF023 | ARF002 8 chunks x 32 frames, mean/std4096, h6 |
+| ResNet50 128x96 sequence mean/std | AF025 | 26.14% | -5.07 pp vs AF023 | same feature, h8; quick acc overestimated relative to full eval |
+| ResNet50 128x96 sequence LSTM | AF026 | 28.97% | -2.24 pp vs AF023 | ARF003 LSTM4096 teacher top1 = 32.42%; h6 |
+| ResNet50 128x96 sequence LSTM | AF027 | 30.76% | -0.45 pp vs AF023 | same ARF003 LSTM4096 feature, h8; best epoch 320; still below AF023 and far below AF029 |
+| paper-STFT ResNet50 global | AF028 | 20.11% | -11.10 pp vs AF023 | ARF004 global2048, h8; quick acc was unreliable for final conclusion |
+| paper-STFT ResNet50 mean/std | AF029 | 38.78% | +7.57 pp vs AF023 | ARF004 teacher top1 = 51.74%, top5 = 77.04%; former best audio-only BM |
+| paper-STFT ResNet50 mean/std | AF030 | 36.65% | -2.13 pp vs AF029 | h8, epoch 450; quick best 41.01% but full eval dropped, so h8 did not help mean/std |
+| paper-STFT ResNet50 LSTM | AF031 | 44.31% | +5.53 pp vs AF029 | ARF005 paper-STFT ResNet50 sequence -> LSTM4096, h6; current best audio-only BM |
+| paper-STFT ResNet50 mean/std continuation | AF032 | 39.30% | +0.52 pp vs AF029 | continued AF029 to epoch 650; improves mean/std but still far below AF031 |
+| paper-STFT ResNet50 mean/std continuation | AF033 | 39.57% | +0.79 pp vs AF029 | continued AF032 to epoch 850; improves slowly, still far below AF031 |
 
-AF023 is now the strongest audio-only BM result. AF017/AF019/AF023 show that the h6 audio BM benefited from much longer training:
+AF031 is now the strongest uploaded audio-only BM result. AF017/AF019/AF023 showed that the h6 audio CNN-LSTM BM benefited from much longer training:
 
 ```text
 AF017 quick best = 25.55% at epoch 300
@@ -61,14 +76,24 @@ AF023 full best  = 31.21% at epoch 990
 
 This means AF012/AF017/AF019 were undertrained. Hidden 8x did not beat h6 long training in the current run, so increasing BM size is not yet the preferred audio path. However, AF023 is close to a plateau: the final quick eval at epoch 1000 fell back to 30.43%.
 
+The later paper-STFT ResNet50 route changed the audio picture substantially:
+
+```text
+ARF004 paper-STFT ResNet50 teacher top1 = 51.74%, top5 = 77.04%
+AF029 paper-STFT ResNet50 mean/std4096 h6 full = 38.78%
+AF031 paper-STFT ResNet50 LSTM4096 h6 full     = 44.31%
+```
+
+This confirms that the earlier weak audio results were mainly caused by the 128x96 audio preprocessing/encoder bottleneck, not by audio being intrinsically weaker for VGGSound.
+
 ## Code Prepared, Waiting For Results Or Analysis
 
 | branch | IDs | code files | status | purpose |
 |---|---|---|---|---|
 | Audio ResNet50 global embedding BM | ARF001 / AF013-AF015 | `make_vggsound_full_audio_resnet50_encoder_features.py`, `run_vggsound_full_audio_resnet50_bm.py`, `sbatch_vggsound_full_audio_resnet50_bm.sh` | completed and analyzed | global 2048-d ResNet50 embedding underperformed AF023; teacher top1 = 32.84% |
-| Audio ResNet50 temporal sequence BM | ARF002-ARF003 / AF024-AF027 | `make_vggsound_full_audio_resnet50_sequence_features.py`, `make_vggsound_full_audio_resnet50_lstm_encoder_features.py`, `run_vggsound_full_audio_resnet50_sequence_bm.py`, `sbatch_vggsound_full_audio_resnet50_sequence_bm.sh` | code packaged, not submitted yet | use ResNet50 spectrogram teacher, then compare chunk mean/std and LSTM sequence audio embeddings |
+| Audio ResNet50 temporal sequence BM | ARF002-ARF003 / AF024-AF027 | `make_vggsound_full_audio_resnet50_sequence_features.py`, `make_vggsound_full_audio_resnet50_lstm_encoder_features.py`, `run_vggsound_full_audio_resnet50_sequence_bm.py`, `sbatch_vggsound_full_audio_resnet50_sequence_bm.sh` | JobID 304 completed, uploaded, and analyzed | use ResNet50 spectrogram teacher, then compare chunk mean/std and LSTM sequence audio embeddings |
 | Video ResNet50 sequence + LSTM BM | VLF001-VLF002 / VF020-VF022 | `make_vggsound_full_video_resnet_sequence_features.py`, `make_vggsound_full_video_lstm_encoder_features.py`, `run_vggsound_full_video_lstm_bm.py`, `sbatch_vggsound_full_video_lstm_bm.sh` | completed and analyzed | preserve frame order before video BM instead of mean+std pooling |
-| VF022 continuation and 8192 visible scale-up | VLF003 / VF023-VF026 | `run_vggsound_full_video_vf022_extend.py`, `sbatch_vggsound_full_video_vf022_extend.sh` | submitted as JobID 302 | test whether current 4096 visible dimension and 220 epochs are limiting video BM |
+| VF022 continuation and 8192 visible scale-up | VLF003 / VF023-VF026 | `run_vggsound_full_video_vf022_extend.py`, `sbatch_vggsound_full_video_vf022_extend.sh` | JobID 302 stopped by time limit; JobID 309 eval-only completed, uploaded, and analyzed | test whether current 4096 visible dimension and 220 epochs are limiting video BM |
 | Video large-hidden probes | VF012-VF013 | `run_vggsound_full_video_scaleup.py`, `sbatch_vggsound_full_video_scaleup.sh` | JobID 289 did not complete full planned sweep | test h12/h16 visual-only BM scale-up if resources allow |
 
 ## Server Job Ledger
@@ -82,15 +107,24 @@ This means AF012/AF017/AF019 were undertrained. Hidden 8x did not beat h6 long t
 | 297 | `vggsound_audio_cnn_lstm_af012_cont_297.out` | AF016-AF017 | 1 GPU, 8 CPU, 80G, 2d | completed | AF017 full = 25.53% |
 | 298 | `vggsound_audio_cnn_lstm_af017_long_298.out` | AF018-AF019 | 1 GPU, 8 CPU, 80G, 12h | completed | AF019 full = 29.78% |
 | 299 | `vggsound_audio_cnn_lstm_h8_299.out` | AF020-AF021 | 1 GPU, 8 CPU, 90G, 12h | completed | AF020 full = 27.76%, AF021 full = 27.42% |
-| 300 | `vggsound_audio_cnn_lstm_af019_long_300.out` | AF022-AF023 | 1 GPU, 8 CPU, 80G, 12h | completed and uploaded | AF023 full = 31.21%, new best audio-only BM |
+| 300 | `vggsound_audio_cnn_lstm_af019_long_300.out` | AF022-AF023 | 1 GPU, 8 CPU, 80G, 12h | completed and uploaded | AF023 full = 31.21%, former best audio-only BM |
 | 301 | `vggsound_video_vf010_long_301.out` | VF014-VF015 | 1 GPU, 8 CPU, 90G, 12h | completed and uploaded | VF015 full = 39.45%; improves VF010 but remains below VF022 |
-| 302 | `vggsound_video_vf022_extend_302.out` | VLF003 / VF023-VF026 | 1 GPU, 8 CPU, 120G, 1d | submitted on 2026-06-20 | continue VF022 and test 8192 visible video LSTM BM |
-| 304 | `vggsound_audio_resnet50_sequence_304.out` | ARF002-ARF003 / AF024-AF027 | 4 GPU, 32 CPU, 110G, 2d | submitted on 2026-06-20 | audio ResNet50 temporal chunk mean/std and LSTM sequence BM |
+| 302 | `vggsound_video_vf022_extend_302.out` | VLF003 / VF023-VF026 | 1 GPU, 8 CPU, 120G, 1d | time-limit stopped on 2026-06-21; partial results uploaded: VF023 full = 41.93%, VF024 full = 42.74%, VLF003 teacher top1 = 42.40%, VF025 full = 42.54%; VF026 reached epoch 149 but has no `summary.json` | VF024 is current best uploaded video-only BM; VF026 needs eval-only checkpoint assessment before deciding whether to continue |
+| 304 | `vggsound_audio_resnet50_sequence_304.out` | ARF002-ARF003 / AF024-AF027 | 4 GPU, 32 CPU, 110G, 2d | completed and uploaded; AF024 full = 26.58%, AF025 full = 26.14%, AF026 full = 28.97%, AF027 full = 30.76% | 128x96 ResNet50 sequence route does not beat AF023 or AF029; no longer a main audio route |
+| 306 | `vggsound_audio_paper_resnet50_306.out` | ARF004-ARF005 / AF028-AF031 | 2 GPU, 24 CPU, 110G, 2d | completed and uploaded: AF028 full = 20.11%, AF029 full = 38.78%, AF030 full = 36.65%, AF031 full = 44.31% | AF031 paper-STFT ResNet50 LSTM4096 is current best audio-only BM |
+| 307 | `vggsound_best_av_twoport_307.out` | AV001-AV005 | 2 GPU, 12 CPU, 100G | submitted on 2026-06-21 | provisional current-best audio/video fusion: avg one-port baseline and two-port gamma ablations |
+| 308 | `vggsound_waiting_param_sweep_308.out` | WP001-WP008 | 2 GPU, 12 CPU, 100G | pending on 2026-06-21 with Slurm reason `Nodes required for job are DOWN, DRAINED or reserved for jobs in higher priority partitions` | waiting parameter sweep; this is queued, not a failed submission |
+| 309 | `vggsound_vf026_eval_only_309.out` | VF026 eval-only checkpoint assessment | 1 GPU, 8 CPU, 120G, 4h | completed and uploaded; VF026 epoch145 full eval = 42.10% | VF026 is below VF024 now, but it was still improving when stopped; continue only if video capacity test is worth another 7-8 h |
+| 310 | `vggsound_vf026_continue_to260_310.out` | VF026 continuation to epoch260 | 1 GPU, 8 CPU, 120G, 12h | completed and uploaded: VF026 full = 42.84% | VF026 is current best video-only BM, marginally above VF024 |
+| 311 | `vggsound_best_av_paper_audio_311.out` | AV006-AV010 paper-audio AV fusion | 1 GPU, 8 CPU, 100G, 1d | partial/failed: AV006 full = 41.48%; AV007 started then wrapper failed; AV008-AV010 not run/uploaded | need inspect/upload AV007 child stderr to diagnose two-port failure |
+| 312 | `vggsound_audio_paperresnet_af029_cont_312.out` | AF032-AF033 AF029 continuation | 1 GPU, 8 CPU, 90G, 12h | completed and uploaded: AF032 full = 39.30%, AF033 full = 39.57% | mean/std audio continues improving slowly but is far below AF031 |
 
-Current submitted-but-not-yet-analyzed request total, assuming only Job 302 is still active or queued:
+Current submitted-but-not-yet-analyzed request total, assuming Jobs 307/308 are still active or queued:
 
 ```text
-Job 302 = 1 GPU, 8 CPU cores, 120G memory requested
+Job 307 = 2 GPU, 12 CPU cores, 100G memory requested
+Job 308 = 2 GPU, 12 CPU cores, 100G memory requested
+Total queued/running request = 4 GPU, 24 CPU cores, 200G memory
 ```
 
 Resource planning note:
@@ -101,6 +135,73 @@ Resource planning note:
 - For pure BM continuation jobs, higher CPU/GPU requests may waste resources unless we explicitly modify the training script.
 
 Note on JobID 289: previous wording "partially uploaded" was imprecise. The GitHub upload did include files, but the experiment itself appears incomplete for the planned VF009-VF013 sweep. Specifically, VF010/VF011 summaries exist, while VF012 only has a short history through epoch 10 and no `summary.json`; VF013 has no uploaded result.
+
+## Runtime Estimates From Available Logs
+
+These estimates come from wrapper log timestamps, not Slurm accounting. They should be revised whenever child stdout logs with exact completion times are available.
+
+### JobID 302 / VF026
+
+The 24h time limit belonged to the whole JobID 302 wrapper, not VF026 alone. VF026 appears to have started at about 2026-06-21 06:15 and was stopped by the JobID 302 wall-time limit at 2026-06-21 16:12.
+
+```text
+VF026 completed epoch = 149 / 260
+VF026 best quick = 42.12% at epoch 145
+elapsed for VF026 ~= 10 h
+estimated speed ~= 4.0 min / epoch
+remaining to epoch 260 ~= 111 epochs ~= 7-8 h training + full eval
+```
+
+Observed eval-only result:
+
+```text
+JobID 309 full eval of VF026 best checkpoint:
+best checkpoint epoch = 145
+quick selection acc = 42.12%
+full eval acc = 42.10%
+current best video-only BM VF024 = 42.74%
+gap to VF024 = -0.64 pp
+gap to VF025 = -0.44 pp
+```
+
+Decision:
+
+```text
+VF026 does not beat VF024 at epoch 145.
+However, VF026 was still improving when JobID 302 stopped, and it has only reached 149/260 epochs.
+If the goal is to complete the 8192-visible h6 capacity test, continuing VF026 from last.pt to epoch 260 is still reasonable.
+If GPU time is tight, prioritize newer fusion/audio experiments because VF026 has not yet shown a clear advantage over VF024/VF025.
+```
+
+### JobID 304 / Audio ResNet50 128x96 Sequence
+
+Observed child starts from `vggsound_audio_resnet50_sequence_304.out`:
+
+```text
+22:05:56 start ARF002 sequence extraction
+22:10:43 start ARF003 LSTM feature training      -> ARF002 took ~5 min
+22:28:37 start AF024 h6 mean/std BM              -> ARF003 took ~18 min
+02:18:33 start AF025 h8 mean/std BM              -> AF024 took ~3 h 50 min
+07:53:13 start AF026 h6 LSTM BM                  -> AF025 took ~5 h 35 min
+11:42:05 start AF027 h8 LSTM BM                  -> AF026 took ~3 h 49 min
+```
+
+AF027 has the same h8 BM size and batch setting as AF025, so its expected runtime is roughly 5.5-6 h. If uninterrupted, JobID 304 should have completed around 17:15-18:00 on 2026-06-21. If AF027 still has no `summary.json`, inspect its child stdout/stderr before treating it as failed.
+
+### JobID 306 / Audio Paper-STFT ResNet50 Route
+
+Observed child starts from `vggsound_audio_paper_resnet50_306.out`:
+
+```text
+22:30:26 start paper-STFT memmap
+22:37:59 start ARF004 paper-STFT ResNet50 teacher -> memmap resume step took ~8 min
+05:05:27 start ARF005 LSTM feature                -> teacher/features took ~6 h 27 min
+05:26:09 start AF028 global2048 h8 BM             -> ARF005 took ~21 min
+08:03:47 start AF029 mean/std4096 h6 BM           -> AF028 took ~2 h 38 min
+13:23:32 start AF030 mean/std4096 h8 BM           -> AF029 took ~5 h 20 min
+```
+
+AF030 is h8 with batch size 64. Using AF025 and AF029 as references, a conservative runtime estimate is 7-8 h, so AF030 would be expected around 20:30-21:30 on 2026-06-21 if uninterrupted. AF031 is h6 LSTM4096 for 450 epochs; based on AF029, estimate another 5-6 h. Therefore, from AF030 start, the remaining AF030+AF031 total is roughly 12-14 h.
 
 ## Video LSTM Result
 
@@ -162,8 +263,8 @@ audio: STFT -> CNN / CNN-LSTM / ResNet50 embedding -> BM
 Current best unimodal results:
 
 ```text
-video-only BM: VF022 = 40.68%
-audio-only BM: AF023 = 31.21%
+video-only BM: VF026 = 42.84%
+audio-only BM: AF031 = 44.31%
 ```
 
 The audio branch is still weaker than video, but the improvement from STFT to learned audio embeddings is very large:
@@ -175,6 +276,7 @@ AF012 CNN-LSTM e180:     22.78%
 AF017 CNN-LSTM e300:     25.53%
 AF019 CNN-LSTM e700:     29.78%
 AF023 CNN-LSTM e1000:    31.21%
+AF029 paper-STFT ResNet: 38.78%
 ```
 
 The main bottleneck is no longer whether BM can learn from audio at all. The bottleneck is the quality of the audio embedding and whether the BM needs longer training or more hidden capacity.
@@ -193,7 +295,7 @@ The main bottleneck is no longer whether BM can learn from audio at all. The bot
 
 | direction | priority | rationale | trigger |
 |---|---|---|---|
-| Continue AF023 longer | low-medium | AF023 improves audio to 31.21%, but quick eval is noisy and final epoch regressed | only if no stronger audio encoder is available |
+| Continue AF023 longer | low | AF029 has superseded AF023 by +7.57 pp | only as a low-priority control |
 | Audio ResNet50 teacher | high | VGGSound paper uses ResNet-style CNN on spectrograms; current audio CNN-LSTM teacher top1 is only about 35% | ARF001 teacher top1 or BM full eval beats AF017 |
 | Stronger audio encoders | medium | ResNet50 may still be below paper baseline; possible later encoders include deeper ResNet or pretrained audio models | ResNet50 BM remains below video BM |
 | Video temporal modeling | high | VF022 proves sequence/LSTM features beat mean+std by +3.02 pp | continue VF022, then use it as the video side of two-port BM |
@@ -214,8 +316,8 @@ The final two-port branch should wait until these are known:
 Then choose:
 
 ```text
-best audio feature = max(AF023, AF013-AF015)
-best video feature = max(VF022, VF014-VF015, later VF022 continuation)
+best audio feature = AF031 paper-STFT ResNet50 LSTM4096
+best video feature = VF026 8192 visible video LSTM h6, or VF024 if same-resource 4096-visible is required
 ```
 
 The first full VGGSound two-port BM should compare:
@@ -231,8 +333,8 @@ using the same feature split and the same final Gibbs eval standard.
 Before those final choices are available, run a provisional two-port branch using:
 
 ```text
-video = VLF002 video_lstm4096_resnet50_f16, current best video BM VF022 = 40.68%
-audio = ACL002 audio_cnnlstm4096_stft128x96, current best audio BM AF023 = 31.21%
+video = VLF002 video_lstm4096_resnet50_f16, strong 4096-visible video BM VF024 = 42.74%
+audio = paper-STFT ResNet50 mean/std4096, strong audio BM AF029 = 38.78%
 ```
 
 ## Newly Prepared 2026-06-20
@@ -251,43 +353,21 @@ audio = ACL002 audio_cnnlstm4096_stft128x96, current best audio BM AF023 = 31.21
 
 | branch | IDs | setup | status |
 |---|---|---|---|
-| Existing best audio-video two-port BM | AV001-AV005 | align current VLF002 video LSTM4096 with ACL002 audio CNN-LSTM4096 by path; compare avg one-port baseline, gamma=1.15/0.5/0 ablations, h6/h8 capacity; two 4096-d inputs still correspond to 4096 two-port visible p-bits | code packaged; requests 2 GPU, 12 CPU, 100G |
+| Existing best audio-video two-port BM | AV001-AV005 | align then-current VLF002 video LSTM4096 with ACL002 audio CNN-LSTM4096 by path; compare avg one-port baseline, gamma=1.15/0.5/0 ablations, h6/h8 capacity; two 4096-d inputs still correspond to 4096 two-port visible p-bits | code packaged as a provisional branch; should be superseded by a new AF029/VF024 fusion branch |
 | Waiting parameter sweep | WP001-WP008 | standard BM only; video h10, video label_copies=8, audio h10, audio label_copies=8, avg-fusion h8/lc8 and h10/lc5; WP007-WP008 add true 8192-visible concat diagnostics | code packaged; requests 2 GPU, 12 CPU, 100G |
+| VF026 continuation | VF026-to260 | continue incomplete VF026 from epoch149 `last.pt` to epoch260, preserving JobID 309 eval-only summary before overwrite; 8192 visible h6 video BM | code packaged; requests 1 GPU, 8 CPU, 120G, 12h |
 
-## VLF003 8192 Visible BM Result
+## Newly Prepared 2026-06-22
 
-| experiment | final epoch | input dim | hidden dim | total pbits | best epoch | quick best | full best |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| VF025_standard_video_lstm8192_h4_lc5_e260 | 260 | 8192 | 32768 | 42505 | 255 | 42.55% | 42.54% |
+| branch | IDs | setup | status |
+|---|---|---|---|
+| Current-best paper-audio AV two-port BM | AV006-AV010 | align VLF002 video LSTM4096 with AF029 paper-STFT ResNet50 mean/std4096; run avg one-port baseline, gamma=1.15/0.5/0, and h6/h8 controls | code packaged; requests 1 GPU, 8 CPU, 100G, 1d |
+| AF029 paper-ResNet audio continuation | AF032-AF033 | continue strongest uploaded audio-only BM AF029 from epoch450 to epoch650/850 | code packaged; requests 1 GPU, 8 CPU, 90G, 12h |
+| AV007 resume and AV008-AV010 | AV007-AV010 | resume failed AV007 from `last.pt` with smaller batch; then run AV008 gamma=0.50, AV009 gamma=0, AV010 h6 gamma=1.15 | code packaged; requests 1 GPU, 8 CPU, 100G, 2d |
+| AF031 best-audio AV two-port BM | AV011-AV015 | align AF031 paper-STFT ResNet50 LSTM4096 audio with the best same-dim VLF002/VF024 video LSTM4096 feature; run avg one-port baseline, gamma=1.15/0.5/0, and h6/h8 controls | code packaged; supersedes AV006-AV010 as the main AV branch; requests 1 GPU, 8 CPU, 100G, 2d |
+| AF031 audio BM improvement | AF034-AF040 | continue AF031, test h8/h10 capacity, and test less-compressed visible encodings: seqconcat8192 and global2048+lstm4096 concat6144 | code packaged; two sbatch files: capacity and encoding variants; each requests 1 GPU |
 
-## Audio ResNet50 Sequence Result
-
-| experiment | final epoch | input dim | hidden dim | total pbits | best epoch | quick best | full best |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| AF024_standard_audio_resnet50seq_meanstd4096_h6_lc5_e320 | 320 | 4096 | 24576 | 30217 | 320 | 26.65% | 26.58% |
-| AF025_standard_audio_resnet50seq_meanstd4096_h8_lc5_e320 | 320 | 4096 | 32768 | 38409 | 305 | 27.74% | 26.14% |
-| AF026_standard_audio_resnet50seq_lstm4096_h6_lc5_e320 | 320 | 4096 | 24576 | 30217 | 320 | 29.06% | 28.97% |
-| AF027_standard_audio_resnet50seq_lstm4096_h8_lc5_e320 | 320 | 4096 | 32768 | 38409 | 320 | 30.77% | 30.76% |
-
-## Audio Paper-STFT ResNet50 Route
-
-Status: code prepared/runnable. This route removes the previous STFT128x96 teacher bottleneck.
-
-| item | result |
-|---|---:|
-| ResNet50 teacher top1 | 51.74% |
-| ResNet50 sequence LSTM teacher top1 | 49.18% |
-| AF028 full best | 20.11% |
-| AF029 full best | 38.78% |
-| AF030 full best | 36.65% |
-| AF031 full best | 44.31% |
-
-## AF029 Paper-ResNet Audio Continuation
-
-| experiment | final epoch | hidden dim | total pbits | best epoch | quick best | full best |
-|---|---:|---:|---:|---:|---:|---:|
-| AF032_standard_audio_paperresnet50_meanstd4096_h6_lc5_e650_resume_af029 | 650 | 24576 | 30217 | 645 | 41.46% | 39.30% |
-| AF033_standard_audio_paperresnet50_meanstd4096_h6_lc5_e850_resume_af032 | 850 | 24576 | 30217 | 815 | 42.38% | 39.57% |
+Note: AV006-AV010 used AF029 mean/std audio and should now be treated as an older audio-feature ablation. The current main audio-video two-port branch is AV011-AV015 because AF031 is the strongest uploaded audio-only BM result. VF026 is the strongest uploaded video-only BM result, but it uses 8192-d video features; the current two-port trainer requires equal port dimensions, so AV011-AV015 uses the strongest 4096-d video branch instead.
 
 ## Existing Best Audio-Video Fusion
 
@@ -295,9 +375,11 @@ Status: code prepared/runnable. This route removes the previous STFT128x96 teach
 |---|---|---:|---:|---:|
 | AV001 | standard | 320 | 37.26% | 37.29% |
 | AV002 | twoport | 270 | 41.06% | 40.63% |
+| AV003 | twoport | 320 | 37.04% | 37.13% |
 
-## Current Best Paper-Audio Audio-Video Fusion
+## AF031 Improvement Branch
 
-| experiment | model | best epoch | quick best | full best |
-|---|---|---:|---:|---:|
-| AV006 | standard | 320 | 41.39% | 41.48% |
+| experiment | input dim | hidden dim | total pbits | best epoch | quick best | full best |
+|---|---:|---:|---:|---:|---:|---:|
+| AF034 | 4096 | 24576 | 30217 | 505 | 44.63% | 44.55% |
+| AF035 | 4096 | 24576 | 30217 | 505 | 44.63% | 44.55% |

@@ -1,0 +1,21 @@
+Start time: Mon Jun 22 03:44:44 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 317
+CUDA_VISIBLE_DEVICES: 6
+Suite: AF031 visible-encoding variants
+
+[2026-06-22 15:44:45] MAKE seqconcat8192 feature
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_audio_bm_feature_variants.py --mode seq_concat --seq_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seq_chunks4_w500_seed123.npz --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seqconcat8192_chunks4_w500_seed123.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seqconcat8192_chunks4_w500_seed123_summary.json --normalize per_dim_zscore_sigmoid
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF038_make_seqconcat8192_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF038_make_seqconcat8192_stderr.log
+
+[2026-06-22 15:46:01] MAKE global2048+lstm4096 concat6144 feature
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_audio_bm_feature_variants.py --mode concat_audio_npz --feature_a_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_global2048_seed123.npz --feature_b_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_lstm4096_chunks4_w500_h1024_seed123.npz --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_global2048_lstm4096_concat6144_seed123.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_global2048_lstm4096_concat6144_seed123_summary.json --normalize per_dim_zscore_sigmoid
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF040_make_global_lstm6144_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF040_make_global_lstm6144_stderr.log
+
+[2026-06-22 15:46:48] TRAIN AF038 standard_audio_paperresnet50_seqconcat8192_h4_lc5_e500 input=8192 hidden=32768 total=42505
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seqconcat8192_chunks4_w500_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF038_standard_audio_paperresnet50_seqconcat8192_h4_lc5_e500 --experiment_id AF038 --model_type standard --input_mode audio --total_pbits 42505 --input_dim 8192 --num_classes 309 --label_copies 5 --epochs 500 --batch_size 64 --eval_batch_size 48 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF038_standard_audio_paperresnet50_seqconcat8192_h4_lc5_e500_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AF038_standard_audio_paperresnet50_seqconcat8192_h4_lc5_e500_stderr.log
