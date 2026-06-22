@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-06-21 18:05:04",
+  "purpose": "Continue VF026 from incomplete JobID 302/epoch149 to epoch260",
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260",
+  "start_history_len": 149,
+  "start_last_epoch": 149,
+  "target_epochs": 260,
+  "start_best_quick_row": {
+    "epoch": 145,
+    "train_recon_mse": 0.009801362939466157,
+    "test_label_gibbs_acc": 0.4212241705234339,
+    "test_label_entropy": 2.5193281809488934
+  },
+  "feature_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_lstm8192_resnet50_f16_h1024_p1024_seed123.npz",
+  "summary_backup": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260/summary_eval_only_epoch149.json",
+  "full_eval_backup": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260/full_eval_best_3000_eval_only_epoch149.json"
+}

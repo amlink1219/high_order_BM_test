@@ -1,4 +1,29 @@
+Start time: Sun Jun 21 06:05:04 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 310
+CUDA_VISIBLE_DEVICES: 4
 {
+  "created_at": "2026-06-21 18:05:04",
+  "purpose": "Continue VF026 from incomplete JobID 302/epoch149 to epoch260",
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260",
+  "start_history_len": 149,
+  "start_last_epoch": 149,
+  "target_epochs": 260,
+  "start_best_quick_row": {
+    "epoch": 145,
+    "train_recon_mse": 0.009801362939466157,
+    "test_label_gibbs_acc": 0.4212241705234339,
+    "test_label_entropy": 2.5193281809488934
+  },
+  "feature_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_lstm8192_resnet50_f16_h1024_p1024_seed123.npz",
+  "summary_backup": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260/summary_eval_only_epoch149.json",
+  "full_eval_backup": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260/full_eval_best_3000_eval_only_epoch149.json"
+}
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_video_lstm8192_resnet50_f16_h1024_p1024_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260 --experiment_id VF026_standard_video_lstm8192_h6_lc5_e260_continue_to260 --model_type standard --input_mode video --total_pbits 58889 --input_dim 8192 --num_classes 309 --label_copies 5 --epochs 260 --batch_size 32 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --resume_ckpt /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260/last.pt --resume_history_json /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260/history.json --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_continue_to260_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_continue_to260_stderr.log
+[summary] {
   "experiment_id": "VF026_standard_video_lstm8192_h6_lc5_e260_continue_to260",
   "finished_at": "2026-06-22 01:48:37",
   "model_type": "standard",
@@ -336,3 +361,4 @@
   },
   "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_VF026_standard_video_lstm8192_h6_lc5_e260"
 }
+End time: Mon Jun 22 01:48:39 AM CST 2026
