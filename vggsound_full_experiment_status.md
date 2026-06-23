@@ -376,10 +376,15 @@ Note: AV006-AV010 used AF029 mean/std audio and should now be treated as an olde
 | AV001 | standard | 320 | 37.26% | 37.29% |
 | AV002 | twoport | 270 | 41.06% | 40.63% |
 | AV003 | twoport | 320 | 37.04% | 37.13% |
+| AV004 | twoport | 320 | 36.84% | 36.93% |
+| AV005 | twoport | 285 | 40.48% | 40.32% |
 
-## AF031 Improvement Branch
+## Waiting Parameter Sweep
 
-| experiment | input dim | hidden dim | total pbits | best epoch | quick best | full best |
-|---|---:|---:|---:|---:|---:|---:|
-| AF034 | 4096 | 24576 | 30217 | 505 | 44.63% | 44.55% |
-| AF035 | 4096 | 24576 | 30217 | 505 | 44.63% | 44.55% |
+| experiment | best epoch | quick best | full best |
+|---|---:|---:|---:|
+| WP001 | 255 | 42.30% | 42.21% |
+| WP002 | 260 | 42.57% | 42.38% |
+| WP003 | 420 | 28.03% | 23.99% |
+| WP004 | 400 | 28.60% | 28.32% |
+| WP005 | 320 | 40.48% | 40.66% |

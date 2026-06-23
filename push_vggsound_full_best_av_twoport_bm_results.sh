@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+shopt -s nullglob
+
+cd /home/Hongjie_Zeng/high_order_BM
+
+paths=(
+  make_vggsound_full_aligned_av_features.py
+  run_vggsound_full_best_av_twoport_bm.py
+  sbatch_vggsound_full_best_av_twoport_bm.sh
+  push_vggsound_full_best_av_twoport_bm_results.sh
+  README_vggsound_full_best_av_twoport_bm.md
+  vggsound_full_experiment_status.md
+  vggsound_full_best_av_twoport_bm_log.md
+  logs/vggsound_best_av_twoport_*.out
+  logs/vggsound_best_av_twoport_*.err
+  runs_vggsound_full_AV000_align_best_av_stdout.log
+  runs_vggsound_full_AV000_align_best_av_stderr.log
+  data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audiocnnlstm4096_seed123_summary.json
+  runs_vggsound_full_AV001_standard_avg_videolstm4096_audiocnnlstm4096_h8_lc5_e320/config.json
+  runs_vggsound_full_AV001_standard_avg_videolstm4096_audiocnnlstm4096_h8_lc5_e320/history.json
+  runs_vggsound_full_AV001_standard_avg_videolstm4096_audiocnnlstm4096_h8_lc5_e320/summary.json
+  runs_vggsound_full_AV001_standard_avg_videolstm4096_audiocnnlstm4096_h8_lc5_e320_stdout.log
+  runs_vggsound_full_AV001_standard_avg_videolstm4096_audiocnnlstm4096_h8_lc5_e320_stderr.log
+  runs_vggsound_full_AV002_twoport_videolstm4096_audiocnnlstm4096_h8_g115_lc5_e320/config.json
+  runs_vggsound_full_AV002_twoport_videolstm4096_audiocnnlstm4096_h8_g115_lc5_e320/history.json
+  runs_vggsound_full_AV002_twoport_videolstm4096_audiocnnlstm4096_h8_g115_lc5_e320/summary.json
+  runs_vggsound_full_AV002_twoport_videolstm4096_audiocnnlstm4096_h8_g115_lc5_e320_stdout.log
+  runs_vggsound_full_AV002_twoport_videolstm4096_audiocnnlstm4096_h8_g115_lc5_e320_stderr.log
+  runs_vggsound_full_AV003_twoport_videolstm4096_audiocnnlstm4096_h8_g050_lc5_e320/config.json
+  runs_vggsound_full_AV003_twoport_videolstm4096_audiocnnlstm4096_h8_g050_lc5_e320/history.json
+  runs_vggsound_full_AV003_twoport_videolstm4096_audiocnnlstm4096_h8_g050_lc5_e320/summary.json
+  runs_vggsound_full_AV003_twoport_videolstm4096_audiocnnlstm4096_h8_g050_lc5_e320_stdout.log
+  runs_vggsound_full_AV003_twoport_videolstm4096_audiocnnlstm4096_h8_g050_lc5_e320_stderr.log
+  runs_vggsound_full_AV004_twoport_videolstm4096_audiocnnlstm4096_h8_g000_lc5_e320/config.json
+  runs_vggsound_full_AV004_twoport_videolstm4096_audiocnnlstm4096_h8_g000_lc5_e320/history.json
+  runs_vggsound_full_AV004_twoport_videolstm4096_audiocnnlstm4096_h8_g000_lc5_e320/summary.json
+  runs_vggsound_full_AV004_twoport_videolstm4096_audiocnnlstm4096_h8_g000_lc5_e320_stdout.log
+  runs_vggsound_full_AV004_twoport_videolstm4096_audiocnnlstm4096_h8_g000_lc5_e320_stderr.log
+  runs_vggsound_full_AV005_twoport_videolstm4096_audiocnnlstm4096_h6_g115_lc5_e320/config.json
+  runs_vggsound_full_AV005_twoport_videolstm4096_audiocnnlstm4096_h6_g115_lc5_e320/history.json
+  runs_vggsound_full_AV005_twoport_videolstm4096_audiocnnlstm4096_h6_g115_lc5_e320/summary.json
+  runs_vggsound_full_AV005_twoport_videolstm4096_audiocnnlstm4096_h6_g115_lc5_e320_stdout.log
+  runs_vggsound_full_AV005_twoport_videolstm4096_audiocnnlstm4096_h6_g115_lc5_e320_stderr.log
+)
+
+for p in "${paths[@]}"; do
+  if [ -e "$p" ]; then
+    git add "$p"
+  fi
+done
+
+git commit -m "Add best audio-video two-port BM results" || true
+git push -u origin main
