@@ -1,0 +1,157 @@
+[data] train=182615 test=15341 classes=309 video=1 motion=1 audio=8192 device=cuda
+[model] standard input=8192 label=1545 hidden=49152 total=58889 mode=audio
+[init] estimating visible bias from training set
+[epoch 001] recon_mse=0.03761
+[epoch 002] recon_mse=0.02271
+[epoch 003] recon_mse=0.02046
+[epoch 004] recon_mse=0.01944
+[epoch 005] recon_mse=0.01883 quick_test_acc=0.1108 ent=5.5694
+[epoch 006] recon_mse=0.01841
+[epoch 007] recon_mse=0.01811
+[epoch 008] recon_mse=0.01786
+[epoch 009] recon_mse=0.01765
+[epoch 010] recon_mse=0.01747 quick_test_acc=0.1649 ent=5.4974
+[epoch 011] recon_mse=0.01733
+[epoch 012] recon_mse=0.01721
+[epoch 013] recon_mse=0.01712
+[epoch 014] recon_mse=0.01703
+[epoch 015] recon_mse=0.01695 quick_test_acc=0.1956 ent=5.3821
+[epoch 016] recon_mse=0.01688
+[epoch 017] recon_mse=0.01681
+[epoch 018] recon_mse=0.01674
+[epoch 019] recon_mse=0.01668
+[epoch 020] recon_mse=0.01663 quick_test_acc=0.2171 ent=5.2347
+[epoch 021] recon_mse=0.01658
+[epoch 022] recon_mse=0.01653
+[epoch 023] recon_mse=0.01649
+[epoch 024] recon_mse=0.01645
+[epoch 025] recon_mse=0.01641 quick_test_acc=0.2355 ent=5.0757
+[epoch 026] recon_mse=0.01637
+[epoch 027] recon_mse=0.01634
+[epoch 028] recon_mse=0.01630
+[epoch 029] recon_mse=0.01627
+[epoch 030] recon_mse=0.01624 quick_test_acc=0.2496 ent=4.9224
+[epoch 031] recon_mse=0.01621
+[epoch 032] recon_mse=0.01618
+[epoch 033] recon_mse=0.01615
+[epoch 034] recon_mse=0.01612
+[epoch 035] recon_mse=0.01610 quick_test_acc=0.2637 ent=4.7918
+[epoch 036] recon_mse=0.01607
+[epoch 037] recon_mse=0.01605
+[epoch 038] recon_mse=0.01603
+[epoch 039] recon_mse=0.01600
+[epoch 040] recon_mse=0.01599 quick_test_acc=0.2763 ent=4.6660
+[epoch 041] recon_mse=0.01597
+[epoch 042] recon_mse=0.01594
+[epoch 043] recon_mse=0.01592
+[epoch 044] recon_mse=0.01590
+[epoch 045] recon_mse=0.01588 quick_test_acc=0.2867 ent=4.5549
+[epoch 046] recon_mse=0.01587
+[epoch 047] recon_mse=0.01585
+[epoch 048] recon_mse=0.01583
+[epoch 049] recon_mse=0.01581
+[epoch 050] recon_mse=0.01580 quick_test_acc=0.2951 ent=4.4624
+[epoch 051] recon_mse=0.01578
+[epoch 052] recon_mse=0.01576
+[epoch 053] recon_mse=0.01575
+[epoch 054] recon_mse=0.01573
+[epoch 055] recon_mse=0.01572 quick_test_acc=0.3050 ent=4.3823
+[epoch 056] recon_mse=0.01571
+[epoch 057] recon_mse=0.01570
+[epoch 058] recon_mse=0.01568
+[epoch 059] recon_mse=0.01566
+[epoch 060] recon_mse=0.01565 quick_test_acc=0.3135 ent=4.2951
+[epoch 061] recon_mse=0.01564
+[epoch 062] recon_mse=0.01562
+[epoch 063] recon_mse=0.01562
+[epoch 064] recon_mse=0.01560
+[epoch 065] recon_mse=0.01559 quick_test_acc=0.3195 ent=4.2199
+[epoch 066] recon_mse=0.01558
+[epoch 067] recon_mse=0.01556
+[epoch 068] recon_mse=0.01555
+[epoch 069] recon_mse=0.01554
+[epoch 070] recon_mse=0.01553 quick_test_acc=0.3255 ent=4.1541
+[epoch 071] recon_mse=0.01552
+[epoch 072] recon_mse=0.01551
+[epoch 073] recon_mse=0.01550
+[epoch 074] recon_mse=0.01549
+[epoch 075] recon_mse=0.01548 quick_test_acc=0.3304 ent=4.1077
+[epoch 076] recon_mse=0.01547
+[epoch 077] recon_mse=0.01546
+[epoch 078] recon_mse=0.01545
+[epoch 079] recon_mse=0.01544
+[epoch 080] recon_mse=0.01543 quick_test_acc=0.3343 ent=4.0469
+[epoch 081] recon_mse=0.01542
+[epoch 082] recon_mse=0.01541
+[epoch 083] recon_mse=0.01540
+[epoch 084] recon_mse=0.01539
+[epoch 085] recon_mse=0.01538 quick_test_acc=0.3395 ent=3.9874
+[epoch 086] recon_mse=0.01537
+[epoch 087] recon_mse=0.01537
+[epoch 088] recon_mse=0.01536
+[epoch 089] recon_mse=0.01535
+[epoch 090] recon_mse=0.01534 quick_test_acc=0.3434 ent=3.9474
+[epoch 091] recon_mse=0.01533
+[epoch 092] recon_mse=0.01532
+[epoch 093] recon_mse=0.01532
+[epoch 094] recon_mse=0.01531
+[epoch 095] recon_mse=0.01530 quick_test_acc=0.3485 ent=3.9045
+[epoch 096] recon_mse=0.01529
+[epoch 097] recon_mse=0.01528
+[epoch 098] recon_mse=0.01528
+[epoch 099] recon_mse=0.01527
+[epoch 100] recon_mse=0.01526 quick_test_acc=0.3521 ent=3.8554
+[epoch 101] recon_mse=0.01526
+[epoch 102] recon_mse=0.01525
+[epoch 103] recon_mse=0.01524
+[epoch 104] recon_mse=0.01523
+[epoch 105] recon_mse=0.01522 quick_test_acc=0.3551 ent=3.8220
+[epoch 106] recon_mse=0.01522
+[epoch 107] recon_mse=0.01522
+[epoch 108] recon_mse=0.01521
+[epoch 109] recon_mse=0.01519
+[epoch 110] recon_mse=0.01519 quick_test_acc=0.3573 ent=3.7844
+[epoch 111] recon_mse=0.01518
+[epoch 112] recon_mse=0.01518
+[epoch 113] recon_mse=0.01517
+[epoch 114] recon_mse=0.01516
+[epoch 115] recon_mse=0.01515 quick_test_acc=0.3610 ent=3.7479
+[epoch 116] recon_mse=0.01515
+[epoch 117] recon_mse=0.01514
+[epoch 118] recon_mse=0.01514
+[epoch 119] recon_mse=0.01513
+[epoch 120] recon_mse=0.01512 quick_test_acc=0.3626 ent=3.7082
+[epoch 121] recon_mse=0.01512
+[epoch 122] recon_mse=0.01511
+[epoch 123] recon_mse=0.01511
+[epoch 124] recon_mse=0.01510
+[epoch 125] recon_mse=0.01510 quick_test_acc=0.3659 ent=3.6783
+[epoch 126] recon_mse=0.01509
+[epoch 127] recon_mse=0.01508
+[epoch 128] recon_mse=0.01507
+[epoch 129] recon_mse=0.01507
+[epoch 130] recon_mse=0.01507 quick_test_acc=0.3686 ent=3.6479
+[epoch 131] recon_mse=0.01506
+[epoch 132] recon_mse=0.01505
+[epoch 133] recon_mse=0.01505
+[epoch 134] recon_mse=0.01504
+[epoch 135] recon_mse=0.01504 quick_test_acc=0.3718 ent=3.6214
+[epoch 136] recon_mse=0.01503
+[epoch 137] recon_mse=0.01503
+[epoch 138] recon_mse=0.01502
+[epoch 139] recon_mse=0.01501
+[epoch 140] recon_mse=0.01501 quick_test_acc=0.3727 ent=3.5875
+[epoch 141] recon_mse=0.01500
+[epoch 142] recon_mse=0.01499
+[epoch 143] recon_mse=0.01499
+[epoch 144] recon_mse=0.01498
+[epoch 145] recon_mse=0.01498 quick_test_acc=0.3753 ent=3.5603
+[epoch 146] recon_mse=0.01497
+[epoch 147] recon_mse=0.01497
+[epoch 148] recon_mse=0.01496
+[epoch 149] recon_mse=0.01496
+[epoch 150] recon_mse=0.01495 quick_test_acc=0.3770 ent=3.5349
+[epoch 151] recon_mse=0.01495
+[epoch 152] recon_mse=0.01495
+[epoch 153] recon_mse=0.01494
+[epoch 154] recon_mse=0.01493

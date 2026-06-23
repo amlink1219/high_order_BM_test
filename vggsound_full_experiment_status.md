@@ -1,6 +1,6 @@
 # VGGSound Full Experiment Status
 
-Updated: 2026-06-21
+Updated: 2026-06-23
 
 This file is the running status ledger for the full VGGSound branch. It separates completed results, code already prepared but not yet analyzed, and discussed future directions.
 
@@ -59,11 +59,13 @@ This file is the running status ledger for the full VGGSound branch. It separate
 | paper-STFT ResNet50 global | AF028 | 20.11% | -11.10 pp vs AF023 | ARF004 global2048, h8; quick acc was unreliable for final conclusion |
 | paper-STFT ResNet50 mean/std | AF029 | 38.78% | +7.57 pp vs AF023 | ARF004 teacher top1 = 51.74%, top5 = 77.04%; former best audio-only BM |
 | paper-STFT ResNet50 mean/std | AF030 | 36.65% | -2.13 pp vs AF029 | h8, epoch 450; quick best 41.01% but full eval dropped, so h8 did not help mean/std |
-| paper-STFT ResNet50 LSTM | AF031 | 44.31% | +5.53 pp vs AF029 | ARF005 paper-STFT ResNet50 sequence -> LSTM4096, h6; current best audio-only BM |
+| paper-STFT ResNet50 LSTM | AF031 | 44.31% | +5.53 pp vs AF029 | ARF005 paper-STFT ResNet50 sequence -> LSTM4096, h6; former best audio-only BM |
 | paper-STFT ResNet50 mean/std continuation | AF032 | 39.30% | +0.52 pp vs AF029 | continued AF029 to epoch 650; improves mean/std but still far below AF031 |
 | paper-STFT ResNet50 mean/std continuation | AF033 | 39.57% | +0.79 pp vs AF029 | continued AF032 to epoch 850; improves slowly, still far below AF031 |
+| paper-STFT ResNet50 LSTM continuation | AF034 | 44.55% | +0.24 pp vs AF031 | continued AF031 to epoch 650; best epoch stayed early at 505 |
+| paper-STFT ResNet50 LSTM continuation | AF035 | 44.55% | +0.24 pp vs AF031 | continued AF034 to epoch 850; no further full-eval gain and final quick regressed |
 
-AF031 is now the strongest uploaded audio-only BM result. AF017/AF019/AF023 showed that the h6 audio CNN-LSTM BM benefited from much longer training:
+AF034/AF035 are now the strongest uploaded audio-only BM results. AF017/AF019/AF023 showed that the h6 audio CNN-LSTM BM benefited from much longer training:
 
 ```text
 AF017 quick best = 25.55% at epoch 300
@@ -112,19 +114,18 @@ This confirms that the earlier weak audio results were mainly caused by the 128x
 | 302 | `vggsound_video_vf022_extend_302.out` | VLF003 / VF023-VF026 | 1 GPU, 8 CPU, 120G, 1d | time-limit stopped on 2026-06-21; partial results uploaded: VF023 full = 41.93%, VF024 full = 42.74%, VLF003 teacher top1 = 42.40%, VF025 full = 42.54%; VF026 reached epoch 149 but has no `summary.json` | VF024 is current best uploaded video-only BM; VF026 needs eval-only checkpoint assessment before deciding whether to continue |
 | 304 | `vggsound_audio_resnet50_sequence_304.out` | ARF002-ARF003 / AF024-AF027 | 4 GPU, 32 CPU, 110G, 2d | completed and uploaded; AF024 full = 26.58%, AF025 full = 26.14%, AF026 full = 28.97%, AF027 full = 30.76% | 128x96 ResNet50 sequence route does not beat AF023 or AF029; no longer a main audio route |
 | 306 | `vggsound_audio_paper_resnet50_306.out` | ARF004-ARF005 / AF028-AF031 | 2 GPU, 24 CPU, 110G, 2d | completed and uploaded: AF028 full = 20.11%, AF029 full = 38.78%, AF030 full = 36.65%, AF031 full = 44.31% | AF031 paper-STFT ResNet50 LSTM4096 is current best audio-only BM |
-| 307 | `vggsound_best_av_twoport_307.out` | AV001-AV005 | 2 GPU, 12 CPU, 100G | submitted on 2026-06-21 | provisional current-best audio/video fusion: avg one-port baseline and two-port gamma ablations |
+| 307 | `vggsound_best_av_twoport_307.out` | AV001-AV005 | 2 GPU, 12 CPU, 100G | completed and uploaded; AV001-AV005 all have summaries | old audio CNN-LSTM fusion branch: AV002 gamma=1.15 full = 40.63%, better than avg baseline but below current unimodal bests |
 | 308 | `vggsound_waiting_param_sweep_308.out` | WP001-WP008 | 2 GPU, 12 CPU, 100G | pending on 2026-06-21 with Slurm reason `Nodes required for job are DOWN, DRAINED or reserved for jobs in higher priority partitions` | waiting parameter sweep; this is queued, not a failed submission |
 | 309 | `vggsound_vf026_eval_only_309.out` | VF026 eval-only checkpoint assessment | 1 GPU, 8 CPU, 120G, 4h | completed and uploaded; VF026 epoch145 full eval = 42.10% | VF026 is below VF024 now, but it was still improving when stopped; continue only if video capacity test is worth another 7-8 h |
 | 310 | `vggsound_vf026_continue_to260_310.out` | VF026 continuation to epoch260 | 1 GPU, 8 CPU, 120G, 12h | completed and uploaded: VF026 full = 42.84% | VF026 is current best video-only BM, marginally above VF024 |
 | 311 | `vggsound_best_av_paper_audio_311.out` | AV006-AV010 paper-audio AV fusion | 1 GPU, 8 CPU, 100G, 1d | partial/failed: AV006 full = 41.48%; AV007 started then wrapper failed; AV008-AV010 not run/uploaded | need inspect/upload AV007 child stderr to diagnose two-port failure |
 | 312 | `vggsound_audio_paperresnet_af029_cont_312.out` | AF032-AF033 AF029 continuation | 1 GPU, 8 CPU, 90G, 12h | completed and uploaded: AF032 full = 39.30%, AF033 full = 39.57% | mean/std audio continues improving slowly but is far below AF031 |
 
-Current submitted-but-not-yet-analyzed request total, assuming Jobs 307/308 are still active or queued:
+Current submitted-but-not-yet-analyzed request total, assuming Job 308 is still active or queued:
 
 ```text
-Job 307 = 2 GPU, 12 CPU cores, 100G memory requested
 Job 308 = 2 GPU, 12 CPU cores, 100G memory requested
-Total queued/running request = 4 GPU, 24 CPU cores, 200G memory
+Total queued/running request = 2 GPU, 12 CPU cores, 100G memory
 ```
 
 Resource planning note:
@@ -251,6 +252,48 @@ Interpretation:
 
 Both kept the AF012 geometry fixed. The only change was longer training.
 
+## Audio-Video Fusion Results
+
+### Job 307: Video LSTM4096 + Old Audio CNN-LSTM4096
+
+This branch used the then-current audio feature, `audio_cnnlstm4096_stft128x96`, paired with the VLF002 video LSTM4096 feature. It is now an older audio-feature ablation because AF031 later became much stronger on audio-only BM.
+
+| experiment | model | hidden dim | gamma | best epoch | quick best | final quick | full best |
+|---|---|---:|---:|---:|---:|---:|---:|
+| AV001 | standard avg(video,audio) | 32768 | - | 320 | 37.26% | 37.26% | 37.29% |
+| AV002 | two-port | 32768 | 1.15 | 270 | 41.06% | 40.47% | 40.63% |
+| AV003 | two-port | 32768 | 0.50 | 320 | 37.04% | 37.04% | 37.13% |
+| AV004 | two-port | 32768 | 0.00 | 320 | 36.84% | 36.84% | 36.93% |
+| AV005 | two-port | 24576 | 1.15 | 285 | 40.48% | 40.27% | 40.32% |
+
+Interpretation:
+
+- In this older feature branch, the true two-port interaction matters: `gamma=1.15` improves over the standard avg baseline by +3.34 pp (`40.63%` vs `37.29%`).
+- Reducing/removing the interaction term collapses the result back to baseline level: `gamma=0.50` gives `37.13%`, and `gamma=0.00` gives `36.93%`.
+- Reducing hidden capacity from h8 to h6 with `gamma=1.15` slightly hurts (`40.32%` vs `40.63%`).
+- Even the best old-audio two-port result is below the later unimodal bests: video-only VF026 = `42.84%`, audio-only AF034/AF035 = `44.55%`.
+
+### Job 313: Video LSTM4096 + AF031 Paper-STFT ResNet50 LSTM4096
+
+This is the current main AF031 audio-video branch. It aligns the strongest uploaded 4096-d video feature with the strongest uploaded 4096-d audio feature.
+
+| experiment | model | hidden dim | gamma | best epoch | quick best | final quick | full best | status |
+|---|---|---:|---:|---:|---:|---:|---:|---|
+| AV011 | standard avg(video,audio) | 32768 | - | 320 | 43.60% | 43.60% | 43.69% | completed |
+| AV012 | two-port | 32768 | 1.15 | epoch 180 partial | 54.76% partial | - | - | failed at epoch 182 with CUDA launch timeout; no full eval yet |
+| AV013 | two-port | 32768 | 0.50 | - | - | - | - | not reached |
+| AV014 | two-port | 32768 | 0.00 | - | - | - | - | not reached |
+| AV015 | two-port | 24576 | 1.15 | - | - | - | - | not reached |
+
+Interpretation:
+
+- The simple avg one-port fusion baseline is already strong: AV011 full = `43.69%`.
+- AV011 beats video-only VF026 (`42.84%`) by +0.85 pp, but it is still below audio-only AF031 (`44.31%`) and below the AF031 continuation best AF034/AF035 (`44.55%`).
+- There is not yet a valid AF031 true two-port full-eval result, but the partial AV012 trajectory is very strong. It reached quick `54.76%` at epoch 180 before failing at epoch 182.
+- The uploaded child stderr shows `torch.AcceleratorError: CUDA error: the launch timed out and was terminated` at `loss.item()`. This is a CUDA kernel timeout/asynchronous CUDA error, not a dataset-missing error and not an ordinary Python exception in the BM logic.
+- Because AV012 quick accuracy is already far above AV011 (`43.69%` full), video-only VF026 (`42.84%`), and audio-only AF034/AF035 (`44.55%`), the next priority is to preserve/evaluate/resume AV012 from its saved checkpoint rather than abandon the branch.
+- Recommended next step: upload/check `AV012/config.json`, `AV012/history.json`, and whether `AV012/best.pt`/`last.pt` exist on the server; then run eval-only on `best.pt` or resume with smaller `batch_size`/`eval_batch_size`.
+
 ## Interpretation
 
 The full VGGSound branch is no longer using raw video/audio directly for the main results. Effective BM performance only appeared after supervised feature extraction:
@@ -264,7 +307,7 @@ Current best unimodal results:
 
 ```text
 video-only BM: VF026 = 42.84%
-audio-only BM: AF031 = 44.31%
+audio-only BM: AF034/AF035 = 44.55%
 ```
 
 The audio branch is still weaker than video, but the improvement from STFT to learned audio embeddings is very large:
@@ -364,27 +407,15 @@ audio = paper-STFT ResNet50 mean/std4096, strong audio BM AF029 = 38.78%
 | Current-best paper-audio AV two-port BM | AV006-AV010 | align VLF002 video LSTM4096 with AF029 paper-STFT ResNet50 mean/std4096; run avg one-port baseline, gamma=1.15/0.5/0, and h6/h8 controls | code packaged; requests 1 GPU, 8 CPU, 100G, 1d |
 | AF029 paper-ResNet audio continuation | AF032-AF033 | continue strongest uploaded audio-only BM AF029 from epoch450 to epoch650/850 | code packaged; requests 1 GPU, 8 CPU, 90G, 12h |
 | AV007 resume and AV008-AV010 | AV007-AV010 | resume failed AV007 from `last.pt` with smaller batch; then run AV008 gamma=0.50, AV009 gamma=0, AV010 h6 gamma=1.15 | code packaged; requests 1 GPU, 8 CPU, 100G, 2d |
-| AF031 best-audio AV two-port BM | AV011-AV015 | align AF031 paper-STFT ResNet50 LSTM4096 audio with the best same-dim VLF002/VF024 video LSTM4096 feature; run avg one-port baseline, gamma=1.15/0.5/0, and h6/h8 controls | code packaged; supersedes AV006-AV010 as the main AV branch; requests 1 GPU, 8 CPU, 100G, 2d |
+| AF031 best-audio AV two-port BM | AV011-AV015 | align AF031 paper-STFT ResNet50 LSTM4096 audio with the best same-dim VLF002/VF024 video LSTM4096 feature; run avg one-port baseline, gamma=1.15/0.5/0, and h6/h8 controls | code packaged; AV011 completed, AV012 failed before two-port result |
 | AF031 audio BM improvement | AF034-AF040 | continue AF031, test h8/h10 capacity, and test less-compressed visible encodings: seqconcat8192 and global2048+lstm4096 concat6144 | code packaged; two sbatch files: capacity and encoding variants; each requests 1 GPU |
 
-Note: AV006-AV010 used AF029 mean/std audio and should now be treated as an older audio-feature ablation. The current main audio-video two-port branch is AV011-AV015 because AF031 is the strongest uploaded audio-only BM result. VF026 is the strongest uploaded video-only BM result, but it uses 8192-d video features; the current two-port trainer requires equal port dimensions, so AV011-AV015 uses the strongest 4096-d video branch instead.
+Note: AV006-AV010 used AF029 mean/std audio and should now be treated as an older audio-feature ablation. The current main audio-video two-port branch is AV011-AV015 because AF031/AF034-style paper-STFT ResNet50 LSTM audio is the strongest uploaded audio feature family. VF026 is the strongest uploaded video-only BM result, but it uses 8192-d video features; the current two-port trainer requires equal port dimensions, so AV011-AV015 uses the strongest 4096-d video branch instead.
 
-## Existing Best Audio-Video Fusion
+## Submitted Jobs 2026-06-22
 
-| experiment | model | best epoch | quick best | full best |
-|---|---|---:|---:|---:|
-| AV001 | standard | 320 | 37.26% | 37.29% |
-| AV002 | twoport | 270 | 41.06% | 40.63% |
-| AV003 | twoport | 320 | 37.04% | 37.13% |
-| AV004 | twoport | 320 | 36.84% | 36.93% |
-| AV005 | twoport | 285 | 40.48% | 40.32% |
-
-## Waiting Parameter Sweep
-
-| experiment | best epoch | quick best | full best |
-|---|---:|---:|---:|
-| WP001 | 255 | 42.30% | 42.21% |
-| WP002 | 260 | 42.57% | 42.38% |
-| WP003 | 420 | 28.03% | 23.99% |
-| WP004 | 400 | 28.60% | 28.32% |
-| WP005 | 320 | 40.48% | 40.66% |
+| JobID | squeue name | branch | IDs | requested resources | status / note |
+|---:|---|---|---|---|---|
+| 313 | `vgg-avaf` | AF031 best-audio AV two-port BM | AV011-AV015 | 1 GPU, 8 CPU, 100G, 2d | completed with failure after AV011: AV011 full = 43.69%; AV012 reached epoch 182, quick best = 54.76%, then CUDA launch timeout; AV013-AV015 not reached |
+| 316 | `vgg-af31` | AF031 audio BM continuation/capacity | AF034-AF037 | 1 GPU, 8 CPU, 100G, 2d | running; AF031 continuation plus h8/h10 BM capacity tests |
+| 317 | `vgg-af31` | AF031 audio BM visible-encoding variants | AF038-AF040 | 1 GPU, 8 CPU, 110G, 2d | running; seqconcat8192 and global2048+lstm4096 concat6144 encodings |

@@ -1,0 +1,30 @@
+{
+  "mode": "seq_concat",
+  "seq_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seq_chunks4_w500_seed123.npz",
+  "out_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_paperresnet50_seqconcat8192_chunks4_w500_seed123.npz",
+  "train_shape": [
+    182615,
+    8192
+  ],
+  "test_shape": [
+    15341,
+    8192
+  ],
+  "source_seq_shape_train": [
+    182615,
+    4,
+    2048
+  ],
+  "source_seq_shape_test": [
+    15341,
+    4,
+    2048
+  ],
+  "normalize": {
+    "mode": "per_dim_zscore_sigmoid",
+    "mu_mean": 0.1612117439508438,
+    "sd_mean": 0.26739487051963806
+  },
+  "created_at": "2026-06-22 15:46:01",
+  "note": "These features are still ResNet50 embedding based; they do not use teacher class logits/probabilities as visible input."
+}
