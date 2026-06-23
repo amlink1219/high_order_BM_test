@@ -1,0 +1,50 @@
+Start time: Tue Jun 23 02:46:00 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 318
+CUDA_VISIBLE_DEVICES: 0
+Eval-only: AV012 best.pt full Gibbs test
+[eval] started_at=2026-06-23 14:46:05 device=cuda
+[eval] ckpt=/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV012_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320/best.pt
+[eval] feature_npz=/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz
+[eval] ports A=audio O=video
+[eval] steps=3000 burn_in=500 thin=2 batch=16
+{
+  "experiment_id": "AV012_eval_best_3000",
+  "created_at": "2026-06-23 15:30:54",
+  "command": "eval_vggsound_twoport_checkpoint.py --ckpt /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV012_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320/best.pt --config_json /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV012_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320/config.json --out_json /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV012_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320/full_eval_best_evalonly_3000.json --experiment_id AV012_eval_best_3000 --eval_batch_size 16 --eval_steps 3000 --eval_burn_in 500 --eval_thin 2 --label_init random_onehot --label_update binary --num_workers 0 --device auto",
+  "ckpt": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV012_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320/best.pt",
+  "ckpt_epoch": 180,
+  "ckpt_best_acc": 0.547617495600026,
+  "config_json": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV012_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320/config.json",
+  "feature_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz",
+  "port_a": "audio",
+  "port_o": "video",
+  "eval_batch_size": 16,
+  "eval_steps": 3000,
+  "eval_burn_in": 500,
+  "eval_thin": 2,
+  "label_init": "random_onehot",
+  "label_update": "binary",
+  "beta_eval": 1.0,
+  "test_label_gibbs_acc": 0.5508767355452708,
+  "test_label_entropy": 2.400505341255379,
+  "data_dims": {
+    "feature_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz",
+    "train_size": 182615,
+    "test_size": 15341,
+    "num_classes": 309,
+    "video_dim": 4096,
+    "motion_dim": 1,
+    "audio_dim": 4096
+  },
+  "computed_dims": {
+    "image_dim": 4096,
+    "audio_dim": 4096,
+    "label_dim": 1545,
+    "hidden_dim": 32768,
+    "total_pbits": 38409,
+    "num_classes": 309
+  }
+}
+End time: Tue Jun 23 03:30:55 PM CST 2026
