@@ -1,0 +1,1179 @@
+[data] train=182615 test=15341 classes=309 video=1 motion=1 audio=4096 device=cuda
+[model] standard input=4096 label=2472 hidden=24576 total=31144 mode=audio
+[init] estimating visible bias from training set
+[epoch 001] recon_mse=0.03456
+[epoch 002] recon_mse=0.02924
+[epoch 003] recon_mse=0.02585
+[epoch 004] recon_mse=0.02366
+[epoch 005] recon_mse=0.02216 quick_test_acc=0.0422 ent=5.5908
+[epoch 006] recon_mse=0.02102
+[epoch 007] recon_mse=0.02013
+[epoch 008] recon_mse=0.01943
+[epoch 009] recon_mse=0.01890
+[epoch 010] recon_mse=0.01852 quick_test_acc=0.0697 ent=5.5883
+[epoch 011] recon_mse=0.01824
+[epoch 012] recon_mse=0.01802
+[epoch 013] recon_mse=0.01784
+[epoch 014] recon_mse=0.01770
+[epoch 015] recon_mse=0.01757 quick_test_acc=0.0977 ent=5.5796
+[epoch 016] recon_mse=0.01747
+[epoch 017] recon_mse=0.01739
+[epoch 018] recon_mse=0.01731
+[epoch 019] recon_mse=0.01724
+[epoch 020] recon_mse=0.01718 quick_test_acc=0.1121 ent=5.5654
+[epoch 021] recon_mse=0.01712
+[epoch 022] recon_mse=0.01707
+[epoch 023] recon_mse=0.01703
+[epoch 024] recon_mse=0.01699
+[epoch 025] recon_mse=0.01695 quick_test_acc=0.1208 ent=5.5448
+[epoch 026] recon_mse=0.01691
+[epoch 027] recon_mse=0.01688
+[epoch 028] recon_mse=0.01685
+[epoch 029] recon_mse=0.01682
+[epoch 030] recon_mse=0.01679 quick_test_acc=0.1297 ent=5.5177
+[epoch 031] recon_mse=0.01676
+[epoch 032] recon_mse=0.01673
+[epoch 033] recon_mse=0.01671
+[epoch 034] recon_mse=0.01668
+[epoch 035] recon_mse=0.01665 quick_test_acc=0.1366 ent=5.4811
+[epoch 036] recon_mse=0.01663
+[epoch 037] recon_mse=0.01661
+[epoch 038] recon_mse=0.01658
+[epoch 039] recon_mse=0.01656
+[epoch 040] recon_mse=0.01653 quick_test_acc=0.1445 ent=5.4396
+[epoch 041] recon_mse=0.01651
+[epoch 042] recon_mse=0.01649
+[epoch 043] recon_mse=0.01647
+[epoch 044] recon_mse=0.01645
+[epoch 045] recon_mse=0.01643 quick_test_acc=0.1525 ent=5.3922
+[epoch 046] recon_mse=0.01641
+[epoch 047] recon_mse=0.01638
+[epoch 048] recon_mse=0.01636
+[epoch 049] recon_mse=0.01634
+[epoch 050] recon_mse=0.01632 quick_test_acc=0.1585 ent=5.3448
+[epoch 051] recon_mse=0.01630
+[epoch 052] recon_mse=0.01628
+[epoch 053] recon_mse=0.01627
+[epoch 054] recon_mse=0.01625
+[epoch 055] recon_mse=0.01622 quick_test_acc=0.1657 ent=5.2947
+[epoch 056] recon_mse=0.01621
+[epoch 057] recon_mse=0.01619
+[epoch 058] recon_mse=0.01617
+[epoch 059] recon_mse=0.01616
+[epoch 060] recon_mse=0.01614 quick_test_acc=0.1705 ent=5.2441
+[epoch 061] recon_mse=0.01611
+[epoch 062] recon_mse=0.01610
+[epoch 063] recon_mse=0.01608
+[epoch 064] recon_mse=0.01607
+[epoch 065] recon_mse=0.01605 quick_test_acc=0.1761 ent=5.1956
+[epoch 066] recon_mse=0.01603
+[epoch 067] recon_mse=0.01602
+[epoch 068] recon_mse=0.01600
+[epoch 069] recon_mse=0.01598
+[epoch 070] recon_mse=0.01596 quick_test_acc=0.1825 ent=5.1512
+[epoch 071] recon_mse=0.01595
+[epoch 072] recon_mse=0.01593
+[epoch 073] recon_mse=0.01592
+[epoch 074] recon_mse=0.01590
+[epoch 075] recon_mse=0.01589 quick_test_acc=0.1870 ent=5.1078
+[epoch 076] recon_mse=0.01587
+[epoch 077] recon_mse=0.01586
+[epoch 078] recon_mse=0.01584
+[epoch 079] recon_mse=0.01583
+[epoch 080] recon_mse=0.01582 quick_test_acc=0.1916 ent=5.0668
+[epoch 081] recon_mse=0.01580
+[epoch 082] recon_mse=0.01579
+[epoch 083] recon_mse=0.01577
+[epoch 084] recon_mse=0.01576
+[epoch 085] recon_mse=0.01575 quick_test_acc=0.1947 ent=5.0266
+[epoch 086] recon_mse=0.01573
+[epoch 087] recon_mse=0.01572
+[epoch 088] recon_mse=0.01571
+[epoch 089] recon_mse=0.01569
+[epoch 090] recon_mse=0.01568 quick_test_acc=0.1988 ent=4.9911
+[epoch 091] recon_mse=0.01567
+[epoch 092] recon_mse=0.01566
+[epoch 093] recon_mse=0.01564
+[epoch 094] recon_mse=0.01563
+[epoch 095] recon_mse=0.01562 quick_test_acc=0.2024 ent=4.9567
+[epoch 096] recon_mse=0.01561
+[epoch 097] recon_mse=0.01559
+[epoch 098] recon_mse=0.01558
+[epoch 099] recon_mse=0.01557
+[epoch 100] recon_mse=0.01556 quick_test_acc=0.2056 ent=4.9223
+[epoch 101] recon_mse=0.01554
+[epoch 102] recon_mse=0.01554
+[epoch 103] recon_mse=0.01553
+[epoch 104] recon_mse=0.01551
+[epoch 105] recon_mse=0.01550 quick_test_acc=0.2087 ent=4.8905
+[epoch 106] recon_mse=0.01549
+[epoch 107] recon_mse=0.01548
+[epoch 108] recon_mse=0.01547
+[epoch 109] recon_mse=0.01546
+[epoch 110] recon_mse=0.01545 quick_test_acc=0.2114 ent=4.8643
+[epoch 111] recon_mse=0.01544
+[epoch 112] recon_mse=0.01543
+[epoch 113] recon_mse=0.01541
+[epoch 114] recon_mse=0.01540
+[epoch 115] recon_mse=0.01539 quick_test_acc=0.2148 ent=4.8339
+[epoch 116] recon_mse=0.01538
+[epoch 117] recon_mse=0.01537
+[epoch 118] recon_mse=0.01536
+[epoch 119] recon_mse=0.01535
+[epoch 120] recon_mse=0.01534 quick_test_acc=0.2186 ent=4.8140
+[epoch 121] recon_mse=0.01533
+[epoch 122] recon_mse=0.01532
+[epoch 123] recon_mse=0.01531
+[epoch 124] recon_mse=0.01530
+[epoch 125] recon_mse=0.01529 quick_test_acc=0.2217 ent=4.7845
+[epoch 126] recon_mse=0.01528
+[epoch 127] recon_mse=0.01527
+[epoch 128] recon_mse=0.01526
+[epoch 129] recon_mse=0.01525
+[epoch 130] recon_mse=0.01524 quick_test_acc=0.2239 ent=4.7651
+[epoch 131] recon_mse=0.01523
+[epoch 132] recon_mse=0.01522
+[epoch 133] recon_mse=0.01521
+[epoch 134] recon_mse=0.01520
+[epoch 135] recon_mse=0.01519 quick_test_acc=0.2273 ent=4.7366
+[epoch 136] recon_mse=0.01518
+[epoch 137] recon_mse=0.01517
+[epoch 138] recon_mse=0.01516
+[epoch 139] recon_mse=0.01515
+[epoch 140] recon_mse=0.01514 quick_test_acc=0.2295 ent=4.7198
+[epoch 141] recon_mse=0.01514
+[epoch 142] recon_mse=0.01513
+[epoch 143] recon_mse=0.01512
+[epoch 144] recon_mse=0.01511
+[epoch 145] recon_mse=0.01510 quick_test_acc=0.2320 ent=4.7046
+[epoch 146] recon_mse=0.01509
+[epoch 147] recon_mse=0.01508
+[epoch 148] recon_mse=0.01507
+[epoch 149] recon_mse=0.01506
+[epoch 150] recon_mse=0.01505 quick_test_acc=0.2345 ent=4.6860
+[epoch 151] recon_mse=0.01505
+[epoch 152] recon_mse=0.01504
+[epoch 153] recon_mse=0.01503
+[epoch 154] recon_mse=0.01502
+[epoch 155] recon_mse=0.01501 quick_test_acc=0.2358 ent=4.6669
+[epoch 156] recon_mse=0.01500
+[epoch 157] recon_mse=0.01499
+[epoch 158] recon_mse=0.01499
+[epoch 159] recon_mse=0.01498
+[epoch 160] recon_mse=0.01497 quick_test_acc=0.2386 ent=4.6481
+[epoch 161] recon_mse=0.01496
+[epoch 162] recon_mse=0.01495
+[epoch 163] recon_mse=0.01494
+[epoch 164] recon_mse=0.01493
+[epoch 165] recon_mse=0.01492 quick_test_acc=0.2398 ent=4.6413
+[epoch 166] recon_mse=0.01492
+[epoch 167] recon_mse=0.01490
+[epoch 168] recon_mse=0.01490
+[epoch 169] recon_mse=0.01489
+[epoch 170] recon_mse=0.01488 quick_test_acc=0.2438 ent=4.6218
+[epoch 171] recon_mse=0.01488
+[epoch 172] recon_mse=0.01487
+[epoch 173] recon_mse=0.01485
+[epoch 174] recon_mse=0.01485
+[epoch 175] recon_mse=0.01484 quick_test_acc=0.2436 ent=4.6088
+[epoch 176] recon_mse=0.01483
+[epoch 177] recon_mse=0.01482
+[epoch 178] recon_mse=0.01482
+[epoch 179] recon_mse=0.01481
+[epoch 180] recon_mse=0.01480 quick_test_acc=0.2472 ent=4.6020
+[epoch 181] recon_mse=0.01479
+[epoch 182] recon_mse=0.01479
+[epoch 183] recon_mse=0.01478
+[epoch 184] recon_mse=0.01477
+[epoch 185] recon_mse=0.01476 quick_test_acc=0.2474 ent=4.5878
+[epoch 186] recon_mse=0.01476
+[epoch 187] recon_mse=0.01475
+[epoch 188] recon_mse=0.01474
+[epoch 189] recon_mse=0.01473
+[epoch 190] recon_mse=0.01473 quick_test_acc=0.2479 ent=4.5787
+[epoch 191] recon_mse=0.01472
+[epoch 192] recon_mse=0.01471
+[epoch 193] recon_mse=0.01470
+[epoch 194] recon_mse=0.01470
+[epoch 195] recon_mse=0.01469 quick_test_acc=0.2506 ent=4.5723
+[epoch 196] recon_mse=0.01468
+[epoch 197] recon_mse=0.01467
+[epoch 198] recon_mse=0.01466
+[epoch 199] recon_mse=0.01466
+[epoch 200] recon_mse=0.01465 quick_test_acc=0.2547 ent=4.5613
+[epoch 201] recon_mse=0.01464
+[epoch 202] recon_mse=0.01463
+[epoch 203] recon_mse=0.01463
+[epoch 204] recon_mse=0.01462
+[epoch 205] recon_mse=0.01461 quick_test_acc=0.2534 ent=4.5525
+[epoch 206] recon_mse=0.01460
+[epoch 207] recon_mse=0.01460
+[epoch 208] recon_mse=0.01459
+[epoch 209] recon_mse=0.01458
+[epoch 210] recon_mse=0.01458 quick_test_acc=0.2554 ent=4.5466
+[epoch 211] recon_mse=0.01457
+[epoch 212] recon_mse=0.01456
+[epoch 213] recon_mse=0.01455
+[epoch 214] recon_mse=0.01455
+[epoch 215] recon_mse=0.01454 quick_test_acc=0.2583 ent=4.5443
+[epoch 216] recon_mse=0.01454
+[epoch 217] recon_mse=0.01453
+[epoch 218] recon_mse=0.01452
+[epoch 219] recon_mse=0.01451
+[epoch 220] recon_mse=0.01451 quick_test_acc=0.2599 ent=4.5355
+[epoch 221] recon_mse=0.01450
+[epoch 222] recon_mse=0.01449
+[epoch 223] recon_mse=0.01448
+[epoch 224] recon_mse=0.01448
+[epoch 225] recon_mse=0.01447 quick_test_acc=0.2616 ent=4.5341
+[epoch 226] recon_mse=0.01446
+[epoch 227] recon_mse=0.01446
+[epoch 228] recon_mse=0.01445
+[epoch 229] recon_mse=0.01445
+[epoch 230] recon_mse=0.01444 quick_test_acc=0.2623 ent=4.5313
+[epoch 231] recon_mse=0.01443
+[epoch 232] recon_mse=0.01442
+[epoch 233] recon_mse=0.01441
+[epoch 234] recon_mse=0.01441
+[epoch 235] recon_mse=0.01440 quick_test_acc=0.2635 ent=4.5306
+[epoch 236] recon_mse=0.01439
+[epoch 237] recon_mse=0.01439
+[epoch 238] recon_mse=0.01438
+[epoch 239] recon_mse=0.01437
+[epoch 240] recon_mse=0.01437 quick_test_acc=0.2654 ent=4.5288
+[epoch 241] recon_mse=0.01436
+[epoch 242] recon_mse=0.01436
+[epoch 243] recon_mse=0.01435
+[epoch 244] recon_mse=0.01434
+[epoch 245] recon_mse=0.01433 quick_test_acc=0.2665 ent=4.5210
+[epoch 246] recon_mse=0.01433
+[epoch 247] recon_mse=0.01432
+[epoch 248] recon_mse=0.01432
+[epoch 249] recon_mse=0.01431
+[epoch 250] recon_mse=0.01430 quick_test_acc=0.2669 ent=4.5261
+[epoch 251] recon_mse=0.01429
+[epoch 252] recon_mse=0.01429
+[epoch 253] recon_mse=0.01428
+[epoch 254] recon_mse=0.01427
+[epoch 255] recon_mse=0.01427 quick_test_acc=0.2672 ent=4.5252
+[epoch 256] recon_mse=0.01426
+[epoch 257] recon_mse=0.01425
+[epoch 258] recon_mse=0.01425
+[epoch 259] recon_mse=0.01424
+[epoch 260] recon_mse=0.01424 quick_test_acc=0.2681 ent=4.5226
+[epoch 261] recon_mse=0.01423
+[epoch 262] recon_mse=0.01422
+[epoch 263] recon_mse=0.01421
+[epoch 264] recon_mse=0.01421
+[epoch 265] recon_mse=0.01420 quick_test_acc=0.2692 ent=4.5281
+[epoch 266] recon_mse=0.01420
+[epoch 267] recon_mse=0.01420
+[epoch 268] recon_mse=0.01418
+[epoch 269] recon_mse=0.01418
+[epoch 270] recon_mse=0.01417 quick_test_acc=0.2700 ent=4.5258
+[epoch 271] recon_mse=0.01417
+[epoch 272] recon_mse=0.01416
+[epoch 273] recon_mse=0.01415
+[epoch 274] recon_mse=0.01415
+[epoch 275] recon_mse=0.01414 quick_test_acc=0.2712 ent=4.5298
+[epoch 276] recon_mse=0.01414
+[epoch 277] recon_mse=0.01413
+[epoch 278] recon_mse=0.01412
+[epoch 279] recon_mse=0.01412
+[epoch 280] recon_mse=0.01412 quick_test_acc=0.2713 ent=4.5349
+[epoch 281] recon_mse=0.01411
+[epoch 282] recon_mse=0.01410
+[epoch 283] recon_mse=0.01409
+[epoch 284] recon_mse=0.01409
+[epoch 285] recon_mse=0.01408 quick_test_acc=0.2743 ent=4.5412
+[epoch 286] recon_mse=0.01408
+[epoch 287] recon_mse=0.01408
+[epoch 288] recon_mse=0.01407
+[epoch 289] recon_mse=0.01406
+[epoch 290] recon_mse=0.01406 quick_test_acc=0.2751 ent=4.5426
+[epoch 291] recon_mse=0.01405
+[epoch 292] recon_mse=0.01404
+[epoch 293] recon_mse=0.01403
+[epoch 294] recon_mse=0.01403
+[epoch 295] recon_mse=0.01403 quick_test_acc=0.2740 ent=4.5437
+[epoch 296] recon_mse=0.01402
+[epoch 297] recon_mse=0.01401
+[epoch 298] recon_mse=0.01401
+[epoch 299] recon_mse=0.01400
+[epoch 300] recon_mse=0.01400 quick_test_acc=0.2764 ent=4.5451
+[epoch 301] recon_mse=0.01399
+[epoch 302] recon_mse=0.01398
+[epoch 303] recon_mse=0.01398
+[epoch 304] recon_mse=0.01397
+[epoch 305] recon_mse=0.01397 quick_test_acc=0.2770 ent=4.5535
+[epoch 306] recon_mse=0.01396
+[epoch 307] recon_mse=0.01395
+[epoch 308] recon_mse=0.01395
+[epoch 309] recon_mse=0.01395
+[epoch 310] recon_mse=0.01394 quick_test_acc=0.2785 ent=4.5545
+[epoch 311] recon_mse=0.01393
+[epoch 312] recon_mse=0.01393
+[epoch 313] recon_mse=0.01392
+[epoch 314] recon_mse=0.01392
+[epoch 315] recon_mse=0.01391 quick_test_acc=0.2797 ent=4.5623
+[epoch 316] recon_mse=0.01391
+[epoch 317] recon_mse=0.01390
+[epoch 318] recon_mse=0.01389
+[epoch 319] recon_mse=0.01389
+[epoch 320] recon_mse=0.01389 quick_test_acc=0.2787 ent=4.5769
+[epoch 321] recon_mse=0.01388
+[epoch 322] recon_mse=0.01388
+[epoch 323] recon_mse=0.01387
+[epoch 324] recon_mse=0.01386
+[epoch 325] recon_mse=0.01387 quick_test_acc=0.2803 ent=4.5773
+[epoch 326] recon_mse=0.01386
+[epoch 327] recon_mse=0.01385
+[epoch 328] recon_mse=0.01385
+[epoch 329] recon_mse=0.01384
+[epoch 330] recon_mse=0.01384 quick_test_acc=0.2799 ent=4.5781
+[epoch 331] recon_mse=0.01383
+[epoch 332] recon_mse=0.01383
+[epoch 333] recon_mse=0.01382
+[epoch 334] recon_mse=0.01381
+[epoch 335] recon_mse=0.01381 quick_test_acc=0.2820 ent=4.5838
+[epoch 336] recon_mse=0.01381
+[epoch 337] recon_mse=0.01381
+[epoch 338] recon_mse=0.01379
+[epoch 339] recon_mse=0.01379
+[epoch 340] recon_mse=0.01379 quick_test_acc=0.2836 ent=4.5952
+[epoch 341] recon_mse=0.01378
+[epoch 342] recon_mse=0.01378
+[epoch 343] recon_mse=0.01377
+[epoch 344] recon_mse=0.01377
+[epoch 345] recon_mse=0.01376 quick_test_acc=0.2828 ent=4.5962
+[epoch 346] recon_mse=0.01376
+[epoch 347] recon_mse=0.01375
+[epoch 348] recon_mse=0.01375
+[epoch 349] recon_mse=0.01374
+[epoch 350] recon_mse=0.01374 quick_test_acc=0.2846 ent=4.6033
+[epoch 351] recon_mse=0.01374
+[epoch 352] recon_mse=0.01373
+[epoch 353] recon_mse=0.01372
+[epoch 354] recon_mse=0.01372
+[epoch 355] recon_mse=0.01371 quick_test_acc=0.2824 ent=4.6152
+[epoch 356] recon_mse=0.01371
+[epoch 357] recon_mse=0.01371
+[epoch 358] recon_mse=0.01370
+[epoch 359] recon_mse=0.01370
+[epoch 360] recon_mse=0.01369 quick_test_acc=0.2821 ent=4.6145
+[epoch 361] recon_mse=0.01369
+[epoch 362] recon_mse=0.01369
+[epoch 363] recon_mse=0.01368
+[epoch 364] recon_mse=0.01368
+[epoch 365] recon_mse=0.01367 quick_test_acc=0.2830 ent=4.6249
+[epoch 366] recon_mse=0.01367
+[epoch 367] recon_mse=0.01366
+[epoch 368] recon_mse=0.01366
+[epoch 369] recon_mse=0.01366
+[epoch 370] recon_mse=0.01365 quick_test_acc=0.2851 ent=4.6213
+[epoch 371] recon_mse=0.01365
+[epoch 372] recon_mse=0.01364
+[epoch 373] recon_mse=0.01364
+[epoch 374] recon_mse=0.01363
+[epoch 375] recon_mse=0.01363 quick_test_acc=0.2848 ent=4.6378
+[epoch 376] recon_mse=0.01363
+[epoch 377] recon_mse=0.01362
+[epoch 378] recon_mse=0.01362
+[epoch 379] recon_mse=0.01361
+[epoch 380] recon_mse=0.01361 quick_test_acc=0.2851 ent=4.6427
+[epoch 381] recon_mse=0.01360
+[epoch 382] recon_mse=0.01361
+[epoch 383] recon_mse=0.01360
+[epoch 384] recon_mse=0.01360
+[epoch 385] recon_mse=0.01359 quick_test_acc=0.2846 ent=4.6474
+[epoch 386] recon_mse=0.01359
+[epoch 387] recon_mse=0.01358
+[epoch 388] recon_mse=0.01358
+[epoch 389] recon_mse=0.01357
+[epoch 390] recon_mse=0.01357 quick_test_acc=0.2843 ent=4.6491
+[epoch 391] recon_mse=0.01357
+[epoch 392] recon_mse=0.01356
+[epoch 393] recon_mse=0.01356
+[epoch 394] recon_mse=0.01356
+[epoch 395] recon_mse=0.01355 quick_test_acc=0.2848 ent=4.6557
+[epoch 396] recon_mse=0.01355
+[epoch 397] recon_mse=0.01354
+[epoch 398] recon_mse=0.01354
+[epoch 399] recon_mse=0.01354
+[epoch 400] recon_mse=0.01353 quick_test_acc=0.2860 ent=4.6604
+[epoch 401] recon_mse=0.01353
+[epoch 402] recon_mse=0.01353
+[epoch 403] recon_mse=0.01352
+[epoch 404] recon_mse=0.01352
+[epoch 405] recon_mse=0.01352 quick_test_acc=0.2831 ent=4.6638
+[epoch 406] recon_mse=0.01351
+[epoch 407] recon_mse=0.01351
+[epoch 408] recon_mse=0.01351
+[epoch 409] recon_mse=0.01350
+[epoch 410] recon_mse=0.01350 quick_test_acc=0.2845 ent=4.6747
+[epoch 411] recon_mse=0.01349
+[epoch 412] recon_mse=0.01349
+[epoch 413] recon_mse=0.01349
+[epoch 414] recon_mse=0.01348
+[epoch 415] recon_mse=0.01348 quick_test_acc=0.2834 ent=4.6750
+[epoch 416] recon_mse=0.01347
+[epoch 417] recon_mse=0.01348
+[epoch 418] recon_mse=0.01347
+[epoch 419] recon_mse=0.01347
+[epoch 420] recon_mse=0.01347 quick_test_acc=0.2837 ent=4.6877
+[epoch 421] recon_mse=0.01346
+[epoch 422] recon_mse=0.01346
+[epoch 423] recon_mse=0.01345
+[epoch 424] recon_mse=0.01345
+[epoch 425] recon_mse=0.01345 quick_test_acc=0.2812 ent=4.6932
+[epoch 426] recon_mse=0.01344
+[epoch 427] recon_mse=0.01344
+[epoch 428] recon_mse=0.01343
+[epoch 429] recon_mse=0.01343
+[epoch 430] recon_mse=0.01343 quick_test_acc=0.2812 ent=4.6965
+[epoch 431] recon_mse=0.01342
+[epoch 432] recon_mse=0.01342
+[epoch 433] recon_mse=0.01342
+[epoch 434] recon_mse=0.01342
+[epoch 435] recon_mse=0.01341 quick_test_acc=0.2806 ent=4.6962
+[epoch 436] recon_mse=0.01341
+[epoch 437] recon_mse=0.01341
+[epoch 438] recon_mse=0.01341
+[epoch 439] recon_mse=0.01340
+[epoch 440] recon_mse=0.01340 quick_test_acc=0.2815 ent=4.7080
+[epoch 441] recon_mse=0.01340
+[epoch 442] recon_mse=0.01339
+[epoch 443] recon_mse=0.01339
+[epoch 444] recon_mse=0.01339
+[epoch 445] recon_mse=0.01339 quick_test_acc=0.2804 ent=4.7071
+[epoch 446] recon_mse=0.01338
+[epoch 447] recon_mse=0.01338
+[epoch 448] recon_mse=0.01338
+[epoch 449] recon_mse=0.01338
+[epoch 450] recon_mse=0.01337 quick_test_acc=0.2794 ent=4.7193
+[epoch 451] recon_mse=0.01337
+[epoch 452] recon_mse=0.01337
+[epoch 453] recon_mse=0.01336
+[epoch 454] recon_mse=0.01336
+[epoch 455] recon_mse=0.01335 quick_test_acc=0.2776 ent=4.7161
+[epoch 456] recon_mse=0.01335
+[epoch 457] recon_mse=0.01335
+[epoch 458] recon_mse=0.01335
+[epoch 459] recon_mse=0.01334
+[epoch 460] recon_mse=0.01334 quick_test_acc=0.2800 ent=4.7198
+[epoch 461] recon_mse=0.01334
+[epoch 462] recon_mse=0.01334
+[epoch 463] recon_mse=0.01333
+[epoch 464] recon_mse=0.01333
+[epoch 465] recon_mse=0.01333 quick_test_acc=0.2746 ent=4.7268
+[epoch 466] recon_mse=0.01332
+[epoch 467] recon_mse=0.01332
+[epoch 468] recon_mse=0.01332
+[epoch 469] recon_mse=0.01332
+[epoch 470] recon_mse=0.01331 quick_test_acc=0.2763 ent=4.7214
+[epoch 471] recon_mse=0.01331
+[epoch 472] recon_mse=0.01331
+[epoch 473] recon_mse=0.01330
+[epoch 474] recon_mse=0.01331
+[epoch 475] recon_mse=0.01330 quick_test_acc=0.2770 ent=4.7339
+[epoch 476] recon_mse=0.01330
+[epoch 477] recon_mse=0.01329
+[epoch 478] recon_mse=0.01329
+[epoch 479] recon_mse=0.01329
+[epoch 480] recon_mse=0.01329 quick_test_acc=0.2773 ent=4.7485
+[epoch 481] recon_mse=0.01328
+[epoch 482] recon_mse=0.01328
+[epoch 483] recon_mse=0.01328
+[epoch 484] recon_mse=0.01327
+[epoch 485] recon_mse=0.01328 quick_test_acc=0.2760 ent=4.7399
+[epoch 486] recon_mse=0.01327
+[epoch 487] recon_mse=0.01327
+[epoch 488] recon_mse=0.01326
+[epoch 489] recon_mse=0.01326
+[epoch 490] recon_mse=0.01326 quick_test_acc=0.2751 ent=4.7473
+[epoch 491] recon_mse=0.01326
+[epoch 492] recon_mse=0.01326
+[epoch 493] recon_mse=0.01325
+[epoch 494] recon_mse=0.01325
+[epoch 495] recon_mse=0.01325 quick_test_acc=0.2715 ent=4.7464
+[epoch 496] recon_mse=0.01324
+[epoch 497] recon_mse=0.01324
+[epoch 498] recon_mse=0.01324
+[epoch 499] recon_mse=0.01324
+[epoch 500] recon_mse=0.01324 quick_test_acc=0.2736 ent=4.7514
+[full_eval_best] {
+  "created_at": "2026-06-23 01:50:27",
+  "ckpt": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP004_audio_cnnlstm4096_h6_lc8_e500/best.pt",
+  "ckpt_epoch": 400,
+  "ckpt_best_acc": 0.2860308975946809,
+  "eval_steps": 3000,
+  "eval_burn_in": 500,
+  "eval_thin": 2,
+  "test_label_gibbs_acc": 0.28316276644286553,
+  "test_label_entropy": 4.5764166901508965,
+  "computed_dims": {
+    "input_dim": 4096,
+    "label_dim": 2472,
+    "hidden_dim": 24576,
+    "total_pbits": 31144,
+    "num_classes": 309
+  },
+  "data_dims": {
+    "feature_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz",
+    "train_size": 182615,
+    "test_size": 15341,
+    "num_classes": 309,
+    "class_names": [
+      "air conditioning noise",
+      "air horn",
+      "airplane",
+      "airplane flyby",
+      "alarm clock ringing",
+      "alligators, crocodiles hissing",
+      "ambulance siren",
+      "arc welding",
+      "baby babbling",
+      "baby crying",
+      "baby laughter",
+      "baltimore oriole calling",
+      "barn swallow calling",
+      "basketball bounce",
+      "bathroom ventilation fan running",
+      "beat boxing",
+      "bee, wasp, etc. buzzing",
+      "bird chirping, tweeting",
+      "bird squawking",
+      "bird wings flapping",
+      "black capped chickadee calling",
+      "blowtorch igniting",
+      "bouncing on trampoline",
+      "bowling impact",
+      "bull bellowing",
+      "canary calling",
+      "cap gun shooting",
+      "car engine idling",
+      "car engine knocking",
+      "car engine starting",
+      "car passing by",
+      "cat caterwauling",
+      "cat growling",
+      "cat hissing",
+      "cat meowing",
+      "cat purring",
+      "cattle mooing",
+      "cattle, bovinae cowbell",
+      "cell phone buzzing",
+      "chainsawing trees",
+      "cheetah chirrup",
+      "chicken clucking",
+      "chicken crowing",
+      "child singing",
+      "child speech, kid speaking",
+      "children shouting",
+      "chimpanzee pant-hooting",
+      "chinchilla barking",
+      "chipmunk chirping",
+      "chopping food",
+      "chopping wood",
+      "church bell ringing",
+      "civil defense siren",
+      "cow lowing",
+      "coyote howling",
+      "cricket chirping",
+      "crow cawing",
+      "cuckoo bird calling",
+      "cupboard opening or closing",
+      "cutting hair with electric trimmers",
+      "dinosaurs bellowing",
+      "disc scratching",
+      "dog barking",
+      "dog baying",
+      "dog bow-wow",
+      "dog growling",
+      "dog howling",
+      "dog whimpering",
+      "donkey, ass braying",
+      "door slamming",
+      "driving buses",
+      "driving motorcycle",
+      "driving snowmobile",
+      "duck quacking",
+      "eagle screaming",
+      "eating with cutlery",
+      "electric grinder grinding",
+      "electric shaver, electric razor shaving",
+      "elephant trumpeting",
+      "eletric blender running",
+      "elk bugling",
+      "engine accelerating, revving, vroom",
+      "female singing",
+      "female speech, woman speaking",
+      "ferret dooking",
+      "fire crackling",
+      "fire truck siren",
+      "fireworks banging",
+      "firing cannon",
+      "firing muskets",
+      "fly, housefly buzzing",
+      "foghorn",
+      "footsteps on snow",
+      "forging swords",
+      "fox barking",
+      "francolin calling",
+      "frog croaking",
+      "gibbon howling",
+      "goat bleating",
+      "golf driving",
+      "goose honking",
+      "hail",
+      "hair dryer drying",
+      "hammering nails",
+      "heart sounds, heartbeat",
+      "hedge trimmer running",
+      "helicopter",
+      "horse clip-clop",
+      "horse neighing",
+      "ice cracking",
+      "ice cream truck, ice cream van",
+      "lathe spinning",
+      "lawn mowing",
+      "lighting firecrackers",
+      "lions growling",
+      "lions roaring",
+      "lip smacking",
+      "machine gun shooting",
+      "magpie calling",
+      "male singing",
+      "male speech, man speaking",
+      "metronome",
+      "missile launch",
+      "mosquito buzzing",
+      "motorboat, speedboat acceleration",
+      "mouse clicking",
+      "mouse pattering",
+      "mouse squeaking",
+      "mynah bird singing",
+      "ocean burbling",
+      "opening or closing car doors",
+      "opening or closing car electric windows",
+      "opening or closing drawers",
+      "orchestra",
+      "otter growling",
+      "owl hooting",
+      "parrot talking",
+      "penguins braying",
+      "people babbling",
+      "people battle cry",
+      "people belly laughing",
+      "people booing",
+      "people burping",
+      "people cheering",
+      "people clapping",
+      "people coughing",
+      "people crowd",
+      "people eating",
+      "people eating apple",
+      "people eating crisps",
+      "people eating noodle",
+      "people farting",
+      "people finger snapping",
+      "people gargling",
+      "people giggling",
+      "people hiccup",
+      "people humming",
+      "people marching",
+      "people nose blowing",
+      "people running",
+      "people screaming",
+      "people shuffling",
+      "people slapping",
+      "people slurping",
+      "people sneezing",
+      "people sniggering",
+      "people sobbing",
+      "people whispering",
+      "people whistling",
+      "pheasant crowing",
+      "pig oinking",
+      "pigeon, dove cooing",
+      "planing timber",
+      "plastic bottle crushing",
+      "playing accordion",
+      "playing acoustic guitar",
+      "playing badminton",
+      "playing bagpipes",
+      "playing banjo",
+      "playing bass drum",
+      "playing bass guitar",
+      "playing bassoon",
+      "playing bongo",
+      "playing bugle",
+      "playing castanets",
+      "playing cello",
+      "playing clarinet",
+      "playing congas",
+      "playing cornet",
+      "playing cymbal",
+      "playing darts",
+      "playing didgeridoo",
+      "playing djembe",
+      "playing double bass",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing electronic organ",
+      "playing erhu",
+      "playing flute",
+      "playing french horn",
+      "playing glockenspiel",
+      "playing gong",
+      "playing guiro",
+      "playing hammond organ",
+      "playing harmonica",
+      "playing harp",
+      "playing harpsichord",
+      "playing hockey",
+      "playing lacrosse",
+      "playing mandolin",
+      "playing marimba, xylophone",
+      "playing oboe",
+      "playing piano",
+      "playing saxophone",
+      "playing shofar",
+      "playing sitar",
+      "playing snare drum",
+      "playing squash",
+      "playing steel guitar, slide guitar",
+      "playing steelpan",
+      "playing synthesizer",
+      "playing tabla",
+      "playing table tennis",
+      "playing tambourine",
+      "playing tennis",
+      "playing theremin",
+      "playing timbales",
+      "playing timpani",
+      "playing trombone",
+      "playing trumpet",
+      "playing tuning fork",
+      "playing tympani",
+      "playing ukulele",
+      "playing vibraphone",
+      "playing violin, fiddle",
+      "playing volleyball",
+      "playing washboard",
+      "playing zither",
+      "police car (siren)",
+      "police radio chatter",
+      "popping popcorn",
+      "printer printing",
+      "pumping water",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "raining",
+      "rapping",
+      "reversing beeps",
+      "ripping paper",
+      "roller coaster running",
+      "rope skipping",
+      "rowboat, canoe, kayak rowing",
+      "running electric fan",
+      "sailing",
+      "scuba diving",
+      "sea lion barking",
+      "sea waves",
+      "sharpen knife",
+      "sheep bleating",
+      "shot football",
+      "singing bowl",
+      "singing choir",
+      "skateboarding",
+      "skidding",
+      "skiing",
+      "sliding door",
+      "sloshing water",
+      "slot machine",
+      "smoke detector beeping",
+      "snake hissing",
+      "snake rattling",
+      "splashing water",
+      "spraying water",
+      "squishing water",
+      "stream burbling",
+      "strike lighter",
+      "striking bowling",
+      "striking pool",
+      "subway, metro, underground",
+      "swimming",
+      "tap dancing",
+      "tapping guitar",
+      "telephone bell ringing",
+      "thunder",
+      "toilet flushing",
+      "tornado roaring",
+      "tractor digging",
+      "train horning",
+      "train wheels squealing",
+      "train whistling",
+      "turkey gobbling",
+      "typing on computer keyboard",
+      "typing on typewriter",
+      "underwater bubbling",
+      "using sewing machines",
+      "vacuum cleaner cleaning floors",
+      "vehicle horn, car horn, honking",
+      "volcano explosion",
+      "warbler chirping",
+      "waterfall burbling",
+      "whale calling",
+      "wind chime",
+      "wind noise",
+      "wind rustling leaves",
+      "wood thrush calling",
+      "woodpecker pecking tree",
+      "writing on blackboard with chalk",
+      "yodelling",
+      "zebra braying"
+    ],
+    "video_dim": 1,
+    "motion_dim": 1,
+    "audio_dim": 4096
+  }
+}
+{
+  "experiment_id": "WP004",
+  "finished_at": "2026-06-23 01:50:27",
+  "model_type": "standard",
+  "best_epoch": 400,
+  "best_acc_selection_metric": 0.2860308975946809,
+  "final_epoch": 500,
+  "final_test_label_gibbs_acc": 0.2735806010038459,
+  "full_eval_best_acc": 0.28316276644286553,
+  "computed_dims": {
+    "input_dim": 4096,
+    "label_dim": 2472,
+    "hidden_dim": 24576,
+    "total_pbits": 31144,
+    "num_classes": 309
+  },
+  "data_dims": {
+    "feature_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_audio_cnnlstm4096_stft128x96_per_dim_zscore_sigmoid_seed123.npz",
+    "train_size": 182615,
+    "test_size": 15341,
+    "num_classes": 309,
+    "class_names": [
+      "air conditioning noise",
+      "air horn",
+      "airplane",
+      "airplane flyby",
+      "alarm clock ringing",
+      "alligators, crocodiles hissing",
+      "ambulance siren",
+      "arc welding",
+      "baby babbling",
+      "baby crying",
+      "baby laughter",
+      "baltimore oriole calling",
+      "barn swallow calling",
+      "basketball bounce",
+      "bathroom ventilation fan running",
+      "beat boxing",
+      "bee, wasp, etc. buzzing",
+      "bird chirping, tweeting",
+      "bird squawking",
+      "bird wings flapping",
+      "black capped chickadee calling",
+      "blowtorch igniting",
+      "bouncing on trampoline",
+      "bowling impact",
+      "bull bellowing",
+      "canary calling",
+      "cap gun shooting",
+      "car engine idling",
+      "car engine knocking",
+      "car engine starting",
+      "car passing by",
+      "cat caterwauling",
+      "cat growling",
+      "cat hissing",
+      "cat meowing",
+      "cat purring",
+      "cattle mooing",
+      "cattle, bovinae cowbell",
+      "cell phone buzzing",
+      "chainsawing trees",
+      "cheetah chirrup",
+      "chicken clucking",
+      "chicken crowing",
+      "child singing",
+      "child speech, kid speaking",
+      "children shouting",
+      "chimpanzee pant-hooting",
+      "chinchilla barking",
+      "chipmunk chirping",
+      "chopping food",
+      "chopping wood",
+      "church bell ringing",
+      "civil defense siren",
+      "cow lowing",
+      "coyote howling",
+      "cricket chirping",
+      "crow cawing",
+      "cuckoo bird calling",
+      "cupboard opening or closing",
+      "cutting hair with electric trimmers",
+      "dinosaurs bellowing",
+      "disc scratching",
+      "dog barking",
+      "dog baying",
+      "dog bow-wow",
+      "dog growling",
+      "dog howling",
+      "dog whimpering",
+      "donkey, ass braying",
+      "door slamming",
+      "driving buses",
+      "driving motorcycle",
+      "driving snowmobile",
+      "duck quacking",
+      "eagle screaming",
+      "eating with cutlery",
+      "electric grinder grinding",
+      "electric shaver, electric razor shaving",
+      "elephant trumpeting",
+      "eletric blender running",
+      "elk bugling",
+      "engine accelerating, revving, vroom",
+      "female singing",
+      "female speech, woman speaking",
+      "ferret dooking",
+      "fire crackling",
+      "fire truck siren",
+      "fireworks banging",
+      "firing cannon",
+      "firing muskets",
+      "fly, housefly buzzing",
+      "foghorn",
+      "footsteps on snow",
+      "forging swords",
+      "fox barking",
+      "francolin calling",
+      "frog croaking",
+      "gibbon howling",
+      "goat bleating",
+      "golf driving",
+      "goose honking",
+      "hail",
+      "hair dryer drying",
+      "hammering nails",
+      "heart sounds, heartbeat",
+      "hedge trimmer running",
+      "helicopter",
+      "horse clip-clop",
+      "horse neighing",
+      "ice cracking",
+      "ice cream truck, ice cream van",
+      "lathe spinning",
+      "lawn mowing",
+      "lighting firecrackers",
+      "lions growling",
+      "lions roaring",
+      "lip smacking",
+      "machine gun shooting",
+      "magpie calling",
+      "male singing",
+      "male speech, man speaking",
+      "metronome",
+      "missile launch",
+      "mosquito buzzing",
+      "motorboat, speedboat acceleration",
+      "mouse clicking",
+      "mouse pattering",
+      "mouse squeaking",
+      "mynah bird singing",
+      "ocean burbling",
+      "opening or closing car doors",
+      "opening or closing car electric windows",
+      "opening or closing drawers",
+      "orchestra",
+      "otter growling",
+      "owl hooting",
+      "parrot talking",
+      "penguins braying",
+      "people babbling",
+      "people battle cry",
+      "people belly laughing",
+      "people booing",
+      "people burping",
+      "people cheering",
+      "people clapping",
+      "people coughing",
+      "people crowd",
+      "people eating",
+      "people eating apple",
+      "people eating crisps",
+      "people eating noodle",
+      "people farting",
+      "people finger snapping",
+      "people gargling",
+      "people giggling",
+      "people hiccup",
+      "people humming",
+      "people marching",
+      "people nose blowing",
+      "people running",
+      "people screaming",
+      "people shuffling",
+      "people slapping",
+      "people slurping",
+      "people sneezing",
+      "people sniggering",
+      "people sobbing",
+      "people whispering",
+      "people whistling",
+      "pheasant crowing",
+      "pig oinking",
+      "pigeon, dove cooing",
+      "planing timber",
+      "plastic bottle crushing",
+      "playing accordion",
+      "playing acoustic guitar",
+      "playing badminton",
+      "playing bagpipes",
+      "playing banjo",
+      "playing bass drum",
+      "playing bass guitar",
+      "playing bassoon",
+      "playing bongo",
+      "playing bugle",
+      "playing castanets",
+      "playing cello",
+      "playing clarinet",
+      "playing congas",
+      "playing cornet",
+      "playing cymbal",
+      "playing darts",
+      "playing didgeridoo",
+      "playing djembe",
+      "playing double bass",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing electronic organ",
+      "playing erhu",
+      "playing flute",
+      "playing french horn",
+      "playing glockenspiel",
+      "playing gong",
+      "playing guiro",
+      "playing hammond organ",
+      "playing harmonica",
+      "playing harp",
+      "playing harpsichord",
+      "playing hockey",
+      "playing lacrosse",
+      "playing mandolin",
+      "playing marimba, xylophone",
+      "playing oboe",
+      "playing piano",
+      "playing saxophone",
+      "playing shofar",
+      "playing sitar",
+      "playing snare drum",
+      "playing squash",
+      "playing steel guitar, slide guitar",
+      "playing steelpan",
+      "playing synthesizer",
+      "playing tabla",
+      "playing table tennis",
+      "playing tambourine",
+      "playing tennis",
+      "playing theremin",
+      "playing timbales",
+      "playing timpani",
+      "playing trombone",
+      "playing trumpet",
+      "playing tuning fork",
+      "playing tympani",
+      "playing ukulele",
+      "playing vibraphone",
+      "playing violin, fiddle",
+      "playing volleyball",
+      "playing washboard",
+      "playing zither",
+      "police car (siren)",
+      "police radio chatter",
+      "popping popcorn",
+      "printer printing",
+      "pumping water",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "raining",
+      "rapping",
+      "reversing beeps",
+      "ripping paper",
+      "roller coaster running",
+      "rope skipping",
+      "rowboat, canoe, kayak rowing",
+      "running electric fan",
+      "sailing",
+      "scuba diving",
+      "sea lion barking",
+      "sea waves",
+      "sharpen knife",
+      "sheep bleating",
+      "shot football",
+      "singing bowl",
+      "singing choir",
+      "skateboarding",
+      "skidding",
+      "skiing",
+      "sliding door",
+      "sloshing water",
+      "slot machine",
+      "smoke detector beeping",
+      "snake hissing",
+      "snake rattling",
+      "splashing water",
+      "spraying water",
+      "squishing water",
+      "stream burbling",
+      "strike lighter",
+      "striking bowling",
+      "striking pool",
+      "subway, metro, underground",
+      "swimming",
+      "tap dancing",
+      "tapping guitar",
+      "telephone bell ringing",
+      "thunder",
+      "toilet flushing",
+      "tornado roaring",
+      "tractor digging",
+      "train horning",
+      "train wheels squealing",
+      "train whistling",
+      "turkey gobbling",
+      "typing on computer keyboard",
+      "typing on typewriter",
+      "underwater bubbling",
+      "using sewing machines",
+      "vacuum cleaner cleaning floors",
+      "vehicle horn, car horn, honking",
+      "volcano explosion",
+      "warbler chirping",
+      "waterfall burbling",
+      "whale calling",
+      "wind chime",
+      "wind noise",
+      "wind rustling leaves",
+      "wood thrush calling",
+      "woodpecker pecking tree",
+      "writing on blackboard with chalk",
+      "yodelling",
+      "zebra braying"
+    ],
+    "video_dim": 1,
+    "motion_dim": 1,
+    "audio_dim": 4096
+  },
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_WP004_audio_cnnlstm4096_h6_lc8_e500"
+}
