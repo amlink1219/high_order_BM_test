@@ -443,7 +443,7 @@ Note: AV006-AV010 used AF029 mean/std audio and should now be treated as an olde
 | JobID | squeue name | branch | IDs | requested resources | status / note |
 |---:|---|---|---|---|---|
 | 313 | `vgg-avaf` | AF031 best-audio AV two-port BM | AV011-AV015 | 1 GPU, 8 CPU, 100G, 2d | completed with failure after AV011: AV011 full = 43.69%; AV012 reached epoch 182, quick best = 54.76%, then CUDA launch timeout; AV013-AV015 not reached |
-| 316 | `vgg-af31` | AF031 audio BM continuation/capacity | AF034-AF037 | 1 GPU, 8 CPU, 100G, 2d | partial upload analyzed: AF034/AF035 full = 44.55%; AF036 h8 full = 44.98% and is current best audio-only BM; AF037 h10 had reached epoch309 quick = 44.57% with no summary yet |
+| 316 | `vgg-af31` | AF031 audio BM continuation/capacity | AF034-AF037 | 1 GPU, 8 CPU, 100G, 2d | completed and uploaded: AF034/AF035 h6 continuation full = 44.55%; AF036 h8 full = 44.98% and remains current best audio-only BM; AF037 h10 full = 44.31%, so h10 did not improve over h8 |
 | 317 | `vgg-af31` | AF031 audio BM visible-encoding variants | AF038-AF040 | 1 GPU, 8 CPU, 110G, 2d | partial upload analyzed: AF038 seqconcat8192 h4 full = 43.80%; AF039 h6 had reached epoch154 quick = 37.70% with no summary yet; AF040 not reached/uploaded |
 | 318 | `vgg-av012-eval` | AV012 eval-only full Gibbs test | AV012 best checkpoint | 1 GPU, 8 CPU, 120G, 1d | completed and uploaded: epoch180 `best.pt`, full Gibbs `3000/500/thin=2`, eval batch 16, full acc = 55.09% |
 
@@ -454,11 +454,119 @@ Note: AV006-AV010 used AF029 mean/std audio and should now be treated as an olde
 | AV012 continuation | AV016 | resume interrupted AV012 from `last.pt` into a new output directory; keep copied epoch180 `best.pt` as baseline best; batch/eval batch reduced to 16; train to epoch320 and run full Gibbs eval | code packaged; requests 1 GPU, 8 CPU, 100G, 2d |
 | AV012 ablations | AV013-AV015 | same AF031 audio LSTM4096 + VLF002 video LSTM4096 two-port setup; AV013 gamma=0.50 h8, AV014 gamma=0 h8, AV015 gamma=1.15 h6; batch/eval batch 16 | code packaged; requests 1 GPU, 8 CPU, 100G, 4d |
 
+## Submitted Jobs 2026-06-23
+
+| JobID | squeue name | branch | IDs | requested resources | status / note |
+|---:|---|---|---|---|---|
+| 319 | `vgg-av012c` | AV012 continuation | AV016 | 1 GPU, 8 CPU, 100G, 2d | submitted; resumes interrupted AV012 from `last.pt` to epoch320 with batch/eval batch 16 |
+| 320 | `vgg-avabl` | AV012 ablations | AV013-AV015 | 1 GPU, 8 CPU, 100G, 4d | submitted; runs gamma=0.50, gamma=0, and h6 ablations sequentially |
+
+## Next Ideas Recorded 2026-06-23
+
+| direction | concrete idea | rationale | status |
+|---|---|---|---|
+| Stronger raw/early data processing | Try higher video frame resolution than 224, more frames, aspect-ratio-preserving crop/pad instead of direct square resize, and finer audio STFT/chunk processing | Current AV012 uses strong processed embeddings, but the upstream encoder may be bottlenecked by 224-frame visual input and fixed paper-STFT settings | recorded; design after AV016 / AV013-AV015 results |
+| Deeper BM head | Extend final BM from the current visible-label-hidden two-layer style to a DBM-like architecture with an extra hidden layer | Current two-port gain is large, but final probabilistic model capacity may still be limited by a single hidden layer | recorded; needs new training/eval code and matched baselines |
+
+## Training Conclusions And Plan 2026-06-23
+
+The current main VGGSound direction is the AF031/VLF002-style two-port branch:
+
+```text
+video LSTM4096 + audio paper-STFT ResNet50 LSTM4096 -> two-port BM
+AV012 full Gibbs acc = 55.09%
+```
+
+This result is far above the current unimodal and one-port fusion controls:
+
+```text
+video-only best: VF026 = 42.84%
+audio-only best: AF036 = 44.98%
+one-port avg fusion: AV011 = 43.69%
+```
+
+### Capacity And Epoch Lessons
+
+| side | tested change | result | training conclusion |
+|---|---|---|---|
+| audio | Continue h6 AF031 from epoch450 to epoch650/850 | AF034/AF035 full = 44.55%; best stayed at epoch505; final quick regressed by epoch850 | Longer h6 training gives only small gain after ~500 epochs; do not spend more long jobs on h6 continuation unless used as a control |
+| audio | Increase hidden from h6 to h8 | AF036 full = 44.98%; current audio-only best | h8 is useful for AF031 audio features and should be the default audio BM capacity |
+| audio | Increase hidden from h8 to h10 | AF037 full = 44.31%, below AF036 | h10 does not help this audio feature; do not blindly scale hidden beyond h8 |
+| audio | Less-compressed seqconcat8192 with h4 | AF038 full = 43.80%, below AF036 | Larger visible dimension alone is not enough; if using 8192 audio input, BM architecture/training must be redesigned |
+| video | Mean/std ResNet50 h8 continuation | VF010 37.66% -> VF014 39.14% -> VF015 39.45%, but final epoch regressed | Longer training helps old mean/std video, but this branch is superseded by video LSTM features |
+| video | Mean/std ResNet50 h10 from scratch | VF011 full = 37.16%, below VF010 | h10 did not help the old mean/std video feature |
+| video | Video LSTM4096 h6 -> h8 | VF021 38.99% -> VF022 40.68% | h8 is useful for video LSTM4096 and should be the default two-layer video BM capacity |
+| video | Continue video LSTM4096 h8 | VF022 40.68% -> VF023 41.93% -> VF024 42.74% | Longer training was valuable for the good video LSTM feature |
+| video | Increase visible to 8192 | VF025 42.54%, VF026 42.84%; only +0.10 pp over VF024 | 8192 visible gives marginal gain relative to 4096 LSTM; use only when comparing high-capacity video features, not as default |
+
+### Current Default Settings
+
+Use these as the default starting point unless an experiment has a specific reason to differ:
+
+```text
+feature dim per port: 4096
+label copies: 5
+hidden factor: h8
+gamma_h/gamma_l: 1.15 for main two-port, with gamma=0 and gamma=0.5 ablations
+full eval: 3000 steps, 500 burn-in, thin=2
+selection metric: test_label_gibbs_acc only
+```
+
+Avoid these unless they are explicit controls:
+
+```text
+audio h6 continuation beyond ~650 epochs
+audio h10 with the current AF031 feature
+old audio CNN-LSTM STFT128x96 feature
+old video mean/std feature scale-up
+8192 visible as a substitute for better encoder/input design
+```
+
+### Main Experiment Plan
+
+| phase | goal | experiments | decision rule |
+|---:|---|---|---|
+| 0 | Finish current two-port validation | Job 319 AV016 continuation; Job 320 AV013-AV015 gamma/hidden ablations | If AV016 beats 55.09%, make it the main checkpoint; if AV013/AV014 collapse, gammaXY is a necessary part of the result |
+| 1 | Improve video input/encoder | Higher resolution than 224, more frames, aspect-ratio-preserving resize/crop, stronger video temporal encoder | Promote to two-port only if video-only BM beats VF024/VF026 by a clear margin |
+| 2 | Improve audio input/encoder | Finer STFT or log-mel settings, more audio chunks, stronger paper-STFT ResNet/LSTM or attention encoder | Promote to two-port only if audio-only BM beats AF036 by a clear margin |
+| 3 | Optimize current two-layer BM | h8 default; limited sweeps over label copies, gamma, label inhibit, training length | Do not repeat h10/long-epoch sweeps unless the feature changed substantially |
+| 4 | Add DBM-like BM branch | Two-port visible layer with two hidden layers; matched standard DBM baseline | Compare under matched p-bit budget and same full Gibbs eval |
+| 5 | Separate fused-head branch | Raw-aligned audio/video fusion CNN/LSTM -> split two port patterns -> BM | Deferred for now; keep as a recorded future AVF branch, not part of the near-term plan. If resumed later, do not mix with AV012; include classifier-only, standard BM, gamma=0 controls |
+
+### Reporting Rules
+
+- Record negative or low-yield conclusions, not only best accuracy.
+- Do not compare quick eval to full eval as final accuracy.
+- Do not mix AV012-style independent processed embeddings with future AVF fused-head inputs in the same result table.
+- Every promoted feature should have unimodal BM controls before two-port fusion.
+- Every new two-port result needs at least gamma=0 and one-port fusion controls.
+
+## Newly Prepared 2026-06-23 Phase 1 Stronger Data
+
+| branch | IDs | setup | status |
+|---|---|---|---|
+| Stronger video input | P1V001 | 24 RGB frames, 320 x 320 aspect-ratio-preserving center crop, ImageNet ResNet50 per frame, BiLSTM4096, standard BM h8/e360 | code packaged; first-round unimodal screening only |
+| Stronger video optional | P1V002 | 32 RGB frames, 320 x 320 aspect-ratio-preserving center crop, BiLSTM4096, standard BM h8/e320 | defined in runner but not submitted by default |
+| Stronger audio STFT | P1A001 | 16 kHz, n_fft=1024, hop=160, about 513 x 994 full-10s STFT, ResNet50, 4 chunks x 500, LSTM4096, standard BM h8/e500 | code packaged; first-round unimodal screening only |
+| Stronger audio temporal chunks optional | P1A002 | original paper-STFT n_fft=512/hop159, but 8 chunks x 250 before LSTM4096, standard BM h8/e500 | defined in runner but not submitted by default |
+
+Decision rule: promote a Phase 1 feature to two-port only if video-only clearly beats VF024/VF026 or audio-only clearly beats AF036. Otherwise record the result as a data-processing negative/low-yield conclusion.
+
+## AV012 Continuation And Ablations
+
+| experiment | purpose | best epoch | quick best | full best | status |
+|---|---|---:|---:|---:|---|
+| AV016 | Continue interrupted AV012 from last.pt; keep copied AV012 best.pt as starting best checkpoint. | 310 | 57.83% | 57.86% | completed |
+
 ## AF031 Improvement Branch
 
 | experiment | input dim | hidden dim | total pbits | best epoch | quick best | full best |
 |---|---:|---:|---:|---:|---:|---:|
-| AF034 | 4096 | 24576 | 30217 | 505 | 44.63% | 44.55% |
-| AF035 | 4096 | 24576 | 30217 | 505 | 44.63% | 44.55% |
-| AF036 | 4096 | 32768 | 38409 | 390 | 45.11% | 44.98% |
-| AF037 | 4096 | 40960 | 46601 | 465 | 44.89% | 44.31% |
+| AF038 | 8192 | 32768 | 42505 | 500 | 43.63% | 43.80% |
+| AF039 | 8192 | 49152 | 58889 | 500 | 44.86% | 44.81% |
+
+## Phase 1 Stronger Video Input Results
+
+| experiment | quick best | full best | note |
+|---|---:|---:|---|
+| P1V001 | 42.55% | 42.56% | Higher resolution and more frames than VF024/VF026, with aspect-ratio-preserving center crop. |
