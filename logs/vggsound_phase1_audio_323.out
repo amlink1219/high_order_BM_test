@@ -1,0 +1,11 @@
+Start time: Wed Jun 24 12:48:09 AM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 323
+CUDA_VISIBLE_DEVICES: 4,5
+Phase 1 audio: P1A001 only by default
+
+[2026-06-24 00:48:09] EXTRACT P1A001 STFT -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_stft_audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_audio_paper_stft_memmap.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_dir /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_stft_audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500 --sample_rate 16000 --duration 10.0 --nperseg 1024 --noverlap 864 --normalization log_per_clip_zscore --dtype float16 --timeout 180 --progress_every 500 --workers 16 --worker_chunksize 8 --resume
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1A001_stft_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1A001_stft_stderr.log

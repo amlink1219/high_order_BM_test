@@ -1,0 +1,205 @@
+Start time: Wed Jun 24 12:27:54 AM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 321
+CUDA_VISIBLE_DEVICES: 2,3
+Phase 1 video: P1V001 only by default
+
+[2026-06-24 00:27:54] EXTRACT P1V001 video sequence -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq.npz
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_phase1_video_resnet_sequence_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_shard0of2.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_summary_shard0of2.json --encoder resnet50 --device cuda:0 --num_frames 24 --video_fps 4 --frame_size 320 --resize_mode center_crop --frame_batch_size 8 --timeout 180 --max_classes 0 --min_train 50 --min_test 10 --num_shards 2 --shard_index 0
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_seq_shard0_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_seq_shard0_stderr.log
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_phase1_video_resnet_sequence_features.py --csv /home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv --clips_root /home/Hongjie_Zeng/datasets/VGGSound_full/clips --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_shard1of2.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_summary_shard1of2.json --encoder resnet50 --device cuda:1 --num_frames 24 --video_fps 4 --frame_size 320 --resize_mode center_crop --frame_batch_size 8 --timeout 180 --max_classes 0 --min_train 50 --min_test 10 --num_shards 2 --shard_index 1
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_seq_shard1_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_seq_shard1_stderr.log
+[2026-06-24 00:27:54] waiting for 2 video shard processes
+[2026-06-24 00:29:54] waiting for 2 video shard processes
+[2026-06-24 00:31:54] waiting for 2 video shard processes
+[2026-06-24 00:33:54] waiting for 2 video shard processes
+[2026-06-24 00:35:54] waiting for 2 video shard processes
+[2026-06-24 00:37:54] waiting for 2 video shard processes
+[2026-06-24 00:39:54] waiting for 2 video shard processes
+[2026-06-24 00:41:54] waiting for 2 video shard processes
+[2026-06-24 00:43:54] waiting for 2 video shard processes
+[2026-06-24 00:45:54] waiting for 2 video shard processes
+[2026-06-24 00:47:54] waiting for 2 video shard processes
+[2026-06-24 00:49:54] waiting for 2 video shard processes
+[2026-06-24 00:51:54] waiting for 2 video shard processes
+[2026-06-24 00:53:54] waiting for 2 video shard processes
+[2026-06-24 00:55:54] waiting for 2 video shard processes
+[2026-06-24 00:57:54] waiting for 2 video shard processes
+[2026-06-24 00:59:54] waiting for 2 video shard processes
+[2026-06-24 01:01:54] waiting for 2 video shard processes
+[2026-06-24 01:03:54] waiting for 2 video shard processes
+[2026-06-24 01:05:54] waiting for 2 video shard processes
+[2026-06-24 01:07:54] waiting for 2 video shard processes
+[2026-06-24 01:09:54] waiting for 2 video shard processes
+[2026-06-24 01:11:54] waiting for 2 video shard processes
+[2026-06-24 01:13:54] waiting for 2 video shard processes
+[2026-06-24 01:15:54] waiting for 2 video shard processes
+[2026-06-24 01:17:54] waiting for 2 video shard processes
+[2026-06-24 01:19:54] waiting for 2 video shard processes
+[2026-06-24 01:21:54] waiting for 2 video shard processes
+[2026-06-24 01:23:54] waiting for 2 video shard processes
+[2026-06-24 01:25:54] waiting for 2 video shard processes
+[2026-06-24 01:27:54] waiting for 2 video shard processes
+[2026-06-24 01:29:54] waiting for 2 video shard processes
+[2026-06-24 01:31:54] waiting for 2 video shard processes
+[2026-06-24 01:33:54] waiting for 2 video shard processes
+[2026-06-24 01:35:54] waiting for 2 video shard processes
+[2026-06-24 01:37:54] waiting for 2 video shard processes
+[2026-06-24 01:39:54] waiting for 2 video shard processes
+[2026-06-24 01:41:54] waiting for 2 video shard processes
+[2026-06-24 01:43:54] waiting for 2 video shard processes
+[2026-06-24 01:45:54] waiting for 2 video shard processes
+[2026-06-24 01:47:54] waiting for 2 video shard processes
+[2026-06-24 01:49:54] waiting for 2 video shard processes
+[2026-06-24 01:51:54] waiting for 2 video shard processes
+[2026-06-24 01:53:54] waiting for 2 video shard processes
+[2026-06-24 01:55:54] waiting for 2 video shard processes
+[2026-06-24 01:57:54] waiting for 2 video shard processes
+[2026-06-24 01:59:54] waiting for 2 video shard processes
+[2026-06-24 02:01:54] waiting for 2 video shard processes
+[2026-06-24 02:03:54] waiting for 2 video shard processes
+[2026-06-24 02:05:54] waiting for 2 video shard processes
+[2026-06-24 02:07:54] waiting for 2 video shard processes
+[2026-06-24 02:09:54] waiting for 2 video shard processes
+[2026-06-24 02:11:54] waiting for 2 video shard processes
+[2026-06-24 02:13:54] waiting for 2 video shard processes
+[2026-06-24 02:15:54] waiting for 2 video shard processes
+[2026-06-24 02:17:54] waiting for 2 video shard processes
+[2026-06-24 02:19:54] waiting for 2 video shard processes
+[2026-06-24 02:21:54] waiting for 2 video shard processes
+[2026-06-24 02:23:54] waiting for 2 video shard processes
+[2026-06-24 02:25:54] waiting for 2 video shard processes
+[2026-06-24 02:27:54] waiting for 2 video shard processes
+[2026-06-24 02:29:54] waiting for 2 video shard processes
+[2026-06-24 02:31:54] waiting for 2 video shard processes
+[2026-06-24 02:33:54] waiting for 2 video shard processes
+[2026-06-24 02:35:54] waiting for 2 video shard processes
+[2026-06-24 02:37:54] waiting for 2 video shard processes
+[2026-06-24 02:39:54] waiting for 2 video shard processes
+[2026-06-24 02:41:54] waiting for 2 video shard processes
+[2026-06-24 02:43:54] waiting for 2 video shard processes
+[2026-06-24 02:45:54] waiting for 2 video shard processes
+[2026-06-24 02:47:54] waiting for 2 video shard processes
+[2026-06-24 02:49:54] waiting for 2 video shard processes
+[2026-06-24 02:51:54] waiting for 2 video shard processes
+[2026-06-24 02:53:54] waiting for 2 video shard processes
+[2026-06-24 02:55:54] waiting for 2 video shard processes
+[2026-06-24 02:57:54] waiting for 2 video shard processes
+[2026-06-24 02:59:54] waiting for 2 video shard processes
+[2026-06-24 03:01:54] waiting for 2 video shard processes
+[2026-06-24 03:03:54] waiting for 2 video shard processes
+[2026-06-24 03:05:54] waiting for 2 video shard processes
+[2026-06-24 03:07:54] waiting for 2 video shard processes
+[2026-06-24 03:09:54] waiting for 2 video shard processes
+[2026-06-24 03:11:54] waiting for 2 video shard processes
+[2026-06-24 03:13:54] waiting for 2 video shard processes
+[2026-06-24 03:15:54] waiting for 2 video shard processes
+[2026-06-24 03:17:54] waiting for 2 video shard processes
+[2026-06-24 03:19:54] waiting for 2 video shard processes
+[2026-06-24 03:21:54] waiting for 2 video shard processes
+[2026-06-24 03:23:54] waiting for 2 video shard processes
+[2026-06-24 03:25:54] waiting for 2 video shard processes
+[2026-06-24 03:27:54] waiting for 2 video shard processes
+[2026-06-24 03:29:54] waiting for 2 video shard processes
+[2026-06-24 03:31:54] waiting for 2 video shard processes
+[2026-06-24 03:33:54] waiting for 2 video shard processes
+[2026-06-24 03:35:54] waiting for 2 video shard processes
+[2026-06-24 03:37:54] waiting for 2 video shard processes
+[2026-06-24 03:39:54] waiting for 2 video shard processes
+[2026-06-24 03:41:54] waiting for 2 video shard processes
+[2026-06-24 03:43:54] waiting for 2 video shard processes
+[2026-06-24 03:45:54] waiting for 2 video shard processes
+[2026-06-24 03:47:54] waiting for 2 video shard processes
+[2026-06-24 03:49:54] waiting for 2 video shard processes
+[2026-06-24 03:51:54] waiting for 2 video shard processes
+[2026-06-24 03:53:54] waiting for 2 video shard processes
+[2026-06-24 03:55:54] waiting for 2 video shard processes
+[2026-06-24 03:57:54] waiting for 2 video shard processes
+[2026-06-24 03:59:54] waiting for 2 video shard processes
+[2026-06-24 04:01:54] waiting for 2 video shard processes
+[2026-06-24 04:03:54] waiting for 2 video shard processes
+[2026-06-24 04:05:54] waiting for 2 video shard processes
+[2026-06-24 04:07:54] waiting for 2 video shard processes
+[2026-06-24 04:09:54] waiting for 2 video shard processes
+[2026-06-24 04:11:54] waiting for 2 video shard processes
+[2026-06-24 04:13:54] waiting for 2 video shard processes
+[2026-06-24 04:15:54] waiting for 2 video shard processes
+[2026-06-24 04:17:54] waiting for 2 video shard processes
+[2026-06-24 04:19:54] waiting for 2 video shard processes
+[2026-06-24 04:21:54] waiting for 2 video shard processes
+[2026-06-24 04:23:54] waiting for 2 video shard processes
+[2026-06-24 04:25:54] waiting for 2 video shard processes
+[2026-06-24 04:27:54] waiting for 2 video shard processes
+[2026-06-24 04:29:54] waiting for 2 video shard processes
+[2026-06-24 04:31:54] waiting for 2 video shard processes
+[2026-06-24 04:33:54] waiting for 2 video shard processes
+[2026-06-24 04:35:54] waiting for 2 video shard processes
+[2026-06-24 04:37:54] waiting for 2 video shard processes
+[2026-06-24 04:39:54] waiting for 2 video shard processes
+[2026-06-24 04:41:54] waiting for 2 video shard processes
+[2026-06-24 04:43:54] waiting for 2 video shard processes
+[2026-06-24 04:45:54] waiting for 2 video shard processes
+[2026-06-24 04:47:54] waiting for 2 video shard processes
+[2026-06-24 04:49:54] waiting for 2 video shard processes
+[2026-06-24 04:51:54] waiting for 2 video shard processes
+[2026-06-24 04:53:54] waiting for 2 video shard processes
+[2026-06-24 04:55:54] waiting for 2 video shard processes
+[2026-06-24 04:57:54] waiting for 2 video shard processes
+[2026-06-24 04:59:54] waiting for 2 video shard processes
+[2026-06-24 05:01:54] waiting for 2 video shard processes
+[2026-06-24 05:03:54] waiting for 2 video shard processes
+[2026-06-24 05:05:54] waiting for 2 video shard processes
+[2026-06-24 05:07:54] waiting for 2 video shard processes
+[2026-06-24 05:09:54] waiting for 2 video shard processes
+[2026-06-24 05:11:54] waiting for 2 video shard processes
+[2026-06-24 05:13:54] waiting for 2 video shard processes
+[2026-06-24 05:15:54] waiting for 2 video shard processes
+[2026-06-24 05:17:54] waiting for 2 video shard processes
+[2026-06-24 05:19:54] waiting for 2 video shard processes
+[2026-06-24 05:21:54] waiting for 2 video shard processes
+[2026-06-24 05:23:54] waiting for 2 video shard processes
+[2026-06-24 05:25:54] waiting for 2 video shard processes
+[2026-06-24 05:27:54] waiting for 2 video shard processes
+[2026-06-24 05:29:54] waiting for 2 video shard processes
+[2026-06-24 05:31:54] waiting for 2 video shard processes
+[2026-06-24 05:33:54] waiting for 2 video shard processes
+[2026-06-24 05:35:54] waiting for 2 video shard processes
+[2026-06-24 05:37:54] waiting for 2 video shard processes
+[2026-06-24 05:39:54] waiting for 2 video shard processes
+[2026-06-24 05:41:54] waiting for 2 video shard processes
+[2026-06-24 05:43:54] waiting for 2 video shard processes
+[2026-06-24 05:45:54] waiting for 2 video shard processes
+[2026-06-24 05:47:54] waiting for 2 video shard processes
+[2026-06-24 05:49:54] waiting for 2 video shard processes
+[2026-06-24 05:51:54] waiting for 2 video shard processes
+[2026-06-24 05:53:54] waiting for 2 video shard processes
+[2026-06-24 05:55:54] waiting for 2 video shard processes
+[2026-06-24 05:57:54] waiting for 2 video shard processes
+[2026-06-24 05:59:54] waiting for 2 video shard processes
+[2026-06-24 06:01:54] waiting for 2 video shard processes
+[2026-06-24 06:03:54] waiting for 2 video shard processes
+[2026-06-24 06:05:54] waiting for 2 video shard processes
+[2026-06-24 06:07:54] waiting for 2 video shard processes
+[2026-06-24 06:09:54] waiting for 2 video shard processes
+[2026-06-24 06:11:54] waiting for 2 video shard processes
+[2026-06-24 06:13:54] waiting for 2 video shard processes
+[2026-06-24 06:15:54] waiting for 2 video shard processes
+[2026-06-24 06:17:54] waiting for 2 video shard processes
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python merge_vggsound_full_video_sequence_shards.py --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_summary.json --shards /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_shard0of2.npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_shard1of2.npz
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_seq_merge_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_seq_merge_stderr.log
+
+[2026-06-24 06:20:50] TRAIN P1V001 video LSTM feature -> /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_video_lstm4096_seed123.npz
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_video_lstm_encoder_features.py --seq_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq.npz --out_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_video_lstm4096_seed123.npz --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_video_lstm4096_seed123_summary.json --out_history /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_video_lstm4096_seed123_history.json --out_ckpt /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_video_lstm4096_seed123_teacher.pt --experiment_id P1V001_video_lstm4096 --embedding_dim 4096 --proj_dim 512 --lstm_hidden 512 --lstm_layers 1 --epochs 50 --batch_size 384 --eval_batch_size 384 --lr 0.001 --weight_decay 0.0001 --dropout 0.25 --eval_every 5 --seed 123 --num_workers 0 --device auto --amp --data_parallel
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_lstm_feature_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_lstm_feature_stderr.log
+
+[2026-06-24 07:19:36] TRAIN P1V001 video BM input=4096 hidden=32768 total=38409
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_video_lstm4096_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_f24_s320_centercrop_lstm4096_h8_e360 --experiment_id P1V001 --model_type standard --input_mode video --total_pbits 38409 --input_dim 4096 --num_classes 309 --label_copies 5 --epochs 360 --batch_size 64 --eval_batch_size 64 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_f24_s320_centercrop_lstm4096_h8_e360_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1V001_video_f24_s320_centercrop_lstm4096_h8_e360_stderr.log
+Phase-1 stronger video input experiments finished.
+End time: Wed Jun 24 01:34:43 PM CST 2026

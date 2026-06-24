@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-06-24 06:20:50",
+  "out_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq.npz",
+  "shards": [
+    "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_shard0of2.npz",
+    "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_shard1of2.npz"
+  ],
+  "train_size": 182615,
+  "test_size": 15341,
+  "num_classes": 309,
+  "sequence_shape_train": [
+    182615,
+    24,
+    2048
+  ],
+  "sequence_shape_test": [
+    15341,
+    24,
+    2048
+  ],
+  "dtype": "float16"
+}

@@ -1,0 +1,18 @@
+Start time: Tue Jun 23 05:11:43 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 320
+CUDA_VISIBLE_DEVICES: 1
+SKIP aligned AV feature: /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz
+[feature] {
+  "num_classes": 309,
+  "input_dim": 4096,
+  "audio_dim": 4096,
+  "train_size": 182615,
+  "test_size": 15341
+}
+
+[2026-06-23 17:11:48] TRAIN AV013 twoport_videolstm4096_audioaf031_lstm4096_h8_g050_lc5_e320_b16 input=4096 hidden=32768 total=38409 batch=16 gamma=(0.5,0.5)
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV013_twoport_videolstm4096_audioaf031_lstm4096_h8_g050_lc5_e320_b16 --experiment_id AV013 --model_type twoport --input_dim 4096 --num_classes 309 --label_copies 5 --total_pbits 38409 --epochs 320 --batch_size 16 --eval_batch_size 16 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --port_a audio --port_o video --gamma_h 0.5 --gamma_l 0.5 --label_inhibit 0.3 --label_update binary --label_condition both --full_eval_on_best
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV013_twoport_videolstm4096_audioaf031_lstm4096_h8_g050_lc5_e320_b16_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV013_twoport_videolstm4096_audioaf031_lstm4096_h8_g050_lc5_e320_b16_stderr.log

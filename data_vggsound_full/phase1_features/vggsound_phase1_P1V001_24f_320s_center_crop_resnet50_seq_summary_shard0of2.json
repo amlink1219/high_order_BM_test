@@ -1,0 +1,1911 @@
+{
+  "created_at": "2026-06-24 06:19:33",
+  "csv": "/home/Hongjie_Zeng/datasets/VGGSound_full/meta/vggsound.csv",
+  "clips_root": "/home/Hongjie_Zeng/datasets/VGGSound_full/clips",
+  "out_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/vggsound_phase1_P1V001_24f_320s_center_crop_resnet50_seq_shard0of2.npz",
+  "num_failures": 1,
+  "total_rows_before_shard": 197957,
+  "num_shards": 2,
+  "shard_index": 0,
+  "train_size": 91307,
+  "test_size": 7671,
+  "num_classes": 309,
+  "class_names": [
+    "air conditioning noise",
+    "air horn",
+    "airplane",
+    "airplane flyby",
+    "alarm clock ringing",
+    "alligators, crocodiles hissing",
+    "ambulance siren",
+    "arc welding",
+    "baby babbling",
+    "baby crying",
+    "baby laughter",
+    "baltimore oriole calling",
+    "barn swallow calling",
+    "basketball bounce",
+    "bathroom ventilation fan running",
+    "beat boxing",
+    "bee, wasp, etc. buzzing",
+    "bird chirping, tweeting",
+    "bird squawking",
+    "bird wings flapping",
+    "black capped chickadee calling",
+    "blowtorch igniting",
+    "bouncing on trampoline",
+    "bowling impact",
+    "bull bellowing",
+    "canary calling",
+    "cap gun shooting",
+    "car engine idling",
+    "car engine knocking",
+    "car engine starting",
+    "car passing by",
+    "cat caterwauling",
+    "cat growling",
+    "cat hissing",
+    "cat meowing",
+    "cat purring",
+    "cattle mooing",
+    "cattle, bovinae cowbell",
+    "cell phone buzzing",
+    "chainsawing trees",
+    "cheetah chirrup",
+    "chicken clucking",
+    "chicken crowing",
+    "child singing",
+    "child speech, kid speaking",
+    "children shouting",
+    "chimpanzee pant-hooting",
+    "chinchilla barking",
+    "chipmunk chirping",
+    "chopping food",
+    "chopping wood",
+    "church bell ringing",
+    "civil defense siren",
+    "cow lowing",
+    "coyote howling",
+    "cricket chirping",
+    "crow cawing",
+    "cuckoo bird calling",
+    "cupboard opening or closing",
+    "cutting hair with electric trimmers",
+    "dinosaurs bellowing",
+    "disc scratching",
+    "dog barking",
+    "dog baying",
+    "dog bow-wow",
+    "dog growling",
+    "dog howling",
+    "dog whimpering",
+    "donkey, ass braying",
+    "door slamming",
+    "driving buses",
+    "driving motorcycle",
+    "driving snowmobile",
+    "duck quacking",
+    "eagle screaming",
+    "eating with cutlery",
+    "electric grinder grinding",
+    "electric shaver, electric razor shaving",
+    "elephant trumpeting",
+    "eletric blender running",
+    "elk bugling",
+    "engine accelerating, revving, vroom",
+    "female singing",
+    "female speech, woman speaking",
+    "ferret dooking",
+    "fire crackling",
+    "fire truck siren",
+    "fireworks banging",
+    "firing cannon",
+    "firing muskets",
+    "fly, housefly buzzing",
+    "foghorn",
+    "footsteps on snow",
+    "forging swords",
+    "fox barking",
+    "francolin calling",
+    "frog croaking",
+    "gibbon howling",
+    "goat bleating",
+    "golf driving",
+    "goose honking",
+    "hail",
+    "hair dryer drying",
+    "hammering nails",
+    "heart sounds, heartbeat",
+    "hedge trimmer running",
+    "helicopter",
+    "horse clip-clop",
+    "horse neighing",
+    "ice cracking",
+    "ice cream truck, ice cream van",
+    "lathe spinning",
+    "lawn mowing",
+    "lighting firecrackers",
+    "lions growling",
+    "lions roaring",
+    "lip smacking",
+    "machine gun shooting",
+    "magpie calling",
+    "male singing",
+    "male speech, man speaking",
+    "metronome",
+    "missile launch",
+    "mosquito buzzing",
+    "motorboat, speedboat acceleration",
+    "mouse clicking",
+    "mouse pattering",
+    "mouse squeaking",
+    "mynah bird singing",
+    "ocean burbling",
+    "opening or closing car doors",
+    "opening or closing car electric windows",
+    "opening or closing drawers",
+    "orchestra",
+    "otter growling",
+    "owl hooting",
+    "parrot talking",
+    "penguins braying",
+    "people babbling",
+    "people battle cry",
+    "people belly laughing",
+    "people booing",
+    "people burping",
+    "people cheering",
+    "people clapping",
+    "people coughing",
+    "people crowd",
+    "people eating",
+    "people eating apple",
+    "people eating crisps",
+    "people eating noodle",
+    "people farting",
+    "people finger snapping",
+    "people gargling",
+    "people giggling",
+    "people hiccup",
+    "people humming",
+    "people marching",
+    "people nose blowing",
+    "people running",
+    "people screaming",
+    "people shuffling",
+    "people slapping",
+    "people slurping",
+    "people sneezing",
+    "people sniggering",
+    "people sobbing",
+    "people whispering",
+    "people whistling",
+    "pheasant crowing",
+    "pig oinking",
+    "pigeon, dove cooing",
+    "planing timber",
+    "plastic bottle crushing",
+    "playing accordion",
+    "playing acoustic guitar",
+    "playing badminton",
+    "playing bagpipes",
+    "playing banjo",
+    "playing bass drum",
+    "playing bass guitar",
+    "playing bassoon",
+    "playing bongo",
+    "playing bugle",
+    "playing castanets",
+    "playing cello",
+    "playing clarinet",
+    "playing congas",
+    "playing cornet",
+    "playing cymbal",
+    "playing darts",
+    "playing didgeridoo",
+    "playing djembe",
+    "playing double bass",
+    "playing drum kit",
+    "playing electric guitar",
+    "playing electronic organ",
+    "playing erhu",
+    "playing flute",
+    "playing french horn",
+    "playing glockenspiel",
+    "playing gong",
+    "playing guiro",
+    "playing hammond organ",
+    "playing harmonica",
+    "playing harp",
+    "playing harpsichord",
+    "playing hockey",
+    "playing lacrosse",
+    "playing mandolin",
+    "playing marimba, xylophone",
+    "playing oboe",
+    "playing piano",
+    "playing saxophone",
+    "playing shofar",
+    "playing sitar",
+    "playing snare drum",
+    "playing squash",
+    "playing steel guitar, slide guitar",
+    "playing steelpan",
+    "playing synthesizer",
+    "playing tabla",
+    "playing table tennis",
+    "playing tambourine",
+    "playing tennis",
+    "playing theremin",
+    "playing timbales",
+    "playing timpani",
+    "playing trombone",
+    "playing trumpet",
+    "playing tuning fork",
+    "playing tympani",
+    "playing ukulele",
+    "playing vibraphone",
+    "playing violin, fiddle",
+    "playing volleyball",
+    "playing washboard",
+    "playing zither",
+    "police car (siren)",
+    "police radio chatter",
+    "popping popcorn",
+    "printer printing",
+    "pumping water",
+    "race car, auto racing",
+    "railroad car, train wagon",
+    "raining",
+    "rapping",
+    "reversing beeps",
+    "ripping paper",
+    "roller coaster running",
+    "rope skipping",
+    "rowboat, canoe, kayak rowing",
+    "running electric fan",
+    "sailing",
+    "scuba diving",
+    "sea lion barking",
+    "sea waves",
+    "sharpen knife",
+    "sheep bleating",
+    "shot football",
+    "singing bowl",
+    "singing choir",
+    "skateboarding",
+    "skidding",
+    "skiing",
+    "sliding door",
+    "sloshing water",
+    "slot machine",
+    "smoke detector beeping",
+    "snake hissing",
+    "snake rattling",
+    "splashing water",
+    "spraying water",
+    "squishing water",
+    "stream burbling",
+    "strike lighter",
+    "striking bowling",
+    "striking pool",
+    "subway, metro, underground",
+    "swimming",
+    "tap dancing",
+    "tapping guitar",
+    "telephone bell ringing",
+    "thunder",
+    "toilet flushing",
+    "tornado roaring",
+    "tractor digging",
+    "train horning",
+    "train wheels squealing",
+    "train whistling",
+    "turkey gobbling",
+    "typing on computer keyboard",
+    "typing on typewriter",
+    "underwater bubbling",
+    "using sewing machines",
+    "vacuum cleaner cleaning floors",
+    "vehicle horn, car horn, honking",
+    "volcano explosion",
+    "warbler chirping",
+    "waterfall burbling",
+    "whale calling",
+    "wind chime",
+    "wind noise",
+    "wind rustling leaves",
+    "wood thrush calling",
+    "woodpecker pecking tree",
+    "writing on blackboard with chalk",
+    "yodelling",
+    "zebra braying"
+  ],
+  "sequence_shape_train": [
+    91307,
+    24,
+    2048
+  ],
+  "sequence_shape_test": [
+    7671,
+    24,
+    2048
+  ],
+  "feature_config": {
+    "encoder": "resnet50",
+    "pretrained": true,
+    "num_frames": 24,
+    "video_fps": 4,
+    "frame_size": 320,
+    "resize_mode": "center_crop",
+    "frame_batch_size": 8,
+    "frame_feature_dim": 2048,
+    "dtype": "float16",
+    "note": "Phase-1 video input upgrade. This is separate from VF024/VF026 baseline features."
+  },
+  "source_summary": {
+    "csv_rows": 199467,
+    "indexed_clips": 197957,
+    "found_csv_clips": 197957,
+    "missing_csv_clips": 1510,
+    "selected_classes": 309,
+    "class_names": [
+      "air conditioning noise",
+      "air horn",
+      "airplane",
+      "airplane flyby",
+      "alarm clock ringing",
+      "alligators, crocodiles hissing",
+      "ambulance siren",
+      "arc welding",
+      "baby babbling",
+      "baby crying",
+      "baby laughter",
+      "baltimore oriole calling",
+      "barn swallow calling",
+      "basketball bounce",
+      "bathroom ventilation fan running",
+      "beat boxing",
+      "bee, wasp, etc. buzzing",
+      "bird chirping, tweeting",
+      "bird squawking",
+      "bird wings flapping",
+      "black capped chickadee calling",
+      "blowtorch igniting",
+      "bouncing on trampoline",
+      "bowling impact",
+      "bull bellowing",
+      "canary calling",
+      "cap gun shooting",
+      "car engine idling",
+      "car engine knocking",
+      "car engine starting",
+      "car passing by",
+      "cat caterwauling",
+      "cat growling",
+      "cat hissing",
+      "cat meowing",
+      "cat purring",
+      "cattle mooing",
+      "cattle, bovinae cowbell",
+      "cell phone buzzing",
+      "chainsawing trees",
+      "cheetah chirrup",
+      "chicken clucking",
+      "chicken crowing",
+      "child singing",
+      "child speech, kid speaking",
+      "children shouting",
+      "chimpanzee pant-hooting",
+      "chinchilla barking",
+      "chipmunk chirping",
+      "chopping food",
+      "chopping wood",
+      "church bell ringing",
+      "civil defense siren",
+      "cow lowing",
+      "coyote howling",
+      "cricket chirping",
+      "crow cawing",
+      "cuckoo bird calling",
+      "cupboard opening or closing",
+      "cutting hair with electric trimmers",
+      "dinosaurs bellowing",
+      "disc scratching",
+      "dog barking",
+      "dog baying",
+      "dog bow-wow",
+      "dog growling",
+      "dog howling",
+      "dog whimpering",
+      "donkey, ass braying",
+      "door slamming",
+      "driving buses",
+      "driving motorcycle",
+      "driving snowmobile",
+      "duck quacking",
+      "eagle screaming",
+      "eating with cutlery",
+      "electric grinder grinding",
+      "electric shaver, electric razor shaving",
+      "elephant trumpeting",
+      "eletric blender running",
+      "elk bugling",
+      "engine accelerating, revving, vroom",
+      "female singing",
+      "female speech, woman speaking",
+      "ferret dooking",
+      "fire crackling",
+      "fire truck siren",
+      "fireworks banging",
+      "firing cannon",
+      "firing muskets",
+      "fly, housefly buzzing",
+      "foghorn",
+      "footsteps on snow",
+      "forging swords",
+      "fox barking",
+      "francolin calling",
+      "frog croaking",
+      "gibbon howling",
+      "goat bleating",
+      "golf driving",
+      "goose honking",
+      "hail",
+      "hair dryer drying",
+      "hammering nails",
+      "heart sounds, heartbeat",
+      "hedge trimmer running",
+      "helicopter",
+      "horse clip-clop",
+      "horse neighing",
+      "ice cracking",
+      "ice cream truck, ice cream van",
+      "lathe spinning",
+      "lawn mowing",
+      "lighting firecrackers",
+      "lions growling",
+      "lions roaring",
+      "lip smacking",
+      "machine gun shooting",
+      "magpie calling",
+      "male singing",
+      "male speech, man speaking",
+      "metronome",
+      "missile launch",
+      "mosquito buzzing",
+      "motorboat, speedboat acceleration",
+      "mouse clicking",
+      "mouse pattering",
+      "mouse squeaking",
+      "mynah bird singing",
+      "ocean burbling",
+      "opening or closing car doors",
+      "opening or closing car electric windows",
+      "opening or closing drawers",
+      "orchestra",
+      "otter growling",
+      "owl hooting",
+      "parrot talking",
+      "penguins braying",
+      "people babbling",
+      "people battle cry",
+      "people belly laughing",
+      "people booing",
+      "people burping",
+      "people cheering",
+      "people clapping",
+      "people coughing",
+      "people crowd",
+      "people eating",
+      "people eating apple",
+      "people eating crisps",
+      "people eating noodle",
+      "people farting",
+      "people finger snapping",
+      "people gargling",
+      "people giggling",
+      "people hiccup",
+      "people humming",
+      "people marching",
+      "people nose blowing",
+      "people running",
+      "people screaming",
+      "people shuffling",
+      "people slapping",
+      "people slurping",
+      "people sneezing",
+      "people sniggering",
+      "people sobbing",
+      "people whispering",
+      "people whistling",
+      "pheasant crowing",
+      "pig oinking",
+      "pigeon, dove cooing",
+      "planing timber",
+      "plastic bottle crushing",
+      "playing accordion",
+      "playing acoustic guitar",
+      "playing badminton",
+      "playing bagpipes",
+      "playing banjo",
+      "playing bass drum",
+      "playing bass guitar",
+      "playing bassoon",
+      "playing bongo",
+      "playing bugle",
+      "playing castanets",
+      "playing cello",
+      "playing clarinet",
+      "playing congas",
+      "playing cornet",
+      "playing cymbal",
+      "playing darts",
+      "playing didgeridoo",
+      "playing djembe",
+      "playing double bass",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing electronic organ",
+      "playing erhu",
+      "playing flute",
+      "playing french horn",
+      "playing glockenspiel",
+      "playing gong",
+      "playing guiro",
+      "playing hammond organ",
+      "playing harmonica",
+      "playing harp",
+      "playing harpsichord",
+      "playing hockey",
+      "playing lacrosse",
+      "playing mandolin",
+      "playing marimba, xylophone",
+      "playing oboe",
+      "playing piano",
+      "playing saxophone",
+      "playing shofar",
+      "playing sitar",
+      "playing snare drum",
+      "playing squash",
+      "playing steel guitar, slide guitar",
+      "playing steelpan",
+      "playing synthesizer",
+      "playing tabla",
+      "playing table tennis",
+      "playing tambourine",
+      "playing tennis",
+      "playing theremin",
+      "playing timbales",
+      "playing timpani",
+      "playing trombone",
+      "playing trumpet",
+      "playing tuning fork",
+      "playing tympani",
+      "playing ukulele",
+      "playing vibraphone",
+      "playing violin, fiddle",
+      "playing volleyball",
+      "playing washboard",
+      "playing zither",
+      "police car (siren)",
+      "police radio chatter",
+      "popping popcorn",
+      "printer printing",
+      "pumping water",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "raining",
+      "rapping",
+      "reversing beeps",
+      "ripping paper",
+      "roller coaster running",
+      "rope skipping",
+      "rowboat, canoe, kayak rowing",
+      "running electric fan",
+      "sailing",
+      "scuba diving",
+      "sea lion barking",
+      "sea waves",
+      "sharpen knife",
+      "sheep bleating",
+      "shot football",
+      "singing bowl",
+      "singing choir",
+      "skateboarding",
+      "skidding",
+      "skiing",
+      "sliding door",
+      "sloshing water",
+      "slot machine",
+      "smoke detector beeping",
+      "snake hissing",
+      "snake rattling",
+      "splashing water",
+      "spraying water",
+      "squishing water",
+      "stream burbling",
+      "strike lighter",
+      "striking bowling",
+      "striking pool",
+      "subway, metro, underground",
+      "swimming",
+      "tap dancing",
+      "tapping guitar",
+      "telephone bell ringing",
+      "thunder",
+      "toilet flushing",
+      "tornado roaring",
+      "tractor digging",
+      "train horning",
+      "train wheels squealing",
+      "train whistling",
+      "turkey gobbling",
+      "typing on computer keyboard",
+      "typing on typewriter",
+      "underwater bubbling",
+      "using sewing machines",
+      "vacuum cleaner cleaning floors",
+      "vehicle horn, car horn, honking",
+      "volcano explosion",
+      "warbler chirping",
+      "waterfall burbling",
+      "whale calling",
+      "wind chime",
+      "wind noise",
+      "wind rustling leaves",
+      "wood thrush calling",
+      "woodpecker pecking tree",
+      "writing on blackboard with chalk",
+      "yodelling",
+      "zebra braying"
+    ],
+    "selected_class_counts": {
+      "air conditioning noise": {
+        "train": 192,
+        "test": 49
+      },
+      "air horn": {
+        "train": 145,
+        "test": 50
+      },
+      "airplane": {
+        "train": 448,
+        "test": 50
+      },
+      "airplane flyby": {
+        "train": 904,
+        "test": 50
+      },
+      "alarm clock ringing": {
+        "train": 281,
+        "test": 50
+      },
+      "alligators, crocodiles hissing": {
+        "train": 311,
+        "test": 50
+      },
+      "ambulance siren": {
+        "train": 994,
+        "test": 49
+      },
+      "arc welding": {
+        "train": 874,
+        "test": 49
+      },
+      "baby babbling": {
+        "train": 546,
+        "test": 49
+      },
+      "baby crying": {
+        "train": 615,
+        "test": 50
+      },
+      "baby laughter": {
+        "train": 827,
+        "test": 50
+      },
+      "baltimore oriole calling": {
+        "train": 149,
+        "test": 50
+      },
+      "barn swallow calling": {
+        "train": 368,
+        "test": 50
+      },
+      "basketball bounce": {
+        "train": 996,
+        "test": 50
+      },
+      "bathroom ventilation fan running": {
+        "train": 150,
+        "test": 49
+      },
+      "beat boxing": {
+        "train": 945,
+        "test": 50
+      },
+      "bee, wasp, etc. buzzing": {
+        "train": 498,
+        "test": 50
+      },
+      "bird chirping, tweeting": {
+        "train": 988,
+        "test": 50
+      },
+      "bird squawking": {
+        "train": 298,
+        "test": 50
+      },
+      "bird wings flapping": {
+        "train": 205,
+        "test": 50
+      },
+      "black capped chickadee calling": {
+        "train": 392,
+        "test": 48
+      },
+      "blowtorch igniting": {
+        "train": 200,
+        "test": 50
+      },
+      "bouncing on trampoline": {
+        "train": 474,
+        "test": 50
+      },
+      "bowling impact": {
+        "train": 915,
+        "test": 50
+      },
+      "bull bellowing": {
+        "train": 264,
+        "test": 50
+      },
+      "canary calling": {
+        "train": 662,
+        "test": 50
+      },
+      "cap gun shooting": {
+        "train": 847,
+        "test": 49
+      },
+      "car engine idling": {
+        "train": 319,
+        "test": 50
+      },
+      "car engine knocking": {
+        "train": 940,
+        "test": 50
+      },
+      "car engine starting": {
+        "train": 441,
+        "test": 50
+      },
+      "car passing by": {
+        "train": 544,
+        "test": 50
+      },
+      "cat caterwauling": {
+        "train": 186,
+        "test": 50
+      },
+      "cat growling": {
+        "train": 333,
+        "test": 49
+      },
+      "cat hissing": {
+        "train": 267,
+        "test": 50
+      },
+      "cat meowing": {
+        "train": 535,
+        "test": 50
+      },
+      "cat purring": {
+        "train": 808,
+        "test": 50
+      },
+      "cattle mooing": {
+        "train": 685,
+        "test": 50
+      },
+      "cattle, bovinae cowbell": {
+        "train": 594,
+        "test": 50
+      },
+      "cell phone buzzing": {
+        "train": 150,
+        "test": 48
+      },
+      "chainsawing trees": {
+        "train": 994,
+        "test": 50
+      },
+      "cheetah chirrup": {
+        "train": 351,
+        "test": 50
+      },
+      "chicken clucking": {
+        "train": 575,
+        "test": 49
+      },
+      "chicken crowing": {
+        "train": 998,
+        "test": 49
+      },
+      "child singing": {
+        "train": 938,
+        "test": 50
+      },
+      "child speech, kid speaking": {
+        "train": 992,
+        "test": 50
+      },
+      "children shouting": {
+        "train": 151,
+        "test": 48
+      },
+      "chimpanzee pant-hooting": {
+        "train": 423,
+        "test": 50
+      },
+      "chinchilla barking": {
+        "train": 159,
+        "test": 50
+      },
+      "chipmunk chirping": {
+        "train": 211,
+        "test": 50
+      },
+      "chopping food": {
+        "train": 149,
+        "test": 50
+      },
+      "chopping wood": {
+        "train": 204,
+        "test": 49
+      },
+      "church bell ringing": {
+        "train": 752,
+        "test": 48
+      },
+      "civil defense siren": {
+        "train": 921,
+        "test": 50
+      },
+      "cow lowing": {
+        "train": 146,
+        "test": 50
+      },
+      "coyote howling": {
+        "train": 437,
+        "test": 50
+      },
+      "cricket chirping": {
+        "train": 650,
+        "test": 50
+      },
+      "crow cawing": {
+        "train": 934,
+        "test": 50
+      },
+      "cuckoo bird calling": {
+        "train": 168,
+        "test": 50
+      },
+      "cupboard opening or closing": {
+        "train": 278,
+        "test": 50
+      },
+      "cutting hair with electric trimmers": {
+        "train": 218,
+        "test": 50
+      },
+      "dinosaurs bellowing": {
+        "train": 580,
+        "test": 49
+      },
+      "disc scratching": {
+        "train": 147,
+        "test": 50
+      },
+      "dog barking": {
+        "train": 712,
+        "test": 49
+      },
+      "dog baying": {
+        "train": 361,
+        "test": 50
+      },
+      "dog bow-wow": {
+        "train": 573,
+        "test": 49
+      },
+      "dog growling": {
+        "train": 772,
+        "test": 50
+      },
+      "dog howling": {
+        "train": 869,
+        "test": 49
+      },
+      "dog whimpering": {
+        "train": 411,
+        "test": 49
+      },
+      "donkey, ass braying": {
+        "train": 387,
+        "test": 49
+      },
+      "door slamming": {
+        "train": 150,
+        "test": 50
+      },
+      "driving buses": {
+        "train": 996,
+        "test": 49
+      },
+      "driving motorcycle": {
+        "train": 994,
+        "test": 50
+      },
+      "driving snowmobile": {
+        "train": 547,
+        "test": 50
+      },
+      "duck quacking": {
+        "train": 546,
+        "test": 50
+      },
+      "eagle screaming": {
+        "train": 200,
+        "test": 50
+      },
+      "eating with cutlery": {
+        "train": 476,
+        "test": 50
+      },
+      "electric grinder grinding": {
+        "train": 369,
+        "test": 50
+      },
+      "electric shaver, electric razor shaving": {
+        "train": 853,
+        "test": 50
+      },
+      "elephant trumpeting": {
+        "train": 258,
+        "test": 49
+      },
+      "eletric blender running": {
+        "train": 163,
+        "test": 50
+      },
+      "elk bugling": {
+        "train": 507,
+        "test": 49
+      },
+      "engine accelerating, revving, vroom": {
+        "train": 997,
+        "test": 49
+      },
+      "female singing": {
+        "train": 998,
+        "test": 50
+      },
+      "female speech, woman speaking": {
+        "train": 994,
+        "test": 50
+      },
+      "ferret dooking": {
+        "train": 187,
+        "test": 50
+      },
+      "fire crackling": {
+        "train": 440,
+        "test": 50
+      },
+      "fire truck siren": {
+        "train": 904,
+        "test": 50
+      },
+      "fireworks banging": {
+        "train": 990,
+        "test": 50
+      },
+      "firing cannon": {
+        "train": 283,
+        "test": 50
+      },
+      "firing muskets": {
+        "train": 365,
+        "test": 50
+      },
+      "fly, housefly buzzing": {
+        "train": 147,
+        "test": 49
+      },
+      "foghorn": {
+        "train": 167,
+        "test": 50
+      },
+      "footsteps on snow": {
+        "train": 201,
+        "test": 50
+      },
+      "forging swords": {
+        "train": 213,
+        "test": 50
+      },
+      "fox barking": {
+        "train": 308,
+        "test": 50
+      },
+      "francolin calling": {
+        "train": 591,
+        "test": 50
+      },
+      "frog croaking": {
+        "train": 958,
+        "test": 50
+      },
+      "gibbon howling": {
+        "train": 737,
+        "test": 48
+      },
+      "goat bleating": {
+        "train": 196,
+        "test": 50
+      },
+      "golf driving": {
+        "train": 250,
+        "test": 50
+      },
+      "goose honking": {
+        "train": 730,
+        "test": 50
+      },
+      "hail": {
+        "train": 664,
+        "test": 50
+      },
+      "hair dryer drying": {
+        "train": 293,
+        "test": 50
+      },
+      "hammering nails": {
+        "train": 561,
+        "test": 50
+      },
+      "heart sounds, heartbeat": {
+        "train": 704,
+        "test": 50
+      },
+      "hedge trimmer running": {
+        "train": 199,
+        "test": 50
+      },
+      "helicopter": {
+        "train": 995,
+        "test": 49
+      },
+      "horse clip-clop": {
+        "train": 830,
+        "test": 50
+      },
+      "horse neighing": {
+        "train": 531,
+        "test": 49
+      },
+      "ice cracking": {
+        "train": 313,
+        "test": 50
+      },
+      "ice cream truck, ice cream van": {
+        "train": 624,
+        "test": 49
+      },
+      "lathe spinning": {
+        "train": 805,
+        "test": 50
+      },
+      "lawn mowing": {
+        "train": 802,
+        "test": 50
+      },
+      "lighting firecrackers": {
+        "train": 795,
+        "test": 50
+      },
+      "lions growling": {
+        "train": 544,
+        "test": 50
+      },
+      "lions roaring": {
+        "train": 906,
+        "test": 50
+      },
+      "lip smacking": {
+        "train": 213,
+        "test": 50
+      },
+      "machine gun shooting": {
+        "train": 933,
+        "test": 50
+      },
+      "magpie calling": {
+        "train": 377,
+        "test": 50
+      },
+      "male singing": {
+        "train": 998,
+        "test": 50
+      },
+      "male speech, man speaking": {
+        "train": 999,
+        "test": 49
+      },
+      "metronome": {
+        "train": 150,
+        "test": 50
+      },
+      "missile launch": {
+        "train": 915,
+        "test": 50
+      },
+      "mosquito buzzing": {
+        "train": 385,
+        "test": 49
+      },
+      "motorboat, speedboat acceleration": {
+        "train": 991,
+        "test": 50
+      },
+      "mouse clicking": {
+        "train": 606,
+        "test": 50
+      },
+      "mouse pattering": {
+        "train": 380,
+        "test": 48
+      },
+      "mouse squeaking": {
+        "train": 186,
+        "test": 50
+      },
+      "mynah bird singing": {
+        "train": 826,
+        "test": 49
+      },
+      "ocean burbling": {
+        "train": 932,
+        "test": 50
+      },
+      "opening or closing car doors": {
+        "train": 404,
+        "test": 50
+      },
+      "opening or closing car electric windows": {
+        "train": 153,
+        "test": 50
+      },
+      "opening or closing drawers": {
+        "train": 404,
+        "test": 49
+      },
+      "orchestra": {
+        "train": 996,
+        "test": 50
+      },
+      "otter growling": {
+        "train": 313,
+        "test": 50
+      },
+      "owl hooting": {
+        "train": 697,
+        "test": 50
+      },
+      "parrot talking": {
+        "train": 540,
+        "test": 50
+      },
+      "penguins braying": {
+        "train": 267,
+        "test": 49
+      },
+      "people babbling": {
+        "train": 533,
+        "test": 50
+      },
+      "people battle cry": {
+        "train": 241,
+        "test": 49
+      },
+      "people belly laughing": {
+        "train": 465,
+        "test": 49
+      },
+      "people booing": {
+        "train": 997,
+        "test": 50
+      },
+      "people burping": {
+        "train": 992,
+        "test": 50
+      },
+      "people cheering": {
+        "train": 646,
+        "test": 50
+      },
+      "people clapping": {
+        "train": 849,
+        "test": 50
+      },
+      "people coughing": {
+        "train": 402,
+        "test": 50
+      },
+      "people crowd": {
+        "train": 990,
+        "test": 50
+      },
+      "people eating": {
+        "train": 175,
+        "test": 50
+      },
+      "people eating apple": {
+        "train": 308,
+        "test": 50
+      },
+      "people eating crisps": {
+        "train": 390,
+        "test": 50
+      },
+      "people eating noodle": {
+        "train": 508,
+        "test": 50
+      },
+      "people farting": {
+        "train": 504,
+        "test": 49
+      },
+      "people finger snapping": {
+        "train": 148,
+        "test": 49
+      },
+      "people gargling": {
+        "train": 171,
+        "test": 50
+      },
+      "people giggling": {
+        "train": 221,
+        "test": 50
+      },
+      "people hiccup": {
+        "train": 343,
+        "test": 50
+      },
+      "people humming": {
+        "train": 341,
+        "test": 50
+      },
+      "people marching": {
+        "train": 761,
+        "test": 50
+      },
+      "people nose blowing": {
+        "train": 175,
+        "test": 50
+      },
+      "people running": {
+        "train": 371,
+        "test": 49
+      },
+      "people screaming": {
+        "train": 676,
+        "test": 50
+      },
+      "people shuffling": {
+        "train": 625,
+        "test": 48
+      },
+      "people slapping": {
+        "train": 160,
+        "test": 50
+      },
+      "people slurping": {
+        "train": 509,
+        "test": 49
+      },
+      "people sneezing": {
+        "train": 637,
+        "test": 50
+      },
+      "people sniggering": {
+        "train": 839,
+        "test": 50
+      },
+      "people sobbing": {
+        "train": 429,
+        "test": 50
+      },
+      "people whispering": {
+        "train": 693,
+        "test": 50
+      },
+      "people whistling": {
+        "train": 832,
+        "test": 49
+      },
+      "pheasant crowing": {
+        "train": 875,
+        "test": 50
+      },
+      "pig oinking": {
+        "train": 393,
+        "test": 50
+      },
+      "pigeon, dove cooing": {
+        "train": 999,
+        "test": 50
+      },
+      "planing timber": {
+        "train": 759,
+        "test": 50
+      },
+      "plastic bottle crushing": {
+        "train": 209,
+        "test": 50
+      },
+      "playing accordion": {
+        "train": 994,
+        "test": 50
+      },
+      "playing acoustic guitar": {
+        "train": 997,
+        "test": 50
+      },
+      "playing badminton": {
+        "train": 943,
+        "test": 49
+      },
+      "playing bagpipes": {
+        "train": 903,
+        "test": 50
+      },
+      "playing banjo": {
+        "train": 996,
+        "test": 50
+      },
+      "playing bass drum": {
+        "train": 806,
+        "test": 49
+      },
+      "playing bass guitar": {
+        "train": 994,
+        "test": 49
+      },
+      "playing bassoon": {
+        "train": 995,
+        "test": 48
+      },
+      "playing bongo": {
+        "train": 865,
+        "test": 50
+      },
+      "playing bugle": {
+        "train": 391,
+        "test": 50
+      },
+      "playing castanets": {
+        "train": 148,
+        "test": 48
+      },
+      "playing cello": {
+        "train": 995,
+        "test": 50
+      },
+      "playing clarinet": {
+        "train": 995,
+        "test": 50
+      },
+      "playing congas": {
+        "train": 411,
+        "test": 50
+      },
+      "playing cornet": {
+        "train": 836,
+        "test": 50
+      },
+      "playing cymbal": {
+        "train": 993,
+        "test": 50
+      },
+      "playing darts": {
+        "train": 503,
+        "test": 50
+      },
+      "playing didgeridoo": {
+        "train": 996,
+        "test": 50
+      },
+      "playing djembe": {
+        "train": 379,
+        "test": 50
+      },
+      "playing double bass": {
+        "train": 752,
+        "test": 50
+      },
+      "playing drum kit": {
+        "train": 996,
+        "test": 49
+      },
+      "playing electric guitar": {
+        "train": 998,
+        "test": 50
+      },
+      "playing electronic organ": {
+        "train": 782,
+        "test": 49
+      },
+      "playing erhu": {
+        "train": 918,
+        "test": 50
+      },
+      "playing flute": {
+        "train": 994,
+        "test": 50
+      },
+      "playing french horn": {
+        "train": 808,
+        "test": 49
+      },
+      "playing glockenspiel": {
+        "train": 982,
+        "test": 50
+      },
+      "playing gong": {
+        "train": 504,
+        "test": 50
+      },
+      "playing guiro": {
+        "train": 425,
+        "test": 49
+      },
+      "playing hammond organ": {
+        "train": 990,
+        "test": 50
+      },
+      "playing harmonica": {
+        "train": 774,
+        "test": 50
+      },
+      "playing harp": {
+        "train": 994,
+        "test": 50
+      },
+      "playing harpsichord": {
+        "train": 969,
+        "test": 49
+      },
+      "playing hockey": {
+        "train": 350,
+        "test": 50
+      },
+      "playing lacrosse": {
+        "train": 232,
+        "test": 50
+      },
+      "playing mandolin": {
+        "train": 772,
+        "test": 50
+      },
+      "playing marimba, xylophone": {
+        "train": 995,
+        "test": 48
+      },
+      "playing oboe": {
+        "train": 495,
+        "test": 49
+      },
+      "playing piano": {
+        "train": 994,
+        "test": 50
+      },
+      "playing saxophone": {
+        "train": 996,
+        "test": 50
+      },
+      "playing shofar": {
+        "train": 147,
+        "test": 48
+      },
+      "playing sitar": {
+        "train": 804,
+        "test": 50
+      },
+      "playing snare drum": {
+        "train": 928,
+        "test": 50
+      },
+      "playing squash": {
+        "train": 995,
+        "test": 49
+      },
+      "playing steel guitar, slide guitar": {
+        "train": 872,
+        "test": 50
+      },
+      "playing steelpan": {
+        "train": 450,
+        "test": 49
+      },
+      "playing synthesizer": {
+        "train": 854,
+        "test": 50
+      },
+      "playing tabla": {
+        "train": 992,
+        "test": 50
+      },
+      "playing table tennis": {
+        "train": 993,
+        "test": 49
+      },
+      "playing tambourine": {
+        "train": 756,
+        "test": 48
+      },
+      "playing tennis": {
+        "train": 339,
+        "test": 50
+      },
+      "playing theremin": {
+        "train": 953,
+        "test": 50
+      },
+      "playing timbales": {
+        "train": 533,
+        "test": 49
+      },
+      "playing timpani": {
+        "train": 570,
+        "test": 50
+      },
+      "playing trombone": {
+        "train": 997,
+        "test": 49
+      },
+      "playing trumpet": {
+        "train": 779,
+        "test": 49
+      },
+      "playing tuning fork": {
+        "train": 150,
+        "test": 50
+      },
+      "playing tympani": {
+        "train": 409,
+        "test": 50
+      },
+      "playing ukulele": {
+        "train": 853,
+        "test": 49
+      },
+      "playing vibraphone": {
+        "train": 829,
+        "test": 50
+      },
+      "playing violin, fiddle": {
+        "train": 991,
+        "test": 49
+      },
+      "playing volleyball": {
+        "train": 936,
+        "test": 50
+      },
+      "playing washboard": {
+        "train": 150,
+        "test": 49
+      },
+      "playing zither": {
+        "train": 488,
+        "test": 50
+      },
+      "police car (siren)": {
+        "train": 995,
+        "test": 50
+      },
+      "police radio chatter": {
+        "train": 906,
+        "test": 50
+      },
+      "popping popcorn": {
+        "train": 201,
+        "test": 50
+      },
+      "printer printing": {
+        "train": 824,
+        "test": 50
+      },
+      "pumping water": {
+        "train": 149,
+        "test": 50
+      },
+      "race car, auto racing": {
+        "train": 992,
+        "test": 50
+      },
+      "railroad car, train wagon": {
+        "train": 993,
+        "test": 48
+      },
+      "raining": {
+        "train": 423,
+        "test": 49
+      },
+      "rapping": {
+        "train": 584,
+        "test": 50
+      },
+      "reversing beeps": {
+        "train": 431,
+        "test": 49
+      },
+      "ripping paper": {
+        "train": 509,
+        "test": 50
+      },
+      "roller coaster running": {
+        "train": 620,
+        "test": 49
+      },
+      "rope skipping": {
+        "train": 913,
+        "test": 50
+      },
+      "rowboat, canoe, kayak rowing": {
+        "train": 994,
+        "test": 50
+      },
+      "running electric fan": {
+        "train": 265,
+        "test": 50
+      },
+      "sailing": {
+        "train": 539,
+        "test": 50
+      },
+      "scuba diving": {
+        "train": 902,
+        "test": 49
+      },
+      "sea lion barking": {
+        "train": 159,
+        "test": 50
+      },
+      "sea waves": {
+        "train": 197,
+        "test": 49
+      },
+      "sharpen knife": {
+        "train": 716,
+        "test": 50
+      },
+      "sheep bleating": {
+        "train": 464,
+        "test": 50
+      },
+      "shot football": {
+        "train": 174,
+        "test": 50
+      },
+      "singing bowl": {
+        "train": 993,
+        "test": 50
+      },
+      "singing choir": {
+        "train": 701,
+        "test": 49
+      },
+      "skateboarding": {
+        "train": 860,
+        "test": 48
+      },
+      "skidding": {
+        "train": 849,
+        "test": 50
+      },
+      "skiing": {
+        "train": 924,
+        "test": 49
+      },
+      "sliding door": {
+        "train": 535,
+        "test": 50
+      },
+      "sloshing water": {
+        "train": 226,
+        "test": 50
+      },
+      "slot machine": {
+        "train": 945,
+        "test": 50
+      },
+      "smoke detector beeping": {
+        "train": 168,
+        "test": 50
+      },
+      "snake hissing": {
+        "train": 234,
+        "test": 50
+      },
+      "snake rattling": {
+        "train": 148,
+        "test": 50
+      },
+      "splashing water": {
+        "train": 561,
+        "test": 50
+      },
+      "spraying water": {
+        "train": 228,
+        "test": 50
+      },
+      "squishing water": {
+        "train": 380,
+        "test": 49
+      },
+      "stream burbling": {
+        "train": 639,
+        "test": 49
+      },
+      "strike lighter": {
+        "train": 179,
+        "test": 50
+      },
+      "striking bowling": {
+        "train": 273,
+        "test": 50
+      },
+      "striking pool": {
+        "train": 349,
+        "test": 47
+      },
+      "subway, metro, underground": {
+        "train": 946,
+        "test": 49
+      },
+      "swimming": {
+        "train": 515,
+        "test": 50
+      },
+      "tap dancing": {
+        "train": 997,
+        "test": 50
+      },
+      "tapping guitar": {
+        "train": 728,
+        "test": 49
+      },
+      "telephone bell ringing": {
+        "train": 150,
+        "test": 50
+      },
+      "thunder": {
+        "train": 275,
+        "test": 50
+      },
+      "toilet flushing": {
+        "train": 995,
+        "test": 49
+      },
+      "tornado roaring": {
+        "train": 306,
+        "test": 50
+      },
+      "tractor digging": {
+        "train": 914,
+        "test": 50
+      },
+      "train horning": {
+        "train": 718,
+        "test": 48
+      },
+      "train wheels squealing": {
+        "train": 283,
+        "test": 48
+      },
+      "train whistling": {
+        "train": 557,
+        "test": 50
+      },
+      "turkey gobbling": {
+        "train": 589,
+        "test": 50
+      },
+      "typing on computer keyboard": {
+        "train": 508,
+        "test": 49
+      },
+      "typing on typewriter": {
+        "train": 694,
+        "test": 50
+      },
+      "underwater bubbling": {
+        "train": 369,
+        "test": 50
+      },
+      "using sewing machines": {
+        "train": 574,
+        "test": 50
+      },
+      "vacuum cleaner cleaning floors": {
+        "train": 952,
+        "test": 50
+      },
+      "vehicle horn, car horn, honking": {
+        "train": 995,
+        "test": 50
+      },
+      "volcano explosion": {
+        "train": 787,
+        "test": 49
+      },
+      "warbler chirping": {
+        "train": 210,
+        "test": 49
+      },
+      "waterfall burbling": {
+        "train": 459,
+        "test": 50
+      },
+      "whale calling": {
+        "train": 150,
+        "test": 50
+      },
+      "wind chime": {
+        "train": 339,
+        "test": 49
+      },
+      "wind noise": {
+        "train": 866,
+        "test": 48
+      },
+      "wind rustling leaves": {
+        "train": 508,
+        "test": 49
+      },
+      "wood thrush calling": {
+        "train": 629,
+        "test": 50
+      },
+      "woodpecker pecking tree": {
+        "train": 690,
+        "test": 49
+      },
+      "writing on blackboard with chalk": {
+        "train": 226,
+        "test": 50
+      },
+      "yodelling": {
+        "train": 907,
+        "test": 50
+      },
+      "zebra braying": {
+        "train": 147,
+        "test": 50
+      }
+    }
+  },
+  "failures": [
+    {
+      "clip_relpath": "scratch/shared/beegfs/hchen/train_data/VGGSound_final/video/PAOL8UF9UDY_000104.mp4",
+      "split": "train",
+      "label": "train horning",
+      "label_id": "287",
+      "error": "ffmpeg decode failed: [mov,mp4,m4a,3gp,3g2,mj2 @ 0x2cc600c0] moov atom not found\n[in#0 @ 0x2cc5fdc0] Error opening input: Invalid data found when processing input\nError opening input file /home/Hongjie_Zeng/datasets/VGGSound_full/clips/scratch/shared/beegfs/hchen/train_data/VGGSound_final/video/PAOL8UF9UDY_000104.mp4.\nError opening input files: Invalid data found when processing input"
+    }
+  ]
+}
