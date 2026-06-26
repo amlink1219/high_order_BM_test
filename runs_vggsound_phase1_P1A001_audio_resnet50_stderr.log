@@ -1,0 +1,12 @@
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/lib/python3.13/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/home/Hongjie_Zeng/high_order_BM/make_vggsound_full_audio_paper_resnet50_features.py:234: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=bool(args.amp and device.type == "cuda"))
+/home/Hongjie_Zeng/high_order_BM/make_vggsound_full_audio_paper_resnet50_features.py:263: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=bool(args.amp and device.type == "cuda")):
+/home/Hongjie_Zeng/high_order_BM/make_vggsound_full_audio_paper_resnet50_features.py:181: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=bool(amp and device.type == "cuda")):
+/home/Hongjie_Zeng/high_order_BM/make_vggsound_full_audio_paper_resnet50_features.py:333: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=bool(amp and device.type == "cuda")):
+/home/Hongjie_Zeng/high_order_BM/make_vggsound_full_audio_paper_resnet50_features.py:365: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=bool(amp and device.type == "cuda")):

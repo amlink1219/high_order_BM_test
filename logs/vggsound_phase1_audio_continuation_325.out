@@ -1,0 +1,18 @@
+Start time: Wed Jun 24 04:58:46 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 325
+CUDA_VISIBLE_DEVICES: 2,3
+Phase 1 audio continuation: P1A001 retry + P1A002
+Start phase-1 audio continuation: 2026-06-24 16:58:47
+root=/home/Hongjie_Zeng/high_order_BM
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python run_vggsound_phase1_stronger_audio.py --root /home/Hongjie_Zeng/high_order_BM --python_bin /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python --only P1A001 --stft_workers 4 --stft_worker_chunksize 2 --teacher_batch_size 48 --teacher_eval_batch_size 64 --teacher_export_batch_size 48 --teacher_num_workers 2 --teacher_export_num_workers 1 --lstm_batch_size 192 --lstm_eval_batch_size 384 --lstm_data_parallel --eval_batch_size 32 --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1A001_retry_wrapper_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1A001_retry_wrapper_stderr.log
+P1A001 wrapper return code: 0
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python run_vggsound_phase1_stronger_audio.py --root /home/Hongjie_Zeng/high_order_BM --python_bin /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python --only P1A002 --stft_workers 8 --stft_worker_chunksize 4 --teacher_batch_size 48 --teacher_eval_batch_size 64 --teacher_export_batch_size 48 --teacher_num_workers 2 --teacher_export_num_workers 1 --lstm_batch_size 192 --lstm_eval_batch_size 384 --lstm_data_parallel --eval_batch_size 32 --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1A002_wrapper_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_phase1_P1A002_wrapper_stderr.log
+P1A002 wrapper return code: 0
+Finished phase-1 audio continuation: 2026-06-26 20:33:25
+End time: Fri Jun 26 08:33:25 PM CST 2026

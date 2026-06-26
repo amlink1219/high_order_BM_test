@@ -1,0 +1,418 @@
+[
+  {
+    "epoch": 1,
+    "train_ce": 0.42199459893456776
+  },
+  {
+    "epoch": 2,
+    "train_ce": 0.14353981782621586
+  },
+  {
+    "epoch": 3,
+    "train_ce": 0.08660271431968994
+  },
+  {
+    "epoch": 4,
+    "train_ce": 0.07143794159045905
+  },
+  {
+    "epoch": 5,
+    "train_ce": 0.06471542866304791,
+    "teacher_train_top1": 0.9873997207239273,
+    "teacher_train_top5": 0.9992552638063686,
+    "teacher_train_ce_eval": 0.046614248178352184,
+    "teacher_test_top1": 0.4667883449579558,
+    "teacher_test_top5": 0.6921973795710841,
+    "teacher_test_ce": 5.6404656827449795
+  },
+  {
+    "epoch": 6,
+    "train_ce": 0.056710680374413916
+  },
+  {
+    "epoch": 7,
+    "train_ce": 0.05198088103828036
+  },
+  {
+    "epoch": 8,
+    "train_ce": 0.04635050229543434
+  },
+  {
+    "epoch": 9,
+    "train_ce": 0.0422926210087725
+  },
+  {
+    "epoch": 10,
+    "train_ce": 0.03913355072046299,
+    "teacher_train_top1": 0.9914464857760863,
+    "teacher_train_top5": 0.9992497878049448,
+    "teacher_train_ce_eval": 0.032239752515499064,
+    "teacher_test_top1": 0.4727201616583013,
+    "teacher_test_top5": 0.6929144123590378,
+    "teacher_test_ce": 5.986402720212936
+  },
+  {
+    "epoch": 11,
+    "train_ce": 0.03612805516586224
+  },
+  {
+    "epoch": 12,
+    "train_ce": 0.033016681956678055
+  },
+  {
+    "epoch": 13,
+    "train_ce": 0.031171905193974347
+  },
+  {
+    "epoch": 14,
+    "train_ce": 0.0304398664552269
+  },
+  {
+    "epoch": 15,
+    "train_ce": 0.02729298562689637,
+    "teacher_train_top1": 0.9943268625249843,
+    "teacher_train_top5": 0.9991621717821647,
+    "teacher_train_ce_eval": 0.018790672037271982,
+    "teacher_test_top1": 0.47839123916302717,
+    "teacher_test_top5": 0.6935662603480868,
+    "teacher_test_ce": 6.058871221542359
+  },
+  {
+    "epoch": 16,
+    "train_ce": 0.026762575802926788
+  },
+  {
+    "epoch": 17,
+    "train_ce": 0.024899848297636022
+  },
+  {
+    "epoch": 18,
+    "train_ce": 0.026124977810025124
+  },
+  {
+    "epoch": 19,
+    "train_ce": 0.023661463908934484
+  },
+  {
+    "epoch": 20,
+    "train_ce": 0.02258622898024128,
+    "teacher_train_top1": 0.9932097582345372,
+    "teacher_train_top5": 0.9992552638063686,
+    "teacher_train_ce_eval": 0.026924276886152905,
+    "teacher_test_top1": 0.4767616191904048,
+    "teacher_test_top5": 0.693501075549182,
+    "teacher_test_ce": 6.544383162260056
+  },
+  {
+    "epoch": 21,
+    "train_ce": 0.02264853560865515
+  },
+  {
+    "epoch": 22,
+    "train_ce": 0.021410591929368422
+  },
+  {
+    "epoch": 23,
+    "train_ce": 0.020440984037948112
+  },
+  {
+    "epoch": 24,
+    "train_ce": 0.01986834934544223
+  },
+  {
+    "epoch": 25,
+    "train_ce": 0.020772374075507846,
+    "teacher_train_top1": 0.9940530624537962,
+    "teacher_train_top5": 0.9992881198149112,
+    "teacher_train_ce_eval": 0.022610231208471367,
+    "teacher_test_top1": 0.4737631184407796,
+    "teacher_test_top5": 0.6985854898637638,
+    "teacher_test_ce": 6.6682705044746395
+  },
+  {
+    "epoch": 26,
+    "train_ce": 0.01925992756623371
+  },
+  {
+    "epoch": 27,
+    "train_ce": 0.019394497648946303
+  },
+  {
+    "epoch": 28,
+    "train_ce": 0.01778777936222262
+  },
+  {
+    "epoch": 29,
+    "train_ce": 0.01895602385754019
+  },
+  {
+    "epoch": 30,
+    "train_ce": 0.01728126125220367,
+    "teacher_train_top1": 0.9958765709279085,
+    "teacher_train_top5": 0.9993264518248774,
+    "teacher_train_ce_eval": 0.01386147331413118,
+    "teacher_test_top1": 0.47650087999478524,
+    "teacher_test_top5": 0.6916759011798449,
+    "teacher_test_ce": 7.23796579837799
+  },
+  {
+    "epoch": 31,
+    "train_ce": 0.018005750300135178
+  },
+  {
+    "epoch": 32,
+    "train_ce": 0.017079430027137233
+  },
+  {
+    "epoch": 33,
+    "train_ce": 0.017360818060908303
+  },
+  {
+    "epoch": 34,
+    "train_ce": 0.015448481689878737
+  },
+  {
+    "epoch": 35,
+    "train_ce": 0.016533567803668395,
+    "teacher_train_top1": 0.995520630835364,
+    "teacher_train_top5": 0.9993154998220299,
+    "teacher_train_ce_eval": 0.016147184877568926,
+    "teacher_test_top1": 0.4770875431849293,
+    "teacher_test_top5": 0.6949351411250896,
+    "teacher_test_ce": 7.619738852977752
+  },
+  {
+    "epoch": 36,
+    "train_ce": 0.016945873279892953
+  },
+  {
+    "epoch": 37,
+    "train_ce": 0.015782043576843284
+  },
+  {
+    "epoch": 38,
+    "train_ce": 0.015110076859427328
+  },
+  {
+    "epoch": 39,
+    "train_ce": 0.016041082568406393
+  },
+  {
+    "epoch": 40,
+    "train_ce": 0.01442506624780932,
+    "teacher_train_top1": 0.9963091750403855,
+    "teacher_train_top5": 0.9993264518248774,
+    "teacher_train_ce_eval": 0.011767200771502642,
+    "teacher_test_top1": 0.4806727071246985,
+    "teacher_test_top5": 0.6957173587119484,
+    "teacher_test_ce": 7.880273711681366
+  },
+  {
+    "epoch": 41,
+    "train_ce": 0.0149297856132394
+  },
+  {
+    "epoch": 42,
+    "train_ce": 0.015504359392239434
+  },
+  {
+    "epoch": 43,
+    "train_ce": 0.014931264788017267
+  },
+  {
+    "epoch": 44,
+    "train_ce": 0.014317034806715449
+  },
+  {
+    "epoch": 45,
+    "train_ce": 0.015072173442139953,
+    "teacher_train_top1": 0.99670892314432,
+    "teacher_train_top5": 0.9993319278263012,
+    "teacher_train_ce_eval": 0.010378658115997124,
+    "teacher_test_top1": 0.4811290007170328,
+    "teacher_test_top5": 0.6921321947721791,
+    "teacher_test_ce": 8.232865035533905
+  },
+  {
+    "epoch": 46,
+    "train_ce": 0.013695227118762397
+  },
+  {
+    "epoch": 47,
+    "train_ce": 0.015064807736756038
+  },
+  {
+    "epoch": 48,
+    "train_ce": 0.014001110600330673
+  },
+  {
+    "epoch": 49,
+    "train_ce": 0.013816226689198748
+  },
+  {
+    "epoch": 50,
+    "train_ce": 0.014161184003561717,
+    "teacher_train_top1": 0.9965555951044547,
+    "teacher_train_top5": 0.9992607398077924,
+    "teacher_train_ce_eval": 0.011754705540546575,
+    "teacher_test_top1": 0.47884753275536146,
+    "teacher_test_top5": 0.6969558698911413,
+    "teacher_test_ce": 8.066408216953278
+  },
+  {
+    "epoch": 51,
+    "train_ce": 0.012660967322249679
+  },
+  {
+    "epoch": 52,
+    "train_ce": 0.01349102706446044
+  },
+  {
+    "epoch": 53,
+    "train_ce": 0.013458793925277698
+  },
+  {
+    "epoch": 54,
+    "train_ce": 0.013500449662349862
+  },
+  {
+    "epoch": 55,
+    "train_ce": 0.013793884217387345,
+    "teacher_train_top1": 0.9966979711414725,
+    "teacher_train_top5": 0.9993264518248774,
+    "teacher_train_ce_eval": 0.011141384155642906,
+    "teacher_test_top1": 0.4806727071246985,
+    "teacher_test_top5": 0.6961736523042826,
+    "teacher_test_ce": 8.366482889652252
+  },
+  {
+    "epoch": 56,
+    "train_ce": 0.01294791767354381
+  },
+  {
+    "epoch": 57,
+    "train_ce": 0.013203389402501828
+  },
+  {
+    "epoch": 58,
+    "train_ce": 0.012965115864871089
+  },
+  {
+    "epoch": 59,
+    "train_ce": 0.012562725182281732
+  },
+  {
+    "epoch": 60,
+    "train_ce": 0.012994331247011432,
+    "teacher_train_top1": 0.9966158311201161,
+    "teacher_train_top5": 0.9992552638063686,
+    "teacher_train_ce_eval": 0.013066215715573664,
+    "teacher_test_top1": 0.47839123916302717,
+    "teacher_test_top5": 0.6942181083371358,
+    "teacher_test_ce": 9.086446309089661
+  },
+  {
+    "epoch": 61,
+    "train_ce": 0.012801026439752458
+  },
+  {
+    "epoch": 62,
+    "train_ce": 0.012439072603228405
+  },
+  {
+    "epoch": 63,
+    "train_ce": 0.011821420209720063
+  },
+  {
+    "epoch": 64,
+    "train_ce": 0.012385791478267561
+  },
+  {
+    "epoch": 65,
+    "train_ce": 0.013005231428100611,
+    "teacher_train_top1": 0.9966048791172686,
+    "teacher_train_top5": 0.9993319278263012,
+    "teacher_train_ce_eval": 0.010823317514986221,
+    "teacher_test_top1": 0.4813897399126524,
+    "teacher_test_top5": 0.6927840427612281,
+    "teacher_test_ce": 8.758387279510497
+  },
+  {
+    "epoch": 66,
+    "train_ce": 0.013009972014972027
+  },
+  {
+    "epoch": 67,
+    "train_ce": 0.012131163560795603
+  },
+  {
+    "epoch": 68,
+    "train_ce": 0.011847927224623704
+  },
+  {
+    "epoch": 69,
+    "train_ce": 0.0128121332526122
+  },
+  {
+    "epoch": 70,
+    "train_ce": 0.012795383893907008,
+    "teacher_train_top1": 0.996687019138625,
+    "teacher_train_top5": 0.9993264518248774,
+    "teacher_train_ce_eval": 0.01044462637618818,
+    "teacher_test_top1": 0.47936901114660063,
+    "teacher_test_top5": 0.6972817938856659,
+    "teacher_test_ce": 9.000450551509857
+  },
+  {
+    "epoch": 71,
+    "train_ce": 0.01241791387895043
+  },
+  {
+    "epoch": 72,
+    "train_ce": 0.011544714225094059
+  },
+  {
+    "epoch": 73,
+    "train_ce": 0.012019961962972262
+  },
+  {
+    "epoch": 74,
+    "train_ce": 0.011609270554801071
+  },
+  {
+    "epoch": 75,
+    "train_ce": 0.012192043792433752,
+    "teacher_train_top1": 0.9966760671357775,
+    "teacher_train_top5": 0.9993264518248774,
+    "teacher_train_ce_eval": 0.010821932363825826,
+    "teacher_test_top1": 0.47917345674988593,
+    "teacher_test_top5": 0.6927840427612281,
+    "teacher_test_ce": 9.560918521881103
+  },
+  {
+    "epoch": 76,
+    "train_ce": 0.012386905871827072
+  },
+  {
+    "epoch": 77,
+    "train_ce": 0.012317501665728587
+  },
+  {
+    "epoch": 78,
+    "train_ce": 0.011977276804935807
+  },
+  {
+    "epoch": 79,
+    "train_ce": 0.011248654821501954
+  },
+  {
+    "epoch": 80,
+    "train_ce": 0.012231425677810387,
+    "teacher_train_top1": 0.9969170111984229,
+    "teacher_train_top5": 0.9993264518248774,
+    "teacher_train_ce_eval": 0.00977250404788651,
+    "teacher_test_top1": 0.48158529430936703,
+    "teacher_test_top5": 0.6949351411250896,
+    "teacher_test_ce": 9.109887230396271
+  }
+]

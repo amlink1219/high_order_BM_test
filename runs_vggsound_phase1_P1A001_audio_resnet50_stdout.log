@@ -1,0 +1,166 @@
+[2026-06-24 17:41:28] train paper-STFT audio resnet50 teacher data_dir=/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_stft_audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500 device=cuda
+[data_parallel] using 2 GPUs for paper-STFT audio resnet50
+[epoch 001] ce=2.5365 lr=1.00e-04
+[epoch 002] ce=1.6841 test_top1=0.4184 test_top5=0.7108 lr=1.00e-04
+[epoch 003] ce=1.4566 lr=1.00e-04
+[epoch 004] ce=1.3034 test_top1=0.4553 test_top5=0.7365 lr=1.00e-04
+[epoch 005] ce=1.1988 lr=1.00e-04
+[epoch 006] ce=1.1090 test_top1=0.4727 test_top5=0.7551 lr=1.00e-04
+[epoch 007] ce=1.0279 lr=1.00e-04
+[epoch 008] ce=0.9628 test_top1=0.4880 test_top5=0.7636 lr=1.00e-04
+[epoch 009] ce=0.9000 lr=1.00e-04
+[epoch 010] ce=0.8427 test_top1=0.4969 test_top5=0.7676 lr=1.00e-04
+[epoch 011] ce=0.7868 lr=1.00e-04
+[epoch 012] ce=0.7362 test_top1=0.4964 test_top5=0.7674 lr=1.00e-04
+[epoch 013] ce=0.6871 lr=1.00e-04
+[epoch 014] ce=0.6394 test_top1=0.5018 test_top5=0.7703 lr=1.00e-04
+[epoch 015] ce=0.5973 lr=1.00e-04
+[epoch 016] ce=0.5573 test_top1=0.5021 test_top5=0.7704 lr=1.00e-04
+[epoch 017] ce=0.5223 lr=1.00e-04
+[epoch 018] ce=0.4880 test_top1=0.5005 test_top5=0.7689 lr=1.00e-04
+[epoch 019] ce=0.4561 lr=1.00e-04
+[epoch 020] ce=0.4250 test_top1=0.4991 test_top5=0.7687 lr=1.00e-04
+[epoch 021] ce=0.3988 lr=1.00e-04
+[epoch 022] ce=0.3779 test_top1=0.4929 test_top5=0.7546 lr=1.00e-04
+[epoch 023] ce=0.3494 lr=1.00e-04
+[epoch 024] ce=0.3336 test_top1=0.5024 test_top5=0.7614 lr=1.00e-04
+[epoch 025] ce=0.3164 lr=1.00e-04
+[epoch 026] ce=0.2970 test_top1=0.4936 test_top5=0.7580 lr=1.00e-04
+[epoch 027] ce=0.2853 lr=1.00e-04
+[epoch 028] ce=0.2706 test_top1=0.4914 test_top5=0.7531 lr=1.00e-04
+[epoch 029] ce=0.2575 lr=1.00e-04
+[epoch 030] ce=0.2434 test_top1=0.4929 test_top5=0.7559 lr=1.00e-04
+[epoch 031] ce=0.2365 lr=1.00e-04
+[epoch 032] ce=0.2278 test_top1=0.4924 test_top5=0.7508 lr=1.00e-04
+[epoch 033] ce=0.1257 lr=1.00e-05
+[epoch 034] ce=0.0981 test_top1=0.5146 test_top5=0.7657 lr=1.00e-05
+[epoch 035] ce=0.0860 lr=1.00e-05
+[epoch 036] ce=0.0803 test_top1=0.5107 test_top5=0.7647 lr=1.00e-05
+[epoch 037] ce=0.0725 lr=1.00e-05
+[epoch 038] ce=0.0694 test_top1=0.5082 test_top5=0.7642 lr=1.00e-05
+[epoch 039] ce=0.0647 lr=1.00e-05
+[epoch 040] ce=0.0623 test_top1=0.5104 test_top5=0.7647 lr=1.00e-05
+[epoch 041] ce=0.0586 lr=1.00e-05
+[epoch 042] ce=0.0564 test_top1=0.5092 test_top5=0.7661 lr=1.00e-05
+[epoch 043] ce=0.0533 lr=1.00e-06
+[epoch 044] ce=0.0506 test_top1=0.5101 test_top5=0.7631 lr=1.00e-06
+[epoch 045] ce=0.0498 lr=1.00e-06
+[epoch 046] ce=0.0491 test_top1=0.5124 test_top5=0.7661 lr=1.00e-06
+[epoch 047] ce=0.0493 lr=1.00e-06
+[epoch 048] ce=0.0477 test_top1=0.5137 test_top5=0.7651 lr=1.00e-06
+[epoch 049] ce=0.0470 lr=1.00e-06
+[epoch 050] ce=0.0477 test_top1=0.5124 test_top5=0.7652 lr=1.00e-06
+[epoch 051] ce=0.0475 lr=1.00e-07
+[epoch 052] ce=0.0472 test_top1=0.5109 test_top5=0.7650 lr=1.00e-07
+[epoch 053] ce=0.0463 lr=1.00e-07
+[epoch 054] ce=0.0472 test_top1=0.5111 test_top5=0.7653 lr=1.00e-07
+[epoch 055] ce=0.0454 lr=1.00e-07
+[epoch 056] ce=0.0478 test_top1=0.5105 test_top5=0.7638 lr=1.00e-07
+[epoch 057] ce=0.0457 lr=1.00e-07
+[epoch 058] ce=0.0462 test_top1=0.5116 test_top5=0.7648 lr=1.00e-07
+[epoch 059] ce=0.0469 lr=1.00e-08
+[epoch 060] ce=0.0464 test_top1=0.5116 test_top5=0.7654 lr=1.00e-08
+[epoch 061] ce=0.0464 lr=1.00e-08
+[epoch 062] ce=0.0456 test_top1=0.5120 test_top5=0.7655 lr=1.00e-08
+[epoch 063] ce=0.0468 lr=1.00e-08
+[epoch 064] ce=0.0466 test_top1=0.5122 test_top5=0.7652 lr=1.00e-08
+[epoch 065] ce=0.0468 lr=1.00e-08
+[epoch 066] ce=0.0463 test_top1=0.5110 test_top5=0.7642 lr=1.00e-08
+[epoch 067] ce=0.0455 lr=1.00e-08
+[epoch 068] ce=0.0472 test_top1=0.5118 test_top5=0.7658 lr=1.00e-08
+[epoch 069] ce=0.0454 lr=1.00e-08
+[epoch 070] ce=0.0469 test_top1=0.5113 test_top5=0.7651 lr=1.00e-08
+[epoch 071] ce=0.0478 lr=1.00e-08
+[epoch 072] ce=0.0462 test_top1=0.5105 test_top5=0.7659 lr=1.00e-08
+[epoch 073] ce=0.0467 lr=1.00e-08
+[epoch 074] ce=0.0467 test_top1=0.5119 test_top5=0.7649 lr=1.00e-08
+[epoch 075] ce=0.0473 lr=1.00e-08
+[epoch 076] ce=0.0462 test_top1=0.5121 test_top5=0.7666 lr=1.00e-08
+[epoch 077] ce=0.0474 lr=1.00e-08
+[epoch 078] ce=0.0463 test_top1=0.5121 test_top5=0.7646 lr=1.00e-08
+[epoch 079] ce=0.0463 lr=1.00e-08
+[epoch 080] ce=0.0466 test_top1=0.5116 test_top5=0.7650 lr=1.00e-08
+[epoch 081] ce=0.0468 lr=1.00e-08
+[epoch 082] ce=0.0465 test_top1=0.5130 test_top5=0.7671 lr=1.00e-08
+[epoch 083] ce=0.0465 lr=1.00e-08
+[epoch 084] ce=0.0465 test_top1=0.5112 test_top5=0.7651 lr=1.00e-08
+[epoch 085] ce=0.0467 lr=1.00e-08
+[epoch 086] ce=0.0467 test_top1=0.5107 test_top5=0.7664 lr=1.00e-08
+[epoch 087] ce=0.0454 lr=1.00e-08
+[epoch 088] ce=0.0454 test_top1=0.5132 test_top5=0.7647 lr=1.00e-08
+[epoch 089] ce=0.0465 lr=1.00e-08
+[epoch 090] ce=0.0460 test_top1=0.5127 test_top5=0.7654 lr=1.00e-08
+[epoch 091] ce=0.0458 lr=1.00e-08
+[epoch 092] ce=0.0472 test_top1=0.5111 test_top5=0.7657 lr=1.00e-08
+[epoch 093] ce=0.0461 lr=1.00e-08
+[epoch 094] ce=0.0466 test_top1=0.5120 test_top5=0.7657 lr=1.00e-08
+[epoch 095] ce=0.0464 lr=1.00e-08
+[epoch 096] ce=0.0460 test_top1=0.5120 test_top5=0.7670 lr=1.00e-08
+[epoch 097] ce=0.0470 lr=1.00e-08
+[epoch 098] ce=0.0476 test_top1=0.5114 test_top5=0.7653 lr=1.00e-08
+[epoch 099] ce=0.0453 lr=1.00e-08
+[epoch 100] ce=0.0460 test_top1=0.5108 test_top5=0.7654 lr=1.00e-08
+[2026-06-25 08:59:01] export global full-10s ResNet50 embeddings
+[2026-06-25 09:11:57] export chunk sequence starts=[0, 165, 329, 494] chunk_frames=500
+{
+  "experiment_id": "P1A001_audio_resnet50",
+  "created_at": "2026-06-25 09:25:51",
+  "data_dir": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_stft_audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500",
+  "out_summary": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/P1A001_teacher_summary.json",
+  "out_history": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/P1A001_teacher_history.json",
+  "out_ckpt_last": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/P1A001_teacher.pt",
+  "out_ckpt_best": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/P1A001_teacher_best.pt",
+  "backbone": "resnet50",
+  "teacher_best_epoch": 34,
+  "teacher_best_test_top1": 0.514633987354149,
+  "teacher_best_test_acc": 0.514633987354149,
+  "teacher_history_last": {
+    "epoch": 100,
+    "train_ce": 0.0460090056066334,
+    "lr": 1.0000000000000004e-08,
+    "teacher_test_top1": 0.5107880842187602,
+    "teacher_test_top5": 0.7653999087412815,
+    "teacher_test_ce": 3.400323348864913
+  },
+  "num_classes": 309,
+  "n_freq": 513,
+  "n_time": 994,
+  "train_crop_frames": 500,
+  "eval_full_10s": true,
+  "paper_alignment": "Teacher trains on random 257x500 crops and exports embeddings from the full 10s STFT, without resizing/sigmoid before the resnet50.",
+  "features": {
+    "global_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/vggsound_full_audio_paperresnet50_global2048_seed223.npz",
+    "global_embedding_dim": 2048,
+    "global_normalization": {
+      "mode": "per_dim_zscore_sigmoid",
+      "mu_mean": 0.4054129719734192,
+      "sd_mean": 0.45690208673477173
+    },
+    "seq_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/vggsound_full_audio_paperresnet50_seq_chunks4_w500_seed223.npz",
+    "seq_shape_train": [
+      182615,
+      4,
+      2048
+    ],
+    "seq_shape_test": [
+      15341,
+      4,
+      2048
+    ],
+    "meanstd_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/vggsound_full_audio_paperresnet50_seqmeanstd4096_chunks4_w500_seed223.npz",
+    "meanstd_embedding_dim": 4096,
+    "meanstd_normalization": {
+      "mode": "per_dim_zscore_sigmoid",
+      "mu_mean": 0.2613772749900818,
+      "sd_mean": 0.2953852117061615
+    },
+    "sequence_num_chunks": 4,
+    "sequence_chunk_frames": 500,
+    "sequence_chunk_starts": [
+      0,
+      165,
+      329,
+      494
+    ]
+  }
+}

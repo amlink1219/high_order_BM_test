@@ -1,0 +1,62 @@
+{
+  "experiment_id": "P1A001_audio_resnet50",
+  "created_at": "2026-06-25 09:25:51",
+  "data_dir": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_stft_audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500",
+  "out_summary": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/P1A001_teacher_summary.json",
+  "out_history": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/P1A001_teacher_history.json",
+  "out_ckpt_last": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/P1A001_teacher.pt",
+  "out_ckpt_best": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/P1A001_teacher_best.pt",
+  "backbone": "resnet50",
+  "teacher_best_epoch": 34,
+  "teacher_best_test_top1": 0.514633987354149,
+  "teacher_best_test_acc": 0.514633987354149,
+  "teacher_history_last": {
+    "epoch": 100,
+    "train_ce": 0.0460090056066334,
+    "lr": 1.0000000000000004e-08,
+    "teacher_test_top1": 0.5107880842187602,
+    "teacher_test_top5": 0.7653999087412815,
+    "teacher_test_ce": 3.400323348864913
+  },
+  "num_classes": 309,
+  "n_freq": 513,
+  "n_time": 994,
+  "train_crop_frames": 500,
+  "eval_full_10s": true,
+  "paper_alignment": "Teacher trains on random 257x500 crops and exports embeddings from the full 10s STFT, without resizing/sigmoid before the resnet50.",
+  "features": {
+    "global_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/vggsound_full_audio_paperresnet50_global2048_seed223.npz",
+    "global_embedding_dim": 2048,
+    "global_normalization": {
+      "mode": "per_dim_zscore_sigmoid",
+      "mu_mean": 0.4054129719734192,
+      "sd_mean": 0.45690208673477173
+    },
+    "seq_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/vggsound_full_audio_paperresnet50_seq_chunks4_w500_seed223.npz",
+    "seq_shape_train": [
+      182615,
+      4,
+      2048
+    ],
+    "seq_shape_test": [
+      15341,
+      4,
+      2048
+    ],
+    "meanstd_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/phase1_features/audio_sr16k_fft1024_hop160_chunks4w500_lstm4096_h8_e500/vggsound_full_audio_paperresnet50_seqmeanstd4096_chunks4_w500_seed223.npz",
+    "meanstd_embedding_dim": 4096,
+    "meanstd_normalization": {
+      "mode": "per_dim_zscore_sigmoid",
+      "mu_mean": 0.2613772749900818,
+      "sd_mean": 0.2953852117061615
+    },
+    "sequence_num_chunks": 4,
+    "sequence_chunk_frames": 500,
+    "sequence_chunk_starts": [
+      0,
+      165,
+      329,
+      494
+    ]
+  }
+}

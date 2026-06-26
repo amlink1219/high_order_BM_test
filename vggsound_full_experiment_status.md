@@ -588,7 +588,7 @@ Decision rule remains unchanged: do not connect a Phase1 feature to AV016-style 
 | JobID | squeue name | branch | IDs | requested resources | status / note |
 |---:|---|---|---|---|---|
 | 324 | `vgg-p1v2` | Phase1 video continuation | P1V002/P1V003 | 2 GPU, 16 CPU, 110G, 4d | submitted; tests 32-frame/320 input and stronger 24-frame/320 LSTM encoder |
-| 325 | `vgg-p1a2` | Phase1 audio continuation | P1A001/P1A002 | 2 GPU, 20 CPU, 120G, 4d | submitted; retries dense STFT with lower workers and tests denser 8-chunk paper-STFT audio sequence |
+| 325 | `vgg-p1a2` | Phase1 audio continuation | P1A001/P1A002 | 2 GPU, 20 CPU, 120G, 4d | running at user check: P1A001 completed 500 epochs, best quick `40.92%`; P1A002 reached epoch365/500, best quick `46.20%` at epoch275 and current `45.81%`; wait for final full eval before promoting |
 
 ## Newly Prepared 2026-06-24 Backbone Upgrade
 
@@ -606,16 +606,121 @@ Decision rule remains strict: do not replace AV016 inputs unless P2V001 beats vi
 | JobID | squeue name | branch | IDs | requested resources | status / note |
 |---:|---|---|---|---|---|
 | 326 | `vgg-p2vid` | Video CNN backbone upgrade | P2V001 | 2 GPU, 16 CPU, 120G, 4d | failed immediately before training because video runner missed `--seed` argparse field; fixed in `vggsound_backbone_upgrade_code_20260624_fixed.zip`; resubmit needed |
-| 327 | `vgg-p2aud` | Audio CNN backbone upgrade | P2A001 | 2 GPU, 20 CPU, 120G, 4d | submitted separately; not affected by the video runner seed bug |
+| 327 | `vgg-p2aud` | Audio CNN backbone upgrade | P2A001 | 2 GPU, 20 CPU, 120G, 4d | active but impractically slow at user check: EfficientNet-B3 teacher reached epoch7 after about 2 days, epoch6 teacher top1 `50.16%`/top5 `77.37%`; process still using GPUs 4/5, but no LSTM feature or BM history yet; likely cancel/retry with shorter teacher or lighter export path |
+| 328 | `vgg-p2vid` | Video CNN backbone upgrade | P2V001 fixed runner | 2 GPU, 16 CPU, 120G, 4d | fixed video runner resubmitted; queued behind running jobs at the time of submission |
 
-## Phase 1 Stronger Video Input Results
+## Newly Prepared 2026-06-26 P2A001 Resized Retry
 
-| experiment | quick best | full best | note |
-|---|---:|---:|---|
-| P1V002 | 42.31% | 42.29% | More temporal samples at the same 320 input resolution. |
+| branch | ID | setup | status |
+|---|---|---|---|
+| Audio CNN backbone resized retry | P2A001R | paper-STFT `257x1004`; train crop `257x300`; bilinear resize to `300x300` before EfficientNet-B3; export `4 chunks x 300`; LSTM4096; standard BM h8/e260 | code packaged in `vggsound_backbone_p2a001_resized_code_20260626.zip`; first submission should use default `STOP_AFTER=teacher` to verify speed before downstream BM |
+
+Rationale: original P2A001/Job 327 was not cost-effective because it only reached EfficientNet-B3 teacher epoch7 after about 48 hours. The retry keeps the same paper-STFT source but makes the CNN input close to EfficientNet's natural square image scale, and reduces the first teacher test to 12 epochs.
+
+## Submitted Jobs 2026-06-26 P2A001 Resized Retry
+
+| JobID | squeue name | branch | IDs | requested resources | status / note |
+|---:|---|---|---|---|---|
+| 330 | `vgg-p2aR` | Audio CNN backbone resized retry | P2A001R | 4 GPU, 40 CPU, 120G, 12h | submitted with `STOP_AFTER=teacher`; teacher batch 128, eval batch 192, export batch 128, workers 12/export workers 6; purpose is to verify whether 300x300 resized EfficientNet-B3 restores normal epoch speed |
+
+## Newly Prepared 2026-06-26 AV016 Fixed-Feature Optimization
+
+This branch keeps the current AV016 video/audio encoder features fixed and only tunes the two-port BM stage.
+
+Reference remains:
+
+```text
+AV016 full Gibbs best = 57.86%
+```
+
+| ID | setup | status |
+|---|---|---|
+| AV017 | continue AV016 `last.pt` to epoch500, gamma=1.15, label_inhibit=0.30, cd_k=3 | code packaged in `vggsound_av016_fixed_feature_optimization_code_20260626.zip` |
+| AV018 | warm-start AV016, gamma=1.10, label_inhibit=0.30, cd_k=3, epoch420 | code packaged |
+| AV019 | warm-start AV016, gamma=1.20, label_inhibit=0.30, cd_k=3, epoch420 | code packaged |
+| AV020 | warm-start AV016, gamma=1.15, label_inhibit=0.25, cd_k=3, epoch420 | code packaged |
+| AV021 | warm-start AV016, gamma=1.15, label_inhibit=0.30, cd_k=5, epoch420 | code packaged |
+
+Priority: AV017 first, then AV018/AV019 gamma bracket, then AV020 label inhibition, then AV021 cd_k=5. This is a low-risk attempt to push the current fixed-feature two-port BM from `57.86%` toward `58.5%-59%`; it should not be mixed with encoder-side P1/P2 experiments.
+
+## Newly Prepared 2026-06-24 DBM-Like Branch
+
+Input file verified locally:
+
+```text
+vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz
+video_train: (182615, 4096) float32
+audio_train: (182615, 4096) float32
+video_test:  (15341, 4096) float32
+audio_test:  (15341, 4096) float32
+```
+
+This is the same processed AV016 evidence file: video端为 ResNet50-frame-sequence + LSTM 的 4096 维 embedding，audio端为 paper-STFT ResNet50 + LSTM 的 4096 维 embedding。
+
+DBM-like structure:
+
+```text
+fixed video/audio evidence -> H1 <-> H2
+label copies              -> H1
+```
+
+Training strategy is two-stage:
+
+1. Pretrain the lower two-port BM with AV016-style `video/audio -> H1 -> label` structure.
+2. Initialize the DBM-like model from the lower checkpoint, add `H2`, then jointly fine-tune `H1-H2-label` with CD updates.
+
+The initial DBM-like sweep is packaged in `vggsound_dbmlike_code_20260624.zip`:
+
+| ID | H1 | H2 | total p-bits | role |
+|---|---:|---:|---:|---|
+| D001 | 24576 | 4096 | 34313 | smaller DBM-like sanity run |
+| D002 | 32768 | 4096 | 42505 | main DBM-like run, matching AV016 H1 plus one extra top layer |
+| D003 | 32768 | 8192 | 46601 | optional larger top-layer run |
+
+Decision rule: compare DBM-like full Gibbs accuracy against AV016 `57.86%`. If D002 does not improve clearly, do not expand DBM-like depth before improving the encoder inputs.
+
+Server path note:
+
+```text
+old GPU server workdir: /home/Hongjie_Zeng/high_order_BM/
+new server workdir:     /fs6/home/midfielder6/high_order_BM/
+```
+
+For DBM-like jobs on the new server, use `ROOT=/fs6/home/midfielder6/high_order_BM` and place the AV016 `.npz` under that directory unless `FEATURE_NPZ` is explicitly set.
+
+## Prepared 2026-06-26 DBM-Like Multi-GPU Resume Patch
+
+Current DBM-like jobs on the new server:
+
+```text
+745774 = D002, originally submitted with 1 GPU / 16 CPU / mem=0, currently single-GPU
+753280 = D001, submitted with 1 GPU / 16 CPU / 180G, currently single-GPU
+753281 = D003, queued; blocked by association CPU limit while D001/D002 are running
+```
+
+The DBM-like training script now supports `--data_parallel` and optional `--gpu_ids`. This uses `torch.nn.DataParallel` to split each mini-batch across the visible GPUs while preserving the same DBM-like CD update rule. Checkpoints still save the underlying model state, so existing single-GPU `last.pt` files can be resumed.
+
+New resume helper:
+
+```text
+run_vggsound_dbmlike_multigpu_resume.py
+sbatch_vggsound_dbmlike_multigpu_resume.sh
+```
+
+Default multi-GPU resume resources:
+
+```text
+partition 5090
+gres gpu:2
+cpus-per-task 16
+mem 180G
+global batch size 32
+```
+
+Recommended use: if a single-GPU DBM-like run is too slow, cancel the running job after confirming `last.pt/history.json` exist, then resume the same ID with the multi-GPU script. This avoids restarting pretraining or losing completed DBM-like epochs.
 
 ## Phase 1 Stronger Audio Input Results
 
 | experiment | quick best | full best | note |
 |---|---:|---:|---|
-| P1A001 | 40.92% | 40.97% | Increase audio STFT frequency resolution from 257 bins to 513 bins while keeping about 10 ms hop. |
+| P1A002 | 46.20% | 46.20% | Keep paper-STFT resolution but export denser 8-chunk temporal audio sequence before LSTM. |
