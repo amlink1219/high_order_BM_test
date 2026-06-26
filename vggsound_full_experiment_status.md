@@ -284,7 +284,8 @@ This is the current main AF031 audio-video branch. It aligns the strongest uploa
 |---|---|---:|---:|---:|---:|---:|---:|---|
 | AV011 | standard avg(video,audio) | 32768 | - | 320 | 43.60% | 43.60% | 43.69% | completed |
 | AV012 | two-port | 32768 | 1.15 | 180 | 54.76% | - | 55.09% | eval-only full Gibbs completed from `best.pt`; training stopped at epoch 182 due to CUDA launch timeout |
-| AV013 | two-port | 32768 | 0.50 | - | - | - | - | not reached |
+| AV016 | two-port | 32768 | 1.15 | 310 | 57.83% | 57.77% | 57.86% | completed AV012 continuation; current main VGGSound result |
+| AV013 | two-port | 32768 | 0.50 | 85 partial | 43.33% | - | - | failed at epoch86 by CUDA launch timeout; no full eval |
 | AV014 | two-port | 32768 | 0.00 | - | - | - | - | not reached |
 | AV015 | two-port | 24576 | 1.15 | - | - | - | - | not reached |
 
@@ -292,10 +293,12 @@ Interpretation:
 
 - The simple avg one-port fusion baseline is already strong: AV011 full = `43.69%`.
 - AV011 beats video-only VF026 (`42.84%`) by +0.85 pp, but it is below audio-only AF031 (`44.31%`) and the current audio-only best AF036 (`44.98%`).
-- AV012 is now the first valid AF031 true two-port full-eval result. It reached quick `54.76%` at epoch 180 and eval-only full Gibbs `55.09%` from `best.pt`.
+- AV012 was the first valid AF031 true two-port full-eval result. It reached quick `54.76%` at epoch 180 and eval-only full Gibbs `55.09%` from `best.pt`.
+- AV016 continued the interrupted AV012 branch to epoch320 and is now the main result: best epoch `310`, quick `57.83%`, full Gibbs `57.86%`, final quick `57.77%`.
 - The uploaded child stderr shows `torch.AcceleratorError: CUDA error: the launch timed out and was terminated` at `loss.item()`. This is a CUDA kernel timeout/asynchronous CUDA error, not a dataset-missing error and not an ordinary Python exception in the BM logic.
-- AV012 is far above AV011 (`43.69%` full), video-only VF026 (`42.84%`), and audio-only AF036 (`44.98%`). This validates the current two-port BM fusion route on VGGSound.
-- Recommended next step: resume AV012 from `last.pt` or `best.pt` with a smaller batch/eval batch to avoid CUDA launch timeout, and run gamma/hidden ablations using the same AF031/VLF002 feature pair.
+- AV016 is far above AV011 (`43.69%` full), video-only VF026 (`42.84%`), and audio-only AF036 (`44.98%`). This validates the current two-port BM fusion route on VGGSound.
+- AV013 gamma=0.50 only reached quick `43.33%` before failure, already near baseline level, but it is not a formal ablation because it has no full eval.
+- Near-term priority is no longer ablation first. Continue improving upstream video/audio features and only promote a new feature to two-port if its unimodal BM beats the current controls.
 
 ### Job 308: Waiting Parameter Sweep With Old Audio CNN-LSTM Feature
 
@@ -333,7 +336,7 @@ Current best unimodal and fusion results:
 ```text
 video-only BM: VF026 = 42.84%
 audio-only BM: AF036 = 44.98%
-audio+video two-port BM: AV012 = 55.09%
+audio+video two-port BM: AV016 = 57.86%
 ```
 
 The audio branch is now stronger than video on the best uploaded unimodal BM. The improvement from STFT to learned audio embeddings is very large:
@@ -444,7 +447,7 @@ Note: AV006-AV010 used AF029 mean/std audio and should now be treated as an olde
 |---:|---|---|---|---|---|
 | 313 | `vgg-avaf` | AF031 best-audio AV two-port BM | AV011-AV015 | 1 GPU, 8 CPU, 100G, 2d | completed with failure after AV011: AV011 full = 43.69%; AV012 reached epoch 182, quick best = 54.76%, then CUDA launch timeout; AV013-AV015 not reached |
 | 316 | `vgg-af31` | AF031 audio BM continuation/capacity | AF034-AF037 | 1 GPU, 8 CPU, 100G, 2d | completed and uploaded: AF034/AF035 h6 continuation full = 44.55%; AF036 h8 full = 44.98% and remains current best audio-only BM; AF037 h10 full = 44.31%, so h10 did not improve over h8 |
-| 317 | `vgg-af31` | AF031 audio BM visible-encoding variants | AF038-AF040 | 1 GPU, 8 CPU, 110G, 2d | partial upload analyzed: AF038 seqconcat8192 h4 full = 43.80%; AF039 h6 had reached epoch154 quick = 37.70% with no summary yet; AF040 not reached/uploaded |
+| 317 | `vgg-af31` | AF031 audio BM visible-encoding variants | AF038-AF040 | 1 GPU, 8 CPU, 110G, 2d | completed/partial upload analyzed: AF038 seqconcat8192 h4 full = 43.80%; AF039 seqconcat8192 h6 full = 44.81%; AF040 has config/history only and no summary |
 | 318 | `vgg-av012-eval` | AV012 eval-only full Gibbs test | AV012 best checkpoint | 1 GPU, 8 CPU, 120G, 1d | completed and uploaded: epoch180 `best.pt`, full Gibbs `3000/500/thin=2`, eval batch 16, full acc = 55.09% |
 
 ## Newly Prepared 2026-06-23
@@ -458,8 +461,8 @@ Note: AV006-AV010 used AF029 mean/std audio and should now be treated as an olde
 
 | JobID | squeue name | branch | IDs | requested resources | status / note |
 |---:|---|---|---|---|---|
-| 319 | `vgg-av012c` | AV012 continuation | AV016 | 1 GPU, 8 CPU, 100G, 2d | submitted; resumes interrupted AV012 from `last.pt` to epoch320 with batch/eval batch 16 |
-| 320 | `vgg-avabl` | AV012 ablations | AV013-AV015 | 1 GPU, 8 CPU, 100G, 4d | submitted; runs gamma=0.50, gamma=0, and h6 ablations sequentially |
+| 319 | `vgg-av012c` | AV012 continuation | AV016 | 1 GPU, 8 CPU, 100G, 2d | completed and uploaded: AV016 full Gibbs = 57.86%, best epoch = 310; current main VGGSound result |
+| 320 | `vgg-avabl` | AV012 ablations | AV013-AV015 | 1 GPU, 8 CPU, 100G, 4d | partial/failed and uploaded: AV013 gamma=0.50 reached epoch85 quick = 43.33%, then CUDA launch timeout at epoch86; AV014/AV015 not started |
 
 ## Next Ideas Recorded 2026-06-23
 
@@ -474,7 +477,7 @@ The current main VGGSound direction is the AF031/VLF002-style two-port branch:
 
 ```text
 video LSTM4096 + audio paper-STFT ResNet50 LSTM4096 -> two-port BM
-AV012 full Gibbs acc = 55.09%
+AV016 full Gibbs acc = 57.86%
 ```
 
 This result is far above the current unimodal and one-port fusion controls:
@@ -483,6 +486,14 @@ This result is far above the current unimodal and one-port fusion controls:
 video-only best: VF026 = 42.84%
 audio-only best: AF036 = 44.98%
 one-port avg fusion: AV011 = 43.69%
+```
+
+The previous AV012 checkpoint remains useful as the first proof of the branch, but AV016 supersedes it as the current main result:
+
+```text
+AV012 full Gibbs acc = 55.09%
+AV016 full Gibbs acc = 57.86%
+absolute gain = +2.77 pp
 ```
 
 ### Capacity And Epoch Lessons
@@ -526,9 +537,9 @@ old video mean/std feature scale-up
 
 | phase | goal | experiments | decision rule |
 |---:|---|---|---|
-| 0 | Finish current two-port validation | Job 319 AV016 continuation; Job 320 AV013-AV015 gamma/hidden ablations | If AV016 beats 55.09%, make it the main checkpoint; if AV013/AV014 collapse, gammaXY is a necessary part of the result |
-| 1 | Improve video input/encoder | Higher resolution than 224, more frames, aspect-ratio-preserving resize/crop, stronger video temporal encoder | Promote to two-port only if video-only BM beats VF024/VF026 by a clear margin |
-| 2 | Improve audio input/encoder | Finer STFT or log-mel settings, more audio chunks, stronger paper-STFT ResNet/LSTM or attention encoder | Promote to two-port only if audio-only BM beats AF036 by a clear margin |
+| 0 | Current two-port main result | AV016 continuation of AV012 | AV016 is now the main checkpoint/result at full Gibbs `57.86%`; do not overwrite this conclusion with partial quick evals |
+| 1 | Improve video input/encoder | Continue Phase 1 video: P1V002 32-frame/320 input and P1V003 stronger 24-frame/320 LSTM encoder | Promote to two-port only if video-only BM beats VF024/VF026 by a clear margin |
+| 2 | Improve audio input/encoder | Continue Phase 1 audio: retry P1A001 with lower STFT workers and run P1A002 denser temporal chunks | Promote to two-port only if audio-only BM beats AF036 by a clear margin |
 | 3 | Optimize current two-layer BM | h8 default; limited sweeps over label copies, gamma, label inhibit, training length | Do not repeat h10/long-epoch sweeps unless the feature changed substantially |
 | 4 | Add DBM-like BM branch | Two-port visible layer with two hidden layers; matched standard DBM baseline | Compare under matched p-bit budget and same full Gibbs eval |
 | 5 | Separate fused-head branch | Raw-aligned audio/video fusion CNN/LSTM -> split two port patterns -> BM | Deferred for now; keep as a recorded future AVF branch, not part of the near-term plan. If resumed later, do not mix with AV012; include classifier-only, standard BM, gamma=0 controls |
@@ -552,21 +563,59 @@ old video mean/std feature scale-up
 
 Decision rule: promote a Phase 1 feature to two-port only if video-only clearly beats VF024/VF026 or audio-only clearly beats AF036. Otherwise record the result as a data-processing negative/low-yield conclusion.
 
-## AV012 Continuation And Ablations
+## Uploaded/Analyzed 2026-06-24 Phase 1 And AV016
 
-| experiment | purpose | best epoch | quick best | full best | status |
-|---|---|---:|---:|---:|---|
-| AV016 | Continue interrupted AV012 from last.pt; keep copied AV012 best.pt as starting best checkpoint. | 310 | 57.83% | 57.86% | completed |
+| job | IDs | result | conclusion |
+|---:|---|---|---|
+| 319 | AV016 | full Gibbs `57.86%`, best epoch 310 | current main VGGSound two-port BM result |
+| 320 | AV013 partial | quick `43.33%` at epoch85, failed epoch86; AV014/AV015 not started | not a formal ablation; gamma=0.50 looks weak but needs full eval to claim |
+| 321 | P1V001 | full Gibbs `42.56%` | 24 frames / 320 center crop did not beat video-only VF026 `42.84%` |
+| 323 | P1A001 | failed during STFT extraction with exit code `-9` | likely resource/OOM kill; retry with lower STFT workers before judging the idea |
 
-## AF031 Improvement Branch
+## Newly Prepared 2026-06-24 Phase 1 Continuation
 
-| experiment | input dim | hidden dim | total pbits | best epoch | quick best | full best |
-|---|---:|---:|---:|---:|---:|---:|
-| AF038 | 8192 | 32768 | 42505 | 500 | 43.63% | 43.80% |
-| AF039 | 8192 | 49152 | 58889 | 500 | 44.86% | 44.81% |
+| branch | IDs | setup | status |
+|---|---|---|---|
+| Video Phase1 continuation | P1V002 | 32 RGB frames, 320 center crop, ImageNet ResNet50 per frame, BiLSTM4096, standard BM h8/e320 | code packaged in `vggsound_phase1_continuation_code_20260624.zip` |
+| Video encoder enhancement | P1V003 | reuse P1V001 24-frame/320 ResNet50 sequence feature; train stronger temporal encoder with `proj_dim=768`, `lstm_hidden=768`, embedding4096; standard BM h8/e360 | code packaged; isolates encoder strength from raw-frame setting |
+| Audio Phase1 retry | P1A001 | dense STFT `n_fft=1024`, hop=160, but retry with workers=4 and chunksize=2 plus `--resume` | code packaged; designed to avoid Job 323 exit -9 |
+| Audio chunk enhancement | P1A002 | paper-STFT resolution with denser 8-chunk temporal sequence before audio LSTM4096; standard BM h8/e500 | code packaged |
+
+Decision rule remains unchanged: do not connect a Phase1 feature to AV016-style two-port BM unless its unimodal full Gibbs result clearly beats the current unimodal control (`VF026 = 42.84%` for video, `AF036 = 44.98%` for audio).
+
+## Submitted Jobs 2026-06-24 Phase 1 Continuation
+
+| JobID | squeue name | branch | IDs | requested resources | status / note |
+|---:|---|---|---|---|---|
+| 324 | `vgg-p1v2` | Phase1 video continuation | P1V002/P1V003 | 2 GPU, 16 CPU, 110G, 4d | submitted; tests 32-frame/320 input and stronger 24-frame/320 LSTM encoder |
+| 325 | `vgg-p1a2` | Phase1 audio continuation | P1A001/P1A002 | 2 GPU, 20 CPU, 120G, 4d | submitted; retries dense STFT with lower workers and tests denser 8-chunk paper-STFT audio sequence |
+
+## Newly Prepared 2026-06-24 Backbone Upgrade
+
+| branch | IDs | setup | status |
+|---|---|---|---|
+| Video CNN backbone upgrade | P2V001 | 16 RGB frames, 300 direct resize, ImageNet EfficientNet-B3 per frame, LSTM4096 with `proj_dim=768` and `hidden=768`, standard BM h8/e360 | code packaged in `vggsound_backbone_upgrade_code_20260624.zip`; unimodal screening only |
+| Audio CNN backbone upgrade | P2A001 | paper-STFT 257x1004, EfficientNet-B3 adapted to one-channel spectrogram input, 4 chunks x 500, LSTM4096, standard BM h8/e500 | code packaged in `vggsound_backbone_upgrade_code_20260624.zip`; unimodal screening only |
+
+Rationale: AV016 uses ResNet50+LSTM processed features and reaches `57.86%`; the next encoder-level question is whether a stronger non-ResNet50 image backbone can produce better 4096-d video/audio evidence before BM fusion. EfficientNet-B3 is the first tested alternative because it is stronger than ResNet50 in many ImageNet settings while still feasible on the current 2-GPU jobs. If ImageNet weight download or memory becomes a problem, rerun the same scripts with `--backbone efficientnet_b0`, `--backbone resnet101`, or `--backbone wide_resnet50_2`.
+
+Decision rule remains strict: do not replace AV016 inputs unless P2V001 beats video-only VF026 `42.84%` or P2A001 beats audio-only AF036 `44.98%` under full Gibbs evaluation.
+
+## Submitted Jobs 2026-06-24 Backbone Upgrade
+
+| JobID | squeue name | branch | IDs | requested resources | status / note |
+|---:|---|---|---|---|---|
+| 326 | `vgg-p2vid` | Video CNN backbone upgrade | P2V001 | 2 GPU, 16 CPU, 120G, 4d | failed immediately before training because video runner missed `--seed` argparse field; fixed in `vggsound_backbone_upgrade_code_20260624_fixed.zip`; resubmit needed |
+| 327 | `vgg-p2aud` | Audio CNN backbone upgrade | P2A001 | 2 GPU, 20 CPU, 120G, 4d | submitted separately; not affected by the video runner seed bug |
 
 ## Phase 1 Stronger Video Input Results
 
 | experiment | quick best | full best | note |
 |---|---:|---:|---|
-| P1V001 | 42.55% | 42.56% | Higher resolution and more frames than VF024/VF026, with aspect-ratio-preserving center crop. |
+| P1V002 | 42.31% | 42.29% | More temporal samples at the same 320 input resolution. |
+
+## Phase 1 Stronger Audio Input Results
+
+| experiment | quick best | full best | note |
+|---|---:|---:|---|
+| P1A001 | 40.92% | 40.97% | Increase audio STFT frequency resolution from 257 bins to 513 bins while keeping about 10 ms hop. |

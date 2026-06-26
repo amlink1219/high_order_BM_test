@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-06-26 01:50:49",
+  "out_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/backbone_features/vggsound_P2V001_efficientnet_b3_16f_300s_direct_seq.npz",
+  "shards": [
+    "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/backbone_features/vggsound_P2V001_efficientnet_b3_16f_300s_direct_seq_shard0of2.npz",
+    "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/backbone_features/vggsound_P2V001_efficientnet_b3_16f_300s_direct_seq_shard1of2.npz"
+  ],
+  "train_size": 182615,
+  "test_size": 15341,
+  "num_classes": 309,
+  "sequence_shape_train": [
+    182615,
+    16,
+    1536
+  ],
+  "sequence_shape_test": [
+    15341,
+    16,
+    1536
+  ],
+  "dtype": "float16"
+}
