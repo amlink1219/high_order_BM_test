@@ -1,0 +1,7 @@
+[2026-06-26 18:32:34] train paper-STFT audio efficientnet_b3 teacher data_dir=/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/audio_paper_stft257x1004 device=cuda
+[data_parallel] using 4 GPUs for paper-STFT audio efficientnet_b3
+[epoch 001] ce=3.2424 lr=1.00e-04
+[epoch 002] ce=2.1957 test_top1=0.3277 test_top5=0.6103 lr=1.00e-04
+[epoch 003] ce=1.9220 lr=1.00e-04
+[epoch 004] ce=1.7674 test_top1=0.3725 test_top5=0.6549 lr=1.00e-04
+[epoch 005] ce=1.6569 lr=1.00e-04

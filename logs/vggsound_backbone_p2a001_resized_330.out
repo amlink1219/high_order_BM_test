@@ -1,0 +1,12 @@
+Start time: Fri Jun 26 06:32:31 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 330
+CUDA_VISIBLE_DEVICES: 0,1,4,5
+P2A001R: resize paper-STFT crops/chunks to 300x300 before EfficientNet-B3
+Start P2A001 resized audio backbone retry: 2026-06-26 18:32:32
+root=/home/Hongjie_Zeng/high_order_BM
+setup=backbone:efficientnet_b3, crop_frames:300, resize:300x300, chunks:4x300, stop_after:teacher
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python make_vggsound_full_audio_paper_resnet50_features.py --data_dir /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/audio_paper_stft257x1004 --feature_out_dir /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/backbone_features/P2A001R_audio_efficientnet_b3_paperstft_crop300_resize300x300_chunks4w300 --out_summary /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/backbone_features/P2A001R_audio_efficientnet_b3_paperstft_crop300_resize300x300_chunks4w300/P2A001R_teacher_summary.json --out_history /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/backbone_features/P2A001R_audio_efficientnet_b3_paperstft_crop300_resize300x300_chunks4w300/P2A001R_teacher_history.json --out_ckpt /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/backbone_features/P2A001R_audio_efficientnet_b3_paperstft_crop300_resize300x300_chunks4w300/P2A001R_teacher.pt --experiment_id P2A001R_audio_efficientnet_b3_r300x300 --backbone efficientnet_b3 --epochs 12 --batch_size 128 --eval_batch_size 192 --export_batch_size 128 --num_workers 12 --export_num_workers 6 --lr 0.0001 --weight_decay 0.0001 --dropout 0.25 --eval_every 2 --train_crop_frames 300 --input_resize_height 300 --input_resize_width 300 --sequence_num_chunks 4 --sequence_chunk_frames 300 --seed 341 --pin_memory --amp --data_parallel --device auto
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_backbone_P2A001R_audio_teacher_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_backbone_P2A001R_audio_teacher_stderr.log

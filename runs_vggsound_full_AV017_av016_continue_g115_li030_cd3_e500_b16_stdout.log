@@ -1,0 +1,7 @@
+[data] train=182615 test=15341 classes=309 video=4096 motion=1 audio=4096 device=cuda
+[model] twoport A=audio:4096 O=video:4096 label=1545 hidden=32768 total=38409
+[epoch 321] loss=-9.7528 short_acc=0.9750
+[epoch 322] loss=-9.7650 short_acc=0.9761
+[epoch 323] loss=-9.7694 short_acc=0.9764
+[epoch 324] loss=-9.2676 short_acc=0.9760
+[epoch 325] loss=-9.3168 short_acc=0.9765 quick_test_acc=0.5784 ent=1.5872

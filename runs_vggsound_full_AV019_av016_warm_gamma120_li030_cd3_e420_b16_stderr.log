@@ -1,0 +1,20 @@
+/home/Hongjie_Zeng/.conda/envs/hongjie_env/lib/python3.13/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Traceback (most recent call last):
+  File "/home/Hongjie_Zeng/high_order_BM/train_vggsound_mini20_bm.py", line 638, in <module>
+    main()
+    ~~~~^^
+  File "/home/Hongjie_Zeng/high_order_BM/train_vggsound_mini20_bm.py", line 634, in main
+    train(args)
+    ~~~~~^^^^^^
+  File "/home/Hongjie_Zeng/high_order_BM/train_vggsound_mini20_bm.py", line 543, in train
+    result = train_twoport(args, device, train_loader, test_loader, dims, config)
+  File "/home/Hongjie_Zeng/high_order_BM/train_vggsound_mini20_bm.py", line 436, in train_twoport
+    grad_vals.append(float(grad_norm.item() if hasattr(grad_norm, "item") else grad_norm))
+                           ~~~~~~~~~~~~~~^^
+torch.AcceleratorError: CUDA error: the launch timed out and was terminated
+Search for `cudaErrorLaunchTimeout' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

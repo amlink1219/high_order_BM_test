@@ -1,0 +1,38 @@
+[data] train=182615 test=15341 classes=309 video=4096 motion=1 audio=4096 device=cuda
+[model] twoport A=audio:4096 O=video:4096 label=1545 hidden=32768 total=38409
+[epoch 321] loss=-4.7458 short_acc=0.9830
+[epoch 322] loss=-5.4951 short_acc=0.9822
+[epoch 323] loss=-5.3064 short_acc=0.9822
+[epoch 324] loss=-5.2253 short_acc=0.9825
+[epoch 325] loss=-5.1371 short_acc=0.9824 quick_test_acc=0.5807 ent=1.5654
+[epoch 326] loss=-5.3207 short_acc=0.9822
+[epoch 327] loss=-5.7059 short_acc=0.9824
+[epoch 328] loss=-5.4287 short_acc=0.9827
+[epoch 329] loss=-5.6391 short_acc=0.9828
+[epoch 330] loss=-5.2976 short_acc=0.9827 quick_test_acc=0.5786 ent=1.5173
+[epoch 331] loss=-5.3948 short_acc=0.9830
+[epoch 332] loss=-5.6835 short_acc=0.9825
+[epoch 333] loss=-5.4271 short_acc=0.9833
+[epoch 334] loss=-5.3127 short_acc=0.9833
+[epoch 335] loss=-5.5866 short_acc=0.9835 quick_test_acc=0.5776 ent=1.5079
+[epoch 336] loss=-5.7949 short_acc=0.9830
+[epoch 337] loss=-5.6245 short_acc=0.9831
+[epoch 338] loss=-5.4664 short_acc=0.9832
+[epoch 339] loss=-5.4412 short_acc=0.9830
+[epoch 340] loss=-5.6313 short_acc=0.9830 quick_test_acc=0.5809 ent=1.4992
+[epoch 341] loss=-5.4652 short_acc=0.9835
+[epoch 342] loss=-5.4861 short_acc=0.9831
+[epoch 343] loss=-5.5187 short_acc=0.9834
+[epoch 344] loss=-5.4114 short_acc=0.9829
+[epoch 345] loss=-5.5308 short_acc=0.9832 quick_test_acc=0.5797 ent=1.4940
+[epoch 346] loss=-5.3575 short_acc=0.9835
+[epoch 347] loss=-5.6397 short_acc=0.9833
+[epoch 348] loss=-5.5646 short_acc=0.9832
+[epoch 349] loss=-5.4121 short_acc=0.9836
+[epoch 350] loss=-5.3792 short_acc=0.9836 quick_test_acc=0.5806 ent=1.4868
+[epoch 351] loss=-5.1785 short_acc=0.9837
+[epoch 352] loss=-5.3688 short_acc=0.9840
+[epoch 353] loss=-5.4546 short_acc=0.9839
+[epoch 354] loss=-5.4239 short_acc=0.9839
+[epoch 355] loss=-5.4109 short_acc=0.9843 quick_test_acc=0.5807 ent=1.4907
+[epoch 356] loss=-5.5343 short_acc=0.9839

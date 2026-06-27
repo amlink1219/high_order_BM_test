@@ -724,3 +724,9 @@ Recommended use: if a single-GPU DBM-like run is too slow, cancel the running jo
 | experiment | quick best | full best | note |
 |---|---:|---:|---|
 | P1A002 | 46.20% | 46.20% | Keep paper-STFT resolution but export denser 8-chunk temporal audio sequence before LSTM. |
+
+## Submitted Jobs 2026-06-26 AV016 Fixed-Feature Optimization
+
+| ID | setup | best quick | full eval best | final | note |
+|---|---|---:|---:|---:|---|
+| AV020 | gamma=(?,?), label_inhibit=?, cd_k=?, epoch=420 | 0.5822958086174305 | 0.5811224822371422 | 0.5809921126393325 | fixed AV016 4096+4096 features |

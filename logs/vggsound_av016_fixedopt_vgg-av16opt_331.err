@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_av016_fixed_feature_optimization.py", line 347, in <module>
+    main()
+    ~~~~^^
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_av016_fixed_feature_optimization.py", line 339, in main
+    res = train_one(root, args, exp, feature_npz, info)
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_av016_fixed_feature_optimization.py", line 249, in train_one
+    run_checked(
+    ~~~~~~~~~~~^
+        cmd,
+        ^^^^
+    ...<3 lines>...
+        dry_run=args.dry_run,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/Hongjie_Zeng/high_order_BM/run_vggsound_av016_fixed_feature_optimization.py", line 107, in run_checked
+    raise RuntimeError(f"command failed with exit code {ret}; see {stderr_path}")
+RuntimeError: command failed with exit code 1; see /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV017_av016_continue_g115_li030_cd3_e500_b16_stderr.log
