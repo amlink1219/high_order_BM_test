@@ -588,7 +588,7 @@ Decision rule remains unchanged: do not connect a Phase1 feature to AV016-style 
 | JobID | squeue name | branch | IDs | requested resources | status / note |
 |---:|---|---|---|---|---|
 | 324 | `vgg-p1v2` | Phase1 video continuation | P1V002/P1V003 | 2 GPU, 16 CPU, 110G, 4d | submitted; tests 32-frame/320 input and stronger 24-frame/320 LSTM encoder |
-| 325 | `vgg-p1a2` | Phase1 audio continuation | P1A001/P1A002 | 2 GPU, 20 CPU, 120G, 4d | running at user check: P1A001 completed 500 epochs, best quick `40.92%`; P1A002 reached epoch365/500, best quick `46.20%` at epoch275 and current `45.81%`; wait for final full eval before promoting |
+| 325 | `vgg-p1a2` | Phase1 audio continuation | P1A001/P1A002 | 2 GPU, 20 CPU, 120G, 4d | completed and uploaded: P1A001 full `40.97%` failed to beat AF036; P1A002 full `46.20%` at epoch275 beats AF036 `44.98%` by +1.22 pp and is the new best uploaded audio-only BM candidate |
 
 ## Newly Prepared 2026-06-24 Backbone Upgrade
 
@@ -642,6 +642,25 @@ AV016 full Gibbs best = 57.86%
 | AV021 | warm-start AV016, gamma=1.15, label_inhibit=0.30, cd_k=5, epoch420 | code packaged |
 
 Priority: AV017 first, then AV018/AV019 gamma bracket, then AV020 label inhibition, then AV021 cd_k=5. This is a low-risk attempt to push the current fixed-feature two-port BM from `57.86%` toward `58.5%-59%`; it should not be mixed with encoder-side P1/P2 experiments.
+
+## Newly Noted Future Directions 2026-06-26
+
+These are not submitted jobs yet. They are design directions to pursue after the current AV016 fixed-feature optimization and P1/P2 audio checks finish.
+
+| Direction | Goal | Proposed setup | Why it matters | Status |
+|---|---|---|---|---|
+| RGB + motion fused video4096 | Improve the video port without changing the two-port BM interface | RGB frames and motion/frame-difference/optical-flow features are fused inside the video encoder, then exported as one `video4096` feature. BM still sees `fused_video4096` vs `audio4096`, not separate RGB/motion ports. | Current video4096 mainly captures static RGB semantics. Explicit motion may add action/event evidence while keeping the hardware-facing video port unchanged. | recorded; code not written |
+| Higher-information 8192-d encoder outputs | Test whether richer encoder outputs help once the feature quality is improved | Extract more video/audio information at the encoder stage, then export `video8192` and/or `audio8192`. First test unimodal standard BM controls, then consider matched two-port `video8192 + audio8192` if both sides are useful. | Previous 8192 tests showed dimension alone is not enough, but richer upstream extraction plus 8192 output may preserve information that 4096 compresses away. | recorded; code not written |
+
+## Submitted Jobs 2026-06-26 AV016 Fixed-Feature Optimization
+
+| JobID | squeue name | ID | setup | requested resources | status / note |
+|---:|---|---|---|---|---|
+| 331 | `vgg-av16` | AV017 | continue AV016 to epoch500, gamma=1.15, label_inhibit=0.30, cd_k=3 | 1 GPU, 8 CPU, 48G, 2d | queued at user check with reason `Resources` |
+| 332 | `vgg-av16` | AV018 | warm-start gamma=1.10, label_inhibit=0.30, cd_k=3, epoch420 | 1 GPU, 8 CPU, 48G, 2d | queued at user check with node/priority reason |
+| 333 | `vgg-av16` | AV019 | warm-start gamma=1.20, label_inhibit=0.30, cd_k=3, epoch420 | 1 GPU, 8 CPU, 48G, 2d | queued at user check with reason `Priority` |
+| 334 | `vgg-av16` | AV020 | warm-start gamma=1.15, label_inhibit=0.25, cd_k=3, epoch420 | 1 GPU, 8 CPU, 48G, 2d | queued at user check with reason `Priority` |
+| 335 | `vgg-av16` | AV021 | warm-start gamma=1.15, label_inhibit=0.30, cd_k=5, epoch420 | 1 GPU, 8 CPU, 48G, 2d | queued at user check with reason `Priority` |
 
 ## Newly Prepared 2026-06-24 DBM-Like Branch
 
@@ -719,14 +738,111 @@ global batch size 32
 
 Recommended use: if a single-GPU DBM-like run is too slow, cancel the running job after confirming `last.pt/history.json` exist, then resume the same ID with the multi-GPU script. This avoids restarting pretraining or losing completed DBM-like epochs.
 
-## Phase 1 Stronger Audio Input Results
+## Prepared 2026-06-27 AV016 Safe Fixed-Feature Resweep
 
-| experiment | quick best | full best | note |
-|---|---:|---:|---|
-| P1A002 | 46.20% | 46.20% | Keep paper-STFT resolution but export denser 8-chunk temporal audio sequence before LSTM. |
+The 2026-06-26 fixed-feature optimization produced two useful completed results:
 
-## Submitted Jobs 2026-06-26 AV016 Fixed-Feature Optimization
+```text
+AV018 gamma=1.10 full eval best = 58.18%
+AV020 label_inhibit=0.25 full eval best = 58.11%
+```
 
-| ID | setup | best quick | full eval best | final | note |
-|---|---|---:|---:|---:|---|
-| AV020 | gamma=(?,?), label_inhibit=?, cd_k=?, epoch=420 | 0.5822958086174305 | 0.5811224822371422 | 0.5809921126393325 | fixed AV016 4096+4096 features |
+Three jobs failed with `torch.AcceleratorError: CUDA error: the launch timed out and was terminated`:
+
+```text
+AV017 continuation gamma=1.15
+AV019 gamma=1.20
+AV021 cd_k=5
+```
+
+These are runtime failures, not scientific negative results. The error was reported at `.item()` synchronization points, so the likely cause is an earlier long CUDA kernel timing out. The safe resweep reduces batch size and eval batch size from 16 to 8 while keeping the final full Gibbs protocol unchanged.
+
+Packaged code:
+
+```text
+vggsound_av016_safe_resweep_code_20260627.zip
+run_vggsound_av016_safe_resweep.py
+sbatch_vggsound_av016_safe_resweep.sh
+push_vggsound_av016_safe_resweep_results.sh
+```
+
+Safe resweep plan:
+
+| ID | purpose | setup |
+|---|---|---|
+| AV022 | rerun failed AV017 | gamma=1.15, label_inhibit=0.30, cd_k=3, epoch500, batch=8 |
+| AV023 | rerun failed AV019 | gamma=1.20, label_inhibit=0.30, cd_k=3, epoch420, batch=8 |
+| AV024 | rerun failed AV021 | gamma=1.15, label_inhibit=0.30, cd_k=5, epoch420, batch=8 |
+| AV025 | local sweep below AV018 | gamma=1.05, label_inhibit=0.30, cd_k=3, epoch420, batch=8 |
+| AV026 | local sweep near AV018 | gamma=1.08, label_inhibit=0.30, cd_k=3, epoch420, batch=8 |
+| AV027 | local sweep above AV018 | gamma=1.12, label_inhibit=0.30, cd_k=3, epoch420, batch=8 |
+| AV028 | combine positive directions | gamma=1.10, label_inhibit=0.25, cd_k=3, epoch420, batch=8 |
+
+Decision rule: compare every full eval against AV018 `58.18%`. If AV028 improves, use it as the new fixed-feature BM default. If only AV025-AV027 improve, narrow around that gamma next.
+
+## Prepared 2026-06-27 RGB+Motion Fused Video Branch
+
+Motivation: previous video experiments treated RGB appearance and frame-difference motion as separate candidates or late BM-side inputs. This branch fuses them inside the supervised temporal encoder and exports one physical video evidence vector.
+
+Packaged code:
+
+```text
+vggsound_rgb_motion_fused_video4096_code_20260627.zip
+```
+
+Pipeline:
+
+```text
+mp4 -> 16 RGB frames at 224x224
+RGB stream    = frame[t]
+motion stream = abs(frame[t+1] - frame[t])
+both streams -> ImageNet ResNet50 frame encoder
+two-branch fused BiLSTM encoder -> video4096
+video4096 -> standard BM h8/e360
+```
+
+Submitted resource plan:
+
+```text
+2 GPU, 24 CPU, 120G, 4 days
+```
+
+Planned experiment:
+
+| ID | setup | decision rule |
+|---|---|---|
+| P3V001 | RGB+motion fused video4096, standard BM h8/e360 | promote to AV fusion only if full eval clearly beats VF026 `42.84%` |
+
+## Prepared 2026-06-27 More-Data 8192 AV Branch
+
+Motivation: AV016/AV018 may be limited by compressing each modality to 4096 dimensions. This branch extracts more raw evidence and exports matched 8192-d video/audio features.
+
+Packaged code:
+
+```text
+vggsound_moredata_8192_av_code_20260627.zip
+```
+
+Pipeline:
+
+```text
+video: mp4 -> 32 RGB frames at 320x320 -> ResNet50 sequence -> BiLSTM -> video8192
+audio: waveform -> paper-STFT 257x1004 -> ResNet50 teacher -> 8 chunks x 250 -> BiLSTM -> audio8192
+aligned video8192/audio8192 -> standard BM controls + two-port BM
+```
+
+Submitted resource plan:
+
+```text
+4 GPU, 48 CPU, 120G, 5 days
+```
+
+Planned experiments:
+
+| ID | setup | role |
+|---|---|---|
+| P4V001 | video8192 standard BM h4/e260 | video-only control |
+| P4A001 | audio8192 standard BM h4/e500 | audio-only control |
+| P4AV001 | video8192 + audio8192 two-port BM h4/e320, gamma=1.10 | compare against AV018 `58.18%` |
+
+Decision rule: if P4AV001 beats AV018 by a clear margin, promote 8192 features to the main AV branch. If only P4A001 or P4V001 improves but P4AV001 does not, keep the unimodal result and redesign the two-port BM capacity/training before another AV run.
