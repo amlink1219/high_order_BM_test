@@ -1,0 +1,31 @@
+Start time: Sat Jun 27 04:09:53 PM CST 2026
+Workdir: /home/Hongjie_Zeng/high_order_BM
+Python: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python
+SLURM_JOB_ID: 336
+CUDA_VISIBLE_DEVICES: 0
+ONLY: all
+AV016 safe fixed-feature resweep: fixed video4096/audio4096 features
+Start AV016 safe fixed-feature resweep: 2026-06-27 16:10:00
+root=/home/Hongjie_Zeng/high_order_BM
+feature=/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz
+{
+  "num_classes": 309,
+  "input_dim": 4096,
+  "audio_dim": 4096,
+  "train_size": 182615,
+  "test_size": 15341
+}
+Copy resume baseline /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV016_av012_resume_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320_b16/best.pt -> /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV022_av016_safe_continue_g115_li030_cd3_e500_b8/best.pt
+Copy resume baseline /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV016_av012_resume_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320_b16/history.json -> /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV022_av016_safe_continue_g115_li030_cd3_e500_b8/history.json
+
+[2026-06-27 16:10:03] TRAIN AV022 av016_safe_continue_g115_li030_cd3_e500_b8 hidden=32768 total=38409 batch=8 eval_batch=8 gamma=(1.15,1.15) label_inhibit=0.3 cd_k=3 epochs=500
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV022_av016_safe_continue_g115_li030_cd3_e500_b8 --experiment_id AV022 --model_type twoport --input_dim 4096 --num_classes 309 --label_copies 5 --total_pbits 38409 --epochs 500 --batch_size 8 --eval_batch_size 8 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --port_a audio --port_o video --gamma_h 1.15 --gamma_l 1.15 --label_inhibit 0.3 --label_update binary --label_condition both --full_eval_on_best --resume_ckpt /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV016_av012_resume_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320_b16/last.pt --resume_history_json /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV016_av012_resume_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320_b16/history.json
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV022_av016_safe_continue_g115_li030_cd3_e500_b8_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV022_av016_safe_continue_g115_li030_cd3_e500_b8_stderr.log
+Copy resume baseline /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV016_av012_resume_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320_b16/best.pt -> /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV023_av016_safe_gamma120_li030_cd3_e420_b8/best.pt
+Copy resume baseline /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV016_av012_resume_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320_b16/history.json -> /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV023_av016_safe_gamma120_li030_cd3_e420_b8/history.json
+
+[2026-06-29 01:30:20] TRAIN AV023 av016_safe_gamma120_li030_cd3_e420_b8 hidden=32768 total=38409 batch=8 eval_batch=8 gamma=(1.2,1.2) label_inhibit=0.3 cd_k=3 epochs=420
+RUN: /home/Hongjie_Zeng/.conda/envs/hongjie_env/bin/python train_vggsound_mini20_bm.py --feature_npz /home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz --out_dir /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV023_av016_safe_gamma120_li030_cd3_e420_b8 --experiment_id AV023 --model_type twoport --input_dim 4096 --num_classes 309 --label_copies 5 --total_pbits 38409 --epochs 420 --batch_size 8 --eval_batch_size 8 --cd_k 3 --lr 0.0002 --momentum 0.6 --weight_decay 0.0 --eval_every 5 --quick_eval_steps 500 --quick_eval_burn_in 100 --quick_eval_thin 2 --full_eval_steps 3000 --full_eval_burn_in 500 --full_eval_thin 2 --label_init random_onehot --seed 123 --num_workers 0 --device auto --binarize none --port_a audio --port_o video --gamma_h 1.2 --gamma_l 1.2 --label_inhibit 0.3 --label_update binary --label_condition both --full_eval_on_best --resume_ckpt /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV016_av012_resume_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320_b16/last.pt --resume_history_json /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV016_av012_resume_twoport_videolstm4096_audioaf031_lstm4096_h8_g115_lc5_e320_b16/history.json
+STDOUT: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV023_av016_safe_gamma120_li030_cd3_e420_b8_stdout.log
+STDERR: /home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV023_av016_safe_gamma120_li030_cd3_e420_b8_stderr.log

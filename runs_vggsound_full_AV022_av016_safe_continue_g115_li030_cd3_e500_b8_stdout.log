@@ -1,0 +1,860 @@
+[data] train=182615 test=15341 classes=309 video=4096 motion=1 audio=4096 device=cuda
+[model] twoport A=audio:4096 O=video:4096 label=1545 hidden=32768 total=38409
+[epoch 321] loss=-9.4978 short_acc=0.9755
+[epoch 322] loss=-9.6617 short_acc=0.9756
+[epoch 323] loss=-9.5452 short_acc=0.9761
+[epoch 324] loss=-9.3875 short_acc=0.9758
+[epoch 325] loss=-9.4708 short_acc=0.9758 quick_test_acc=0.5783 ent=1.5940
+[epoch 326] loss=-9.5850 short_acc=0.9766
+[epoch 327] loss=-9.8663 short_acc=0.9764
+[epoch 328] loss=-9.2189 short_acc=0.9765
+[epoch 329] loss=-9.4645 short_acc=0.9759
+[epoch 330] loss=-9.2200 short_acc=0.9767 quick_test_acc=0.5771 ent=1.5890
+[epoch 331] loss=-9.4109 short_acc=0.9771
+[epoch 332] loss=-9.4894 short_acc=0.9769
+[epoch 333] loss=-9.3347 short_acc=0.9769
+[epoch 334] loss=-9.2973 short_acc=0.9773
+[epoch 335] loss=-9.1807 short_acc=0.9771 quick_test_acc=0.5795 ent=1.5648
+[epoch 336] loss=-9.6044 short_acc=0.9775
+[epoch 337] loss=-9.4527 short_acc=0.9776
+[epoch 338] loss=-9.3802 short_acc=0.9775
+[epoch 339] loss=-9.3149 short_acc=0.9779
+[epoch 340] loss=-9.2491 short_acc=0.9776 quick_test_acc=0.5790 ent=1.5711
+[epoch 341] loss=-9.6385 short_acc=0.9781
+[epoch 342] loss=-9.0308 short_acc=0.9780
+[epoch 343] loss=-8.9131 short_acc=0.9782
+[epoch 344] loss=-9.0212 short_acc=0.9788
+[epoch 345] loss=-9.0660 short_acc=0.9788 quick_test_acc=0.5778 ent=1.5551
+[epoch 346] loss=-9.0985 short_acc=0.9786
+[epoch 347] loss=-8.7770 short_acc=0.9795
+[epoch 348] loss=-8.8248 short_acc=0.9791
+[epoch 349] loss=-8.7319 short_acc=0.9797
+[epoch 350] loss=-8.8514 short_acc=0.9796 quick_test_acc=0.5791 ent=1.5348
+[epoch 351] loss=-9.2135 short_acc=0.9794
+[epoch 352] loss=-9.1830 short_acc=0.9795
+[epoch 353] loss=-9.0805 short_acc=0.9791
+[epoch 354] loss=-8.8113 short_acc=0.9799
+[epoch 355] loss=-8.8982 short_acc=0.9803 quick_test_acc=0.5786 ent=1.5251
+[epoch 356] loss=-9.2646 short_acc=0.9798
+[epoch 357] loss=-8.9195 short_acc=0.9799
+[epoch 358] loss=-8.9116 short_acc=0.9800
+[epoch 359] loss=-8.8240 short_acc=0.9807
+[epoch 360] loss=-8.6354 short_acc=0.9804 quick_test_acc=0.5789 ent=1.5182
+[epoch 361] loss=-8.7594 short_acc=0.9803
+[epoch 362] loss=-8.9079 short_acc=0.9805
+[epoch 363] loss=-8.5513 short_acc=0.9806
+[epoch 364] loss=-8.4754 short_acc=0.9811
+[epoch 365] loss=-8.3805 short_acc=0.9805 quick_test_acc=0.5783 ent=1.4958
+[epoch 366] loss=-8.6565 short_acc=0.9805
+[epoch 367] loss=-8.5310 short_acc=0.9807
+[epoch 368] loss=-8.3882 short_acc=0.9811
+[epoch 369] loss=-8.4284 short_acc=0.9810
+[epoch 370] loss=-8.2769 short_acc=0.9816 quick_test_acc=0.5796 ent=1.4808
+[epoch 371] loss=-8.7100 short_acc=0.9820
+[epoch 372] loss=-8.6397 short_acc=0.9814
+[epoch 373] loss=-8.1280 short_acc=0.9817
+[epoch 374] loss=-8.1694 short_acc=0.9817
+[epoch 375] loss=-8.3956 short_acc=0.9820 quick_test_acc=0.5787 ent=1.4726
+[epoch 376] loss=-8.6581 short_acc=0.9822
+[epoch 377] loss=-8.3555 short_acc=0.9823
+[epoch 378] loss=-8.0547 short_acc=0.9821
+[epoch 379] loss=-8.0884 short_acc=0.9818
+[epoch 380] loss=-8.2188 short_acc=0.9822 quick_test_acc=0.5788 ent=1.4590
+[epoch 381] loss=-8.3494 short_acc=0.9825
+[epoch 382] loss=-8.1620 short_acc=0.9827
+[epoch 383] loss=-8.0302 short_acc=0.9827
+[epoch 384] loss=-7.9423 short_acc=0.9827
+[epoch 385] loss=-7.9707 short_acc=0.9831 quick_test_acc=0.5806 ent=1.4500
+[epoch 386] loss=-8.2438 short_acc=0.9829
+[epoch 387] loss=-8.2910 short_acc=0.9829
+[epoch 388] loss=-7.9431 short_acc=0.9830
+[epoch 389] loss=-8.1080 short_acc=0.9829
+[epoch 390] loss=-8.0443 short_acc=0.9830 quick_test_acc=0.5808 ent=1.4374
+[epoch 391] loss=-7.9718 short_acc=0.9828
+[epoch 392] loss=-8.0159 short_acc=0.9831
+[epoch 393] loss=-7.9240 short_acc=0.9834
+[epoch 394] loss=-8.0971 short_acc=0.9833
+[epoch 395] loss=-7.9033 short_acc=0.9836 quick_test_acc=0.5808 ent=1.4274
+[epoch 396] loss=-7.8762 short_acc=0.9838
+[epoch 397] loss=-8.1151 short_acc=0.9838
+[epoch 398] loss=-7.9005 short_acc=0.9837
+[epoch 399] loss=-7.9328 short_acc=0.9841
+[epoch 400] loss=-7.9169 short_acc=0.9840 quick_test_acc=0.5813 ent=1.4191
+[epoch 401] loss=-7.8088 short_acc=0.9841
+[epoch 402] loss=-7.7056 short_acc=0.9839
+[epoch 403] loss=-7.6677 short_acc=0.9842
+[epoch 404] loss=-7.7419 short_acc=0.9839
+[epoch 405] loss=-7.6929 short_acc=0.9843 quick_test_acc=0.5803 ent=1.4072
+[epoch 406] loss=-7.8824 short_acc=0.9838
+[epoch 407] loss=-7.6822 short_acc=0.9847
+[epoch 408] loss=-7.6429 short_acc=0.9846
+[epoch 409] loss=-7.5092 short_acc=0.9847
+[epoch 410] loss=-7.8749 short_acc=0.9845 quick_test_acc=0.5817 ent=1.4021
+[epoch 411] loss=-7.4726 short_acc=0.9844
+[epoch 412] loss=-7.6664 short_acc=0.9846
+[epoch 413] loss=-7.6303 short_acc=0.9845
+[epoch 414] loss=-7.6677 short_acc=0.9844
+[epoch 415] loss=-7.8212 short_acc=0.9846 quick_test_acc=0.5798 ent=1.3838
+[epoch 416] loss=-7.5824 short_acc=0.9843
+[epoch 417] loss=-7.8171 short_acc=0.9846
+[epoch 418] loss=-7.8321 short_acc=0.9850
+[epoch 419] loss=-7.8547 short_acc=0.9845
+[epoch 420] loss=-7.7351 short_acc=0.9848 quick_test_acc=0.5810 ent=1.3855
+[epoch 421] loss=-7.5267 short_acc=0.9848
+[epoch 422] loss=-7.5673 short_acc=0.9845
+[epoch 423] loss=-7.6511 short_acc=0.9850
+[epoch 424] loss=-7.4722 short_acc=0.9847
+[epoch 425] loss=-7.6377 short_acc=0.9850 quick_test_acc=0.5824 ent=1.3811
+[epoch 426] loss=-7.4913 short_acc=0.9847
+[epoch 427] loss=-7.4700 short_acc=0.9849
+[epoch 428] loss=-7.5137 short_acc=0.9853
+[epoch 429] loss=-7.5942 short_acc=0.9851
+[epoch 430] loss=-7.5245 short_acc=0.9855 quick_test_acc=0.5818 ent=1.3755
+[epoch 431] loss=-7.1397 short_acc=0.9859
+[epoch 432] loss=-7.3419 short_acc=0.9856
+[epoch 433] loss=-7.3337 short_acc=0.9856
+[epoch 434] loss=-7.3145 short_acc=0.9856
+[epoch 435] loss=-7.2797 short_acc=0.9858 quick_test_acc=0.5826 ent=1.3585
+[epoch 436] loss=-7.3426 short_acc=0.9860
+[epoch 437] loss=-7.4273 short_acc=0.9861
+[epoch 438] loss=-7.4192 short_acc=0.9856
+[epoch 439] loss=-7.2093 short_acc=0.9862
+[epoch 440] loss=-7.0100 short_acc=0.9859 quick_test_acc=0.5803 ent=1.3596
+[epoch 441] loss=-7.1648 short_acc=0.9856
+[epoch 442] loss=-7.2747 short_acc=0.9863
+[epoch 443] loss=-7.1132 short_acc=0.9864
+[epoch 444] loss=-7.2893 short_acc=0.9861
+[epoch 445] loss=-7.2871 short_acc=0.9862 quick_test_acc=0.5811 ent=1.3440
+[epoch 446] loss=-7.0922 short_acc=0.9862
+[epoch 447] loss=-7.0883 short_acc=0.9866
+[epoch 448] loss=-7.1456 short_acc=0.9864
+[epoch 449] loss=-7.0055 short_acc=0.9867
+[epoch 450] loss=-7.1272 short_acc=0.9864 quick_test_acc=0.5800 ent=1.3361
+[epoch 451] loss=-6.7919 short_acc=0.9867
+[epoch 452] loss=-6.9978 short_acc=0.9865
+[epoch 453] loss=-6.8863 short_acc=0.9863
+[epoch 454] loss=-6.9588 short_acc=0.9868
+[epoch 455] loss=-6.8812 short_acc=0.9863 quick_test_acc=0.5808 ent=1.3289
+[epoch 456] loss=-6.8964 short_acc=0.9869
+[epoch 457] loss=-7.0897 short_acc=0.9868
+[epoch 458] loss=-6.8304 short_acc=0.9871
+[epoch 459] loss=-7.0797 short_acc=0.9867
+[epoch 460] loss=-6.8495 short_acc=0.9870 quick_test_acc=0.5807 ent=1.3107
+[epoch 461] loss=-6.9326 short_acc=0.9872
+[epoch 462] loss=-6.9054 short_acc=0.9869
+[epoch 463] loss=-6.8724 short_acc=0.9869
+[epoch 464] loss=-7.1034 short_acc=0.9868
+[epoch 465] loss=-6.8682 short_acc=0.9868 quick_test_acc=0.5809 ent=1.3098
+[epoch 466] loss=-6.6965 short_acc=0.9869
+[epoch 467] loss=-6.8591 short_acc=0.9867
+[epoch 468] loss=-6.9815 short_acc=0.9872
+[epoch 469] loss=-6.9359 short_acc=0.9871
+[epoch 470] loss=-7.0874 short_acc=0.9873 quick_test_acc=0.5807 ent=1.3028
+[epoch 471] loss=-7.0619 short_acc=0.9872
+[epoch 472] loss=-6.7806 short_acc=0.9872
+[epoch 473] loss=-6.8484 short_acc=0.9874
+[epoch 474] loss=-7.0481 short_acc=0.9874
+[epoch 475] loss=-6.8272 short_acc=0.9871 quick_test_acc=0.5820 ent=1.3004
+[epoch 476] loss=-6.8399 short_acc=0.9874
+[epoch 477] loss=-7.0373 short_acc=0.9875
+[epoch 478] loss=-6.8284 short_acc=0.9875
+[epoch 479] loss=-6.6181 short_acc=0.9874
+[epoch 480] loss=-6.6996 short_acc=0.9872 quick_test_acc=0.5815 ent=1.2941
+[epoch 481] loss=-6.6801 short_acc=0.9872
+[epoch 482] loss=-6.9543 short_acc=0.9879
+[epoch 483] loss=-6.7517 short_acc=0.9874
+[epoch 484] loss=-6.8036 short_acc=0.9878
+[epoch 485] loss=-6.8421 short_acc=0.9879 quick_test_acc=0.5799 ent=1.2836
+[epoch 486] loss=-6.5175 short_acc=0.9874
+[epoch 487] loss=-6.6167 short_acc=0.9879
+[epoch 488] loss=-6.6381 short_acc=0.9881
+[epoch 489] loss=-6.6210 short_acc=0.9876
+[epoch 490] loss=-6.7168 short_acc=0.9879 quick_test_acc=0.5814 ent=1.2773
+[epoch 491] loss=-6.5772 short_acc=0.9880
+[epoch 492] loss=-6.6011 short_acc=0.9880
+[epoch 493] loss=-6.5685 short_acc=0.9876
+[epoch 494] loss=-6.5192 short_acc=0.9880
+[epoch 495] loss=-6.6316 short_acc=0.9879 quick_test_acc=0.5806 ent=1.2765
+[epoch 496] loss=-6.6647 short_acc=0.9879
+[epoch 497] loss=-6.3620 short_acc=0.9884
+[epoch 498] loss=-6.5529 short_acc=0.9880
+[epoch 499] loss=-6.3476 short_acc=0.9881
+[epoch 500] loss=-6.4090 short_acc=0.9879 quick_test_acc=0.5812 ent=1.2689
+[full_eval_best] {
+  "created_at": "2026-06-29 01:30:13",
+  "ckpt": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV022_av016_safe_continue_g115_li030_cd3_e500_b8/best.pt",
+  "ckpt_epoch": 435,
+  "ckpt_best_acc": 0.5826217326119549,
+  "eval_steps": 3000,
+  "eval_burn_in": 500,
+  "eval_thin": 2,
+  "test_label_gibbs_acc": 0.5824913630141451,
+  "test_label_entropy": 1.3685015133728697,
+  "computed_dims": {
+    "image_dim": 4096,
+    "audio_dim": 4096,
+    "label_dim": 1545,
+    "hidden_dim": 32768,
+    "total_pbits": 38409,
+    "num_classes": 309
+  },
+  "data_dims": {
+    "feature_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz",
+    "train_size": 182615,
+    "test_size": 15341,
+    "num_classes": 309,
+    "class_names": [
+      "air conditioning noise",
+      "air horn",
+      "airplane",
+      "airplane flyby",
+      "alarm clock ringing",
+      "alligators, crocodiles hissing",
+      "ambulance siren",
+      "arc welding",
+      "baby babbling",
+      "baby crying",
+      "baby laughter",
+      "baltimore oriole calling",
+      "barn swallow calling",
+      "basketball bounce",
+      "bathroom ventilation fan running",
+      "beat boxing",
+      "bee, wasp, etc. buzzing",
+      "bird chirping, tweeting",
+      "bird squawking",
+      "bird wings flapping",
+      "black capped chickadee calling",
+      "blowtorch igniting",
+      "bouncing on trampoline",
+      "bowling impact",
+      "bull bellowing",
+      "canary calling",
+      "cap gun shooting",
+      "car engine idling",
+      "car engine knocking",
+      "car engine starting",
+      "car passing by",
+      "cat caterwauling",
+      "cat growling",
+      "cat hissing",
+      "cat meowing",
+      "cat purring",
+      "cattle mooing",
+      "cattle, bovinae cowbell",
+      "cell phone buzzing",
+      "chainsawing trees",
+      "cheetah chirrup",
+      "chicken clucking",
+      "chicken crowing",
+      "child singing",
+      "child speech, kid speaking",
+      "children shouting",
+      "chimpanzee pant-hooting",
+      "chinchilla barking",
+      "chipmunk chirping",
+      "chopping food",
+      "chopping wood",
+      "church bell ringing",
+      "civil defense siren",
+      "cow lowing",
+      "coyote howling",
+      "cricket chirping",
+      "crow cawing",
+      "cuckoo bird calling",
+      "cupboard opening or closing",
+      "cutting hair with electric trimmers",
+      "dinosaurs bellowing",
+      "disc scratching",
+      "dog barking",
+      "dog baying",
+      "dog bow-wow",
+      "dog growling",
+      "dog howling",
+      "dog whimpering",
+      "donkey, ass braying",
+      "door slamming",
+      "driving buses",
+      "driving motorcycle",
+      "driving snowmobile",
+      "duck quacking",
+      "eagle screaming",
+      "eating with cutlery",
+      "electric grinder grinding",
+      "electric shaver, electric razor shaving",
+      "elephant trumpeting",
+      "eletric blender running",
+      "elk bugling",
+      "engine accelerating, revving, vroom",
+      "female singing",
+      "female speech, woman speaking",
+      "ferret dooking",
+      "fire crackling",
+      "fire truck siren",
+      "fireworks banging",
+      "firing cannon",
+      "firing muskets",
+      "fly, housefly buzzing",
+      "foghorn",
+      "footsteps on snow",
+      "forging swords",
+      "fox barking",
+      "francolin calling",
+      "frog croaking",
+      "gibbon howling",
+      "goat bleating",
+      "golf driving",
+      "goose honking",
+      "hail",
+      "hair dryer drying",
+      "hammering nails",
+      "heart sounds, heartbeat",
+      "hedge trimmer running",
+      "helicopter",
+      "horse clip-clop",
+      "horse neighing",
+      "ice cracking",
+      "ice cream truck, ice cream van",
+      "lathe spinning",
+      "lawn mowing",
+      "lighting firecrackers",
+      "lions growling",
+      "lions roaring",
+      "lip smacking",
+      "machine gun shooting",
+      "magpie calling",
+      "male singing",
+      "male speech, man speaking",
+      "metronome",
+      "missile launch",
+      "mosquito buzzing",
+      "motorboat, speedboat acceleration",
+      "mouse clicking",
+      "mouse pattering",
+      "mouse squeaking",
+      "mynah bird singing",
+      "ocean burbling",
+      "opening or closing car doors",
+      "opening or closing car electric windows",
+      "opening or closing drawers",
+      "orchestra",
+      "otter growling",
+      "owl hooting",
+      "parrot talking",
+      "penguins braying",
+      "people babbling",
+      "people battle cry",
+      "people belly laughing",
+      "people booing",
+      "people burping",
+      "people cheering",
+      "people clapping",
+      "people coughing",
+      "people crowd",
+      "people eating",
+      "people eating apple",
+      "people eating crisps",
+      "people eating noodle",
+      "people farting",
+      "people finger snapping",
+      "people gargling",
+      "people giggling",
+      "people hiccup",
+      "people humming",
+      "people marching",
+      "people nose blowing",
+      "people running",
+      "people screaming",
+      "people shuffling",
+      "people slapping",
+      "people slurping",
+      "people sneezing",
+      "people sniggering",
+      "people sobbing",
+      "people whispering",
+      "people whistling",
+      "pheasant crowing",
+      "pig oinking",
+      "pigeon, dove cooing",
+      "planing timber",
+      "plastic bottle crushing",
+      "playing accordion",
+      "playing acoustic guitar",
+      "playing badminton",
+      "playing bagpipes",
+      "playing banjo",
+      "playing bass drum",
+      "playing bass guitar",
+      "playing bassoon",
+      "playing bongo",
+      "playing bugle",
+      "playing castanets",
+      "playing cello",
+      "playing clarinet",
+      "playing congas",
+      "playing cornet",
+      "playing cymbal",
+      "playing darts",
+      "playing didgeridoo",
+      "playing djembe",
+      "playing double bass",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing electronic organ",
+      "playing erhu",
+      "playing flute",
+      "playing french horn",
+      "playing glockenspiel",
+      "playing gong",
+      "playing guiro",
+      "playing hammond organ",
+      "playing harmonica",
+      "playing harp",
+      "playing harpsichord",
+      "playing hockey",
+      "playing lacrosse",
+      "playing mandolin",
+      "playing marimba, xylophone",
+      "playing oboe",
+      "playing piano",
+      "playing saxophone",
+      "playing shofar",
+      "playing sitar",
+      "playing snare drum",
+      "playing squash",
+      "playing steel guitar, slide guitar",
+      "playing steelpan",
+      "playing synthesizer",
+      "playing tabla",
+      "playing table tennis",
+      "playing tambourine",
+      "playing tennis",
+      "playing theremin",
+      "playing timbales",
+      "playing timpani",
+      "playing trombone",
+      "playing trumpet",
+      "playing tuning fork",
+      "playing tympani",
+      "playing ukulele",
+      "playing vibraphone",
+      "playing violin, fiddle",
+      "playing volleyball",
+      "playing washboard",
+      "playing zither",
+      "police car (siren)",
+      "police radio chatter",
+      "popping popcorn",
+      "printer printing",
+      "pumping water",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "raining",
+      "rapping",
+      "reversing beeps",
+      "ripping paper",
+      "roller coaster running",
+      "rope skipping",
+      "rowboat, canoe, kayak rowing",
+      "running electric fan",
+      "sailing",
+      "scuba diving",
+      "sea lion barking",
+      "sea waves",
+      "sharpen knife",
+      "sheep bleating",
+      "shot football",
+      "singing bowl",
+      "singing choir",
+      "skateboarding",
+      "skidding",
+      "skiing",
+      "sliding door",
+      "sloshing water",
+      "slot machine",
+      "smoke detector beeping",
+      "snake hissing",
+      "snake rattling",
+      "splashing water",
+      "spraying water",
+      "squishing water",
+      "stream burbling",
+      "strike lighter",
+      "striking bowling",
+      "striking pool",
+      "subway, metro, underground",
+      "swimming",
+      "tap dancing",
+      "tapping guitar",
+      "telephone bell ringing",
+      "thunder",
+      "toilet flushing",
+      "tornado roaring",
+      "tractor digging",
+      "train horning",
+      "train wheels squealing",
+      "train whistling",
+      "turkey gobbling",
+      "typing on computer keyboard",
+      "typing on typewriter",
+      "underwater bubbling",
+      "using sewing machines",
+      "vacuum cleaner cleaning floors",
+      "vehicle horn, car horn, honking",
+      "volcano explosion",
+      "warbler chirping",
+      "waterfall burbling",
+      "whale calling",
+      "wind chime",
+      "wind noise",
+      "wind rustling leaves",
+      "wood thrush calling",
+      "woodpecker pecking tree",
+      "writing on blackboard with chalk",
+      "yodelling",
+      "zebra braying"
+    ],
+    "video_dim": 4096,
+    "motion_dim": 1,
+    "audio_dim": 4096
+  }
+}
+{
+  "experiment_id": "AV022",
+  "finished_at": "2026-06-29 01:30:13",
+  "model_type": "twoport",
+  "best_epoch": 435,
+  "best_acc_selection_metric": 0.5826217326119549,
+  "final_epoch": 500,
+  "final_test_label_gibbs_acc": 0.5811876670360472,
+  "full_eval_best_acc": 0.5824913630141451,
+  "computed_dims": {
+    "image_dim": 4096,
+    "audio_dim": 4096,
+    "label_dim": 1545,
+    "hidden_dim": 32768,
+    "total_pbits": 38409,
+    "num_classes": 309
+  },
+  "data_dims": {
+    "feature_npz": "/home/Hongjie_Zeng/high_order_BM/data_vggsound_full/features/vggsound_full_aligned_videolstm4096_audioaf031_lstm4096_seed123.npz",
+    "train_size": 182615,
+    "test_size": 15341,
+    "num_classes": 309,
+    "class_names": [
+      "air conditioning noise",
+      "air horn",
+      "airplane",
+      "airplane flyby",
+      "alarm clock ringing",
+      "alligators, crocodiles hissing",
+      "ambulance siren",
+      "arc welding",
+      "baby babbling",
+      "baby crying",
+      "baby laughter",
+      "baltimore oriole calling",
+      "barn swallow calling",
+      "basketball bounce",
+      "bathroom ventilation fan running",
+      "beat boxing",
+      "bee, wasp, etc. buzzing",
+      "bird chirping, tweeting",
+      "bird squawking",
+      "bird wings flapping",
+      "black capped chickadee calling",
+      "blowtorch igniting",
+      "bouncing on trampoline",
+      "bowling impact",
+      "bull bellowing",
+      "canary calling",
+      "cap gun shooting",
+      "car engine idling",
+      "car engine knocking",
+      "car engine starting",
+      "car passing by",
+      "cat caterwauling",
+      "cat growling",
+      "cat hissing",
+      "cat meowing",
+      "cat purring",
+      "cattle mooing",
+      "cattle, bovinae cowbell",
+      "cell phone buzzing",
+      "chainsawing trees",
+      "cheetah chirrup",
+      "chicken clucking",
+      "chicken crowing",
+      "child singing",
+      "child speech, kid speaking",
+      "children shouting",
+      "chimpanzee pant-hooting",
+      "chinchilla barking",
+      "chipmunk chirping",
+      "chopping food",
+      "chopping wood",
+      "church bell ringing",
+      "civil defense siren",
+      "cow lowing",
+      "coyote howling",
+      "cricket chirping",
+      "crow cawing",
+      "cuckoo bird calling",
+      "cupboard opening or closing",
+      "cutting hair with electric trimmers",
+      "dinosaurs bellowing",
+      "disc scratching",
+      "dog barking",
+      "dog baying",
+      "dog bow-wow",
+      "dog growling",
+      "dog howling",
+      "dog whimpering",
+      "donkey, ass braying",
+      "door slamming",
+      "driving buses",
+      "driving motorcycle",
+      "driving snowmobile",
+      "duck quacking",
+      "eagle screaming",
+      "eating with cutlery",
+      "electric grinder grinding",
+      "electric shaver, electric razor shaving",
+      "elephant trumpeting",
+      "eletric blender running",
+      "elk bugling",
+      "engine accelerating, revving, vroom",
+      "female singing",
+      "female speech, woman speaking",
+      "ferret dooking",
+      "fire crackling",
+      "fire truck siren",
+      "fireworks banging",
+      "firing cannon",
+      "firing muskets",
+      "fly, housefly buzzing",
+      "foghorn",
+      "footsteps on snow",
+      "forging swords",
+      "fox barking",
+      "francolin calling",
+      "frog croaking",
+      "gibbon howling",
+      "goat bleating",
+      "golf driving",
+      "goose honking",
+      "hail",
+      "hair dryer drying",
+      "hammering nails",
+      "heart sounds, heartbeat",
+      "hedge trimmer running",
+      "helicopter",
+      "horse clip-clop",
+      "horse neighing",
+      "ice cracking",
+      "ice cream truck, ice cream van",
+      "lathe spinning",
+      "lawn mowing",
+      "lighting firecrackers",
+      "lions growling",
+      "lions roaring",
+      "lip smacking",
+      "machine gun shooting",
+      "magpie calling",
+      "male singing",
+      "male speech, man speaking",
+      "metronome",
+      "missile launch",
+      "mosquito buzzing",
+      "motorboat, speedboat acceleration",
+      "mouse clicking",
+      "mouse pattering",
+      "mouse squeaking",
+      "mynah bird singing",
+      "ocean burbling",
+      "opening or closing car doors",
+      "opening or closing car electric windows",
+      "opening or closing drawers",
+      "orchestra",
+      "otter growling",
+      "owl hooting",
+      "parrot talking",
+      "penguins braying",
+      "people babbling",
+      "people battle cry",
+      "people belly laughing",
+      "people booing",
+      "people burping",
+      "people cheering",
+      "people clapping",
+      "people coughing",
+      "people crowd",
+      "people eating",
+      "people eating apple",
+      "people eating crisps",
+      "people eating noodle",
+      "people farting",
+      "people finger snapping",
+      "people gargling",
+      "people giggling",
+      "people hiccup",
+      "people humming",
+      "people marching",
+      "people nose blowing",
+      "people running",
+      "people screaming",
+      "people shuffling",
+      "people slapping",
+      "people slurping",
+      "people sneezing",
+      "people sniggering",
+      "people sobbing",
+      "people whispering",
+      "people whistling",
+      "pheasant crowing",
+      "pig oinking",
+      "pigeon, dove cooing",
+      "planing timber",
+      "plastic bottle crushing",
+      "playing accordion",
+      "playing acoustic guitar",
+      "playing badminton",
+      "playing bagpipes",
+      "playing banjo",
+      "playing bass drum",
+      "playing bass guitar",
+      "playing bassoon",
+      "playing bongo",
+      "playing bugle",
+      "playing castanets",
+      "playing cello",
+      "playing clarinet",
+      "playing congas",
+      "playing cornet",
+      "playing cymbal",
+      "playing darts",
+      "playing didgeridoo",
+      "playing djembe",
+      "playing double bass",
+      "playing drum kit",
+      "playing electric guitar",
+      "playing electronic organ",
+      "playing erhu",
+      "playing flute",
+      "playing french horn",
+      "playing glockenspiel",
+      "playing gong",
+      "playing guiro",
+      "playing hammond organ",
+      "playing harmonica",
+      "playing harp",
+      "playing harpsichord",
+      "playing hockey",
+      "playing lacrosse",
+      "playing mandolin",
+      "playing marimba, xylophone",
+      "playing oboe",
+      "playing piano",
+      "playing saxophone",
+      "playing shofar",
+      "playing sitar",
+      "playing snare drum",
+      "playing squash",
+      "playing steel guitar, slide guitar",
+      "playing steelpan",
+      "playing synthesizer",
+      "playing tabla",
+      "playing table tennis",
+      "playing tambourine",
+      "playing tennis",
+      "playing theremin",
+      "playing timbales",
+      "playing timpani",
+      "playing trombone",
+      "playing trumpet",
+      "playing tuning fork",
+      "playing tympani",
+      "playing ukulele",
+      "playing vibraphone",
+      "playing violin, fiddle",
+      "playing volleyball",
+      "playing washboard",
+      "playing zither",
+      "police car (siren)",
+      "police radio chatter",
+      "popping popcorn",
+      "printer printing",
+      "pumping water",
+      "race car, auto racing",
+      "railroad car, train wagon",
+      "raining",
+      "rapping",
+      "reversing beeps",
+      "ripping paper",
+      "roller coaster running",
+      "rope skipping",
+      "rowboat, canoe, kayak rowing",
+      "running electric fan",
+      "sailing",
+      "scuba diving",
+      "sea lion barking",
+      "sea waves",
+      "sharpen knife",
+      "sheep bleating",
+      "shot football",
+      "singing bowl",
+      "singing choir",
+      "skateboarding",
+      "skidding",
+      "skiing",
+      "sliding door",
+      "sloshing water",
+      "slot machine",
+      "smoke detector beeping",
+      "snake hissing",
+      "snake rattling",
+      "splashing water",
+      "spraying water",
+      "squishing water",
+      "stream burbling",
+      "strike lighter",
+      "striking bowling",
+      "striking pool",
+      "subway, metro, underground",
+      "swimming",
+      "tap dancing",
+      "tapping guitar",
+      "telephone bell ringing",
+      "thunder",
+      "toilet flushing",
+      "tornado roaring",
+      "tractor digging",
+      "train horning",
+      "train wheels squealing",
+      "train whistling",
+      "turkey gobbling",
+      "typing on computer keyboard",
+      "typing on typewriter",
+      "underwater bubbling",
+      "using sewing machines",
+      "vacuum cleaner cleaning floors",
+      "vehicle horn, car horn, honking",
+      "volcano explosion",
+      "warbler chirping",
+      "waterfall burbling",
+      "whale calling",
+      "wind chime",
+      "wind noise",
+      "wind rustling leaves",
+      "wood thrush calling",
+      "woodpecker pecking tree",
+      "writing on blackboard with chalk",
+      "yodelling",
+      "zebra braying"
+    ],
+    "video_dim": 4096,
+    "motion_dim": 1,
+    "audio_dim": 4096
+  },
+  "out_dir": "/home/Hongjie_Zeng/high_order_BM/runs_vggsound_full_AV022_av016_safe_continue_g115_li030_cd3_e500_b8"
+}

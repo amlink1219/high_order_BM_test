@@ -1,6 +1,6 @@
 # VGGSound Full Experiment Status
 
-Updated: 2026-06-23
+Updated: 2026-06-28
 
 This file is the running status ledger for the full VGGSound branch. It separates completed results, code already prepared but not yet analyzed, and discussed future directions.
 
@@ -33,6 +33,7 @@ This file is the running status ledger for the full VGGSound branch. It separate
 | video LSTM 8192 visible | VF025 | 42.54% | new VLF003 8192-d BiLSTM feature, h4, epoch 260; best epoch 255, final quick 42.48% |
 | video LSTM 8192 visible | VF026 eval-only | 42.10% | VLF003 8192-d BiLSTM feature, h6, JobID 302 stopped at epoch 149; JobID 309 full-evaled best checkpoint at epoch 145; incomplete, not final |
 | video LSTM 8192 visible | VF026 | 42.84% | continued incomplete VF026 to epoch 260; best epoch 250; current best video-only BM, but only +0.10 pp over VF024 |
+| RGB+motion fused video4096 | P3V001 | 41.55% | RGB frames plus frame-difference motion fused inside encoder, then standard BM h8/e360; below VF026, so not promoted |
 
 ### Audio-Only BM
 
@@ -99,6 +100,8 @@ This confirms that the earlier weak audio results were mainly caused by the 128x
 | Video ResNet50 sequence + LSTM BM | VLF001-VLF002 / VF020-VF022 | `make_vggsound_full_video_resnet_sequence_features.py`, `make_vggsound_full_video_lstm_encoder_features.py`, `run_vggsound_full_video_lstm_bm.py`, `sbatch_vggsound_full_video_lstm_bm.sh` | completed and analyzed | preserve frame order before video BM instead of mean+std pooling |
 | VF022 continuation and 8192 visible scale-up | VLF003 / VF023-VF026 | `run_vggsound_full_video_vf022_extend.py`, `sbatch_vggsound_full_video_vf022_extend.sh` | JobID 302 stopped by time limit; JobID 309 eval-only completed, uploaded, and analyzed | test whether current 4096 visible dimension and 220 epochs are limiting video BM |
 | Video large-hidden probes | VF012-VF013 | `run_vggsound_full_video_scaleup.py`, `sbatch_vggsound_full_video_scaleup.sh` | JobID 289 did not complete full planned sweep | test h12/h16 visual-only BM scale-up if resources allow |
+| More-data 8192 AV branch | P4V001/P4A001/P4AV001 | `run_vggsound_moredata_8192_av.py`, `sbatch_vggsound_moredata_8192_av.sh` | JobID 338 failed before BM; video ResNet50 sequence was extracted and merged, but video8192 LSTM encoder was killed with exit code -9 | test whether larger raw evidence and 8192-d visible embeddings improve video/audio/two-port BM |
+| More-data 8192 AV resume/fix | P4V001/P4A001/P4AV001 | `run_vggsound_moredata_8192_av_resume.py`, `sbatch_vggsound_moredata_8192_av_resume.sh` | code prepared 2026-06-28 | resume from existing `vggsound_full_video_seq_resnet50_f32_s320.npz`; fixes unnecessary float32 copies and reduces encoder/BM batch sizes |
 
 ## Server Job Ledger
 
@@ -122,6 +125,8 @@ This confirms that the earlier weak audio results were mainly caused by the 128x
 | 310 | `vggsound_vf026_continue_to260_310.out` | VF026 continuation to epoch260 | 1 GPU, 8 CPU, 120G, 12h | completed and uploaded: VF026 full = 42.84% | VF026 is current best video-only BM, marginally above VF024 |
 | 311 | `vggsound_best_av_paper_audio_311.out` | AV006-AV010 paper-audio AV fusion | 1 GPU, 8 CPU, 100G, 1d | partial/failed: AV006 full = 41.48%; AV007 started then wrapper failed; AV008-AV010 not run/uploaded | need inspect/upload AV007 child stderr to diagnose two-port failure |
 | 312 | `vggsound_audio_paperresnet_af029_cont_312.out` | AF032-AF033 AF029 continuation | 1 GPU, 8 CPU, 90G, 12h | completed and uploaded: AF032 full = 39.30%, AF033 full = 39.57% | mean/std audio continues improving slowly but is far below AF031 |
+| 337 | `vggsound_rgb_motion_fused_video4096_337.out` | P3V001 RGB+motion fused video4096 | 2 GPU, 24 CPU, 120G, 4d | completed and uploaded | P3V001 full = 41.55%, below VF026 = 42.84%; current fusion encoder did not improve video-only branch |
+| 338 | `vggsound_moredata_8192_av_338.out` | P4 more-data 8192 AV branch | 4 GPU, 48 CPU, 120G, 5d | failed before BM results; video sequence extraction and merge completed; `make_vggsound_full_video_lstm_encoder_features.py` exited -9 | continue with P4 resume/fix package using lower batch and no duplicate float32 copy |
 
 Current submitted-but-not-yet-analyzed request total, assuming Job 308 is still active or queued:
 
@@ -846,3 +851,9 @@ Planned experiments:
 | P4AV001 | video8192 + audio8192 two-port BM h4/e320, gamma=1.10 | compare against AV018 `58.18%` |
 
 Decision rule: if P4AV001 beats AV018 by a clear margin, promote 8192 features to the main AV branch. If only P4A001 or P4V001 improves but P4AV001 does not, keep the unimodal result and redesign the two-port BM capacity/training before another AV run.
+
+## Submitted Jobs 2026-06-27 AV016 Safe Fixed-Feature Resweep
+
+| ID | setup | best quick | full eval best | final | note |
+|---|---|---:|---:|---:|---|
+| AV022 | gamma=(?,?), label_inhibit=?, cd_k=?, epoch=500, batch=8 | 0.5826217326119549 | 0.5824913630141451 | 0.5811876670360472 | safe rerun / local sweep around AV018 |
